@@ -45,7 +45,7 @@ export const legalDocuments: LegalDocument[] = [
         id: "what-we-collect",
         heading: "What we collect",
         body: [
-          "If you complete the contact form we collect the details you enter: your name, your company or brand, your email address, and optionally a phone number, a website, the areas you need help with, an indication of budget or stage, and the message you write.",
+          "The contact form prepares a draft in your browser. Entering details or preparing the draft does not send them to us or store them on our server. If you choose to send the draft through your email app, we receive the information included in that email: your name, company, email address, message and any optional details you provide.",
           "We do not ask for and do not want payment details, identity documents, or any sensitive personal information through this site.",
           "Our hosting provider keeps standard server logs, which may include IP addresses and request information. These are used for security and reliability, not for profiling.",
         ],
@@ -78,7 +78,7 @@ export const legalDocuments: LegalDocument[] = [
         id: "sharing",
         heading: "Who else sees it",
         body: [
-          "Our hosting provider and, once configured, our email or CRM provider will process this information on our behalf. They are bound to use it only to provide that service.",
+          "Our hosting provider processes website request logs. When you choose to send an enquiry, your email provider delivers it to our email provider. The website does not currently submit your form details to a CRM.",
           "The specific processors we use are [TO_CONFIRM_WITH_LEGAL].",
         ],
       },

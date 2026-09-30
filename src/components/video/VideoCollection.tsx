@@ -26,6 +26,7 @@ export function VideoCollection({items,carousel=false,filters=false}:{items:Vide
  const visible=category==="All"?items:items.filter(item=>item.category===category);
  const categories=["All",...new Set(items.map(item=>item.category))];
  const copies=carousel?[0,1,2]:[0];
+ const accessibleCopy=carousel&&selected?Number(selected.split("-")[0]):1;
  useEffect(()=>{const close=(event:Event)=>{if((event as CustomEvent<string>).detail!==identity)setSelected(null);};window.addEventListener("pixelcliq-film-play",close);return()=>window.removeEventListener("pixelcliq-film-play",close);},[identity]);
  useEffect(()=>{const node=rail.current;if(!carousel||!node)return;const group=node.querySelector<HTMLElement>("[data-film-group]");if(!group)return;const observer=new ResizeObserver(()=>{node.scrollLeft=group.getBoundingClientRect().width+20;});observer.observe(group);return()=>observer.disconnect();},[carousel,category]);
  useEffect(()=>{const node=rail.current;if(!carousel||!node)return;let inView=false;let frame=0;let previous=0;let fraction=0;
@@ -47,7 +48,7 @@ export function VideoCollection({items,carousel=false,filters=false}:{items:Vide
  onPointerUp={e=>{if(e.currentTarget.hasPointerCapture(e.pointerId))e.currentTarget.releasePointerCapture(e.pointerId);drag.current=null;manualUntil.current=performance.now()+1800;}}
  onPointerCancel={()=>{drag.current=null;}} onLostPointerCapture={()=>{drag.current=null;}}
  onClickCapture={e=>{if(suppressClick.current){e.preventDefault();e.stopPropagation();suppressClick.current=false;}}}>
- {carousel?copies.map(copy=><div key={copy} className={styles.group} data-film-group aria-hidden={copy!==1&&!selected?true:undefined}>{visible.map(film=>{const key=`${copy}-${film.id}`;return <FilmCard key={key} film={film} active={selected===key} enabled={!paused&&!selected} duplicate={copy!==1} onOpen={()=>choose(key)} onClose={()=>setSelected(null)}/>;})}</div>):visible.map(film=><FilmCard key={film.id} film={film} active={selected===film.id} enabled={!paused&&!selected} duplicate={false} onOpen={()=>choose(film.id)} onClose={()=>setSelected(null)}/>)}
+ {carousel?copies.map(copy=><div key={copy} className={styles.group} data-film-group aria-hidden={copy!==accessibleCopy?true:undefined}>{visible.map(film=>{const key=`${copy}-${film.id}`;return <FilmCard key={key} film={film} active={selected===key} enabled={!paused&&!selected} duplicate={copy!==accessibleCopy} onOpen={()=>choose(key)} onClose={()=>setSelected(null)}/>;})}</div>):visible.map(film=><FilmCard key={film.id} film={film} active={selected===film.id} enabled={!paused&&!selected} duplicate={false} onOpen={()=>choose(film.id)} onClose={()=>setSelected(null)}/>)}
  </div>{filters&&<p className={styles.count}>Select a film to watch with sound.</p>}
  </div>;
 }

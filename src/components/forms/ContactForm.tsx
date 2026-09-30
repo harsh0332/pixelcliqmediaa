@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState, type FormEvent } from "react";
+import { useEffect, useRef, useState, type FormEvent } from "react";
 import { site } from "@/content/site";
 import { Button } from "@/components/ui/Button";
 import { Chip } from "@/components/ui/Chip";
@@ -58,10 +58,18 @@ const inputClass = [
 
 export function ContactForm() {
   const formRef = useRef<HTMLFormElement>(null);
+  const readyHeading = useRef<HTMLHeadingElement>(null);
+  const lastStatus = useRef("idle");
   const [values, setValues] = useState<Values>(EMPTY);
   const [help, setHelp] = useState<string[]>([]);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [status, setStatus] = useState<"idle" | "submitting" | "done">("idle");
+
+  useEffect(() => {
+    if (status === "done") readyHeading.current?.focus();
+    else if (lastStatus.current === "done") formRef.current?.querySelector<HTMLInputElement>("#name")?.focus();
+    lastStatus.current = status;
+  }, [status]);
 
   const set = (key: keyof Values, value: string) =>
     setValues((current) => ({ ...current, [key]: value }));
@@ -144,7 +152,7 @@ export function ContactForm() {
     const draft = `mailto:${site.email}?subject=${encodeURIComponent(`Growth enquiry — ${values.company}`)}&body=${encodeURIComponent(body)}`;
     return (
       <div role="status" className="rounded-md border border-line p-8">
-        <h2 className="type-h2">Your brief is ready.</h2>
+        <h2 ref={readyHeading} tabIndex={-1} className="type-h2">Your brief is ready.</h2>
         <p className="type-body-lg mt-5 text-ink-soft">
           Open your email draft, review it and send it to {site.email}.
           Your enquiry has not been sent yet.
