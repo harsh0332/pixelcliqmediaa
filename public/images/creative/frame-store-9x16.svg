@@ -1,0 +1,33 @@
+<!--
+  Frame 3 — store screen, 9:16.
+
+  A hairline wireframe of a product page: image block, title bar, two text
+  lines, a price line and the buy button. Rules only — no fake glyphs and no
+  numbers, so it suggests a PDP without inventing one.
+
+  Carries one of the two permitted accents: the buy button.
+  Token values inlined — see the note in frame-social-9x16.svg.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 1280" width="720" height="1280" role="presentation" aria-hidden="true">
+  <rect width="720" height="1280" fill="#FFFFFF"/>
+
+  <!-- Chrome. -->
+  <line x1="0" y1="96" x2="720" y2="96" stroke="#E2DDD3" stroke-width="2"/>
+  <rect x="56" y="46" width="104" height="10" rx="5" fill="#65666D" opacity="0.28"/>
+
+  <!-- Product image block. -->
+  <rect x="56" y="152" width="608" height="608" fill="#EFEBE3"/>
+  <rect x="56.5" y="152.5" width="607" height="607" fill="none" stroke="#E2DDD3" stroke-width="2"/>
+  <path d="M56 660 L268 470 L432 626 L520 552 L664 692 L664 760 L56 760 Z" fill="#A2A5AD"/>
+  <circle cx="536" cy="286" r="46" fill="#A2A5AD"/>
+
+  <!-- Title, two lines of copy, price rule. -->
+  <rect x="56" y="812" width="392" height="18" rx="9" fill="#14151A" opacity="0.72"/>
+  <rect x="56" y="866" width="560" height="10" rx="5" fill="#65666D" opacity="0.26"/>
+  <rect x="56" y="898" width="470" height="10" rx="5" fill="#65666D" opacity="0.26"/>
+  <line x1="56" y1="960" x2="664" y2="960" stroke="#E2DDD3" stroke-width="2"/>
+  <rect x="56" y="994" width="132" height="16" rx="8" fill="#14151A" opacity="0.55"/>
+
+  <!-- The one accent in this frame. -->
+  <rect x="56" y="1074" width="608" height="92" rx="46" fill="#2C4BFF"/>
+</svg>

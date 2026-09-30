@@ -1,0 +1,22 @@
+.figure{margin:0;background:#142344;border:1px solid #324464;border-radius:18px;overflow:hidden;color:#fff;isolation:isolate}
+.top{display:flex;justify-content:space-between;gap:15px;padding:22px 25px 0;color:#9fb5ee;font-size:9px;font-weight:600;letter-spacing:.13em}
+.canvas{display:block;width:100%;height:auto;overflow:visible}
+.grid{stroke:#6784c4;opacity:.13;fill:none}.ring{stroke:#436299;stroke-width:1;fill:none}
+.scanner{transform-origin:325px 185px;animation:scan 9s linear infinite}.signal{fill:#e4ff83;animation:pulse 2.5s ease-in-out infinite}
+.label rect{fill:#1c3159;stroke:#486397;stroke-width:1}.label text{fill:#fff;font:500 14px var(--font-sans-stack)}.label .small{fill:#93acff;font-size:10px;letter-spacing:.1em}
+.route{fill:none;stroke:#425d8f;stroke-width:2;stroke-linecap:round}.traveller{fill:none;stroke:#b0c0ff;stroke-width:3;stroke-dasharray:25 600;animation:travel 5s linear infinite}
+.note{fill:#9aafd8;font:9px var(--font-sans-stack);letter-spacing:1.5px}
+.cardA{animation:floatA 5s ease-in-out infinite;transform-origin:175px 175px}.cardB{animation:floatB 5s ease-in-out infinite;transform-origin:350px 185px}.cardC{animation:floatA 5s ease-in-out -2s infinite}
+.launch{animation:launch 3s ease-in-out infinite}.bar{transform-box:fill-box;transform-origin:bottom;animation:bar 4s ease-in-out infinite}.trend{stroke:#fff;stroke-width:2;fill:none;stroke-dasharray:450;animation:draw 4s ease-in-out infinite}
+.figure figcaption{padding:16px 23px;border-top:1px solid #324464;display:flex;align-items:center;justify-content:space-between;gap:15px;font-size:11px;color:#c3d0ed;line-height:1.5}
+.figure button{width:30px;height:30px;border:1px solid #536a94;border-radius:50%;color:#fff;background:transparent;cursor:pointer;flex-shrink:0}.figure button:hover{background:#284bff}.figure button:focus-visible{outline:2px solid #e4ff83;outline-offset:3px}
+.figure[data-running=false] *{animation-play-state:paused!important}
+@keyframes scan{to{transform:rotate(360deg)}}@keyframes pulse{50%{opacity:.3}}
+@keyframes travel{to{stroke-dashoffset:-625}}
+@keyframes floatA{0%,100%{transform:translateY(0) rotate(-4deg)}50%{transform:translateY(-8px) rotate(-1deg)}}
+@keyframes floatB{0%,100%{transform:translateY(-5px) rotate(3deg)}50%{transform:translateY(5px) rotate(0deg)}}
+@keyframes launch{0%,100%{transform:translate(0,0)}50%{transform:translate(5px,-8px)}}
+@keyframes bar{0%,100%{transform:scaleY(.85)}50%{transform:scaleY(1)}}
+@keyframes draw{0%{stroke-dashoffset:450}60%,100%{stroke-dashoffset:0}}
+@media(max-width:600px){.top{padding:18px 18px 0;font-size:8px}.figure figcaption{padding:12px 16px;font-size:10px}.figure{border-radius:12px}}
+@media(prefers-reduced-motion:reduce){.figure *{animation:none!important}}

@@ -1,0 +1,7 @@
+import Link from "next/link";
+import {Container} from "@/components/ui/Container";
+import {aiVideos,featuredAiVideos,referenceVideos} from "@/content/videoCreatives";
+import {VideoCollection} from "./VideoCollection";
+import styles from "./VideoSections.module.css";
+export function AiVideoSection(){return <section className={styles.ai} id="ai-video-creative"><Container><div className={styles.heading}><div><p>AI VIDEO CREATIVE / SELECTED FILMS</p><h2>IMAGINATION.<br/><span>IN FULL MOTION.</span></h2></div><div><p>Product worlds. Fashion stories. Impossible ideas, brought into frame.</p><Link href="/ai-video-creative">Explore the film collection <span>↗</span></Link></div></div><VideoCollection items={[...featuredAiVideos,...aiVideos.filter(film=>!featuredAiVideos.some(featured=>featured.id===film.id))]} carousel/></Container></section>}
+export function ReferenceVideoSection(){return <section className={styles.reference} id="video-portfolio"><Container><div className={styles.heading}><div><p>THE VIDEO EDIT</p><h2>SMALL SCREENS.<br/><span>STRONG STORIES.</span></h2></div><div><p>Product films, creator stories and campaign motion. Different stories. One instinct: hold attention.</p><Link href="/contact">Plan your next creative ↗</Link></div></div><VideoCollection items={referenceVideos.map(({id,title,src,poster,duration,landscape})=>({id,title,src,poster,duration,landscape,category:"Campaign film"}))} carousel/></Container></section>}

@@ -1,0 +1,988 @@
+@import "tailwindcss";
+
+/* ==========================================================================
+   PIXELCLIQ MEDIA — DESIGN TOKENS
+   The single source of truth. No component may use a raw hex, a one-off font
+   size, or an unlisted easing. If a value is not here, it does not exist.
+   ========================================================================== */
+
+:root {
+  /* --- Colour ------------------------------------------------------------
+     Ink on bone is the default pairing. The accent is rationed: it should
+     cover roughly 5% of any viewport. If a section looks colourful, it is
+     overused. Measured contrast ratios are recorded in /styleguide. */
+
+  --ink: #14151a;          /* primary text — 16.73:1 on bone */
+  --ink-soft: #3a3b40;     /* secondary text — 10.25:1 on bone */
+  --ink-muted: #65666d;    /* tertiary text, captions, meta — 5.25:1 on bone,
+                              4.81:1 on sand. Never body copy. */
+
+  --bone: #f7f5f0;         /* PRIMARY PAGE BACKGROUND — warm ivory */
+  --paper: #ffffff;        /* raised surfaces: cards, form fields */
+  --sand: #efebe3;         /* secondary raised surface, alternating bands */
+  /* The one support tone. A muted slate for the large flat areas inside
+     diagrams and placeholder frames, so they are not all beige. FILLS ONLY —
+     never text, never a button, never a section background. 2.26:1 on bone,
+     7.40:1 on ink, and cool enough that the cobalt stays the only blue that
+     reads as colour. Its warm-stone alternative (#c9c2b4) was rejected for
+     still being beige. */
+  --support: #a2a5ad;
+
+  --line: #e2ddd3;         /* hairline borders — the workhorse */
+  --line-strong: #c9c2b4;  /* emphasised dividers */
+  --line-field: #8d8678;   /* the ONLY border colour permitted on interactive
+                              form controls — 3.32:1 on bone, meets WCAG 1.4.11
+                              for UI component boundaries. --line fails it. */
+
+  --accent: #2c4bff;       /* THE single accent — electric cobalt */
+  --accent-deep: #1e40af;  /* accent at body size — 8.01:1 on bone (AAA) */
+  --accent-lift: #7a96ff;  /* accent on dark — 6.63:1 on inverse-bg. Was
+                              #6685ff at 5.52:1; lifted so the cobalt is
+                              present on ink, not just legible.
+                              Raw --accent is 3.09:1 there and fails as text. */
+  --accent-wash: #eaedff;  /* very light accent tint, subtle fills only */
+
+  /* The only colour outside the accent family, and only for validation.
+     Measured: 6.03:1 on bone, 6.57:1 on paper, 5.53:1 on sand — passes AA as
+     body text on every surface, and 3:1 as a field border under 1.4.11. */
+  --error: #b42318;
+  --error-lift: #f97066;   /* 6.54:1 on inverse-bg, for dark bands */
+
+  --inverse-bg: #14151a;   /* dark inversion bands — max 3 per page */
+  --inverse-text: #f7f5f0; /* 16.73:1 on inverse-bg */
+
+  /* The ink and line scale re-cut for dark bands. surface-inverse swaps these
+     in, so a component written for the light page needs no dark variant. */
+  --inverse-ink-soft: #c9c6bf;    /* 10.69:1 on inverse-bg */
+  --inverse-ink-muted: #9d9a94;   /*  6.50:1 on inverse-bg */
+  --inverse-line: #2c2d33;
+  --inverse-line-strong: #43444b;
+
+  /* Semantic pointers. Reassigned inside `surface-inverse` so that focus rings
+     and links stay legible on dark bands without any component knowing. */
+  --surface: var(--bone);
+  /* The accent as a MARK — a diagram stroke, a lit node, a rule. Never a fill
+     behind text: --accent stays the fill so the tokens cannot be swapped by
+     accident. Repointed on ink, where raw --accent is 3.09:1. */
+  --accent-fg: var(--accent);
+  --focus-ring: var(--accent);
+  --link-color: var(--accent-deep);
+
+  /* --- Radius ------------------------------------------------------------
+     Used sparingly. Default for images and panels is --r-md; buttons and nav
+     chips are pill. Never apply large radius to a full-width section. */
+  --r-xs: 4px;
+  --r-sm: 8px;
+  --r-md: 12px;
+  --r-lg: 20px;
+  --r-pill: 999px;
+
+  /* --- Motion ------------------------------------------------------------
+     Mirrored in src/lib/motion.ts for Framer Motion. Change both together. */
+  --dur-instant: 150ms;
+  --dur-fast: 300ms;
+  --dur-base: 500ms;
+  --dur-slow: 800ms;
+
+  /* --- Type stacks -------------------------------------------------------
+     next/font supplies --font-clash / --font-satoshi / --font-instrument. */
+  --font-display-stack: var(--font-clash), system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-sans-stack: var(--font-satoshi), system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  /* One family per weight, so next/font can preload only the two faces the
+     first screen needs and let the rest load normally. Each stack is paired
+     with the matching font-weight in the utility that uses it — never mix
+     them, or the browser is handed a family that lacks the requested weight
+     and synthesises a fake one. */
+  --font-display-medium-stack: var(--font-clash-medium), system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-sans-medium-stack: var(--font-satoshi-medium), system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-sans-bold-stack: var(--font-satoshi-bold), system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-serif-stack: var(--font-instrument), Georgia, "Times New Roman", serif;
+
+  /* Header is 80px tall; the extra 24px keeps an anchored heading off the
+     hairline rather than flush against it. */
+  --header-height: 80px;
+  --header-offset: 104px;
+}
+
+/* --------------------------------------------------------------------------
+   TAILWIND THEME
+   `inline` so utilities compile to var(--token) and stay live under any
+   scoped override — the tokens above remain the single source of truth.
+   -------------------------------------------------------------------------- */
+
+@theme inline {
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-ink-muted: var(--ink-muted);
+
+  --color-bone: var(--bone);
+  --color-paper: var(--paper);
+  --color-sand: var(--sand);
+  --color-support: var(--support);
+
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-line-field: var(--line-field);
+
+  --color-accent: var(--accent);
+  --color-accent-deep: var(--accent-deep);
+  --color-accent-lift: var(--accent-lift);
+  /* The accent as text, cut for the surface: accent-deep on light, accent-lift
+     on ink. `text-link` is how a label or a number takes the accent without
+     knowing which band it is standing on. */
+  --color-link: var(--link-color);
+  --color-accent-wash: var(--accent-wash);
+
+  --color-error: var(--error);
+  --color-error-lift: var(--error-lift);
+
+  --color-inverse-bg: var(--inverse-bg);
+  --color-inverse-text: var(--inverse-text);
+
+  --font-display: var(--font-display-stack);
+  --font-sans: var(--font-sans-stack);
+  --font-serif: var(--font-serif-stack);
+
+  --radius-xs: var(--r-xs);
+  --radius-sm: var(--r-sm);
+  --radius-md: var(--r-md);
+  --radius-lg: var(--r-lg);
+  --radius-pill: var(--r-pill);
+}
+
+@theme {
+  /* Grid. 12 columns, 1440px content ceiling. Gutters live in <Container>.
+     Widths are in rem, not px, so the layout scales with the user's base font
+     size rather than ignoring it. */
+  --container-content: 90rem;   /* 1440px */
+  --container-narrow: 55rem;    /* 880px  */
+  --container-mid: 68.75rem;    /* 1100px — the story blocks. Narrower than a
+                                   section index, wider than an editorial
+                                   column: the width a diagram reads at. */
+  --container-prose: 45rem;     /* 720px  */
+  --container-measure: 62ch;    /* max measure for body copy — never full-bleed */
+
+  /* Fourth gutter step, above the 1440px content ceiling.
+     Must be rem: Tailwind sorts breakpoint variants by value, and it cannot
+     compare a px breakpoint against the rem defaults. Declared in px, `wide:`
+     is emitted before `md:` and `lg:` and loses the cascade at wide widths. */
+  --breakpoint-wide: 90rem;     /* 1440px */
+
+  /* Elevation. We are a hairline site, not a shadow site: the default state of
+     a panel is a 1px --line border, never a shadow. --shadow-lift is hover-only
+     and only on media cards. */
+  --shadow-subtle: 0 1px 2px rgba(20, 21, 26, 0.04);
+  --shadow-lift: 0 14px 50px rgba(20, 21, 26, 0.08);
+
+  --ease-expo: cubic-bezier(0.22, 1, 0.36, 1);   /* entrances, reveals */
+  --ease-inout: cubic-bezier(0.65, 0, 0.35, 1);  /* state changes */
+}
+
+/* ==========================================================================
+   TYPE SCALE
+   The complete set. `type-*` is the only sanctioned way to size text — it
+   carries family, weight, size, leading and tracking together so a headline
+   can never end up in the body face or at an off-scale size.
+   ========================================================================== */
+
+/*
+ * A 44px pointer target on an element that is visually smaller.
+ *
+ * WCAG 2.5.8 measures the *target*, not the ink. A wordmark or a compact list
+ * link can stay typographically tight while still offering a full touch target,
+ * by overlaying a transparent 44px band centred on the element. The overlay is
+ * a pseudo-element on the control itself, so clicks on it land on the control
+ * and nothing shifts in layout.
+ *
+ * Use where enlarging the visible box would damage the typography. Where it
+ * would not, set a real min-height instead — it is simpler to reason about.
+ */
+@utility target-44 {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset-inline: 0;
+    top: 50%;
+    height: 44px;
+    transform: translateY(-50%);
+  }
+}
+
+@utility type-display-xl {
+  font-family: var(--font-display-stack);
+  font-weight: 600;
+  /* Floor lowered from 3rem to 2.625rem. At 375px the 3rem floor set the hero
+     H1 over three lines and pushed the primary CTA past the fold on an SE-class
+     phone once browser chrome is counted. The headline is still the largest
+     thing on the page; it just stops eating the decision. */
+  font-size: clamp(2.625rem, 7vw, 6.5rem);
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+}
+
+@utility type-display {
+  font-family: var(--font-display-stack);
+  font-weight: 600;
+  font-size: clamp(2.75rem, 6vw, 5.5rem);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+}
+
+@utility type-h1 {
+  font-family: var(--font-display-stack);
+  font-weight: 600;
+  font-size: clamp(2.25rem, 4.5vw, 3.75rem);
+  line-height: 1.06;
+  letter-spacing: -0.02em;
+}
+
+@utility type-h2 {
+  font-family: var(--font-display-medium-stack);
+  font-weight: 500;
+  font-size: clamp(1.875rem, 3.2vw, 2.75rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+@utility type-h3 {
+  font-family: var(--font-sans-bold-stack);
+  font-weight: 700;
+  font-size: clamp(1.25rem, 2vw, 1.625rem);
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+@utility type-body-lg {
+  font-family: var(--font-sans-stack);
+  font-weight: 400;
+  font-size: 1.125rem;
+  line-height: 1.65;
+}
+
+@utility type-body {
+  font-family: var(--font-sans-stack);
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+@utility type-body-sm {
+  font-family: var(--font-sans-stack);
+  font-weight: 400;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+
+@utility type-caption {
+  font-family: var(--font-sans-stack);
+  font-weight: 400;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: var(--ink-muted);
+}
+
+@utility type-label {
+  font-family: var(--font-sans-medium-stack);
+  font-weight: 500;
+  font-size: 0.75rem;
+  line-height: 1.2;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+@utility type-button {
+  font-family: var(--font-sans-medium-stack);
+  font-weight: 500;
+  font-size: 0.9375rem;
+  line-height: 1;
+  letter-spacing: -0.01em;
+}
+
+/* The footer wordmark. A single editorial signature, large enough that it does
+   not belong on the general display scale but still a named token rather than an
+   arbitrary value at the call site. */
+@utility type-wordmark {
+  font-family: var(--font-display-stack);
+  font-weight: 600;
+  font-size: clamp(3rem, 9vw, 9rem);
+  line-height: 0.85;
+  letter-spacing: -0.02em;
+}
+
+/* The editorial signature: one italic serif word inside a display headline,
+   at most once per section. Optically sized up — Instrument Serif runs small
+   next to Clash — and nudged off the baseline grid on purpose. */
+@utility type-emphasis {
+  font-family: var(--font-serif-stack);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.08em;
+  letter-spacing: -0.01em;
+}
+
+/* ==========================================================================
+   SURFACES & HELPERS
+   ========================================================================== */
+
+/* Surface tones.
+   <Section tone="…"> sets data-tone and the tokens are repointed here, once.
+   Children keep using text-ink / border-line and are correct on every surface —
+   no component needs a dark variant of itself. */
+@layer components {
+  [data-tone="bone"] {
+    background-color: var(--bone);
+    color: var(--ink);
+    --surface: var(--bone);
+  }
+
+  [data-tone="paper"] {
+    background-color: var(--paper);
+    color: var(--ink);
+    --surface: var(--paper);
+  }
+
+  [data-tone="sand"] {
+    background-color: var(--sand);
+    color: var(--ink);
+    --surface: var(--sand);
+  }
+
+  /* Dark band. Repoints the semantic tokens so focus rings and links stay above
+     3:1 without any child component knowing it went dark. */
+  [data-tone="inverse"] {
+    background-color: var(--inverse-bg);
+    color: var(--inverse-text);
+    --surface: var(--inverse-bg);
+    --accent-fg: var(--accent-lift);
+    --focus-ring: var(--accent-lift);
+    --link-color: var(--accent-lift);
+    --line: var(--inverse-line);
+    --line-strong: var(--inverse-line-strong);
+    --ink: var(--inverse-text);
+    --ink-soft: var(--inverse-ink-soft);
+    --ink-muted: var(--inverse-ink-muted);
+  }
+}
+
+/* Infinite marquee. CSS-only so it costs no JavaScript and no hydration.
+   The track holds the content twice; the duplicate is aria-hidden. */
+@utility marquee-track {
+  display: flex;
+  width: max-content;
+  /* Three passes, then it rests. A decorative loop that runs for the whole
+     session is one of the forty things we audit competitors for; three passes
+     is enough to read as a marquee and the end state (-50%, the seam) is
+     visually identical to the start, so stopping is invisible. It also pauses
+     while off-screen via [data-marquee-idle], so the three passes are spent
+     where someone can see them. */
+  animation: marquee-scroll var(--marquee-duration, 40s) linear 3;
+  animation-fill-mode: forwards;
+  animation-direction: var(--marquee-direction, normal);
+}
+
+@keyframes marquee-scroll {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+/* Pause on hover and on keyboard focus, so a focused link inside cannot scroll
+   away from the user mid-read. */
+.marquee[data-pause="true"]:hover .marquee-track,
+.marquee:focus-within .marquee-track,
+.marquee[data-marquee-idle] .marquee-track {
+  animation-play-state: paused;
+}
+
+/* Reduced motion: stop entirely and wrap onto multiple rows. The global
+   reduced-motion rule would otherwise fast-forward the animation to its end
+   state, leaving the track visibly offset. !important is required to beat it. */
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none !important;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  /* The second copy exists only to make the loop seamless. With the loop off it
+     would simply render everything twice. */
+  .marquee-duplicate {
+    display: none;
+  }
+}
+
+/* Optional grain. Opt-in, never global: add to a section that needs tooth.
+   Capped at 0.03 opacity and disabled below md for paint cost on mobile. */
+@utility grain {
+  position: relative;
+  isolation: isolate;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  @media (min-width: 768px) {
+    &::after {
+      opacity: 0.025;
+    }
+  }
+}
+
+/* Tone transitions.
+   Where a light band meets the ink, the cut alone reads as a rendering
+   accident. A hairline in the dark band's own line token gives the edge an
+   author. Drawn on the ink side only: on bone or sand a rule between two
+   near-identical creams is noise, not structure. */
+@layer components {
+  [data-tone="inverse"] {
+    border-top: 1px solid var(--inverse-line-strong);
+  }
+
+  /* The footer stacks inverse directly onto the last light section and then
+     onto its own nav band. The second border would draw a line under the CTA
+     that belongs to neither. */
+  [data-tone="inverse"] + [data-tone="inverse"] {
+    border-top-color: transparent;
+  }
+}
+
+/* ==========================================================================
+   BASE
+   ========================================================================== */
+
+@layer base {
+  html {
+    /* Smooth scrolling is owned by Lenis (Phase 04), not by CSS. Next 16 only
+       intervenes in scroll behaviour when data-scroll-behavior is set, so this
+       stays `auto` and the two never fight. */
+    scroll-behavior: auto;
+  }
+
+  body {
+    background-color: var(--bone);
+    color: var(--ink);
+    font-family: var(--font-sans-stack);
+    font-size: 1rem;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Anchor targets clear the sticky header. Interactive elements are included
+     so that Tab-driven scrolling cannot park a focused control underneath it
+     either — WCAG 2.4.11 Focus Not Obscured. */
+  :where(h1, h2, h3, h4, h5, h6, section, [id]),
+  :where(a, button, input, textarea, select, summary, [tabindex]) {
+    scroll-margin-top: var(--header-offset);
+  }
+
+  ::selection {
+    background-color: var(--accent);
+    color: #fff;
+  }
+
+  /* ------------------------------------------------------------------ *
+   * Page hero — the shared motion chain
+   *
+   * Five variants, one sequence. Timings are the design spec's, and the whole
+   * family is retimed from the two custom properties below rather than by
+   * editing six rules.
+   *
+   * CSS rather than JavaScript, for the same reason as the logo: the headline
+   * animates from translateY(120%) inside an overflow-hidden mask, and a JS
+   * from-state would ship the H1 off-screen in the server HTML. A CSS
+   * animation applies its from-state at paint and finishes on its own, so the
+   * hero is readable with a slow bundle, a failed bundle, or no JS at all.
+   * ------------------------------------------------------------------ */
+
+  [data-page-hero] {
+    --hero-ease: var(--ease-expo);
+    --hero-step: 0.06s;
+  }
+
+  @keyframes hero-rise {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: none; }
+  }
+
+  @keyframes hero-line {
+    from { transform: translateY(120%); }
+    to { transform: none; }
+  }
+
+  @keyframes hero-rule {
+    from { transform: scaleX(0); }
+    to { transform: scaleX(1); }
+  }
+
+  [data-hero-eyebrow] {
+    animation: hero-rise 600ms var(--hero-ease) 0.05s backwards;
+  }
+
+  /* A mount-triggered FadeUp. CSS, not Framer, for one reason: Framer's
+     `initial` ships opacity:0 in the server HTML and only lifts it after
+     hydration. On a throttled phone that is ~4s of JavaScript before the hero
+     paragraph — the LCP element — is visible at all, and Lighthouse reported
+     exactly that: 0ms load time, 3.8s render delay. A keyframe with a
+     `backwards` fill starts on first paint and needs no script. */
+  [data-mount-reveal] {
+    animation: mount-rise 600ms var(--hero-ease) var(--mount-delay, 0s) backwards;
+  }
+
+  @keyframes mount-rise {
+    from { opacity: 0; transform: translateY(28px); }
+    to { opacity: 1; transform: none; }
+  }
+
+  /* The mask is on the wrapper; the animated element is the span inside. */
+  [data-hero-line] > span {
+    animation: hero-line 700ms var(--hero-ease) backwards;
+    animation-delay: calc(0.15s + var(--hero-i) * var(--hero-step));
+  }
+
+  [data-hero-support] {
+    animation: hero-rise 600ms var(--hero-ease) 0.4s backwards;
+  }
+
+  /* Inserted between support and hairline so the text block resolves
+     top-to-bottom rather than the rule arriving mid-paragraph. */
+  [data-hero-ctas] {
+    animation: hero-rise 600ms var(--hero-ease) 0.48s backwards;
+  }
+
+  [data-hero-rule] {
+    animation: hero-rule 600ms var(--hero-ease) 0.5s backwards;
+  }
+
+  [data-hero-accent] {
+    animation: hero-rise 600ms var(--hero-ease) 0.55s backwards;
+  }
+
+  /* Pillar variant: the capability rail's rows rise behind the accent block,
+     0.05s apart, starting just after it. */
+  [data-hero-rail] > li {
+    animation: hero-rise 520ms var(--hero-ease) backwards;
+    animation-delay: calc(0.63s + var(--hero-i) * 0.05s);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    [data-hero-rail] > li { animation: none; }
+    /* Every element paints in its final state. Nothing is left translated
+       out of its mask, which is the one failure this hero could not survive. */
+    [data-hero-eyebrow],
+    [data-mount-reveal],
+    [data-hero-line] > span,
+    [data-hero-support],
+    [data-hero-ctas],
+    [data-hero-rule],
+    [data-hero-accent] {
+      animation: none;
+    }
+  }
+
+  /* ------------------------------------------------------------------ *
+   * Section diagrams
+   *
+   * The authored SVG is the FINISHED diagram — every node activated, every
+   * line drawn, the result visible. These rules are an opt-in override: an
+   * armed diagram is pushed back to its start state, and a playing one
+   * animates forward to the state the markup already describes.
+   *
+   * That order matters. Nothing is animated *into* existence, so a diagram
+   * cannot be stranded half-drawn — with reduced motion, with the bundle
+   * disabled, or if the in-view trigger never fires, it is simply already
+   * complete. Arming only happens in JS, and only when motion is allowed.
+   *
+   * Colours resolve to tokens; the export's hard-coded hexes are gone.
+   * ------------------------------------------------------------------ */
+
+  [data-draw],
+  [data-track],
+  [data-return] {
+    stroke-dasharray: var(--len);
+  }
+
+  /* Armed — the start state. */
+  [data-diagram-armed] [data-draw] { stroke-dashoffset: var(--len); }
+  [data-diagram-armed] [data-node] { stroke: var(--line); }
+  [data-diagram-armed] [data-name] { fill: var(--ink-muted); }
+  [data-diagram-armed] [data-dot] { opacity: 0; }
+  [data-diagram-armed] [data-row] { opacity: 0; transform: translateY(9px); }
+  [data-diagram-armed] [data-result] { opacity: 0; }
+  [data-diagram-armed] [data-pulse] { opacity: 0; stroke-dasharray: 44 9999; }
+
+  /* Playing — forward to the authored state. Per-element delays come from the
+     `--d` custom property the SVG already carries. */
+  [data-diagram-play] [data-draw] {
+    animation: dg-draw var(--dur, 240ms) cubic-bezier(0.33, 0.05, 0.5, 1) both;
+    animation-delay: var(--d, 0ms);
+  }
+  [data-diagram-play] [data-node] {
+    animation: dg-node 200ms linear both;
+    animation-delay: var(--d, 0ms);
+  }
+  [data-diagram-play] [data-name] {
+    animation: dg-name 200ms linear both;
+    animation-delay: var(--d, 0ms);
+  }
+  [data-diagram-play] [data-dot] {
+    animation: dg-fade 160ms linear both;
+    animation-delay: var(--d, 0ms);
+  }
+  [data-diagram-play] [data-row] {
+    animation: dg-row 340ms cubic-bezier(0.22, 0.61, 0.36, 1) both;
+    animation-delay: var(--d, 0ms);
+  }
+  [data-diagram-play] [data-result] {
+    animation: dg-fade 280ms linear both;
+    animation-delay: var(--d, 0ms);
+  }
+  /* One pulse along the whole chain, then gone. Iteration count is 1 — this
+     is the automation diagram's only motion and it must not loop. */
+  [data-diagram-play] [data-pulse] {
+    animation: dg-pulse 1600ms cubic-bezier(0.42, 0, 0.58, 1) both;
+  }
+
+  [data-mk] [data-ring],
+  [data-mk] [data-core],
+  [data-mk] [data-num] {
+    transition:
+      stroke 260ms ease,
+      opacity 260ms ease,
+      fill 260ms ease;
+  }
+
+  /* Scroll-linked markers (diagram 04) light as the line reaches them. */
+  [data-on] [data-ring] { stroke: var(--accent); }
+  [data-on] [data-core] { opacity: 1; }
+  [data-on] [data-num] { fill: var(--ink); }
+
+  @keyframes dg-draw { to { stroke-dashoffset: 0; } }
+  @keyframes dg-node { to { stroke: var(--ink); } }
+  @keyframes dg-name { to { fill: var(--ink); } }
+  @keyframes dg-fade { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes dg-row { to { opacity: 1; transform: none; } }
+  @keyframes dg-pulse {
+    0% { opacity: 1; stroke-dashoffset: 0; }
+    97% { opacity: 1; }
+    100% { opacity: 0; stroke-dashoffset: calc(-1px * (var(--L) + 44)); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    /* Belt and braces: arming is already gated in JS, but if a diagram is ever
+       armed here it must still resolve. */
+    [data-diagram-armed] [data-draw] { stroke-dashoffset: 0; }
+    [data-diagram-armed] [data-node] { stroke: var(--ink); }
+    [data-diagram-armed] [data-name] { fill: var(--ink); }
+    [data-diagram-armed] [data-dot],
+    [data-diagram-armed] [data-result] { opacity: 1; }
+    [data-diagram-armed] [data-row] { opacity: 1; transform: none; }
+    /* The pulse carries no information the static state lacks, so it stays off. */
+    [data-diagram-armed] [data-pulse] { opacity: 0; }
+  }
+
+  /* The hero's structural hairline draws left to right on entry, in step with
+     the text block above it. One line only — the capability strip's rules stay
+     static, or the section reads as a row of things drawing themselves. */
+  [data-hero-rule] {
+    animation: hero-rule 600ms var(--ease-expo) 0.6s backwards;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    [data-hero-rule] {
+      animation: none;
+    }
+  }
+
+  /* ------------------------------------------------------------------ *
+   * Logo — entrance and hover
+   *
+   * Driven by CSS, not JavaScript. Framer needs the element to render in its
+   * `initial` state, which put the wordmark at opacity 0 in the server HTML —
+   * if the bundle were slow or failed, the brand name would not be there. A
+   * CSS animation applies its from-state at first paint and completes on its
+   * own, so the mark and the name always arrive.
+   *
+   * The entrance is gated on <html data-logo-fresh>, set synchronously by a
+   * head script from sessionStorage. It therefore plays once per session:
+   * never on client-side navigation (the header does not remount), and not
+   * again on a reload within the same tab. Nothing loops.
+   * ------------------------------------------------------------------ */
+
+  @keyframes logo-draw {
+    from { stroke-dashoffset: 100.53; }
+    to { stroke-dashoffset: var(--logo-rest-offset); }
+  }
+
+  /* Left-to-right mask: the wrapper clips, the inner element travels. */
+  @keyframes logo-wipe {
+    from { transform: translateX(-102%); }
+    to { transform: none; }
+  }
+
+  [data-logo-fresh] [data-logo-entrance] [data-logo-mark] {
+    animation: logo-draw 600ms var(--ease-expo) backwards;
+  }
+
+  /* Starts at 350ms so it overlaps the tail of the draw rather than queueing
+     behind it. 350 + 500 = 850ms, inside the 900ms budget. */
+  [data-logo-fresh] [data-logo-entrance] [data-logo-wipe] {
+    animation: logo-wipe 500ms var(--ease-expo) 350ms backwards;
+  }
+
+  /*
+   * Hover: the loop completes.
+   *
+   * Three things move together, because any one of them alone is too quiet at
+   * this size. The measured failure was exactly that — the closing gap was 7%
+   * of the path, about 6px of arc, and although it fired correctly every time
+   * it was below the threshold of noticing.
+   *
+   *   1. the open return draws in and the form closes
+   *   2. the whole mark turns a quarter of a rotation
+   *   3. the stroke goes to accent
+   *
+   * The rotation is what makes it readable. A gap sealing is a change you have
+   * to be looking for; a form turning is one you cannot miss, and it says the
+   * right thing — the loop coming round rather than a control lighting up.
+   *
+   * Transitions, not keyframes: a keyframe animation interrupted halfway
+   * restarts or snaps, and the cursor crossing a logo is interrupted halfway
+   * most of the time. A transition reverses from wherever it is, natively.
+   */
+  [data-logo-mark] {
+    stroke-dashoffset: var(--logo-rest-offset);
+  }
+
+  @media (hover: hover) {
+    [data-logo-mark] {
+      transition:
+        stroke-dashoffset 350ms var(--ease-inout),
+        transform 350ms var(--ease-inout),
+        color 250ms var(--ease-inout);
+    }
+
+    [data-logo-link]:hover [data-logo-mark] {
+      stroke-dashoffset: 0;
+      transform: rotate(90deg);
+    }
+  }
+
+  /* Keyboard focus gets the identical state, on touch devices too — a focus
+     ring with no accompanying change would be the odd one out. */
+  [data-logo-link]:focus-visible [data-logo-mark] {
+    stroke-dashoffset: 0;
+    transform: rotate(90deg);
+    transition:
+      stroke-dashoffset 350ms var(--ease-inout),
+      transform 350ms var(--ease-inout),
+      color 250ms var(--ease-inout);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    /* No draw, no wipe, no rotation, no path animation. The form renders
+       closed and the name renders set. Colour still changes on hover — that is
+       information, not motion. */
+    [data-logo-fresh] [data-logo-entrance] [data-logo-mark],
+    [data-logo-fresh] [data-logo-entrance] [data-logo-wipe] {
+      animation: none;
+    }
+
+    [data-logo-mark] {
+      stroke-dashoffset: 0;
+      transform: none;
+    }
+
+    @media (hover: hover) {
+      [data-logo-mark] {
+        transition: color 250ms var(--ease-inout);
+      }
+
+      [data-logo-link]:hover [data-logo-mark] {
+        stroke-dashoffset: 0;
+        transform: none;
+      }
+    }
+
+    [data-logo-link]:focus-visible [data-logo-mark] {
+      stroke-dashoffset: 0;
+      transform: none;
+      transition: color 250ms var(--ease-inout);
+    }
+  }
+
+  /* Tailwind v4's preflight dropped the historic `button { cursor: pointer }`
+     default, which left every button on the site with the text cursor's
+     default arrow. Anything that responds to a click should say so. Scoped to
+     enabled controls: a disabled button should not invite the click. */
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  label[for],
+  summary {
+    cursor: pointer;
+  }
+
+  /* Visible on every interactive element, on every surface. --focus-ring is
+     repointed inside surface-inverse, where raw --accent would fall to 3.09:1. */
+  :focus-visible {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  /* Only remove the ring for pointer users who never needed it. */
+  :focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  /* Media never overflows its column. */
+  :where(img, svg, video, canvas) {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Headings default to the display face at their own scale; type-* utilities
+     override. This keeps an un-classed heading from rendering as body text. */
+  :where(h1, h2, h3, h4, h5, h6) {
+    text-wrap: balance;
+  }
+
+  :where(p, li) {
+    text-wrap: pretty;
+  }
+
+  /* Space for the mobile sticky CTA while it is up, so it never covers the
+     last of the content. Set on <body> by the component and removed when the
+     bar hides, so the reservation exists only while the bar does. */
+  body {
+    padding-bottom: var(--mobile-cta-height, 0px);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+
+    /* The Compound Loop stops pinning entirely: no 300vh of scroll, no sticky
+       container, no scroll-driven drawing. It becomes a static diagram with
+       every stage already lit. Handled here rather than in JavaScript so the
+       layout never depends on a hydrated media query. */
+    [data-loop-scroller],
+    [data-pin-scroller] {
+      height: auto !important;
+    }
+
+    [data-loop-pin],
+    [data-pin-target] {
+      position: static !important;
+      height: auto !important;
+    }
+
+    /* Entrance reveals, forced to their finished state.
+       Framer writes opacity and transform inline. When a component stops
+       managing an element — variants removed once the reduced-motion
+       preference resolves — those inline values stay behind, and content that
+       was mid-reveal is stranded at opacity 0. This rule outranks the inline
+       style, so anything marked as a reveal is guaranteed visible: before
+       JavaScript loads, after it loads, and if it never loads at all.
+       Scoped to [data-reveal] on purpose — no descendant selector, so
+       collapsed disclosure panels and deliberately dimmed elements keep the
+       opacity they were given. */
+    [data-reveal] {
+      opacity: 1 !important;
+      transform: none !important;
+    }
+
+    /* Deliberate exception: a busy spinner is a status indicator, not a
+       decorative effect. Frozen mid-rotation it reads as a broken control, and
+       a small rotating glyph is not a vestibular trigger. */
+    [data-spinner] {
+      animation-duration: 0.8s !important;
+      animation-iteration-count: infinite !important;
+    }
+  }
+}
+
+/* A line lifted out of the surrounding copy and given display treatment.
+   Instrument Serif roman, not italic: the italic cut is the one-word headline
+   signature and stays reserved for it — a whole sentence set in it reads as a
+   different voice rather than as emphasis. */
+@utility type-pull {
+  font-family: var(--font-serif-stack);
+  font-style: normal;
+  font-weight: 400;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 1.12;
+  letter-spacing: -0.015em;
+}
+
+/* A named term inside body copy — the seven stages, the six pillars. Satoshi
+   500 against the surrounding 400. Weight only: no colour, no size change. */
+@utility type-term {
+  font-family: var(--font-sans-medium-stack);
+  font-weight: 500;
+}
+
+/* The spine's per-section lighting.
+   SpineLine writes data-spine-lit as the line reaches each section; the colour
+   change lives here so passing a boundary costs one attribute write and no
+   React render. --link-color, not --accent-deep: it is repointed on the ink
+   band, so a story block on ink lights correctly without knowing it is dark. */
+[data-spine-eyebrow] {
+  transition: color 400ms var(--ease-expo);
+}
+
+[data-spine-lit] [data-spine-eyebrow] {
+  color: var(--link-color);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* The line renders full height, so every section is behind it already. */
+  [data-spine-eyebrow] {
+    color: var(--link-color);
+    transition: none;
+  }
+}
+
+/* The oversized cut of the pull statement, for a page that has no diagram and
+   lets the sentence carry the top on its own. */
+@utility type-pull-xl {
+  font-family: var(--font-serif-stack);
+  font-style: normal;
+  font-weight: 400;
+  /* 66px at 1440 — four lines of a 139-character statement across the
+     content column. 5rem set it over five and it stopped reading as a
+     sentence. */
+  font-size: clamp(2.5rem, 4.6vw, 4.25rem);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+}
+
+/* No JavaScript: every entrance renders its `initial` state into the server
+   HTML, which is opacity:0. Without the bundle nothing would ever lift it, so
+   the page below the hero would be blank. The class is removed by an inline
+   script before first paint; if that script never runs, this does. */
+.no-js [data-reveal],
+.no-js [style*="opacity:0"] {
+  opacity: 1 !important;
+  transform: none !important;
+  pointer-events: auto !important;
+}

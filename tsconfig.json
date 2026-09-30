@@ -1,0 +1,58 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "react-jsx",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    }
+  },
+  "include": [
+    "next-env.d.ts",
+    "src/**/*.ts",
+    "next.config.ts",
+    "src/**/*.tsx",
+    ".next/types/**/*.ts",
+    ".next/dev/types/**/*.ts",
+    "scripts/**/*.mts",
+    ".next.nosync/types/**/*.ts",
+    ".next.nosync/dev/types/**/*.ts"
+  ],
+  // This machine's Desktop sync creates duplicate files ("routes.d 2.ts"). They
+  // are byte-identical copies of generated Next types, so TypeScript sees every
+  // declaration twice. Excluded by pattern rather than deleted, because the
+  // build regenerates them.
+  "exclude": [
+    "node_modules",
+    "**/* ?.ts",
+    "**/* ?.tsx",
+    "**/* ?.mts",
+    "deps.nosync"
+  ]
+}

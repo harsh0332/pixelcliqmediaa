@@ -1,0 +1,4 @@
+"use client";
+import {useState} from "react";
+import styles from "./Motion3D.module.css";
+export function Motion3D({scene="product-scene"}:{scene?:"product-scene"|"compound-loop"|"rocket"}){const [open,setOpen]=useState(false);return <div className={styles.wrap}><div><span>THE INTERACTIVE STUDIO</span><h3>{scene==="product-scene"?"Give a product another dimension.":scene==="compound-loop"?"Explore a connected growth system.":"A little ambition. In motion."}</h3><p>Explore the scene, then bring your next idea into the conversation.</p><button onClick={()=>setOpen(!open)} aria-expanded={open}>{open?"Close 3D scene":"Explore in 3D"} ↗</button></div>{open?<iframe title={`Interactive ${scene.replaceAll("-"," ")} scene`} src={`/animations/files/pixelcliq-${scene}-3d.html`} sandbox="allow-scripts" loading="lazy"/>:<div className={styles.orbit} aria-hidden="true"><span/><span/><b>3D</b></div>}</div>}

@@ -1,0 +1,35 @@
+<!--
+  Frame 1 — social / UGC, 9:16.
+
+  A deliberately abstract still: a tonal field, a subject-shaped mass placed on
+  the lower-left third, caption bars and a CTA block. It should read as creative
+  work at a glance and as an obvious abstraction on inspection. No accent — the
+  accent appears in only two of the four frames.
+
+  Colours are the literal token values: bone #F7F5F0, sand #EFEBE3,
+  line #E2DDD3, ink-muted #65666D, ink #14151A. A standalone SVG loaded through
+  an img element cannot resolve CSS custom properties, so they are inlined here
+  and must be kept in step with globals.css.
+
+  Note for anyone editing: a double hyphen is illegal inside an XML comment, so
+  the token names are written without their leading dashes on purpose.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 1280" width="720" height="1280" role="presentation" aria-hidden="true">
+  <rect width="720" height="1280" fill="#F7F5F0"/>
+
+  <!-- Tonal field: a horizon rather than a gradient. -->
+  <rect y="470" width="720" height="810" fill="#EFEBE3"/>
+  <line x1="0" y1="470" x2="720" y2="470" stroke="#E2DDD3" stroke-width="2"/>
+
+  <!-- Subject mass, off-centre on the lower-left third. -->
+  <ellipse cx="252" cy="392" rx="104" ry="104" fill="#A2A5AD"/>
+  <path d="M112 900 C112 690 172 556 252 556 C332 556 392 690 392 900 Z" fill="#A2A5AD"/>
+  <path d="M112 900 C112 690 172 556 252 556 C332 556 392 690 392 900" fill="none" stroke="#65666D" stroke-width="2" opacity="0.45"/>
+
+  <!-- Caption bars. -->
+  <rect x="80" y="1006" width="376" height="12" rx="6" fill="#65666D" opacity="0.34"/>
+  <rect x="80" y="1042" width="248" height="12" rx="6" fill="#65666D" opacity="0.22"/>
+
+  <!-- Where a call to action would sit. -->
+  <rect x="80" y="1104" width="236" height="76" rx="38" fill="none" stroke="#14151A" stroke-width="2.5"/>
+</svg>

@@ -1,0 +1,25 @@
+<!--
+  Frame 4 — campaign / carousel, 1:1.
+
+  A strong diagonal division carries the frame, with an abstract letterform-like
+  counter cut into it. Typographic in feel without setting any type.
+
+  Carries the second of the two permitted accents: a single bar.
+  Token values inlined — see the note in frame-social-9x16.svg.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" width="1080" height="1080" role="presentation" aria-hidden="true">
+  <rect width="1080" height="1080" fill="#F7F5F0"/>
+
+  <!-- The diagonal that splits the frame. -->
+  <path d="M0 1080 L1080 0 L1080 1080 Z" fill="#EFEBE3"/>
+  <line x1="0" y1="1080" x2="1080" y2="0" stroke="#E2DDD3" stroke-width="2"/>
+
+  <!-- Abstract letterform: a heavy stem with a counter, reading as type
+       without being a glyph. -->
+  <rect x="212" y="212" width="104" height="656" fill="#14151A"/>
+  <path d="M316 212 H556 C676 212 748 284 748 396 C748 508 676 580 556 580 H316 Z" fill="#14151A"/>
+  <path d="M420 316 H548 C604 316 636 348 636 396 C636 444 604 476 548 476 H420 Z" fill="#F7F5F0"/>
+
+  <!-- The one accent in this frame. -->
+  <rect x="212" y="928" width="288" height="20" fill="#2C4BFF"/>
+</svg>

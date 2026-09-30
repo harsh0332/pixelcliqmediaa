@@ -1,0 +1,2 @@
+import { cn } from "@/lib/utils";
+export function LogoMark({className}:{className?:string}){return <svg viewBox="0 0 48 48" aria-hidden="true" focusable="false" className={cn("block size-full",className)} fill="currentColor"><path d="M22 3v19H3C3 11.5 11.5 3 22 3Z"/><path d="M26 3c10.5 0 19 8.5 19 19H26Z"/><path d="M26 26h19c0 10.5-8.5 19-19 19Z"/><path d="M3 26h19v19C11.5 45 3 36.5 3 26Z"/></svg>}

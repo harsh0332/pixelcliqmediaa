@@ -1,0 +1,32 @@
+<!--
+  Frame 2 — product still, 4:5.
+
+  A bottle-like silhouette built from flat tonal blocks with a single hairline
+  contour, on a sand ground with generous air around it. Suggests a product shot
+  without pretending to be a photograph. No accent.
+
+  Token values inlined — see the note in frame-social-9x16.svg.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1280" width="1024" height="1280" role="presentation" aria-hidden="true">
+  <rect width="1024" height="1280" fill="#EFEBE3"/>
+
+  <!-- Surface the object stands on. -->
+  <line x1="0" y1="980" x2="1024" y2="980" stroke="#E2DDD3" stroke-width="2"/>
+
+  <!-- Body, shoulder and neck as separate tonal blocks. -->
+  <rect x="404" y="470" width="216" height="510" fill="#A2A5AD"/>
+  <path d="M404 470 C404 400 452 372 452 316 L572 316 C572 372 620 400 620 470 Z" fill="#A2A5AD"/>
+  <rect x="470" y="228" width="84" height="92" fill="#A2A5AD"/>
+  <rect x="462" y="206" width="100" height="30" rx="6" fill="#65666D" opacity="0.3"/>
+
+  <!-- One hairline contour over the whole form. -->
+  <path d="M404 980 L404 470 C404 400 452 372 452 316 L452 236 M572 236 L572 316 C572 372 620 400 620 470 L620 980"
+        fill="none" stroke="#14151A" stroke-width="2.5" opacity="0.55"/>
+
+  <!-- Label band. -->
+  <rect x="404" y="628" width="216" height="132" fill="#F7F5F0"/>
+  <line x1="404" y1="628" x2="620" y2="628" stroke="#E2DDD3" stroke-width="2"/>
+  <line x1="404" y1="760" x2="620" y2="760" stroke="#E2DDD3" stroke-width="2"/>
+  <rect x="440" y="676" width="144" height="10" rx="5" fill="#65666D" opacity="0.32"/>
+  <rect x="440" y="706" width="96" height="10" rx="5" fill="#65666D" opacity="0.2"/>
+</svg>
