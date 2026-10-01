@@ -51,3 +51,11 @@
   .secondaryCta { padding-left: 0; }
   .kicker { font-size: 12px; letter-spacing: .015em; }
 }
+
+/* One immersive opening, with a cobalt-to-ink shift as the story moves on. */
+.hero{background-image:radial-gradient(ellipse at 88% 12%,#7498ff38,transparent 55%);padding-top:calc(var(--header-height) + 30px);isolation:isolate}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;opacity:.1;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%23fff' filter='url(%23n)' opacity='.5' d='M0 0h160v160H0z'/%3E%3C/svg%3E")}
+.top{color:#dbe6ff}.headline{padding:50px 0 48px}.kicker{font-size:11px;letter-spacing:.16em;color:#e1e8ff}.headline h1{font-size:clamp(64px,9.5vw,148px);letter-spacing:-.065em;line-height:.94}.under{margin-top:36px}.under p{max-width:36ch;font-size:clamp(17px,1.55vw,23px);line-height:1.45}.exhibition{gap:18px}.exhibition>.art,.exhibition>.statement{border-radius:18px 18px 0 0;border:1px solid #ffffff24}.statement{background:linear-gradient(140deg,#112357,#0a1636)}.stamp{bottom:32px;right:calc(33.333% + 35px)}.bottom{color:#dce5ff;padding:24px 0}.cta{min-height:54px}.secondaryCta{font-size:13px}
+@media(max-width:767px){
+.hero{padding-top:calc(var(--header-height) + 34px)}.top{display:none}.headline{padding:12px 0 34px;position:relative}.kicker{font-size:10px;letter-spacing:.16em;margin-bottom:27px}.headline h1{font-size:clamp(46px,14.6vw,96px);line-height:.93;text-wrap:initial;letter-spacing:-.055em}.lastWord{display:block}.under{gap:23px;margin-top:27px}.under p{font-size:17px;line-height:1.5;max-width:31ch}.actions{flex-direction:row;flex-wrap:wrap;align-items:center;gap:4px 16px}.cta{font-size:13px;padding:14px 19px;gap:20px;min-height:50px}.secondaryCta{font-size:12px;min-height:42px;padding:4px 0}.exhibition{margin-top:36px;gap:10px}.exhibition>.statement{min-height:180px}.statement strong{font-size:clamp(20px,5.7vw,34px)}.statement>span{font-size:6px}.stamp{width:70px;height:70px;top:-38px;right:12px;bottom:auto}.stamp>span{font-size:32px}.bottom{font-size:6px;gap:8px;padding:20px 0}.art>span{line-height:1.5;min-height:32px;align-items:center}
+}

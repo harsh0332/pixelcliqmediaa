@@ -1,16 +1,24 @@
+"use client";
+
+import { useRef } from "react";
+import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import styles from "./EditorialHero.module.css";
 
 export function Hero() {
-  return <section className={styles.hero} data-hero-section aria-labelledby="hero-heading">
+  const ref = useRef<HTMLElement>(null);
+  const reduced = useReducedMotion();
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
+  const backgroundColor = useTransform(scrollYProgress, [0, .8], ["#244af0", "#101d52"]);
+  return <motion.section ref={ref} style={{ backgroundColor: reduced ? "#244af0" : backgroundColor }} className={styles.hero} data-hero-section aria-labelledby="hero-heading">
     <Container>
       <div className={styles.top}><span><i /> INDEPENDENT THINKING. CONNECTED GROWTH.</span><span>D2C FIRST. FULL SERVICE.</span></div>
       <div className={styles.headline}>
-        <p className={styles.kicker}>D2C growth agency. Full-service thinking.</p>
-        <h1 id="hero-heading">MAKE YOUR<br /><span>NEXT BIG MOVE.</span></h1>
-        <div className={styles.under}><p>Desire starts with creative. Growth takes a system.<br /> We bring your brand, media and commerce together.</p><div className={styles.actions}><Link className={styles.cta} href="/contact">Let’s build your next move <span aria-hidden="true">↗</span></Link><Link className={styles.secondaryCta} href="/work">Explore our creative work <span aria-hidden="true">↗</span></Link></div></div>
+        <p className={styles.kicker}>D2C FIRST. FULL-SERVICE THINKING.</p>
+        <h1 id="hero-heading">MAKE YOUR<br /><span>NEXT BIG <span className={styles.lastWord}>MOVE.</span></span></h1>
+        <div className={styles.under}><p>Creative people remember.<br /> Marketing that moves them. Commerce that brings them back.</p><div className={styles.actions}><Link className={styles.cta} href="/contact">Build your next move <span aria-hidden="true">↗</span></Link><Link className={styles.secondaryCta} href="/work">Explore our creative work <span aria-hidden="true">↗</span></Link></div></div>
       </div>
       <div className={styles.exhibition}>
         <Link href="/creative-showcase" className={styles.art}><Image src="/images/showcase/coffee.png" alt="Early Hours original coffee campaign concept" width={600} height={600} sizes="(max-width: 767px) 50vw, (max-width: 1440px) 33vw, 440px" priority /><span>01 / BRAND WORLDS <b>↗</b></span></Link>
@@ -20,5 +28,5 @@ export function Hero() {
       </div>
       <div className={styles.bottom}><span>CREATIVE THAT CONNECTS</span><span>MEDIA WITH INTENT</span><span>COMMERCE THAT CONVERTS</span></div>
     </Container>
-  </section>;
+  </motion.section>;
 }

@@ -5,7 +5,6 @@ import { Accordion } from "@/components/ui/Accordion";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { FadeUp } from "@/components/motion/FadeUp";
-import { ServiceArt } from "@/components/sections/GrowthVisuals";
 import { ServiceCanvas } from "./ServiceCanvas";
 import { servicePillars, type ServicePillar } from "@/content/services";
 import type { CaseStudy } from "@/content/cases";
@@ -31,5 +30,5 @@ export function ServicePageTemplate({ pillar, next }: ServicePageTemplateProps) 
 }
 
 export function ServicesDirectory() {
-  return <section className={styles.section}><Container><div className={styles.directory}>{servicePillars.map((p,i)=><Link key={p.id} href={p.slug} className={styles.directoryCard}><ServiceArt index={i%6}/><div><span className={styles.label}>CAPABILITY {p.number}</span><h2>{p.title}<ArrowUpRight size={24}/></h2><p>{p.promise}</p><div className={styles.directoryTags}>{p.capabilities.slice(0,3).map(c=><span key={c}>{c}</span>)}</div></div></Link>)}</div></Container></section>;
+  return <section className={styles.section}><Container><div className={styles.sectionHead}><div><p className={styles.label}>YOUR CAPABILITIES INDEX</p><h2>Find your<br/><em>starting point.</em></h2></div><p className={styles.copy}>D2C at our core. Strategy, creative and technology for the wider business. Every service has a clear scope and a dedicated page.</p></div><div className={styles.directory}>{servicePillars.map((p)=><Link key={p.id} href={p.slug} className={styles.directoryCard}><div><span className={styles.label}>CAPABILITY {p.number}</span><h2>{p.title}<ArrowUpRight size={24}/></h2><p>{p.promise}</p><div className={styles.directoryTags}>{p.capabilities.slice(0,3).map(c=><span key={c}>{c}</span>)}</div></div></Link>)}</div></Container></section>;
 }

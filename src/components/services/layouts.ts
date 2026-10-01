@@ -52,6 +52,8 @@ const CONFIG: Record<PillarId, ServiceLayoutConfig> = {
   // Landing pages take their parent's configuration.
   performance: { layout: "row", tone: "bone", cta: "end" },
   "social-media": { layout: "showcase", tone: "paper", cta: "mid" },
+  "strategic-marketing": { layout: "flow", tone: "bone", cta: "mid" },
+  "web-development": { layout: "showcase", tone: "paper", cta: "end" },
 };
 
 export function serviceLayout(id: PillarId): ServiceLayoutConfig {

@@ -19,6 +19,8 @@ export const PILLAR_IDS = [
   // get the full service template — see `primary` on ServicePillar.
   "performance",
   "social-media",
+  "strategic-marketing",
+  "web-development",
 ] as const;
 
 export type PillarId = (typeof PILLAR_IDS)[number];

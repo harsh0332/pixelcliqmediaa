@@ -2,6 +2,8 @@ import { MotionFigure } from "@/components/animations/MotionFigure";
 import styles from "./ServiceCanvas.module.css";
 
 const scenes: Record<string, { headline: string; subtitle: string; file: string; title: string; theme: string }> = {
+  "strategic-marketing": { headline: "A clear plan. A stronger next move.", subtitle: "THE STRATEGY ROADMAP", file: "loop-02-strategise-direction", title: "Research becomes a focused campaign and launch roadmap", theme: "performance" },
+  "web-development": { headline: "From first click to next step.", subtitle: "THE DIGITAL EXPERIENCE", file: "loop-03-create-connection", title: "A consistent message connects the campaign, website and enquiry journey", theme: "commerce" },
   "d2c-growth": { headline: "Turn demand into momentum.", subtitle: "THE ACQUISITION ENGINE", file: "pixelcliq-cac-reduction", title: "How creative testing and conversion work together to improve acquisition", theme: "growth" },
   creative: { headline: "One idea. Many possibilities.", subtitle: "THE CREATIVE TESTING STUDIO", file: "pixelcliq-creative-testing", title: "Creative concepts move through testing, learning and iteration", theme: "creative" },
   shopify: { headline: "Make the next click count.", subtitle: "THE SHOPPING EXPERIENCE", file: "pixelcliq-cro-product-page", title: "The details that help a product page turn interest into a purchase", theme: "commerce" },
@@ -17,7 +19,7 @@ export function ServiceCanvas({ service, title, capabilities }: { service: strin
   return <aside className={`${styles.canvas} ${styles[scene.theme]}`} aria-label={`${title} in motion`}>
     <div className={styles.top}><span>{scene.subtitle}</span><span aria-hidden="true">↗</span></div>
     <h2>{scene.headline}</h2>
-    <div className={styles.motion}><MotionFigure file={scene.file} title={scene.title} dark={service === "seo"}/></div>
+    <div className={styles.motion}><MotionFigure file={scene.file} title={scene.title} dark={scene.file.startsWith("loop-")}/></div>
     <div className={styles.tags}>{capabilities.map(c => <span key={c}>{c}</span>)}</div>
     <p className={styles.note}>Illustrative workflow · example figures</p>
   </aside>;
