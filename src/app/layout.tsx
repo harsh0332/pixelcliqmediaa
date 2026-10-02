@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Footer } from "@/components/layout/Footer";
 import { MobileCta } from "@/components/layout/MobileCta";
+import { WhatsAppFab } from "@/components/layout/WhatsAppFab";
+import { Reveals } from "@/components/providers/Reveals";
 import { Header } from "@/components/layout/Header";
 import { SkipLink } from "@/components/layout/SkipLink";
 import { site } from "@/content/site";
@@ -14,6 +16,7 @@ import {
 } from "@/lib/schema";
 import "./globals.css";
 import "@/styles/agency-refresh.css";
+import "@/styles/premium.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -122,7 +125,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     // that script never runs — JavaScript disabled, blocked, or failed — the
     // class stays, and globals.css uses it to lift every entrance's opacity:0
     // so the page is readable without a single byte of the bundle.
-    <html lang="en" className={`${fontVariables} no-js h-full antialiased`}>
+    <html lang="en" className={`${fontVariables} no-js h-full antialiased`} suppressHydrationWarning>
       <head>
         {/*
           The logo entrance plays once per session.
@@ -176,6 +179,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         </main>
         <Footer />
         <MobileCta />
+        <WhatsAppFab />
+        <Reveals />
       </body>
     </html>
   );

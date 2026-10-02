@@ -69,6 +69,7 @@ export function PageHero({
       tone={tone}
       aria-labelledby={id}
       data-page-hero
+      data-dark-hero
       className={cn("pt-[calc(var(--header-height)+4rem)]", className)}
     >
       <Container>

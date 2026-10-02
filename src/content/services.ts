@@ -342,17 +342,19 @@ export const servicePillars: ServicePillar[] = [
         "It is the wrong fit if the store has almost no traffic. Conversion work needs volume to learn from, and at low traffic the honest answer is to fix acquisition first. We would rather say that than bill for tests which can never reach significance.",
     },
     number: "03",
-    title: "Commerce & Shopify",
+    title: "Shopify & Web Experiences",
     slug: "/services/shopify",
     promise: "A store that finishes what the ad started.",
     headline: "A point of conversion rate is worth more than a better bid.",
     summary:
-      "Shopify design, development and conversion work built around what paid traffic actually needs: fast pages, honest product detail, and a checkout that does not lose people you have already paid for.",
+      "Shopify stores, brand websites and landing pages built around a clear customer journey: fast pages, useful product detail, connected enquiry forms and an easier checkout.",
     intro:
       "The store is where media spend becomes revenue or evaporates. A point of conversion rate is worth more than most bidding changes, and it compounds across every channel at once. We treat the storefront as growth infrastructure — instrumented, and iterated rather than redesigned every two years.",
     capabilities: [
       "Shopify design",
       "Shopify development",
+      "Brand websites",
+      "Lead capture & forms",
       "PDP optimisation",
       "Conversion rate optimisation",
       "Landing pages",
@@ -360,6 +362,10 @@ export const servicePillars: ServicePillar[] = [
       "Third-party integrations",
     ],
     deliverables: [
+      {
+        title: "Brand websites & lead capture",
+        description: "Responsive business websites with a clear story, focused landing pages and enquiry forms connected to your follow-up workflow.",
+      },
       {
         title: "Storefront design and build",
         description:
@@ -978,92 +984,180 @@ export const servicePillars: ServicePillar[] = [
     ],
   },
   {
-    id: "strategic-marketing",
-    number: "09",
-    title: "Strategic Marketing",
-    slug: "/services/strategic-marketing",
-    primary: false,
-    parent: "d2c-growth",
-    promise: "A clear direction for every channel, campaign and launch.",
-    headline: "Decide what matters before you decide where to spend.",
-    summary: "Positioning, audience research, offers and channel planning brought into one practical marketing roadmap. Built for D2C brands, and for businesses that need a clearer route from attention to enquiry.",
-    intro: "Your ads, content and website should be working toward the same decision. We connect customer research, a distinctive proposition and a realistic channel plan, so the team knows what to say, where to show up and what to measure next.",
-    problem: {
-      intro: "A busy marketing calendar can hide an unclear strategy. When each channel has its own message, the customer has to work out what the business stands for. We give the activity a shared direction.",
-      pains: ["Campaigns launch without a clear audience or offer.", "Teams produce more content without knowing which message matters.", "Budget follows habit instead of customer demand and business priorities."],
-    },
-    connectsNote: "The strategy becomes the brief for creative, the priorities for paid media and the story the website needs to tell.",
-    fit: {
-      intro: "For D2C launches, established brands entering a new category, and service businesses that need a joined-up marketing plan. Useful before committing to a new campaign, website or ongoing media budget.",
-      notFor: "A roadmap cannot replace product demand or a viable offer. If those are still uncertain, we start with a focused discovery and testing brief rather than a large rollout.",
-    },
-    capabilities: ["Audience research", "Brand positioning", "Offer strategy", "Launch planning", "Channel planning", "Marketing roadmap"],
-    deliverables: [
-      { title: "Customer and category review", description: "A focused review of customer needs, buying objections and competing alternatives, with the opportunities translated into decisions." },
-      { title: "Positioning and message framework", description: "A clear proposition, reasons to believe and messaging hierarchy that the team can use across ads, content and landing pages." },
-      { title: "Offer and campaign brief", description: "The audience, promise, creative angles and destination for your next launch or campaign, with a defined conversion goal." },
-      { title: "Channel and budget plan", description: "A prioritised mix of paid, organic, owned and website activity, matched to the available resources and sales journey." },
-      { title: "Actionable marketing roadmap", description: "A sequenced plan with owners, dependencies and review points, so strategy moves into production without another round of interpretation." },
-      { title: "Measurement framework", description: "Agreed definitions for enquiries, qualified leads, orders and repeat customers, choosing the measures relevant to your business." },
-    ],
-    process: [
-      { step: "01", title: "Listen", description: "Understand your customer, offer, economics and existing activity before proposing channels." },
-      { step: "02", title: "Find the angle", description: "Identify the customer tension and the part of your proposition worth building the campaign around." },
-      { step: "03", title: "Build the plan", description: "Translate the angle into creative briefs, channel priorities and a realistic production schedule." },
-      { step: "04", title: "Test and refine", description: "Use customer response and campaign evidence to improve the plan as it runs." },
-    ],
-    connectsTo: ["creative-content", "performance", "web-development"],
-    faq: [
-      { q: "Is this only for D2C brands?", a: "D2C is our focus, but strategy engagements can also support service businesses and lead-generation campaigns. The audience, conversion goal and measurement plan are adapted to the business." },
-      { q: "Can we start with strategy and use our own team?", a: "Yes. The roadmap and briefs can be handed to your internal team, or we can support execution through our creative, media, web and automation services." },
-      { q: "How is this different from performance marketing?", a: "Strategy defines the audience, offer, positioning and channel priorities. Performance marketing executes and improves paid campaigns against those decisions. They can be scoped together or separately." },
-      { q: "What do you need from us?", a: "Your business goals, product or service details, customer feedback, existing marketing assets and any useful sales or campaign data. We agree access and scope before starting." },
-      { q: "Do we receive a presentation or an execution plan?", a: "The output includes a practical roadmap and briefs, with priorities, responsibilities and review points. The format supports the people who will actually execute the work." },
-    ],
-  },
-  {
     id: "web-development",
-    number: "10",
-    title: "Web & Landing Pages",
+    number: "03",
+    title: "Websites & Landing Pages",
     slug: "/services/web-development",
     primary: false,
     parent: "commerce-shopify",
-    promise: "A better destination for every campaign and conversation.",
-    headline: "Give every click a clear next step.",
-    summary: "Business websites, campaign landing pages and lead-generation experiences designed and developed around the customer journey. Clear messaging, responsive layouts and useful integrations from the start.",
-    intro: "A website should explain the offer, answer the questions that hold someone back and make the next step easy. We bring strategy, design and development together for business sites and landing pages, with the same attention to mobile usability that we bring to a D2C store.",
+    promise: "A site that loads fast and knows what it wants the visitor to do.",
+    headline: "A website is a sales conversation that has to work without you in the room.",
     problem: {
-      intro: "Sending good traffic to an unclear page wastes the opportunity. Slow mobile experiences, disconnected messaging and awkward forms can lose the people your campaign worked hard to reach.",
-      pains: ["The landing page makes a different promise from the ad.", "Visitors scroll through information without finding a clear action.", "Enquiries get lost between forms, inboxes and follow-up tools."],
+      intro:
+        "Most business websites were built to exist rather than to convert. They look acceptable on a laptop, slow down on a phone, and leave a visitor from a paid ad hunting for the one button that matters.",
+      pains: [
+        "An ad that promises one thing and a page that opens on something else.",
+        "A mobile layout that was checked once, on one phone, before launch.",
+        "Enquiries that arrive in an inbox nobody is watching closely.",
+      ],
     },
-    connectsNote: "The page carries the creative promise through to conversion, while tracking and automation help the team understand and follow up on customer interest.",
+    connectsNote:
+      "Landing pages give paid media somewhere worth sending traffic, and every form on them feeds the automation that follows up within minutes rather than days.",
     fit: {
-      intro: "For businesses launching a site, rebuilding an outdated one, or creating a focused destination for a campaign. Suitable for lead generation and service websites alongside our dedicated Shopify offering for commerce.",
-      notFor: "If the brief is a complex software product or a large custom platform, we first establish the technical scope and dependencies. A campaign website engagement should not hide an application build inside it.",
+      intro:
+        "Right for service businesses, educators, clinics, consultants and brands who need a fast marketing site or campaign pages that match their ads. It works best when there is a clear offer and someone who can sign off copy quickly.",
+      notFor:
+        "If you need a complex web application with user accounts, payments logic and custom back-end systems, a product engineering team is the better partner. We will point you towards one rather than stretch the scope.",
     },
-    capabilities: ["Business websites", "Campaign landing pages", "Responsive development", "Conversion copy", "Forms and integrations", "Technical SEO foundations"],
+    summary:
+      "Fast marketing websites and campaign landing pages built around one job each. Clear structure, honest copy, mobile-first layouts and forms wired to the follow-up, so the click you paid for has somewhere useful to land.",
+    intro:
+      "We design and build marketing websites and landing pages for businesses that run ads, take enquiries or sell online. Every page is planned around a single action, written to match the traffic it receives, and measured from launch.",
+    capabilities: [
+      "Website design",
+      "Landing pages",
+      "Next.js and WordPress builds",
+      "Page speed",
+      "Lead forms and tracking",
+      "Copywriting",
+    ],
     deliverables: [
-      { title: "Page and content architecture", description: "A clear sitemap, conversion journey and content hierarchy, so every section earns its place and visitors know where to go next." },
-      { title: "Responsive interface design", description: "Layouts designed for phone and desktop, with readable type, considered motion and consistent components across the site." },
-      { title: "Website development", description: "The agreed pages built on a platform suited to the brief, with attention to accessibility, responsive behaviour and loading performance." },
-      { title: "Campaign landing pages", description: "Focused pages that match the campaign message and organise the offer, objections and call to action around one primary goal." },
-      { title: "Lead capture and integrations", description: "Forms connected to the agreed inbox, CRM or workflow, with validation and delivery checked before launch." },
-      { title: "Launch and handover", description: "Device checks, page metadata, redirects where needed, analytics events and an editing handover for your team." },
+      { title: "Site map and page plan", description: "What each page is for, who arrives on it and what we want them to do next, agreed before a single screen is designed." },
+      { title: "Mobile-first design", description: "Layouts drawn for the phone first and the desktop second, because that is the order most of your visitors arrive in." },
+      { title: "Campaign landing pages", description: "Pages matched to specific ads and offers, so the headline a visitor clicked is the headline they land on." },
+      { title: "Speed and technical setup", description: "Image handling, caching, metadata and accessibility basics done properly, so the site stays quick as content is added." },
+      { title: "Forms wired to follow-up", description: "Every enquiry routed to a sheet, a CRM or WhatsApp with tracking events attached, so no lead waits on someone checking an inbox." },
     ],
     process: [
-      { step: "01", title: "Map", description: "Agree the audience, conversion goal, content needs and technical scope before designing pages." },
-      { step: "02", title: "Design", description: "Develop the message hierarchy and visual direction, then resolve mobile and desktop layouts together." },
-      { step: "03", title: "Build", description: "Develop the approved experience, connect the agreed integrations and prepare the content for launch." },
-      { step: "04", title: "Check and launch", description: "Test key journeys across devices, verify enquiries and analytics, then hand over the live site." },
+      { step: "01", title: "Plan", description: "We agree the audience, the offer and the single most important action for every page before any design work begins." },
+      { step: "02", title: "Design", description: "Wireframes first, then full visual design on mobile and desktop, reviewed together so feedback is specific rather than general." },
+      { step: "03", title: "Build", description: "A clean build with speed, tracking and forms tested on real devices, then a staged launch with nothing left switched to placeholder." },
+      { step: "04", title: "Improve", description: "We watch how visitors actually use the pages and adjust headlines, sections and forms against what the data shows." },
     ],
-    connectsTo: ["strategic-marketing", "seo-organic", "automation-ai"],
+    connectsTo: ["commerce-shopify", "performance", "automation-ai"],
     faq: [
-      { q: "Do you build websites beyond Shopify?", a: "Yes. This service covers business websites and landing pages. We recommend the platform after understanding your content, integrations and editing needs. Shopify stores have a dedicated commerce service." },
-      { q: "Can you build a single landing page?", a: "Yes. A focused campaign page can be scoped on its own, with a clear offer, conversion action and the tracking needed to evaluate it." },
-      { q: "Do you help with website copy?", a: "Messaging and page structure can be included in the scope. We work from your actual offer, customer questions and supporting evidence rather than filling the page with generic claims." },
-      { q: "Will the site work on mobile?", a: "Mobile layouts are part of design and development from the beginning. Navigation, typography, media and forms are checked at practical screen sizes before launch." },
-      { q: "Can the site connect to our CRM or WhatsApp workflow?", a: "Where the tools support it, yes. We agree the integration, required access, any provider costs and how delivery will be verified before building it." },
-      { q: "Can our team update the site afterwards?", a: "We establish your editing needs when choosing the platform and provide a handover for the agreed content. Ongoing support and further development can be scoped separately." },
+      { q: "Do you build on Shopify, WordPress or custom code?", a: "Whichever suits the job. Stores usually belong on Shopify, content-heavy marketing sites often suit WordPress, and fast campaign or brand sites are frequently built in Next.js. We recommend one and explain why." },
+      { q: "Can you just build landing pages for our ads?", a: "Yes. Campaign pages are one of the most common starting points, and they are where the gap between an ad and a sale is easiest to close." },
+      { q: "Will we be able to edit the site ourselves?", a: "Yes. We set up the editing your team needs for everyday changes and hand over a short guide, so routine updates never wait on us." },
+      { q: "Who writes the copy?", a: "We can write it, or work from yours. Either way the copy is planned alongside the design rather than poured into boxes afterwards." },
+    ],
+  },
+  {
+    id: "lead-generation",
+    number: "01",
+    title: "Lead Generation & Funnels",
+    slug: "/services/lead-generation",
+    primary: false,
+    parent: "d2c-growth",
+    promise: "Enquiries that arrive qualified and get answered quickly.",
+    headline: "A lead is only worth what happens in the first hour after it arrives.",
+    problem: {
+      intro:
+        "Most lead generation is measured at the form. The cost per lead looks fine, the sales team says the leads are poor, and nobody can say which campaign produced the customers who actually paid.",
+      pains: [
+        "Cheap leads that never pick up the phone.",
+        "Webinar and course registrations with no follow-up after the reminder.",
+        "A spreadsheet of enquiries that is days old before anyone opens it.",
+      ],
+    },
+    connectsNote:
+      "Lead funnels depend on ads to bring the right people, on landing pages to qualify them and on automation to answer them while the interest is still warm.",
+    fit: {
+      intro:
+        "Right for coaches, educators, course creators, clinics, real estate, B2B services and any business where a conversation comes before the sale. It works best when someone on your side can respond to leads on the same day.",
+      notFor:
+        "If there is nobody to call or message the leads, more volume will only create a longer list of people who were never contacted. We would rather fix the follow-up first.",
+    },
+    summary:
+      "Meta and Google lead campaigns, course and webinar funnels, qualifying landing pages and instant follow-up on WhatsApp and email. Judged on booked calls and paying customers, not just on form fills.",
+    intro:
+      "We plan lead generation from the sale backwards. What makes a good lead, what they need to hear before they talk to you, and how quickly they hear from you. Then we build the ads, pages and follow-up around those answers.",
+    capabilities: [
+      "Lead ads",
+      "Course and webinar funnels",
+      "Qualifying forms",
+      "WhatsApp follow-up",
+      "CRM pipelines",
+      "Call booking",
+    ],
+    deliverables: [
+      { title: "Offer and audience plan", description: "Who the ideal lead is, what will make them raise their hand, and what we deliberately filter out with the form and the copy." },
+      { title: "Lead campaigns", description: "Meta lead forms or website conversion campaigns with Google search where intent exists, structured so spend follows the leads that convert." },
+      { title: "Funnel pages", description: "Registration, booking and thank-you pages for webinars, workshops, courses and consultations, each with a clear next step." },
+      { title: "Instant follow-up", description: "WhatsApp, email and SMS sequences that confirm, remind and re-engage, so a registration does not quietly turn into a no-show." },
+      { title: "Lead quality loop", description: "Outcomes from your sales team fed back into the ad platforms, so campaigns learn which leads became customers." },
+    ],
+    process: [
+      { step: "01", title: "Define", description: "We agree what a qualified lead looks like and what a sale is worth, so every later decision has a target to aim at." },
+      { step: "02", title: "Build", description: "Campaigns, pages, forms and follow-up are built together and tested end to end before any meaningful budget goes live." },
+      { step: "03", title: "Launch", description: "Spend starts small, lead quality is checked daily with your team, and anything that brings the wrong people is cut early." },
+      { step: "04", title: "Scale", description: "Budget moves towards the sources that produce booked calls and customers, not towards whichever form is cheapest to fill." },
+    ],
+    connectsTo: ["performance", "web-development", "automation-ai"],
+    faq: [
+      { q: "Do you work with non-D2C businesses?", a: "Yes. Lead generation is the main way we work with educators, consultants, clinics and service businesses. The thinking is the same: understand the customer, remove friction and measure what actually turns into revenue." },
+      { q: "Can you run webinar and course launches?", a: "Yes. We build the registration pages, the ads, the reminder sequence and the replay or offer follow-up, and we plan the launch calendar with you." },
+      { q: "How do you improve lead quality?", a: "Better qualifying questions, clearer copy about who the offer is for, and feeding sales outcomes back to the ad platforms so they optimise for customers rather than form fills." },
+      { q: "Do we need a CRM?", a: "Not on day one. A well-organised sheet with WhatsApp follow-up works for many teams, and we can set up a proper CRM when the volume justifies it." },
+    ],
+  },
+  {
+    id: "brand-design",
+    number: "02",
+    title: "Brand Identity & Design",
+    slug: "/services/branding",
+    primary: false,
+    parent: "creative-content",
+    promise: "A brand people recognise before they read the name.",
+    headline: "Consistency is what makes a small brand look established.",
+    problem: {
+      intro:
+        "Many growing brands look like several different companies depending on where you meet them. The logo changes weight, the colours drift, and every new post or packaging run is designed from scratch.",
+      pains: [
+        "A logo that was made quickly and never quite fit.",
+        "Ads, website and packaging that do not look related.",
+        "Every designer reinventing the look because nothing is written down.",
+      ],
+    },
+    connectsNote:
+      "A clear identity makes every ad, post and page faster to produce and easier to recognise, which is where creative volume starts to pay off.",
+    fit: {
+      intro:
+        "Right for new brands preparing to launch, and for growing brands whose look has drifted across channels. It works best when the founder is involved in the early direction and willing to commit to a system afterwards.",
+      notFor:
+        "If the goal is a logo by the end of the week with no wider system, a freelance designer will be quicker and cheaper. Our work is the identity and the rules that keep it consistent.",
+    },
+    summary:
+      "Logo, colour, type, packaging and the visual system behind your ads, website and social feed. Designed to be recognisable at thumbnail size and simple for any designer to apply consistently.",
+    intro:
+      "We build brand identities for D2C and growing businesses that need to look credible fast and stay consistent as they scale. The output is not just a logo but a working kit your team and partners can use every day.",
+    capabilities: [
+      "Logo and identity",
+      "Colour and typography",
+      "Packaging design",
+      "Brand guidelines",
+      "Social templates",
+      "Ad design system",
+    ],
+    deliverables: [
+      { title: "Brand direction", description: "Positioning, personality and the visual references that set the tone, agreed before we design anything final." },
+      { title: "Identity system", description: "Logo suite, colour palette, typography and graphic elements, tested at the sizes they will really be seen at." },
+      { title: "Packaging and print", description: "Labels, boxes, inserts and print collateral designed to the same system and prepared for your printer." },
+      { title: "Brand guidelines", description: "A practical guide showing what to do and what to avoid, written for the designers and agencies who come after us." },
+      { title: "Template kit", description: "Editable social, ad and presentation templates, so day-to-day content stays on brand without starting from a blank canvas." },
+    ],
+    process: [
+      { step: "01", title: "Discover", description: "We study your customers, competitors and category so the identity stands apart for a reason rather than by accident." },
+      { step: "02", title: "Explore", description: "Two or three distinct directions are presented with real applications, so you are choosing a world rather than a logo in isolation." },
+      { step: "03", title: "Refine", description: "The chosen direction is developed into a complete system and tested across ads, packaging, the website and the feed." },
+      { step: "04", title: "Hand over", description: "Final files, guidelines and templates are delivered and walked through with your team, so the system is used rather than archived." },
+    ],
+    connectsTo: ["creative-content", "social-media", "web-development"],
+    faq: [
+      { q: "Can you refresh our existing brand instead of starting over?", a: "Yes. Often the right answer is to keep what customers already recognise and tighten everything around it. We will recommend a refresh or a rebuild after the discovery stage." },
+      { q: "Do you design packaging?", a: "Yes, including labels, boxes and inserts, prepared to the specifications your printer needs." },
+      { q: "How many logo options will we see?", a: "Two or three considered directions, each shown in use. More options usually means less thinking behind each one." },
+      { q: "Do we own the final files?", a: "Yes. On final payment you receive all source files and full ownership of the identity we create for you." },
     ],
   },
 ];

@@ -1,5 +1,5 @@
 import type { NavLink } from "@/types";
-import { primaryPillars, servicePillars } from "@/content/services";
+import { homeContent } from "@/content/refinedHome";
 
 export interface MegaMenuItem extends NavLink {
   /** Sequence marker, e.g. "01". Genuinely ordered, so genuinely numbered. */
@@ -31,11 +31,12 @@ const servicesMega: MegaMenu = {
   label: "Services",
   href: "/services",
   intro: "D2C expertise. Full-service capabilities.",
-  items: primaryPillars.map((pillar) => ({
-    label: pillar.title,
-    href: pillar.slug,
-    description: pillar.promise,
-    number: pillar.number,
+  // The same nine services, in the same order, as the homepage explorer.
+  items: homeContent.explorer.items.map((item, index) => ({
+    label: item.title,
+    href: item.href,
+    description: item.line,
+    number: String(index + 1).padStart(2, "0"),
   })),
   footerLink: {
     label: "View all services",
@@ -61,10 +62,7 @@ export const footerNav: FooterColumn[] = [
     title: "Services",
     // All eight, not just the six nav pillars: the landing pages need a
     // crawlable link from somewhere, and the footer is where they live.
-    links: servicePillars.map((pillar) => ({
-      label: pillar.title,
-      href: pillar.slug,
-    })),
+    links: homeContent.explorer.items.map((item) => ({ label: item.title, href: item.href })),
   },
   {
     title: "Company",

@@ -255,8 +255,9 @@ const VISUALS: Record<PillarId, () => React.ReactElement> = {
   // visual as their parent rather than inventing a seventh and eighth diagram.
   performance: GrowthFunnel,
   "social-media": CreativeCluster,
-  "strategic-marketing": GrowthFunnel,
   "web-development": CommerceFlow,
+  "lead-generation": GrowthFunnel,
+  "brand-design": CreativeCluster,
 };
 
 export function ServiceVisual({ pillar }: { pillar: PillarId }) {

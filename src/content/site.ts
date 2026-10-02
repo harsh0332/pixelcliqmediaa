@@ -19,6 +19,10 @@ export interface SiteConfig {
   location: string;
   phone: string;
   email: string;
+  /** WhatsApp number in international format, digits only. */
+  whatsapp: string;
+  /** The message a visitor's WhatsApp opens with. */
+  whatsappMessage: string;
   socials: SocialLink[];
   primaryCta: Cta;
   secondaryCta: Cta;
@@ -44,6 +48,8 @@ export const site: SiteConfig = {
 
   phone: "+91 7024332332",
   email: "contact@pixelcliqmedia.com",
+  whatsapp: "917024332332",
+  whatsappMessage: "Hi Pixelcliq, I would like to talk about growing my brand.",
 
   socials: [
     { platform: "instagram", label: "Instagram", href: "[INSTAGRAM_URL]" },
@@ -52,7 +58,7 @@ export const site: SiteConfig = {
     { platform: "youtube", label: "YouTube", href: "[YOUTUBE_URL]" },
   ],
 
-  primaryCta: { label: "Let’s talk growth", href: "/contact" },
+  primaryCta: { label: "Book a free call", href: "/contact" },
   secondaryCta: { label: "Explore our services", href: "/services" },
 };
 
@@ -68,3 +74,8 @@ export const HAS_CLIENT_LOGOS = false;
 export const HAS_PUBLISHED_CASES = false;
 export const HAS_TESTIMONIALS = false;
 export const HAS_VERIFIED_STATS = false;
+
+/** A wa.me link with the default greeting filled in. */
+export function whatsappHref(message: string = site.whatsappMessage): string {
+  return `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(message)}`;
+}

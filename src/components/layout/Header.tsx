@@ -16,11 +16,11 @@ import { site } from "@/content/site";
 export function Header() {
   return (
     <HeaderShell>
-      <Container className="h-[var(--header-height)]">
+      <Container className="h-full max-w-[1320px] pt-2.5 md:pt-3">
         {/* This inner box spans the content area rather than the container's
             padding box, so the absolutely positioned mega-panel lines up with
             the wordmark instead of running to the gutter edge. */}
-        <div className="relative flex h-full items-center justify-between gap-8">
+        <div className="header-card relative flex h-[60px] items-center justify-between gap-8 px-3 md:h-16 md:px-5 lg:px-6">
           <Wordmark />
 
           <nav aria-label="Main" className="hidden lg:block">
@@ -41,7 +41,7 @@ export function Header() {
             <Button
               href={site.primaryCta.href}
               size="sm"
-              className="hidden sm:inline-flex"
+              className="header-cta hidden sm:inline-flex"
             >
               {site.primaryCta.label}
             </Button>

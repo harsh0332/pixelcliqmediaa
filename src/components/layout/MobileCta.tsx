@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/Button";
-import { site } from "@/content/site";
+import { site, whatsappHref } from "@/content/site";
 import { cn } from "@/lib/utils";
 
 /**
@@ -99,7 +99,7 @@ export function MobileCta() {
       aria-hidden={!visible}
       {...(visible ? {} : { inert: true })}
       className={cn(
-        "fixed inset-x-0 bottom-0 z-40 border-t border-line bg-bone md:hidden",
+        "fixed inset-x-0 bottom-0 z-40 border-t border-line bg-white/95 backdrop-blur md:hidden",
         "pb-[env(safe-area-inset-bottom)]",
         // transform and opacity only; the bar is out of flow, so nothing moves
         // on the page when it arrives.
@@ -108,9 +108,17 @@ export function MobileCta() {
         visible ? "translate-y-0" : "translate-y-full",
       )}
     >
-      <div className="flex h-14 items-center px-5">
-        <Button href={site.primaryCta.href} size="lg" className="w-full justify-center">
-          {site.primaryCta.label}
+      <div className="flex h-14 items-center gap-2 px-3">
+        <a
+          href={whatsappHref()}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="type-button inline-flex h-11 flex-1 items-center justify-center gap-2 rounded-pill bg-[#25d366] text-white"
+        >
+          WhatsApp us
+        </a>
+        <Button href={site.primaryCta.href} size="md" className="h-11 flex-1 justify-center">
+          Get a proposal
         </Button>
       </div>
     </div>

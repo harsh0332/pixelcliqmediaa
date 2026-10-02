@@ -57,6 +57,7 @@ export default function ContactPage() {
       <Section
         tone="bone"
         className="contact-refresh pt-[calc(var(--header-height)+4rem)]"
+        data-dark-hero
         aria-labelledby="contact-heading"
       >
         <Container>

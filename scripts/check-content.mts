@@ -8,7 +8,7 @@ import { register } from "node:module";
 
 register(new URL("./resolve-alias.mjs", import.meta.url));
 
-const { refinedHome } = await import("@/content/refinedHome");
+const { refinedHome, homeContent } = await import("@/content/refinedHome");
 
 const [
   { caseStudies },
@@ -61,6 +61,7 @@ const bundle = {
   },
   modules: {
     refinedHome,
+    homeContent,
     site: siteModule.site,
     servicePillars,
     loopStages,

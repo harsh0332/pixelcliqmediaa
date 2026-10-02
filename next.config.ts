@@ -6,6 +6,9 @@ const nextConfig: NextConfig = {
   // that exact directory. For local iCloud-synced folders, set
   // NEXT_DIST_DIR=.next.nosync (iCloud skips directories ending in `.nosync`).
   distDir: process.env.NEXT_DIST_DIR || ".next",
+  async redirects() {
+    return [{ source: "/services/strategic-marketing", destination: "/services/performance", permanent: true }];
+  },
   images: {
     // Serve modern formats first; the browser falls back automatically.
     formats: ["image/avif", "image/webp"],

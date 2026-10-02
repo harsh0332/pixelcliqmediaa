@@ -5,6 +5,7 @@ import { Accordion } from "@/components/ui/Accordion";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { FadeUp } from "@/components/motion/FadeUp";
+import { ServiceArt } from "@/components/sections/GrowthVisuals";
 import { ServiceCanvas } from "./ServiceCanvas";
 import { servicePillars, type ServicePillar } from "@/content/services";
 import type { CaseStudy } from "@/content/cases";
@@ -14,7 +15,7 @@ import styles from "./StudioPages.module.css";
 export interface ServicePageTemplateProps { pillar: ServicePillar; next: ServicePillar; related: CreativeItem[]; cases: CaseStudy[]; }
 export function ServicePageTemplate({ pillar, next }: ServicePageTemplateProps) {
   return <>
-    <section className={styles.hero} aria-labelledby="pillar-heading"><Container>
+    <section className={styles.hero} data-dark-hero aria-labelledby="pillar-heading"><Container>
       <Link href="/services" className={styles.breadcrumb}>Services / {pillar.title}</Link>
       <div className={styles.heroGrid}><div><p className={styles.label}>PIXELCLIQ CAPABILITIES / {pillar.number}</p><h1 id="pillar-heading">{pillar.title}<span>.</span></h1><p className={styles.promise}>{pillar.promise}</p><p className={styles.copy}>{pillar.summary}</p><div className={styles.actions}><Button href="/contact" size="lg">Let’s talk {pillar.title === "D2C Growth" ? "growth" : "about your project"}</Button><a href="#deliverables">Explore the scope ↓</a></div></div><ServiceCanvas service={pillar.slug.split("/").pop() ?? pillar.id} title={pillar.title} capabilities={pillar.capabilities.slice(0,3)} /></div>
       <div className={styles.capabilityRail}>{pillar.capabilities.map(c => <span key={c}><Check size={13}/>{c}</span>)}</div>
@@ -30,5 +31,5 @@ export function ServicePageTemplate({ pillar, next }: ServicePageTemplateProps) 
 }
 
 export function ServicesDirectory() {
-  return <section className={styles.section}><Container><div className={styles.sectionHead}><div><p className={styles.label}>YOUR CAPABILITIES INDEX</p><h2>Find your<br/><em>starting point.</em></h2></div><p className={styles.copy}>D2C at our core. Strategy, creative and technology for the wider business. Every service has a clear scope and a dedicated page.</p></div><div className={styles.directory}>{servicePillars.map((p)=><Link key={p.id} href={p.slug} className={styles.directoryCard}><div><span className={styles.label}>CAPABILITY {p.number}</span><h2>{p.title}<ArrowUpRight size={24}/></h2><p>{p.promise}</p><div className={styles.directoryTags}>{p.capabilities.slice(0,3).map(c=><span key={c}>{c}</span>)}</div></div></Link>)}</div></Container></section>;
+  return <section className={styles.section}><Container><div className={styles.directory}>{servicePillars.map((p,i)=><Link key={p.id} href={p.slug} className={styles.directoryCard}><ServiceArt index={i%6}/><div><span className={styles.label}>CAPABILITY {p.number}</span><h2>{p.title}<ArrowUpRight size={24}/></h2><p>{p.promise}</p><div className={styles.directoryTags}>{p.capabilities.slice(0,3).map(c=><span key={c}>{c}</span>)}</div></div></Link>)}</div></Container></section>;
 }

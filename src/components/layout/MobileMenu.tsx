@@ -27,6 +27,8 @@ import { cn } from "@/lib/utils";
  *   page behind cannot rubber-band under the overlay.
  * Reduced motion — the panel appears without sliding and links do not stagger.
  */
+const liveSocials = site.socials.filter((social) => !isPlaceholder(social.href));
+
 export function MobileMenu() {
   const panelId = useId();
   const triggerRef = useRef<HTMLButtonElement>(null);
@@ -251,27 +253,25 @@ export function MobileMenu() {
                   <ContactDetails className="mt-3" />
                 </div>
 
-                <div>
-                  <Eyebrow as="p">Follow</Eyebrow>
-                  <ul className="mt-3 flex flex-wrap gap-x-5 gap-y-2">
-                    {site.socials.map((social) => (
-                      <li key={social.platform}>
-                        {isPlaceholder(social.href) ? (
-                          <span className="type-body-sm text-ink-muted">
-                            {social.label}
-                          </span>
-                        ) : (
+                {/* Only real profiles. Until the handles are supplied the
+                    labels would read as links that go nowhere. */}
+                {liveSocials.length > 0 ? (
+                  <div>
+                    <Eyebrow as="p">Follow</Eyebrow>
+                    <ul className="mt-3 flex flex-wrap gap-x-5 gap-y-2">
+                      {liveSocials.map((social) => (
+                        <li key={social.platform}>
                           <a
                             href={social.href}
                             className="type-body-sm inline-flex min-h-12 items-center text-ink-soft underline-offset-4 hover:underline focus-visible:underline"
                           >
                             {social.label}
                           </a>
-                        )}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ) : null}
               </div>
 
               <div className="mt-10">
