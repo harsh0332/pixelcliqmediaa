@@ -7,26 +7,41 @@ import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import styles from "./EditorialHero.module.css";
 
+const campaigns = [
+  { image: "coffee", name: "Early Hours", category: "Brand worlds" },
+  { image: "beauty", name: "Hue Theory", category: "Campaign creative" },
+  { image: "sneakers", name: "Pace Club", category: "Culture & commerce" },
+];
+
 export function Hero() {
   const ref = useRef<HTMLElement>(null);
   const reduced = useReducedMotion();
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
-  const backgroundColor = useTransform(scrollYProgress, [0, .8], ["#244af0", "#101d52"]);
-  return <motion.section ref={ref} style={{ backgroundColor: reduced ? "#244af0" : backgroundColor }} className={styles.hero} data-hero-section aria-labelledby="hero-heading">
+  const backgroundColor = useTransform(scrollYProgress, [0, .8], ["#193edd", "#0b173c"]);
+  return <motion.section ref={ref} style={{ backgroundColor: reduced ? "#193edd" : backgroundColor }} className={styles.hero} data-hero-section aria-labelledby="hero-heading">
+    <div className={styles.halo} aria-hidden="true" />
     <Container>
-      <div className={styles.top}><span><i /> INDEPENDENT THINKING. CONNECTED GROWTH.</span><span>D2C FIRST. FULL SERVICE.</span></div>
+      <div className={styles.top}><span><i /> INDEPENDENT THINKING. CONNECTED GROWTH.</span><span>PIXELCLIQ — CREATIVE & GROWTH</span></div>
       <div className={styles.headline}>
-        <p className={styles.kicker}>D2C FIRST. FULL-SERVICE THINKING.</p>
-        <h1 id="hero-heading">MAKE YOUR<br /><span>NEXT BIG <span className={styles.lastWord}>MOVE.</span></span></h1>
-        <div className={styles.under}><p>Creative people remember.<br /> Marketing that moves them. Commerce that brings them back.</p><div className={styles.actions}><Link className={styles.cta} href="/contact">Build your next move <span aria-hidden="true">↗</span></Link><Link className={styles.secondaryCta} href="/work">Explore our creative work <span aria-hidden="true">↗</span></Link></div></div>
+        <p className={styles.kicker}>THE NEXT CHAPTER OF YOUR BRAND STARTS HERE</p>
+        <h1 id="hero-heading">Good brands.<br /><span>Impossible</span> to ignore.</h1>
+        <p className={styles.description}>We turn attention into desire. And desire into growth.<br /> Creative, media and commerce. Working as one.</p>
+        <div className={styles.actions}>
+          <Link className={styles.cta} href="/contact">Let’s make your next move <span aria-hidden="true">↗</span></Link>
+          <Link className={styles.secondaryCta} href="/work">Explore the work <span aria-hidden="true">↗</span></Link>
+        </div>
       </div>
       <div className={styles.exhibition}>
-        <Link href="/creative-showcase" className={styles.art}><Image src="/images/showcase/coffee.png" alt="Early Hours original coffee campaign concept" width={600} height={600} sizes="(max-width: 767px) 50vw, (max-width: 1440px) 33vw, 440px" priority /><span>01 / BRAND WORLDS <b>↗</b></span></Link>
-        <Link href="/work#ai-video-creative" className={styles.statement}><span>CREATIVE × COMMERCE</span><strong>Made to stop.<br />Built to move.</strong><div className={styles.orbit} aria-hidden="true"><i /><i /><i /><b>↗</b></div><span>EXPLORE THE STUDIO <b>↗</b></span></Link>
-        <Link href="/creative-showcase" className={styles.art}><Image src="/images/showcase/sneakers.png" alt="Pace Club original footwear campaign concept" width={600} height={600} sizes="(max-width: 767px) 1px, (max-width: 1440px) 33vw, 440px" /><span>02 / CULTURE & CAMPAIGNS <b>↗</b></span></Link>
+        <div className={styles.sideNote}><span>IDEAS WITH<br />A POINT OF VIEW.</span><span aria-hidden="true">↘</span></div>
+        <div className={styles.campaigns}>
+          {campaigns.map((campaign, index) => <Link href="/creative-showcase" className={styles.art} key={campaign.image} aria-label={`Explore ${campaign.name} campaign concept`}>
+            <Image src={`/images/showcase/${campaign.image}.png`} alt={`${campaign.name} original campaign concept`} width={600} height={600} sizes="(max-width: 767px) 40vw, 26vw" priority={index === 1} />
+            <span><b>{campaign.name}</b><span>{campaign.category} ↗</span></span>
+          </Link>)}
+        </div>
         <Link href="#services" className={styles.stamp} aria-label="Discover our D2C growth services"><svg viewBox="0 0 120 120" aria-hidden="true"><defs><path id="hero-stamp-ring" d="M60,60 m-44,0 a44,44 0 1,1 88,0 a44,44 0 1,1 -88,0" /></defs><text><textPath href="#hero-stamp-ring" textLength="276">D2C FIRST • IDEAS INTO IMPACT • </textPath></text></svg><span>↘</span></Link>
       </div>
-      <div className={styles.bottom}><span>CREATIVE THAT CONNECTS</span><span>MEDIA WITH INTENT</span><span>COMMERCE THAT CONVERTS</span></div>
+      <div className={styles.bottom}><span>01 / A DIFFERENT POINT OF VIEW</span><span>SCROLL TO SEE THE BIGGER PICTURE ↓</span></div>
     </Container>
   </motion.section>;
 }
