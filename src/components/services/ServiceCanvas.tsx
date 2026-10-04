@@ -22,7 +22,7 @@ export function ServiceCanvas({ service, title, capabilities }: { service: strin
   return <aside className={`${styles.canvas} ${styles[scene.theme]}`} aria-label={`${title} in motion`}>
     <div className={styles.top}><span>{scene.subtitle}</span><span aria-hidden="true">↗</span></div>
     <h2>{scene.headline}</h2>
-    <div className={styles.motion} data-service-visual={visual ? "true" : undefined}>{visual ? <FeatureVisual kind={visual} instance="service" /> : <MotionFigure file={scene.file} title={scene.title}/>}</div>
+    <div className={styles.motion} data-service-visual={visual ? "true" : undefined}>{visual ? <FeatureVisual kind={visual} instance="service" /> : <MotionFigure file={scene.file} title={scene.title} priority/>}</div>
     <div className={styles.tags}>{capabilities.map(c => <span key={c}>{c}</span>)}</div>
     <p className={styles.note}>Illustrative workflow · example figures</p>
   </aside>;

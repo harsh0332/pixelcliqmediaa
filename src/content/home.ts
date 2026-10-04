@@ -41,7 +41,7 @@ export interface HeroContent {
 }
 
 export const hero: HeroContent = {
-  eyebrow: "D2C growth system · Indore / Global",
+  eyebrow: "Growth system · Working worldwide",
 
   emphasis: "Compound",
 
@@ -88,7 +88,7 @@ export const hero: HeroContent = {
   ],
 
   metaRail: {
-    location: "Indore, India",
+    location: "Working worldwide",
     scrollHint: "See the system",
   },
 
@@ -467,7 +467,7 @@ export const aboutPage = {
     "and the numbers.",
   ],
   support:
-    "Pixelcliq Media is a D2C-first growth partner working from Indore with brands in India and internationally. We take responsibility for the whole system rather than one channel inside it.",
+    "Pixelcliq Media is an independent creative and growth studio working with brands wherever they sell. We take responsibility for the whole system rather than one channel inside it.",
 
   whyEyebrow: "Why we exist",
   whyHeadline: "Most brands do not have a media problem.",
@@ -504,11 +504,11 @@ export const aboutPage = {
   systemHeadline: "Seven stages, one loop.",
   systemLinkLabel: "See the six pillars",
 
-  whereEyebrow: "Where we are",
-  whereHeadline: "Indore, Madhya Pradesh, India.",
+  whereEyebrow: "How we work",
+  whereHeadline: "Wherever your customers are.",
   whereBody:
-    "We work with brands across India and internationally. The weekly cadence runs remotely, and if you are in Indore we are happy to meet in person.",
-  whereDetail: "IST · GMT+5:30 · working globally",
+    "We work with brands wherever they sell. The weekly cadence runs remotely, with calls, shared dashboards and one team you can reach directly.",
+  whereDetail: "Remote-first · working globally",
 
   factsEyebrow: "Facts",
   /**
@@ -520,8 +520,7 @@ export const aboutPage = {
    * with a number nobody could check. Add rows here as they become verifiable.
    */
   facts: [
-    { label: "Based in", value: "Indore, Madhya Pradesh, India" },
-    { label: "Working with", value: "D2C and Shopify brands, India and global" },
+    { label: "Working with", value: "D2C and Shopify brands, worldwide" },
     { label: "Hours", value: "IST, GMT+5:30" },
     { label: "Engagement", value: "Monthly retainer, starting with an audit" },
   ],

@@ -34,13 +34,12 @@
                               form controls — 3.32:1 on bone, meets WCAG 1.4.11
                               for UI component boundaries. --line fails it. */
 
-  --accent: #2c4bff;       /* THE single accent — electric cobalt */
-  --accent-deep: #1e40af;  /* accent at body size — 8.01:1 on bone (AAA) */
-  --accent-lift: #7a96ff;  /* accent on dark — 6.63:1 on inverse-bg. Was
-                              #6685ff at 5.52:1; lifted so the cobalt is
-                              present on ink, not just legible.
-                              Raw --accent is 3.09:1 there and fails as text. */
-  --accent-wash: #eaedff;  /* very light accent tint, subtle fills only */
+  --accent: #0a6fd0;       /* THE single accent — the hero's sky blue, one step
+                              deeper so it holds 5.00:1 on white as text */
+  --accent-deep: #0868ad;  /* accent at body size — 5.84:1 on white */
+  --accent-lift: #7cc0ff;  /* accent on dark — 6.97:1 on the #082f57 bands.
+                              Raw --accent is 2.70:1 there and fails as text. */
+  --accent-wash: #e8f2fc;  /* very light accent tint, subtle fills only */
 
   /* The only colour outside the accent family, and only for validation.
      Measured: 6.03:1 on bone, 6.57:1 on paper, 5.53:1 on sand — passes AA as

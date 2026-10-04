@@ -8,7 +8,7 @@ import { site } from "@/content/site";
  */
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: `${site.name} — D2C Growth Agency, Indore`,
+    name: `${site.name} — Creative & Growth Studio`,
     short_name: site.name,
     description: site.description,
     start_url: "/",

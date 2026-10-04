@@ -12,9 +12,8 @@ import Link from "next/link";
 import styles from "./ServicesDropdown.module.css";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
-import { ChevronDown, ArrowUpRight, Target, Layers3, ShoppingBag, Search, Workflow, ChartNoAxesCombined } from "lucide-react";
-
-const serviceIcons = [Target, Layers3, ShoppingBag, Search, Workflow, ChartNoAxesCombined];
+import { ChevronDown, ArrowUpRight, ArrowRight } from "lucide-react";
+import { FeatureVisual } from "@/components/home/Mockups";
 import { RollLabel } from "@/components/layout/RollLabel";
 import type { MegaMenu } from "@/content/navigation";
 import { DURATION, EASE, STAGGER } from "@/lib/motion";
@@ -53,6 +52,10 @@ export function ServicesDropdown({ mega }: { mega: MegaMenu }) {
   /** Set when the panel is opened by keyboard, so focus follows it in. */
   const focusFirstOnOpen = useRef(false);
   const [open, setOpen] = useState(false);
+  /** The service whose preview is showing; follows hover and focus. */
+  const [active, setActive] = useState(0);
+  // Display order: column by column, so arrow keys walk the menu as it reads.
+  const ordered = mega.groups.flatMap((group) => mega.items.filter((item) => item.group === group.id));
   const reduce = useReducedMotion();
   const pathname = usePathname();
   const [lastPath, setLastPath] = useState(pathname);
@@ -100,7 +103,7 @@ export function ServicesDropdown({ mega }: { mega: MegaMenu }) {
   }, [open]);
 
   const focusItem = (index: number) => {
-    const last = mega.items.length - 1;
+    const last = ordered.length - 1;
     const wrapped = index < 0 ? last : index > last ? 0 : index;
     itemRefs.current[wrapped]?.focus();
   };
@@ -121,7 +124,7 @@ export function ServicesDropdown({ mega }: { mega: MegaMenu }) {
       ArrowDown: index + 1,
       ArrowUp: index - 1,
       Home: 0,
-      End: mega.items.length - 1,
+      End: ordered.length - 1,
     };
     const next = targets[event.key];
     if (next === undefined) return;
@@ -185,10 +188,10 @@ export function ServicesDropdown({ mega }: { mega: MegaMenu }) {
         {open ? (
           <motion.div
             id={panelId}
-            initial={reduce ? false : { opacity: 0, y: -8 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={reduce ? { opacity: 0 } : { opacity: 0, y: -8 }}
-            transition={{ duration: reduce ? 0 : DURATION.fast, ease: EASE.expo }}
+            initial={reduce ? false : { opacity: 0, y: -10, clipPath: "inset(0% 0% 100% 0% round 20px)" }}
+            animate={{ opacity: 1, y: 0, clipPath: "inset(0% 0% 0% 0% round 20px)" }}
+            exit={reduce ? { opacity: 0 } : { opacity: 0, y: -6, clipPath: "inset(0% 0% 92% 0% round 20px)" }}
+            transition={{ duration: reduce ? 0 : DURATION.base, ease: EASE.expo }}
             onKeyDown={(event) => {
               // Panel-level, so Escape works from every control inside.
               if (event.key === "Escape") {
@@ -196,82 +199,89 @@ export function ServicesDropdown({ mega }: { mega: MegaMenu }) {
                 close(true);
               }
             }}
-            className={`absolute inset-x-0 top-full z-50 mt-3 rounded-lg border border-line bg-paper p-6 ${styles.panel}`}
+            // Padding, not margin: the gap under the trigger stays part of the
+            // hover area, so the pointer can travel into the panel.
+            className="absolute inset-x-0 top-full z-50 pt-3"
           >
-            <div className="grid grid-cols-12 gap-6">
-              <div className={`col-span-3 ${styles.intro}`}>
-                <span className={styles.introLabel}>THE CONNECTED CAPABILITIES</span>
-                <p className="type-h3 max-w-[16ch]">{mega.intro}</p>
-                <div className={styles.introOrbit} aria-hidden="true"><span/><span/><ArrowUpRight size={48}/></div>
-                <Link
-                  href={mega.footerLink.href}
-                  className="type-button group/all mt-6 inline-flex min-h-12 items-center gap-2 text-accent-deep"
-                >
-                  {mega.footerLink.label}
-                  <span
-                    aria-hidden="true"
-                    className="transition-transform duration-300 ease-expo group-hover/all:translate-x-1 group-focus-visible/all:translate-x-1"
-                  >
-                    →
-                  </span>
-                </Link>
+            <div className={styles.panel}>
+            <div className={styles.body}>
+              <div className={styles.index}>
+                <div className={styles.groups}>
+                  {mega.groups.map((group) => (
+                    <div key={group.id} className={styles.group}>
+                      <p className={styles.groupLabel}>{group.label}</p>
+                      <ul>
+                        {ordered.map((item, index) => {
+                          if (item.group !== group.id) return null;
+                          const current = pathname === item.href;
+                          return (
+                            <motion.li
+                              key={item.href}
+                              initial={reduce ? false : { opacity: 0, y: 8 }}
+                              animate={{ opacity: 1, y: 0 }}
+                              transition={{
+                                duration: reduce ? 0 : DURATION.base,
+                                ease: EASE.expo,
+                                delay: reduce ? 0 : 0.08 + index * STAGGER.tight,
+                              }}
+                            >
+                              <Link
+                                ref={(node) => {
+                                  itemRefs.current[index] = node;
+                                }}
+                                href={item.href}
+                                aria-current={current ? "page" : undefined}
+                                onKeyDown={(event) => onItemKeyDown(event, index)}
+                                onMouseEnter={() => setActive(index)}
+                                onFocus={() => setActive(index)}
+                                className={cn(styles.item, index === active && styles.itemActive)}
+                              >
+                                <span className={styles.pixel} aria-hidden="true" />
+                                <span className={styles.itemLabel}>{item.label}</span>
+                                <ArrowUpRight className={styles.itemArrow} size={16} aria-hidden="true" />
+                              </Link>
+                            </motion.li>
+                          );
+                        })}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+
+                <div className={styles.foot}>
+                  <Link href={mega.cta.href} className={styles.footCta}>
+                    {mega.cta.label}
+                    <span aria-hidden="true"><ArrowRight size={16} /></span>
+                  </Link>
+                  <Link href={mega.footerLink.href} className={styles.footAll}>
+                    {mega.footerLink.label} <ArrowUpRight size={15} aria-hidden="true" />
+                  </Link>
+                </div>
               </div>
 
-              <ul className="col-span-9 grid grid-cols-3 gap-3">
-                {mega.items.map((item, index) => {
-                  const current = pathname === item.href;
-                  const Icon = serviceIcons[index % serviceIcons.length]!;
-                  return (
-                    <motion.li
-                      key={item.href}
-                      initial={reduce ? false : { opacity: 0, y: 6 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{
-                        duration: reduce ? 0 : DURATION.fast,
-                        ease: EASE.expo,
-                        delay: reduce ? 0 : index * STAGGER.tight * 0.75,
-                      }}
-                    >
-                      <Link
-                        ref={(node) => {
-                          itemRefs.current[index] = node;
-                        }}
-                        href={item.href}
-                        aria-current={current ? "page" : undefined}
-                        onKeyDown={(event) => onItemKeyDown(event, index)}
-                        className={`group/item block min-h-12 ${styles.card}`}
-                      >
-                        <div className={styles.cardTop}><Icon size={22} strokeWidth={1.5} aria-hidden="true"/><ArrowUpRight size={16} aria-hidden="true"/></div>
-                        <span
-                          className={cn(
-                            "type-label transition-colors duration-300",
-                            current
-                              ? "text-accent-deep"
-                              : "text-ink-muted group-hover/item:text-accent-deep group-focus-visible/item:text-accent-deep",
-                          )}
-                        >
-                          {item.number}
-                        </span>
-                        <span className={styles.cardTitle}>
-                          {item.label}
-                          <span
-                            aria-hidden="true"
-                            className={cn(
-                              "mt-1 block h-px origin-left bg-accent transition-transform duration-300 ease-expo",
-                              current
-                                ? "scale-x-100"
-                                : "scale-x-0 group-hover/item:scale-x-100 group-focus-visible/item:scale-x-100",
-                            )}
-                          />
-                        </span>
-                        <span className={styles.cardDescription}>
-                          {item.description}
-                        </span>
-                      </Link>
-                    </motion.li>
-                  );
-                })}
-              </ul>
+              {/* Keyed by service: a new hover re-mounts the preview, which
+                  replays that service's animation from the first frame. */}
+              <div className={styles.preview}>
+                <AnimatePresence mode="wait" initial={false}>
+                  <motion.div
+                    key={ordered[active]?.href}
+                    className={styles.previewInner}
+                    initial={reduce ? false : { opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={reduce ? { opacity: 0 } : { opacity: 0, y: -6 }}
+                    transition={{ duration: reduce ? 0 : 0.28, ease: EASE.expo }}
+                  >
+                    <div className={styles.visual} aria-hidden="true">
+                      <FeatureVisual kind={ordered[active]?.visual ?? "ads"} instance="menu" />
+                    </div>
+                    <Link href={ordered[active]?.href ?? mega.href} className={styles.previewLink} tabIndex={-1}>
+                      <span>{mega.explore} {ordered[active]?.label}</span>
+                      <ArrowRight size={15} aria-hidden="true" />
+                    </Link>
+                  </motion.div>
+                </AnimatePresence>
+              </div>
+            </div>
             </div>
           </motion.div>
         ) : null}

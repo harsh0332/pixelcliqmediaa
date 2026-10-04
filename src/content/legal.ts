@@ -16,10 +16,10 @@ export interface LegalDocument {
 /**
  * Draft policies, written plainly rather than copied from another company.
  *
- * They describe what this site actually does today: one contact form, no
- * analytics, no cookies of our own. That will change, and the places it will
- * change are marked [TO_CONFIRM_WITH_LEGAL] rather than filled with the usual
- * boilerplate — a policy describing tracking we have not implemented is as
+ * They describe what this site actually does today: one contact form, and
+ * Google Analytics 4 only after a visitor accepts it in the cookie banner (and
+ * only once a measurement ID is configured). Open points are marked
+ * [TO_CONFIRM_WITH_LEGAL] rather than filled with the usual boilerplate — a policy describing tracking we have not implemented is as
  * inaccurate as one omitting tracking we have.
  *
  * These need review by someone qualified in Indian data protection law before
@@ -29,7 +29,7 @@ export const legalDocuments: LegalDocument[] = [
   {
     slug: "privacy",
     title: "Privacy Policy",
-    updated: "2026-08-26",
+    updated: "2026-10-05",
     intro:
       "This policy explains what personal information Pixelcliq Media collects through this website, why we collect it, and what you can ask us to do with it. It is written to be read rather than to be survived.",
     sections: [
@@ -37,7 +37,7 @@ export const legalDocuments: LegalDocument[] = [
         id: "who-we-are",
         heading: "Who we are",
         body: [
-          "Pixelcliq Media is a D2C growth agency based in Indore, Madhya Pradesh, India. For anything in this policy you can reach us at the email address on our contact page.",
+          "Pixelcliq Media is an independent creative and growth studio. For anything in this policy you can reach us at the email address on our contact page.",
           "Our registered legal entity name and registered address are [TO_CONFIRM_WITH_LEGAL].",
         ],
       },
@@ -62,8 +62,8 @@ export const legalDocuments: LegalDocument[] = [
         id: "cookies",
         heading: "Cookies and analytics",
         body: [
-          "This website currently sets no cookies of its own and runs no third-party analytics. If that changes, this policy and our cookie policy will be updated before the change goes live, and any non-essential cookies will require your consent first.",
-          "The analytics tooling we intend to use is [TO_CONFIRM_WITH_LEGAL].",
+          "This website sets no cookies of its own unless you accept analytics in the cookie banner. If you accept, we use Google Analytics 4 to count visits and see which pages are useful, with Google’s advertising features switched off. Google processes that data on our behalf.",
+          "Without a yes, analytics stays off. The footer’s “Cookie settings” link reopens the choice whenever you like, and our cookie policy lists the cookies involved.",
         ],
       },
       {
@@ -156,9 +156,9 @@ export const legalDocuments: LegalDocument[] = [
   {
     slug: "cookies",
     title: "Cookie Policy",
-    updated: "2026-08-26",
+    updated: "2026-10-05",
     intro:
-      "This page explains what cookies this website uses. At the moment the honest answer is: none of our own.",
+      "This page explains what cookies this website uses. The short answer: none of our own, unless you accept analytics.",
     sections: [
       {
         id: "what",
@@ -171,16 +171,17 @@ export const legalDocuments: LegalDocument[] = [
         id: "what-we-use",
         heading: "What this site uses",
         body: [
-          "This website currently sets no cookies of its own. It runs no advertising pixels and no third-party analytics.",
+          "This website sets no cookies of its own unless you accept analytics. It runs no advertising pixels.",
           "Our hosting provider may set a strictly necessary cookie for security or load balancing. Necessary cookies of that kind do not require consent, because the site cannot be delivered safely without them.",
         ],
       },
       {
-        id: "future",
-        heading: "If that changes",
+        id: "analytics",
+        heading: "Analytics, only with your consent",
         body: [
-          "We expect to add analytics so we can see which pages are useful. When we do, this page will be updated first, non-essential cookies will be off until you consent, and declining will not degrade the site.",
-          "The tooling and the consent mechanism we intend to use are [TO_CONFIRM_WITH_LEGAL].",
+          "If a cookie banner appears and you choose Accept, Google Analytics 4 sets two first-party cookies, _ga and _ga_<ID>, to count visits and page views. They last up to two years. We do not use them for advertising.",
+          "If you choose Decline, or never choose, analytics does not load and these cookies are not set. Declining does not change anything else about the site.",
+          "You can change your choice at any time from “Cookie settings” in the footer. Switching to Decline removes the analytics cookies from your browser.",
         ],
       },
       {

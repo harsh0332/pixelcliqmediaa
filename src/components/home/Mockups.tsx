@@ -53,12 +53,12 @@ function AdsVisual({ uid }: { uid: string }) {
       <svg className={styles.chart} viewBox="0 0 320 150" aria-hidden="true">
         <defs>
           <linearGradient id={`${uid}-area`} x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0" stopColor="#5b7cff" stopOpacity=".35" />
-            <stop offset="1" stopColor="#5b7cff" stopOpacity="0" />
+            <stop offset="0" stopColor="#5badff" stopOpacity=".35" />
+            <stop offset="1" stopColor="#5badff" stopOpacity="0" />
           </linearGradient>
           <linearGradient id={`${uid}-line`} x1="0" y1="0" x2="1" y2="0">
             <stop offset="0" stopColor="#27c4f5" />
-            <stop offset="1" stopColor="#284bff" />
+            <stop offset="1" stopColor="#0a6fd0" />
           </linearGradient>
         </defs>
         <g className={styles.grid}>
@@ -72,7 +72,7 @@ function AdsVisual({ uid }: { uid: string }) {
       </svg>
       <div className={styles.kpis}>
         <div><span className={styles.kDot} style={{ background: "#2ad19b" }} /><b>3.4x</b><small>Blended ROAS</small></div>
-        <div><span className={styles.kDot} style={{ background: "#284bff" }} /><b>₹412</b><small>Cost per order</small></div>
+        <div><span className={styles.kDot} style={{ background: "#0a6fd0" }} /><b>₹412</b><small>Cost per order</small></div>
         <div><span className={styles.kDot} style={{ background: "#ff6b8a" }} /><b>1,284</b><small>Orders this month</small></div>
       </div>
       <Sample />
@@ -239,7 +239,7 @@ function LeadsVisual() {
 
 function BrandVisual() {
   const swatches = [
-    { hex: "#1E2A5A", name: "Ink" },
+    { hex: "#0e3f70", name: "Ink" },
     { hex: "#E9DCC8", name: "Sand" },
     { hex: "#C8553D", name: "Clay" },
     { hex: "#F5F1EA", name: "Paper" },

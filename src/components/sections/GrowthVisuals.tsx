@@ -63,7 +63,7 @@ function ProcessVisual({stage,title}:{stage:number;title:string}) {
       {stage===0 && <>
         <g className={processStyles.grid}>{[100,160,220,280].map(y=><path key={y} d={`M50 ${y}H590`}/>)}{[100,200,300,400,500].map(x=><path key={x} d={`M${x} 55V310`}/>)}</g>
         <circle cx="325" cy="185" r="110" className={processStyles.ring}/><circle cx="325" cy="185" r="68" className={processStyles.ring}/>
-        <g className={processStyles.scanner}><path d="M325 185L432 163A110 110 0 0 0 374 87Z" fill="#284bff" opacity=".4"/><path d="M325 185L432 163" stroke="#7694ff" strokeWidth="2"/></g>
+        <g className={processStyles.scanner}><path d="M325 185L432 163A110 110 0 0 0 374 87Z" fill="#0a6fd0" opacity=".4"/><path d="M325 185L432 163" stroke="#76baff" strokeWidth="2"/></g>
         <circle cx="285" cy="150" r="7" fill="#fff"/><circle cx="380" cy="235" r="7" fill="#fff"/><circle cx="360" cy="118" r="9" className={processStyles.signal}/>
         <g className={processStyles.label}><rect x="48" y="82" width="154" height="50" rx="9"/><text x="68" y="113">Audience signals</text><rect x="413" y="238" width="174" height="50" rx="9"/><text x="433" y="269">The opportunity ↗</text></g>
       </>}
@@ -74,19 +74,19 @@ function ProcessVisual({stage,title}:{stage:number;title:string}) {
         <text x="380" y="302" className={processStyles.note}>ONE SHARED ROADMAP</text>
       </>}
       {stage===2 && <>
-        <g className={processStyles.cardA}><rect x="95" y="61" width="160" height="225" rx="12" fill="#e9eeff"/><rect x="111" y="77" width="128" height="116" rx="6" fill="#284bff"/><path d="M151 110L201 139L151 168Z" fill="#e4ff83"/><path d="M113 216H216M113 232H184" stroke="#101b38" strokeWidth="7"/><text x="113" y="265" fill="#284bff" fontSize="11">THE CREATIVE</text></g>
-        <g className={processStyles.cardB}><rect x="267" y="91" width="167" height="214" rx="12" fill="#284bff"/><rect x="284" y="109" width="133" height="112" rx="6" fill="#7891ff"/><circle cx="350" cy="163" r="35" fill="#e4ff83"/><path d="M287 244H405M287 261H371" stroke="#fff" strokeWidth="6"/><text x="287" y="288" fill="#fff" fontSize="11">THE EXPERIENCE</text></g>
-        <g className={processStyles.cardC}><rect x="449" y="117" width="94" height="136" rx="15" fill="#fff"/><rect x="459" y="139" width="74" height="55" rx="6" fill="#dce5ff"/><path d="M466 211H526M466 225H509" stroke="#284bff" strokeWidth="5"/></g>
+        <g className={processStyles.cardA}><rect x="95" y="61" width="160" height="225" rx="12" fill="#e9f4ff"/><rect x="111" y="77" width="128" height="116" rx="6" fill="#0a6fd0"/><path d="M151 110L201 139L151 168Z" fill="#e4ff83"/><path d="M113 216H216M113 232H184" stroke="#082f57" strokeWidth="7"/><text x="113" y="265" fill="#0a6fd0" fontSize="11">THE CREATIVE</text></g>
+        <g className={processStyles.cardB}><rect x="267" y="91" width="167" height="214" rx="12" fill="#0a6fd0"/><rect x="284" y="109" width="133" height="112" rx="6" fill="#78bbff"/><circle cx="350" cy="163" r="35" fill="#e4ff83"/><path d="M287 244H405M287 261H371" stroke="#fff" strokeWidth="6"/><text x="287" y="288" fill="#fff" fontSize="11">THE EXPERIENCE</text></g>
+        <g className={processStyles.cardC}><rect x="449" y="117" width="94" height="136" rx="15" fill="#fff"/><rect x="459" y="139" width="74" height="55" rx="6" fill="#dcedff"/><path d="M466 211H526M466 225H509" stroke="#0a6fd0" strokeWidth="5"/></g>
       </>}
       {stage===3 && <>
-        <g className={processStyles.label}><rect x="49" y="70" width="203" height="220" rx="12"/>{['Tracking ready','Creative checked','Journey connected'].map((t,i)=><g key={t}><circle cx="75" cy={118+i*61} r="10" fill="#284bff"/><path d={`M70 ${118+i*61}l4 4 7-8`} stroke="#fff" strokeWidth="2" fill="none"/><text x="96" y={123+i*61} fontSize="12">{t}</text></g>)}</g>
+        <g className={processStyles.label}><rect x="49" y="70" width="203" height="220" rx="12"/>{['Tracking ready','Creative checked','Journey connected'].map((t,i)=><g key={t}><circle cx="75" cy={118+i*61} r="10" fill="#0a6fd0"/><path d={`M70 ${118+i*61}l4 4 7-8`} stroke="#fff" strokeWidth="2" fill="none"/><text x="96" y={123+i*61} fontSize="12">{t}</text></g>)}</g>
         <path d="M288 278Q440 278 535 87" className={processStyles.route}/><path d="M288 278Q440 278 535 87" className={processStyles.traveller}/>
         <g className={processStyles.launch}><path d="M474 151L535 74L528 174L509 155L486 183L468 169L492 141Z" fill="#e4ff83"/></g>
         <text x="331" y="327" className={processStyles.note}>READY. SET. IN MARKET.</text>
       </>}
       {stage===4 && <>
         <path d="M64 70V290H575" className={processStyles.route}/>
-        {[82,130,172,209,252,285].map((h,i)=><rect key={h} x={100+i*73} y={290-h*.65} width="42" height={h*.65} rx="5" fill={i===5?'#e4ff83':'#284bff'} className={processStyles.bar} style={{animationDelay:`${i*.14}s`}}/>)}
+        {[82,130,172,209,252,285].map((h,i)=><rect key={h} x={100+i*73} y={290-h*.65} width="42" height={h*.65} rx="5" fill={i===5?'#e4ff83':'#0a6fd0'} className={processStyles.bar} style={{animationDelay:`${i*.14}s`}}/>)}
         <path d="M120 213L194 202L266 169L341 149L412 112L486 72" className={processStyles.trend}/>
         <g className={processStyles.label}><rect x="74" y="35" width="220" height="47" rx="9"/><text x="92" y="64">Learn → Test → Improve</text></g>
         <text x="333" y="330" className={processStyles.note}>EVERY TEST INFORMS THE NEXT</text>

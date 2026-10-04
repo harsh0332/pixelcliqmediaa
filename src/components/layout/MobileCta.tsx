@@ -118,7 +118,7 @@ export function MobileCta() {
           WhatsApp us
         </a>
         <Button href={site.primaryCta.href} size="md" className="h-11 flex-1 justify-center">
-          Get a proposal
+          {site.primaryCta.label}
         </Button>
       </div>
     </div>

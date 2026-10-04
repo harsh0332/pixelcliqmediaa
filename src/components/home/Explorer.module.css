@@ -5,9 +5,9 @@
 
 .explorer {
   --gutter: clamp(20px, 4vw, 64px);
-  --ink: #0b1124;
-  --muted: #9a9789;
-  --blue: #2b46d6;
+  --ink: #082f57;
+  --muted: #6f6c5d;
+  --blue: #0868ad; /* one step deeper: holds AA on every service tint */
   position: relative;
   padding: clamp(80px, 10vw, 150px) 0 clamp(64px, 8vw, 120px);
   background-color: var(--svc, #eef1fd);
@@ -75,10 +75,10 @@
 .row {
   position: relative;
   display: grid;
-  grid-template-columns: 64px minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr);
   gap: 18px;
   padding: clamp(30px, 3.2vw, 44px) 0;
-  border-bottom: 1px solid #0b112417;
+  border-bottom: 1px solid #082f5717;
 }
 /* The active marker: a short bar that grows in from the left edge. */
 .row::before {
@@ -129,7 +129,7 @@
   min-height: 38px;
   padding: 0 15px;
   border-radius: 99px;
-  border: 1px solid #0b112426;
+  border: 1px solid #082f5726;
   background: #ffffffb3;
   font-size: 13.5px;
   font-weight: 700;
@@ -150,7 +150,7 @@
   padding: 20px;
   border-radius: 32px;
   background: #ffffffd9;
-  box-shadow: 0 1px 0 #fff inset, 0 0 0 1px #0b11240f, 0 50px 100px -60px #1a1f4a59;
+  box-shadow: 0 1px 0 #fff inset, 0 0 0 1px #082f570f, 0 50px 100px -60px #1a1f4a59;
 }
 .panelTop {
   display: flex;
@@ -166,7 +166,7 @@
 .panelTop b { color: var(--blue); font-size: 15px; }
 .panelTop span:last-child { color: var(--ink); text-align: right; }
 .progress { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; gap: 5px; margin: 14px 6px 16px; }
-.progress i { height: 3px; border-radius: 3px; background: #0b112414; transition: background-color 0.4s; }
+.progress i { height: 3px; border-radius: 3px; background: #082f5714; transition: background-color 0.4s; }
 .progress i.on { background: var(--ink); }
 .stage { position: relative; }
 .panelCta {
@@ -217,7 +217,7 @@
     border: 0;
     border-radius: 26px;
     background: #ffffffcc;
-    box-shadow: 0 0 0 1px #0b11240f, 0 30px 60px -44px #1a1f4a59;
+    box-shadow: 0 0 0 1px #082f570f, 0 30px 60px -44px #1a1f4a59;
     scroll-snap-align: start;
   }
   .row::before { display: none; }

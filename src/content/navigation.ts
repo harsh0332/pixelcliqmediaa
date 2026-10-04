@@ -4,14 +4,26 @@ import { homeContent } from "@/content/refinedHome";
 export interface MegaMenuItem extends NavLink {
   /** Sequence marker, e.g. "01". Genuinely ordered, so genuinely numbered. */
   number: string;
+  /** Which animated preview the dropdown shows for this service. */
+  visual: string;
+  /** The column this service sits in, by MegaMenuGroup id. */
+  group: string;
+}
+
+export interface MegaMenuGroup {
+  id: string;
+  label: string;
 }
 
 export interface MegaMenu {
   label: string;
   href: string;
-  /** The editorial line beside the pillar grid in the dropdown. */
-  intro: string;
+  groups: MegaMenuGroup[];
   items: MegaMenuItem[];
+  /** The way out for a reader who does not know which service they need. */
+  cta: NavLink;
+  /** Label on the preview's link through to the hovered service. */
+  explore: string;
   /** The link out of the dropdown, to the full services index. */
   footerLink: NavLink;
 }
@@ -27,19 +39,39 @@ export interface HeaderNavItem {
  * The services dropdown is derived from servicePillars rather than restated,
  * so a pillar can never appear in the menu with a stale title or a dead slug.
  */
+/** Which column each homepage service sits in, keyed by its explorer id. */
+const SERVICE_GROUP: Record<string, string> = {
+  ads: "grow",
+  leads: "grow",
+  seo: "grow",
+  design: "create",
+  social: "create",
+  brand: "create",
+  store: "build",
+  automation: "build",
+};
+
 const servicesMega: MegaMenu = {
   label: "Services",
   href: "/services",
-  intro: "D2C expertise. Full-service capabilities.",
-  // The same nine services, in the same order, as the homepage explorer.
+  groups: [
+    { id: "grow", label: "Grow" },
+    { id: "create", label: "Create" },
+    { id: "build", label: "Build" },
+  ],
+  // The same services, in the same order, as the homepage explorer.
   items: homeContent.explorer.items.map((item, index) => ({
     label: item.title,
     href: item.href,
     description: item.line,
     number: String(index + 1).padStart(2, "0"),
+    visual: item.visual,
+    group: SERVICE_GROUP[item.id] ?? "grow",
   })),
+  cta: homeContent.explorer.cta,
+  explore: "Explore",
   footerLink: {
-    label: "View all services",
+    label: "All services",
     href: "/services",
   },
 };

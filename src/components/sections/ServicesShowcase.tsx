@@ -73,7 +73,7 @@ export function ServicesShowcase({ compact = false }: { compact?: boolean }) {
                   <div className={styles.visualBottom}><span aria-hidden="true" className={styles.signal} /><span>{service.outcome}</span></div>
                 </div>
                 <div className={styles.copy}>
-                  <p className={styles.category}><span aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>{service.category}</p>
+                  <p className={styles.category}>{service.category}</p>
                   <h3>{service.title.split("\n").map((line, lineIndex) => <span key={line}>{lineIndex > 0 && <br />}{line}</span>)}</h3>
                   <p className={styles.description}>{service.description}</p>
                   <ul className={styles.tags} aria-label={`${service.category} capabilities`}>{service.tags.map(tag => <li key={tag}>{tag}</li>)}</ul>
@@ -85,7 +85,7 @@ export function ServicesShowcase({ compact = false }: { compact?: boolean }) {
         </div>
         <div className={styles.bottom}>
           <p>{compact ? "More ways to move your brand forward." : "One service or a connected team. Let’s find your starting point."}</p>
-          <Link href={compact ? "/services" : "/contact"}>{compact ? "Discover all our services" : "Let’s talk about your project"}{compact ? <ArrowDown size={20} aria-hidden="true" /> : <ArrowUpRight size={20} aria-hidden="true" />}</Link>
+          <Link href={compact ? "/services" : "/contact"}>{compact ? "Discover all our services" : "Book a free growth call"}{compact ? <ArrowDown size={20} aria-hidden="true" /> : <ArrowUpRight size={20} aria-hidden="true" />}</Link>
         </div>
       </div>
     </section>

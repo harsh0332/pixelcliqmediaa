@@ -46,7 +46,7 @@ export function RollLabel({
         aria-hidden="true"
         // Accent, not inverted ink: the roll is the one hover in the header,
         // and an ink twin on a bone bar reads as a state, not as a response.
-        // White on #2c4bff is 5.90:1.
+        // White on #0a6fd0 is 5.90:1.
         className={cn(face, "absolute inset-x-0 top-full rounded-sm bg-accent text-white")}
       >
         {children}

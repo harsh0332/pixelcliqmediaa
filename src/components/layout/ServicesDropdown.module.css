@@ -1,1 +1,128 @@
-.panel{box-shadow:0 24px 60px #10244d20;max-height:calc(100dvh - 110px);overflow-y:auto;background:#fff;border-color:#dce4f5;border-radius:12px!important}.intro{background:#14264b;color:#fff;border-radius:7px;padding:1.5rem;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}.introLabel{font-size:8px;letter-spacing:.15em;color:#aebfe9;margin-bottom:1.5rem}.intro p{font:700 clamp(1.25rem,2vw,2rem)/1.15 var(--font-sans-bold-stack);letter-spacing:-.04em;position:relative;z-index:1}.intro a{color:#d4e1ff;font-size:.8rem;position:relative;z-index:1}.introOrbit{height:100px;display:grid;place-items:center;color:#d9ff72;position:relative;margin:15px 0}.introOrbit span{position:absolute;border:1px solid #708bb95c;width:145px;height:65px;border-radius:50%;transform:rotate(-28deg)}.introOrbit span:nth-child(2){transform:rotate(28deg)}.card{height:100%;border:1px solid #dce4f5;border-radius:7px;background:#f7f9ff;padding:18px;transition:background .2s,border-color .2s,transform .2s}.card:hover,.card:focus-visible{background:#eef3ff;border-color:#a0b3f5;transform:translateY(-2px)}.cardTop{display:flex;align-items:center;justify-content:space-between;color:#3150ed;margin-bottom:14px}.cardTop>svg:last-child{transition:transform .2s}.card:hover .cardTop>svg:last-child{transform:translate(2px,-2px)}.card>span{color:#152749}.card>span:nth-child(2){font-size:9px;color:#5f77ac}.cardTitle{font:700 18px/1.2 var(--font-sans-bold-stack);display:block;margin-top:7px;letter-spacing:-.035em}.cardDescription{display:block;font-size:12px;line-height:1.5;color:#52617e!important;margin-top:8px;max-width:30ch}@media(prefers-reduced-motion:reduce){.card,.cardTop>svg:last-child{transition:none}.card:hover,.card:focus-visible,.card:hover .cardTop>svg:last-child{transform:none}}
+/* ==========================================================================
+   Services mega menu: three short columns of names and one live preview.
+   Nothing else — no boxes, no icons, no dividers between items.
+   ========================================================================== */
+
+.panel {
+  --ink: #082f57;
+  --blue: #0a6fd0;
+  --lime: #d6f06e;
+  max-height: calc(100dvh - 110px);
+  overflow-y: auto;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 0 0 1px #082f5712, 0 40px 80px -40px #082f5766;
+}
+.body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 340px);
+  gap: 8px;
+  padding: 8px;
+}
+
+/* ---- The index ----------------------------------------------------------- */
+.index { display: flex; flex-direction: column; padding: 26px 30px 0; }
+.groups { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; padding: 6px 0 30px; }
+.groupLabel {
+  margin: 0 0 10px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #56697f;
+}
+.group ul { display: flex; flex-direction: column; gap: 2px; margin: 0; padding: 0; list-style: none; }
+
+.item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 52px;
+  color: var(--ink);
+}
+.pixel {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  margin-top: -4px;
+  background: var(--lime);
+  box-shadow: 0 0 0 1.5px var(--ink);
+  transform: scale(0);
+  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.itemLabel {
+  font: 700 clamp(16px, 1.4vw, 20px) / 1.2 var(--font-sans-bold-stack);
+  letter-spacing: -0.025em;
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), color 0.2s;
+}
+.itemArrow {
+  flex: none;
+  color: var(--blue);
+  opacity: 0;
+  transform: translate(-4px, 4px);
+  transition: opacity 0.25s, transform 0.3s;
+}
+.itemActive .pixel { transform: scale(1); }
+.itemActive .itemLabel { transform: translateX(18px); }
+.itemActive .itemArrow { opacity: 1; transform: translateX(18px); }
+.item[aria-current="page"] .itemLabel { color: var(--blue); }
+.item:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; border-radius: 6px; }
+
+.foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: auto;
+  padding: 14px 0 18px;
+  border-top: 1px solid #082f5712;
+}
+.footCta { display: inline-flex; align-items: center; gap: 10px; min-height: 44px; font-size: 13.5px; font-weight: 600; color: #2f4b69; }
+.footCta span { display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; background: var(--lime); color: var(--ink); transition: transform 0.3s; }
+.footCta:hover { color: var(--ink); }
+.footCta:hover span { transform: translateX(3px); }
+.footAll { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; font-size: 13.5px; font-weight: 700; color: var(--blue); }
+.footAll:hover { text-decoration: underline; text-underline-offset: 4px; }
+.foot a:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; border-radius: 6px; }
+
+/* ---- The preview --------------------------------------------------------- */
+.preview {
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+  padding: 12px;
+  background: linear-gradient(180deg, #1685e4 0%, #4aa3ee 45%, #cfe6fa 100%);
+}
+.previewInner { position: relative; display: flex; flex-direction: column; height: 100%; }
+.visual { overflow: hidden; border-radius: 10px; box-shadow: 0 22px 44px -28px #082f57cc; }
+.visual > div { aspect-ratio: 1; }
+.previewLink {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 12px 4px 2px;
+  padding: 4px 2px;
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 700;
+}
+.previewLink span { border-bottom: 1.5px solid currentColor; padding-bottom: 2px; }
+.previewLink svg { transition: transform 0.3s; }
+.previewLink:hover svg { transform: translateX(3px); }
+
+@media (max-width: 1200px) {
+  .index { padding: 22px 20px 0; }
+  .groups { gap: 18px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pixel,
+  .itemLabel,
+  .itemArrow,
+  .footCta span,
+  .previewLink svg { transition: none; }
+}

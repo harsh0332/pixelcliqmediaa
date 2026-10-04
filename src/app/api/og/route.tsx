@@ -14,7 +14,7 @@ const BONE = "#f7f5f0";
 const INK = "#14151a";
 const INK_MUTED = "#65666d";
 const LINE = "#e2ddd3";
-const ACCENT = "#2c4bff";
+const ACCENT = "#0a6fd0";
 
 /**
  * Clash Display, if a satori-readable file exists.

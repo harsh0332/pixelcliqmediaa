@@ -1,1 +1,21 @@
-.wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:35px;padding:35px;background:#152858;color:white;border-radius:8px;align-items:center;margin-top:45px}.wrap>div>span{font-size:9px;letter-spacing:.14em;color:#c6d3fd}.wrap h3{font:700 clamp(25px,3vw,38px)/1.1 var(--font-sans-bold-stack);letter-spacing:-.04em;margin:18px 0}.wrap p{font-size:14px;line-height:1.6;color:#d2dcf5;max-width:36ch}.wrap button{margin-top:23px;background:#ddff85;color:#172651;padding:13px 20px;border-radius:3px;font-size:13px;font-weight:700;cursor:pointer}.wrap iframe{border:0;width:100%;height:410px;border-radius:6px;background:#172650}.orbit{height:280px;position:relative;display:grid;place-items:center;overflow:hidden}.orbit span{position:absolute;width:210px;height:210px;border:1px solid #718fe6;border-radius:50%;transform:rotateX(60deg) rotateZ(30deg)}.orbit span:nth-child(2){transform:rotateY(60deg) rotateZ(-30deg);border-color:#ddff85}.orbit b{font-size:48px;font-weight:700;color:#ddff85}@media(max-width:767px){.wrap{grid-template-columns:1fr;padding:24px;gap:20px}.orbit{height:180px}.wrap iframe{height:350px}}
+.wrap{position:relative;overflow:hidden;display:grid;grid-template-columns:.8fr 1.2fr;gap:35px;padding:35px;background:#082f57;color:white;border-radius:14px;align-items:center;margin-top:45px;isolation:isolate}
+/* The pixel grid from the homepage hero, faint, fading out to the left. */
+.wrap::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(#ffffff12 1px,transparent 1px) 0 0/44px 44px,linear-gradient(90deg,#ffffff12 1px,transparent 1px) 0 0/44px 44px;-webkit-mask-image:linear-gradient(90deg,transparent 10%,#000 70%);mask-image:linear-gradient(90deg,transparent 10%,#000 70%)}
+.wrap>div>span{font-size:10px;font-weight:700;letter-spacing:.16em;color:#9cc8ef}.wrap h3{font:700 clamp(25px,3vw,38px)/1.1 var(--font-sans-bold-stack);letter-spacing:-.04em;margin:18px 0}.wrap p{font-size:14px;line-height:1.6;color:#c9dcef;max-width:36ch}
+.wrap button{margin-top:23px;background:#d6f06e;color:#082f57;padding:13px 20px;border-radius:99px;font-size:13px;font-weight:700;cursor:pointer;transition:transform .25s}.wrap button:hover{transform:translateY(-2px)}
+.wrap iframe{border:0;width:100%;height:410px;border-radius:10px;background:#06284a}
+.orbit{height:280px;position:relative;display:grid;place-items:center;overflow:hidden;perspective:700px}
+.orbit span{position:absolute;width:210px;height:210px;border:1px solid #4f8fd0;border-radius:50%;transform:rotateX(62deg) rotateZ(30deg)}.orbit span:nth-child(2){transform:rotateY(62deg) rotateZ(-30deg);border-color:#d6f06e99}
+/* A pixel cube: six faces, two of them lime. */
+.cube{position:relative;width:72px;height:72px;transform-style:preserve-3d;transform:rotateX(-24deg) rotateY(38deg)}
+.cube i{position:absolute;inset:0;border:1px solid #ffffff59;background:linear-gradient(135deg,#1685e4cc,#0a6fd099)}
+.cube i:nth-child(1){transform:translateZ(36px)}.cube i:nth-child(2){transform:rotateY(180deg) translateZ(36px)}
+.cube i:nth-child(3){transform:rotateY(90deg) translateZ(36px);background:#d6f06e;border-color:#082f5733}.cube i:nth-child(4){transform:rotateY(-90deg) translateZ(36px)}
+.cube i:nth-child(5){transform:rotateX(90deg) translateZ(36px);background:#d6f06ecc}.cube i:nth-child(6){transform:rotateX(-90deg) translateZ(36px)}
+@media(prefers-reduced-motion:no-preference){
+.cube{animation:cube-turn 9s linear infinite}
+.orbit span{animation:ring 14s linear infinite}.orbit span:nth-child(2){animation-duration:18s;animation-direction:reverse}
+}
+@keyframes cube-turn{from{transform:rotateX(-24deg) rotateY(0)}to{transform:rotateX(-24deg) rotateY(360deg)}}
+@keyframes ring{to{rotate:360deg}}
+@media(max-width:767px){.wrap{grid-template-columns:1fr;padding:24px;gap:20px}.orbit{height:180px}.wrap iframe{height:350px}}

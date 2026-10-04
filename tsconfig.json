@@ -42,7 +42,11 @@
     ".next/dev/types/**/*.ts",
     "scripts/**/*.mts",
     ".next.nosync/types/**/*.ts",
-    ".next.nosync/dev/types/**/*.ts"
+    ".next.nosync/dev/types/**/*.ts",
+    ".next-prod/types/**/*.ts",
+    ".next-prod/dev/types/**/*.ts",
+    ".next-verify/types/**/*.ts",
+    ".next-verify/dev/types/**/*.ts"
   ],
   // This machine's Desktop sync creates duplicate files ("routes.d 2.ts"). They
   // are byte-identical copies of generated Next types, so TypeScript sees every

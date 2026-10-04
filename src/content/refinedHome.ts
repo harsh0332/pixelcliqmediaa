@@ -1,6 +1,6 @@
 /** Concise homepage copy; detailed capabilities remain on service pages. */
 export const refinedHome = {
-  eyebrow: "Independent growth agency · D2C first",
+  eyebrow: "Independent creative & growth studio",
   ctaNote: "Tell us about your brand. We’ll find the right place to start.",
   services: [
     { number: "01", title: "Performance marketing", description: "Meta and Google campaigns built around your offer, your audience and your margins.", tags: "Paid media · Acquisition · Retargeting", href: "/services/d2c-growth" },
@@ -30,14 +30,35 @@ export const refinedHome = {
  */
 export const homeContent = {
   hero: {
-    kicker: "Independent creative & growth agency",
+    kicker: "Independent creative & growth studio",
     topRight: "Creative · Media · Commerce",
     titleLines: ["Make your", "next big move."],
     support:
-      "We’re a digital-first creative agency, bringing bold ideas, smart technology and growth together.",
+      "We make the ads, run the media and build the store. One team, from the first scroll to the repeat order.",
     cta: "Book a free growth call",
-    whatsapp: "Or chat on WhatsApp",
-    trust: "Free 30-minute call · Reply within one working day",
+    whatsapp: "Chat on WhatsApp",
+    trust: "Free 30-minute call · We reply within one working day",
+    scrollCue: "Selected work",
+    headline: { a: "Make brands", b: "mean more." },
+    stamp: "D2C first • Ideas into impact • ",
+    reelLabel: "Studio concepts & selected films",
+    pixels: ["coffee", "soda", "forme", "skincare", "sneakers", "morrow", "fragrance", "interval", "jewelry", "beauty", "chocolate", "eyewear", "saree", "tech"],
+    explore: "Explore the work",
+    disciplines: ["Creative direction", "Digital experiences", "Performance & growth"],
+    reel: [
+      { kind: "image", src: "coffee", brand: "Early Hours", tag: "Studio concept" },
+      { kind: "video", src: "film-22", brand: "Nutra Wellness", tag: "Product film" },
+      { kind: "image", src: "soda", brand: "Good Fizz", tag: "Studio concept" },
+      { kind: "image", src: "forme", brand: "Forme", tag: "Studio concept" },
+      { kind: "video", src: "film-07", brand: "M.D.", tag: "Spice in motion" },
+      { kind: "image", src: "skincare", brand: "Still Kind", tag: "Studio concept" },
+      { kind: "image", src: "sneakers", brand: "Pace Club", tag: "Studio concept" },
+      { kind: "video", src: "film-04", brand: "Allwin", tag: "Travel in style" },
+      { kind: "image", src: "morrow", brand: "Morrow", tag: "Studio concept" },
+      { kind: "image", src: "fragrance", brand: "Nuit Atelier", tag: "Studio concept" },
+      { kind: "video", src: "film-19", brand: "KT Jewellers", tag: "Crafted in gold" },
+      { kind: "image", src: "interval", brand: "Interval", tag: "Studio concept" },
+    ],
     cards: {
       a: "01 / Brand worlds",
       statementTop: "Creative × Commerce",
@@ -57,7 +78,7 @@ export const homeContent = {
   },
   explorer: {
     eyebrow: "01 / Services",
-    title: "What we do",
+    title: "How we grow brands",
     intro:
       "Start with the one thing holding you back today. Every service is planned to plug into the others, so nothing you build now has to be rebuilt later.",
     cta: { label: "Not sure where to start? Book a free growth call", href: "/contact" },
@@ -122,7 +143,7 @@ export const homeContent = {
       { tag: "A written plan", title: "See what to fix first", copy: "We review what is running today, write down what is holding growth back and propose a scope in priority order." },
       { tag: "Weekly sprints", title: "Launch and keep improving", copy: "Work goes live in planned sprints, followed by a weekly review of what moved, what did not and what comes next." },
     ],
-    cta: "Book your free growth call",
+    cta: "Book a free growth call",
   },
   standard: {
     eyebrow: "04 / Our standard",

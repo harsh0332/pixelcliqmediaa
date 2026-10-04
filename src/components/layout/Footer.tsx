@@ -6,6 +6,8 @@ import { ContactDetails } from "@/components/layout/ContactDetails";
 import { FooterLink } from "@/components/layout/FooterLink";
 import { Wordmark } from "@/components/layout/Wordmark";
 import { footerNav, legalNav } from "@/content/navigation";
+import { CookieSettingsButton } from "@/components/analytics/CookieSettingsButton";
+import { analyticsEnabled } from "@/lib/analytics";
 import { HAS_VERIFIED_STATS, site } from "@/content/site";
 import { isPlaceholder } from "@/lib/placeholders";
 import styles from "./Footer.module.css";
@@ -55,7 +57,7 @@ export function Footer() {
         </div>
         <div className={styles.legal}>
           <span>&copy; {new Date().getFullYear()} {site.name}</span>
-          <ul>{legalNav.map((link) => <li key={link.href}><FooterLink href={link.href}>{link.label}</FooterLink></li>)}</ul>
+          <ul>{legalNav.map((link) => <li key={link.href}><FooterLink href={link.href}>{link.label}</FooterLink></li>)}{analyticsEnabled && <li><CookieSettingsButton className={styles.cookieButton} /></li>}</ul>
           <span>Independent thinking. Connected growth.</span>
         </div>
       </Container>

@@ -65,8 +65,8 @@ export const siteFaqs: FaqItem[] = [
   },
   {
     id: "location",
-    q: "Where are you based?",
-    a: "Indore, Madhya Pradesh, India. We work with brands across India and internationally, and the weekly cadence runs remotely. If you are in Indore, we are happy to meet in person.",
+    q: "Do you work remotely?",
+    a: "Yes. We work with brands wherever they sell, and the weekly cadence runs remotely: calls, shared dashboards and one team you can reach directly.",
   },
   {
     id: "how-to-start",

@@ -1,0 +1,43 @@
+.banner {
+  position: fixed;
+  left: 16px;
+  bottom: 16px;
+  z-index: 70;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: min(420px, calc(100vw - 32px));
+  padding: 18px 18px 16px;
+  border-radius: 16px;
+  background: #082f57;
+  color: #fff;
+  box-shadow: 0 30px 60px -30px #082f57b3, 0 0 0 1px #ffffff14;
+  font-size: 14px;
+  line-height: 1.55;
+}
+.banner p { margin: 0; color: #e3effb; }
+.banner a { color: #d6f06e; text-decoration: underline; text-underline-offset: 3px; }
+.actions { display: flex; gap: 10px; }
+.actions button {
+  min-height: 44px;
+  padding: 0 20px;
+  border-radius: 99px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+.accept { background: #d6f06e; color: #082f57; }
+.accept:hover { background: #e4f79a; }
+.decline { border: 1px solid #ffffff4d; background: transparent; color: #fff; }
+.decline:hover { background: #ffffff14; }
+.banner :focus-visible { outline: 2px solid #d6f06e; outline-offset: 3px; }
+/* Phones: sit above the fixed booking bar rather than over it. */
+@media (max-width: 767px) {
+  .banner { left: 12px; right: 12px; width: auto; bottom: calc(var(--mobile-cta-height, 0px) + 12px); }
+  .actions button { flex: 1; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .banner { animation: banner-in 0.5s cubic-bezier(0.16, 0.84, 0.24, 1) 1.2s both; }
+}
+@keyframes banner-in { from { opacity: 0; transform: translateY(16px); } }

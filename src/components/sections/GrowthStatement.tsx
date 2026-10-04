@@ -9,7 +9,7 @@ export function GrowthStatement() {
   const ref = useRef<HTMLElement>(null);
   const reduced = useReducedMotion();
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
-  const backgroundColor = useTransform(scrollYProgress, [0, .7], ["#bdd1ff", "#f1f5ff"]);
+  const backgroundColor = useTransform(scrollYProgress, [0, .7], ["#bddeff", "#f1f8ff"]);
   return <motion.section ref={ref} className={styles.section} style={{ backgroundColor: reduced ? "#e3edff" : backgroundColor }} aria-labelledby="growth-statement">
     <Container>
       <div className={styles.intro}><span className={styles.label}>THE PIXELCLIQ POINT OF VIEW</span><span className={styles.marker} aria-hidden="true">↙</span></div>

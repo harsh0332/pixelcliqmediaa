@@ -67,7 +67,6 @@ export function ServiceExplorer({ headingLevel = "h2" }: { headingLevel?: "h1" |
   }, []);
 
   const current = explorer.items[active] ?? explorer.items[0]!;
-  const total = String(explorer.items.length).padStart(2, "0");
 
   return (
     <section
@@ -95,7 +94,6 @@ export function ServiceExplorer({ headingLevel = "h2" }: { headingLevel?: "h1" |
         <div className={styles.body}>
           <ol ref={listRef} className={styles.list}>
             {explorer.items.map((item, index) => {
-              const number = String(index + 1).padStart(2, "0");
               return (
                 <li
                   key={item.id}
@@ -107,7 +105,6 @@ export function ServiceExplorer({ headingLevel = "h2" }: { headingLevel?: "h1" |
                   <div className={styles.cardVisual}>
                     <FeatureVisual kind={item.visual} instance="card" />
                   </div>
-                  <span className={styles.number}>{number}</span>
                   <div className={styles.rowBody}>
                     <h3>
                       <Link href={item.href}>
@@ -133,7 +130,7 @@ export function ServiceExplorer({ headingLevel = "h2" }: { headingLevel?: "h1" |
           <div className={styles.panel}>
             <div className={styles.panelInner}>
               <div className={styles.panelTop} aria-hidden="true">
-                <span><b>{String(active + 1).padStart(2, "0")}</b> / {total}</span>
+                <span>{explorer.eyebrow.replace(/^\d+\s*\/\s*/, "")}</span>
                 <span>{current.title}</span>
               </div>
               <div className={styles.progress} aria-hidden="true">

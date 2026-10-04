@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Footer } from "@/components/layout/Footer";
 import { MobileCta } from "@/components/layout/MobileCta";
 import { WhatsAppFab } from "@/components/layout/WhatsAppFab";
+import { Analytics } from "@/components/analytics/Analytics";
 import { Reveals } from "@/components/providers/Reveals";
 import { Header } from "@/components/layout/Header";
 import { SkipLink } from "@/components/layout/SkipLink";
@@ -21,15 +22,15 @@ import "@/styles/premium.css";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: `${site.name} — D2C Growth Agency, Indore`,
+    default: `${site.name} — Creative & Growth Studio`,
     template: `%s — ${site.name}`,
   },
   description: site.description,
   // Kept to terms the site actually earns a page for. A longer list does
   // nothing for ranking and reads as spam to a human reviewing the source.
   keywords: [
-    "D2C growth agency",
-    "performance marketing Indore",
+    "creative and growth studio",
+    "performance marketing agency",
     "Shopify agency India",
     "ecommerce growth partner",
     "paid media and creative",
@@ -94,9 +95,6 @@ const siteGraph = {
       siteUrl: SITE_URL,
       name: site.name,
       description: site.description,
-      locality: "Indore",
-      region: "Madhya Pradesh",
-      country: "IN",
       telephone: isPlaceholder(site.phone) ? undefined : site.phone,
       email: isPlaceholder(site.email) ? undefined : site.email,
       sameAs: site.socials
@@ -181,6 +179,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <MobileCta />
         <WhatsAppFab />
         <Reveals />
+        <Analytics />
       </body>
     </html>
   );

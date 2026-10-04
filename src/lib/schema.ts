@@ -92,9 +92,6 @@ export interface OrganizationInput {
   siteUrl: string;
   name: string;
   description: string;
-  locality: string;
-  region: string;
-  country: string;
   /** Omitted unless a complete, real number. */
   telephone?: string;
   /** Omitted unless the domain is registered. */
@@ -122,12 +119,6 @@ export function organizationSchema(input: OrganizationInput): JsonLdNode {
     url: `${input.siteUrl}/`,
     description: input.description,
     logo: input.logo,
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: input.locality,
-      addressRegion: input.region,
-      addressCountry: input.country,
-    },
     telephone: input.telephone,
     email: input.email,
     sameAs: input.sameAs?.length ? input.sameAs : undefined,

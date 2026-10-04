@@ -45,7 +45,7 @@ export default async function Image() {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                color: "#2C4BFF",
+                color: "#0a6fd0",
                 fontSize: "24px",
                 fontWeight: "bold",
               }}
@@ -71,9 +71,9 @@ export default async function Image() {
               gap: "8px",
               padding: "8px 18px",
               borderRadius: "9999px",
-              backgroundColor: "#EAEDFF",
-              border: "1px solid #2C4BFF",
-              color: "#2C4BFF",
+              backgroundColor: "#e8f2fc",
+              border: "1px solid #0a6fd0",
+              color: "#0a6fd0",
               fontSize: "13px",
               fontWeight: "600",
               letterSpacing: "0.08em",
@@ -85,7 +85,7 @@ export default async function Image() {
                 width: "8px",
                 height: "8px",
                 borderRadius: "9999px",
-                backgroundColor: "#2C4BFF",
+                backgroundColor: "#0a6fd0",
               }}
             />
             <span>D2C Growth Architecture</span>
@@ -98,7 +98,7 @@ export default async function Image() {
             style={{
               width: "72px",
               height: "4px",
-              backgroundColor: "#2C4BFF",
+              backgroundColor: "#0a6fd0",
               borderRadius: "2px",
             }}
           />
@@ -119,7 +119,7 @@ export default async function Image() {
             }}
           >
             <span>Where D2C Brands</span>
-            <span style={{ color: "#2C4BFF", fontStyle: "italic", fontFamily: "Georgia, serif" }}>
+            <span style={{ color: "#0a6fd0", fontStyle: "italic", fontFamily: "Georgia, serif" }}>
               Compound.
             </span>
           </div>

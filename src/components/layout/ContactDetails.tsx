@@ -16,7 +16,7 @@ export function ContactDetails({ className }: { className?: string }) {
         <li>
           <a
             href={`tel:${phone.replace(/\s+/g, "")}`}
-            className="type-body-sm text-ink-soft underline-offset-4 hover:underline focus-visible:underline"
+            className="type-body-sm inline-flex min-h-11 items-center text-ink-soft underline-offset-4 hover:underline focus-visible:underline"
           >
             {phone}
           </a>
@@ -27,7 +27,7 @@ export function ContactDetails({ className }: { className?: string }) {
         <li>
           <a
             href={`mailto:${email}`}
-            className="type-body-sm text-ink-soft underline-offset-4 hover:underline focus-visible:underline"
+            className="type-body-sm inline-flex min-h-11 items-center text-ink-soft underline-offset-4 hover:underline focus-visible:underline"
           >
             {email}
           </a>

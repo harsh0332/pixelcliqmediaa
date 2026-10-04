@@ -7,6 +7,7 @@ import { Chip } from "@/components/ui/Chip";
 import { contactPage } from "@/content/home";
 import { primaryPillars } from "@/content/services";
 import { cn } from "@/lib/utils";
+import { track } from "@/lib/analytics";
 
 /**
  * The contact form.
@@ -138,6 +139,7 @@ export function ContactForm() {
     }
 
     if (values.website2) return;
+    track("generate_lead", { method: "contact_form", services: help.join(", ") });
     setStatus("done");
   };
 

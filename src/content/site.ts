@@ -42,9 +42,9 @@ export const site: SiteConfig = {
   // Kept under ~160 characters: past that Google truncates the snippet
   // mid-sentence, and the clause that gets cut is always the last one.
   description:
-    "A D2C-first growth partner in Indore. Creative, media, commerce, retention, data and automation run as one system — so growth compounds instead of leaking.",
+    "An independent creative and growth studio. Creative, media, commerce, retention and automation run as one system, so growth compounds instead of leaking.",
 
-  location: "Indore, Madhya Pradesh, India",
+  location: "Working with brands worldwide",
 
   phone: "+91 7024332332",
   email: "contact@pixelcliqmedia.com",

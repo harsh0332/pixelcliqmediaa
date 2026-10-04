@@ -213,9 +213,6 @@ export function MobileMenu() {
                                     href={entry.href}
                                     className="flex min-h-12 items-center gap-4 border-t border-line py-3 pl-12"
                                   >
-                                    <span className="type-label text-ink-muted tabular-nums">
-                                      {entry.number}
-                                    </span>
                                     <span className="type-body-lg">{entry.label}</span>
                                   </Link>
                                 </li>

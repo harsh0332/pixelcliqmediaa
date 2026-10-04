@@ -23,7 +23,7 @@ export default function AppleIcon() {
           background: "#ffffff",
         }}
       >
-        <svg width="136" height="136" viewBox="0 0 48 48" fill="#284bff"><rect x="4" y="4" width="18" height="18" rx="2"/><path d="M26 4h6a12 12 0 0 1 12 12v6H26Z"/><path d="M4 26h18v18h-6A12 12 0 0 1 4 32Z"/><rect x="26" y="26" width="18" height="18" rx="2" fill="#101b38"/></svg>
+        <svg width="136" height="136" viewBox="0 0 48 48" fill="#0a6fd0"><rect x="4" y="4" width="18" height="18" rx="2"/><path d="M26 4h6a12 12 0 0 1 12 12v6H26Z"/><path d="M4 26h18v18h-6A12 12 0 0 1 4 32Z"/><rect x="26" y="26" width="18" height="18" rx="2" fill="#082f57"/></svg>
       </div>
     ),
     size,
