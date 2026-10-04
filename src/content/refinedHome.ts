@@ -30,11 +30,11 @@ export const refinedHome = {
  */
 export const homeContent = {
   hero: {
-    kicker: "D2C growth agency · India",
+    kicker: "Independent creative & growth agency",
     topRight: "Creative · Media · Commerce",
     titleLines: ["Make your", "next big move."],
     support:
-      "More sales from the traffic you already pay for. Ads, creative, Shopify and WhatsApp automation, run by one team from first scroll to repeat order.",
+      "We’re a digital-first creative agency, bringing bold ideas, smart technology and growth together.",
     cta: "Book a free growth call",
     whatsapp: "Or chat on WhatsApp",
     trust: "Free 30-minute call · Reply within one working day",

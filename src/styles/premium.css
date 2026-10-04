@@ -130,9 +130,7 @@ main [data-dark-hero]:not([data-hero-section]) {
   color: #fff;
   border-bottom: 0 !important;
   background:
-    radial-gradient(60% 55% at 85% -10%, #5874ff 0%, transparent 62%),
-    radial-gradient(55% 60% at -5% 110%, #142596 0%, transparent 62%),
-    linear-gradient(180deg, #2543e2 0%, #1b33b6 100%) !important;
+    var(--brand-blue-field) !important;
 }
 main [data-dark-hero]:not([data-hero-section]) > * { position: relative; z-index: 1; }
 main [data-dark-hero]:not([data-hero-section]) :is(h1, h2) { color: #fff; }
@@ -191,3 +189,44 @@ main [data-dark-hero]:not([data-hero-section]) p:not(.contact-form-panel p) { co
 /* Large accented headings on dark bands use a soft periwinkle; lime is kept
    for buttons, numbers and small marks so it never fills the eye. */
 main [data-tone="inverse"] :is(h2, h3) em { color: #aebcff !important; }
+
+/* Keep illustration labels legible inside the dark service hero. */
+main [data-dark-hero] [data-service-visual] { --ink:#101b38; --ink-soft:#37445f; --accent:#2b46d6; color:#101b38; }
+main [data-dark-hero] [data-service-visual] p { color:#536079 !important; }
+
+/* Azure sampled in spirit from the supplied reference: no violet cast. */
+:root {
+  --brand-blue:#238be2;
+  --brand-blue-field:radial-gradient(ellipse at 78% 16%,#52a9ef55,transparent 58%),linear-gradient(145deg,#238be2,#2084d6);
+  --accent:#0872bd;
+  --accent-deep:#075d9c;
+  --accent-fg:#0868ad;
+  --accent-wash:#e8f5ff;
+}
+main [data-dark-hero]:not([data-hero-section]) { --ink-soft:#082f57; --ink-muted:#123b60; }
+main [data-dark-hero]:not([data-hero-section]) p:not(.contact-form-panel p):not(aside p),
+main [data-dark-hero]:not([data-hero-section]) [data-hero-support] { color:#082f57 !important; }
+main [data-dark-hero]:not([data-hero-section]) [class*="promise"] { color:#082f57; }
+main [data-dark-hero] a:not(.bg-accent):not(aside a):not(.contact-form-panel a) { text-decoration-color:currentColor; }
+body:has([data-dark-hero]) .site-header:not([data-scrolled]):not(:has([role="dialog"])) .header-card nav > ul > li > a,
+body:has([data-dark-hero]) .site-header:not([data-scrolled]):not(:has([role="dialog"])) .header-card nav > ul > li > div > button { color:#082f57; }
+
+/* Approved sky-to-paper treatment, shared by every public page hero. */
+:root { --brand-blue-field:radial-gradient(ellipse at 80% 0%,#55acf055,transparent 45%),linear-gradient(180deg,#258ee4 0%,#64b0ed 24%,#c9e7fb 48%,#f0f9ff 70%,#fff 100%); }
+main [data-dark-hero]:not([data-hero-section]) {
+ --ink:#082f57; --ink-soft:#214e72; --ink-muted:#315875;
+ --line:#124b7326; --line-strong:#124b7345; --accent:#075da5;
+ --accent-deep:#064d86; --accent-fg:#075da5; --focus-ring:#082f57;
+ color:#082f57;
+}
+main [data-dark-hero]:not([data-hero-section]) :is(h1,h2) { color:#082f57; }
+main [data-dark-hero]:not([data-hero-section]) h1 em,
+main [data-dark-hero]:not([data-hero-section]) [data-hero-line]:not(:first-child) > span { color:#075da5 !important; }
+main [data-dark-hero]:not([data-hero-section]) .bg-accent { background:#082f57; color:#fff !important; }
+main [data-dark-hero]:not([data-hero-section]) [data-hero-support] { border-left-color:#0872bd !important; }
+main [data-dark-hero]:not([data-hero-section]) [data-hero-rule] { background:#124b7326; }
+main [data-dark-hero]::after { opacity:.10; }
+
+main [data-dark-hero]:not([data-hero-section]) aside p { color:#214e72; }
+
+:root { --brand-blue-field:linear-gradient(180deg,#1685e4 0%,#218ee9 28%,#74baf0 51%,#d9eefc 76%,#fff 100%); }

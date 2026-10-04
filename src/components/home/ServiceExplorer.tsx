@@ -82,7 +82,6 @@ export function ServiceExplorer({ headingLevel = "h2" }: { headingLevel?: "h1" |
             <p className={styles.eyebrow}>{explorer.eyebrow}</p>
             <Heading id="explorer-heading" className={styles.title}>
               {explorer.title}
-              <sup>({total})</sup>
             </Heading>
           </div>
           <div className={styles.headSide}>
