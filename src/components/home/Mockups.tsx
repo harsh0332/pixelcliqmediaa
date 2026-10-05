@@ -84,15 +84,15 @@ function DesignVisual() {
   return (
     <figure className={styles.design} aria-label="Ad creative variations in three formats">
       <div className={`${styles.creative} ${styles.cTall}`}>
-        <Image src="/images/showcase/thumbs/sneakers.webp" alt="" fill unoptimized />
+        <Image src="/images/showcase/thumbs/sm/sneakers.webp" alt="" fill unoptimized />
         <span>9:16 · Reel</span>
       </div>
       <div className={`${styles.creative} ${styles.cMid}`}>
-        <Image src="/images/showcase/thumbs/skincare.webp" alt="" fill unoptimized />
+        <Image src="/images/showcase/thumbs/sm/skincare.webp" alt="" fill unoptimized />
         <span>4:5 · Feed</span>
       </div>
       <div className={`${styles.creative} ${styles.cSquare}`}>
-        <Image src="/images/showcase/thumbs/coffee.webp" alt="" fill unoptimized />
+        <Image src="/images/showcase/thumbs/sm/coffee.webp" alt="" fill unoptimized />
         <span>1:1 · Static</span>
       </div>
       <span className={`${styles.hook} ${styles.hookA}`}>Hook A · Problem first</span>
@@ -113,7 +113,7 @@ function SocialVisual() {
       <div className={styles.phone}>
         <div className={styles.postHead}><span className={styles.avatarSm} /> <b>yourbrand</b><span>•••</span></div>
         <div className={styles.postImg}>
-          <Image src="/images/showcase/thumbs/beauty.webp" alt="" fill unoptimized />
+          <Image src="/images/showcase/thumbs/sm/beauty.webp" alt="" fill unoptimized />
         </div>
         <div className={styles.postBar} aria-hidden="true">
           <Heart size={17} className={styles.liked} /><MessageCircle size={17} /><Send size={17} /><Bookmark size={17} className={styles.save} />
@@ -160,7 +160,7 @@ function WebVisual() {
         <div className={styles.chrome}><i /><i /><i /><span>yourbrand.com/products/tote</span></div>
         <div className={styles.page}>
           <div className={styles.pImg}>
-            <Image src="/images/showcase/thumbs/bags.webp" alt="" fill unoptimized />
+            <Image src="/images/showcase/thumbs/sm/bags.webp" alt="" fill unoptimized />
           </div>
           <div className={styles.pInfo}>
             <span className={styles.stars} aria-hidden="true">{[0, 1, 2, 3, 4].map((n) => <Star key={n} size={11} />)}</span>
@@ -256,7 +256,7 @@ function BrandVisual() {
         <small>Display · Bold</small>
       </div>
       <div className={styles.packTile}>
-        <Image src="/images/showcase/thumbs/morrow.webp" alt="" fill unoptimized />
+        <Image src="/images/showcase/thumbs/sm/morrow.webp" alt="" fill unoptimized />
         <span>Packaging</span>
       </div>
       <div className={styles.swatches}>

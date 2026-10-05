@@ -49,7 +49,7 @@ export function WorkHeroDeck() {
           return (
             <figure key={card.label} className={styles.card} data-slot={slot} style={{ ["--deal" as string]: i }}>
               {card.kind === "video"
-                ? <HeroVideo className={styles.media} src={`/videos/ai/${card.src}-preview.mp4`} poster={`/videos/ai/${card.src}.jpg`} />
+                ? <HeroVideo className={styles.media} src={`/videos/ai/${card.src}-preview.mp4`} poster={`/videos/ai/${card.src}-sm.webp`} />
                 : <Image className={styles.media} src={card.src} alt="" fill sizes="280px" priority={i === 0} />}
               <figcaption>{card.label}</figcaption>
             </figure>

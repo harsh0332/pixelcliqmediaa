@@ -176,7 +176,7 @@ export function StudioZero() {
           <div className={styles.films}>
             {z.films.items.map((film) => (
               <div key={film} className={styles.film}>
-                <HeroVideo className={styles.filmVideo} src={`/videos/ai/${film}-preview.mp4`} poster={`/videos/ai/${film}.jpg`} />
+                <HeroVideo className={styles.filmVideo} src={`/videos/ai/${film}-preview.mp4`} poster={`/videos/ai/${film}-sm.webp`} />
               </div>
             ))}
           </div>

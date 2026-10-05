@@ -73,14 +73,15 @@ export const satoshiMedium = localFont({
   fallback: ["system-ui", "-apple-system", "Segoe UI", "sans-serif"],
 });
 
-/** Satoshi 700. Sub-headings (type-h3). */
+/** Satoshi 700. Headlines and sub-headings — preloaded for the hero. */
 export const satoshiBold = localFont({
   src: [
     { path: "../../public/fonts/Satoshi-Bold.woff2", weight: "700", style: "normal" },
   ],
   variable: "--font-satoshi-bold",
   display: "swap",
-  preload: false,
+  // The home hero headline (the LCP element) is set in this face.
+  preload: true,
   fallback: ["system-ui", "-apple-system", "Segoe UI", "sans-serif"],
 });
 

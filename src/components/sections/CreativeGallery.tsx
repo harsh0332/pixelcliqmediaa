@@ -33,7 +33,7 @@ const pieces = [
 const categories=["All","Fashion","Food & beverage","Beauty & lifestyle","Product & interiors"];
 type Piece = (typeof pieces)[number];
 function CreativeCard({piece}:{piece:Piece}) {
- return <article className={styles.card}><div className={styles.art}><Image draggable={false} src={`/images/showcase/${piece.id}.webp`} alt={`${piece.brand} concept campaign: ${piece.title}`} width={1024} height={1024} sizes="(max-width:600px) 65vw, 300px"/></div><div className={styles.caption}><span><strong>{piece.brand}</strong><small>{piece.category}</small></span></div></article>;
+ return <article className={styles.card}><div className={styles.art}><Image draggable={false} src={`/images/showcase/${piece.id}.webp`} alt={`${piece.brand} concept campaign: ${piece.title}`} width={1024} height={1024} sizes="(max-width:600px) 230px, 300px"/></div><div className={styles.caption}><span><strong>{piece.brand}</strong><small>{piece.category}</small></span></div></article>;
 }
 function CreativeRow({items,reverse=false,paused}:{items:Piece[];reverse?:boolean;paused:boolean}) {
  const rail=useRef<HTMLDivElement>(null);const drag=useRef<{x:number;left:number}|null>(null);const reduce=useReducedMotion();const [focused,setFocused]=useState(false);

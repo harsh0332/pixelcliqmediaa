@@ -75,7 +75,7 @@ export function HeroReel() {
           {film ? (
             <video
               src={`/videos/ai/${item.src}-preview.mp4`}
-              poster={`/videos/ai/${item.src}.jpg`}
+              poster={`/videos/ai/${item.src}-sm.webp`}
               muted
               loop
               playsInline

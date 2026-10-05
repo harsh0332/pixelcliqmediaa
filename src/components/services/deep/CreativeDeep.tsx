@@ -160,7 +160,7 @@ function FormatWall() {
           {d.formats.items.map((item, i) => (
             <figure key={item.label} className={styles.format} style={{ aspectRatio: item.ratio, ["--rise" as string]: (i % 3) + 1 }} data-rise>
               {item.kind === "video"
-                ? <HeroVideo className={styles.media} src={`/videos/ai/${item.src}-preview.mp4`} poster={`/videos/ai/${item.src}.jpg`} />
+                ? <HeroVideo className={styles.media} src={`/videos/ai/${item.src}-preview.mp4`} poster={`/videos/ai/${item.src}-sm.webp`} />
                 : <Image className={styles.media} src={img(item.src)} alt="" fill sizes="(max-width: 700px) 50vw, 22vw" />}
               <figcaption>{item.label}</figcaption>
             </figure>

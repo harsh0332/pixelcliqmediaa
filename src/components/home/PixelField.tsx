@@ -64,7 +64,7 @@ export function PixelField() {
     const pool = homeContent.hero.pixels.map((name) => {
       const img = new Image();
       img.decoding = "async";
-      img.src = `/images/showcase/thumbs/${name}.webp`;
+      img.src = `/images/showcase/thumbs/sm/${name}.webp`;
       return img;
     });
     const make = () => {

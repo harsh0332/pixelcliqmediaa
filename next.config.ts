@@ -24,14 +24,28 @@ const nextConfig: NextConfig = {
           { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=(), browsing-topics=()" },
         ],
       },
+      // Static media from /public: let browsers keep it for 30 days instead of
+      // re-downloading every visit. Replaced files should get a new name.
+      {
+        source: "/:dir(images|videos|animations|fonts|logos|3d)/:path*",
+        headers: [{ key: "Cache-Control", value: "public, max-age=2592000, stale-while-revalidate=86400" }],
+      },
     ];
   },
   async redirects() {
     return [{ source: "/services/strategic-marketing", destination: "/services/performance", permanent: true }];
   },
+  experimental: {
+    // Put the (small) CSS straight into the HTML so it no longer blocks the
+    // first paint behind three extra requests.
+    inlineCss: true,
+  },
   images: {
     // Serve modern formats first; the browser falls back automatically.
     formats: ["image/avif", "image/webp"],
+    // Extra in-between widths so small cards on phones get a 480px file
+    // instead of jumping straight to 640px.
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 320, 384, 480],
   },
   turbopack: {
     // Pin the workspace root. A stray lockfile in a parent directory otherwise

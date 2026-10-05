@@ -13,7 +13,7 @@ function FilmCard({film,active,onOpen,onClose,enabled,duplicate}:{film:VideoCrea
  <div className={`${styles.picture} ${film.landscape?styles.landscape:""} ${active?styles.active:""}`}>
  {active?<><video key={film.id} src={film.src} poster={film.poster} controls autoPlay playsInline preload="metadata" aria-label={film.title} onEnded={onClose}/><button className={styles.close} onClick={onClose} aria-label={`Close ${film.title}`}><X size={16}/></button></>:<button className={styles.open} onClick={onOpen} aria-label={`Play ${film.title}`} tabIndex={duplicate?-1:0}>
  <Image src={film.poster} alt={`${film.title} video still`} width={720} height={1280} sizes="(max-width:600px) 62vw, 240px" draggable={false}/>
- {film.preview&&<video ref={preview} muted loop playsInline preload="none" poster={film.poster} aria-hidden="true"/>}
+ {film.preview&&<video ref={preview} muted loop playsInline preload="none" aria-hidden="true"/>}
  <span className={styles.duration}>{Math.floor(film.duration/60)}:{String(film.duration%60).padStart(2,"0")}</span><span className={styles.play}><Play size={21} fill="currentColor"/></span>{film.preview&&<span className={styles.featured}>SELECTED FILM</span>}
  </button>}
  </div><div className={styles.caption}><strong>{film.title}</strong><span>{film.category}</span></div>
