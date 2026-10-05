@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
-import { BrokenLoop } from "@/components/legal/BrokenLoop";
+import { PixelFourOhFour } from "@/components/legal/PixelFourOhFour";
 import { notFoundPage } from "@/content/home";
 
 /**
@@ -16,9 +16,11 @@ export default function NotFound() {
       tone="bone"
       spacing="none"
       className="flex min-h-[80svh] items-center pt-[calc(var(--header-height)+4rem)] pb-20"
+      data-page-hero
+      data-dark-hero
     >
       <Container variant="narrow" className="text-center">
-        <BrokenLoop />
+        <PixelFourOhFour />
         <h1 className="type-display mx-auto mt-10 max-w-[14ch]">
           {notFoundPage.headline}
         </h1>

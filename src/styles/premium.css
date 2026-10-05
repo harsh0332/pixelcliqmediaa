@@ -103,7 +103,7 @@ body:has([data-dark-hero]) .site-header:not([data-scrolled]):not(:has([role="dia
 @property --svc {
   syntax: "<color>";
   inherits: true;
-  initial-value: #0c2034;
+  initial-value: #082f57;
 }
 #services { transition: --svc 1.1s cubic-bezier(0.22, 0.8, 0.24, 1); }
 
@@ -185,7 +185,7 @@ main [data-dark-hero].contact-refresh ol { background: #ffffff14 !important; }
 main [data-dark-hero]:not([data-hero-section]) [class*="promise"] { color: #e3effb; }
 /* Large accented headings on dark bands use a soft periwinkle; lime is kept
    for buttons, numbers and small marks so it never fills the eye. */
-main [data-tone="inverse"] :is(h2, h3) em { color: #aed6ff !important; }
+main [data-tone="inverse"] :is(h2, h3) em { color: #d6f06e !important; }
 
 /* Keep illustration labels legible inside the dark service hero. */
 main [data-dark-hero] [data-service-visual] { --ink:#082f57; --ink-soft:#2f4b69; --accent:#0a6fd0; color:#082f57; }
@@ -195,8 +195,8 @@ main [data-dark-hero] [data-service-visual] p { color:#536079 !important; }
 :root {
   --brand-blue:#238be2;
   --brand-blue-field:radial-gradient(ellipse at 78% 16%,#52a9ef55,transparent 58%),linear-gradient(145deg,#238be2,#2084d6);
-  --accent:#0872bd;
-  --accent-deep:#075d9c;
+  --accent:#0a6fd0;
+  --accent-deep:#0868ad;
   --accent-fg:#0868ad;
   --accent-wash:#e8f5ff;
 }
@@ -220,7 +220,7 @@ main [data-dark-hero]:not([data-hero-section]) :is(h1,h2) { color:#082f57; }
 main [data-dark-hero]:not([data-hero-section]) h1 em,
 main [data-dark-hero]:not([data-hero-section]) [data-hero-line]:not(:first-child) > span { color:#075da5 !important; }
 main [data-dark-hero]:not([data-hero-section]) .bg-accent { background:#082f57; color:#fff !important; }
-main [data-dark-hero]:not([data-hero-section]) [data-hero-support] { border-left-color:#0872bd !important; }
+main [data-dark-hero]:not([data-hero-section]) [data-hero-support] { border-left-color:#0a6fd0 !important; }
 main [data-dark-hero]:not([data-hero-section]) [data-hero-rule] { background:#124b7326; }
 main [data-dark-hero]::after { opacity:.10; }
 
@@ -239,3 +239,13 @@ main [data-dark-hero].contact-refresh :is(dl, ol) {
 main [data-dark-hero].contact-refresh ol { background: #ffffff38 !important; }
 main [data-dark-hero].contact-refresh h1 em { color: #fff !important; }
 main [data-dark-hero].contact-refresh :is(dl li, dl a, ol p, ol li) { font-weight: 600; }
+
+/* ==========================================================================
+   One palette. Two button styles: navy on light surfaces, lime on dark ones.
+   Borders on form fields take a cool slate instead of the old warm stone.
+   ========================================================================== */
+:root { --line-field: #7d8ea4; }
+:is(a, button).bg-accent { background-color: #082f57; color: #fff; }
+:is(a, button).bg-accent:is(:hover, :focus-visible, :active) { background-color: #0a6fd0; }
+:is([data-tone="inverse"], .surface-inverse) :is(a, button).bg-accent { background-color: #d6f06e; color: #082f57 !important; }
+:is([data-tone="inverse"], .surface-inverse) :is(a, button).bg-accent:is(:hover, :focus-visible) { background-color: #e4f59a; }

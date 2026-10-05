@@ -12,7 +12,7 @@
 .note { margin: 14px 0 0; font-size: 12.5px; color: #56697f; }
 
 /* ---- Growth story ------------------------------------------------------ */
-.story { position: relative; background: radial-gradient(70% 60% at 85% 20%, #1685e433, transparent 70%), #061f3a; color: #fff; }
+.story { position: relative; background: radial-gradient(70% 60% at 85% 20%, #1685e433, transparent 70%), #082f57; color: #fff; }
 .storyPin { padding: clamp(72px, 9vw, 120px) 0; }
 .storyGrid { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: clamp(32px, 5vw, 80px); align-items: center; }
 .milestone { padding: 24px 26px; border-radius: 20px; background: #ffffff0f; border: 1px solid #ffffff1f; }

@@ -9,7 +9,6 @@ import { notFound } from "next/navigation";
 import journalStyles from "@/components/insights/InsightsIndex.module.css";
 import Link from "next/link";
 import { BalancedHeading } from "@/components/ui/BalancedHeading";
-import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Section } from "@/components/ui/Section";
@@ -17,8 +16,7 @@ import { ArticleBody } from "@/components/insights/ArticleBody";
 import { ReadingProgress } from "@/components/insights/ReadingProgress";
 import { ShareRail } from "@/components/insights/ShareRail";
 import { insights } from "@/content/insights";
-import { closingCta, insightsPage, insightsSection } from "@/content/home";
-import { site } from "@/content/site";
+import { insightsPage, insightsSection } from "@/content/home";
 
 
 /**
@@ -125,6 +123,8 @@ export default async function ArticlePage({
         spacing="tight"
         className="pt-[calc(var(--header-height)+4rem)]"
         aria-labelledby="article-heading"
+        data-page-hero
+        data-dark-hero
       >
         <Container variant="prose">
           <Eyebrow as="p">{article.category}</Eyebrow>
@@ -212,18 +212,6 @@ export default async function ArticlePage({
         </Container>
       </Section>
 
-      <Section tone="bone" spacing="tight" aria-labelledby="article-cta-heading">
-        <Container variant="narrow" className="text-center">
-          <h2 id="article-cta-heading" className="type-h1 mx-auto max-w-[14ch]">
-            {closingCta.headline}
-          </h2>
-          <div className="mt-8">
-            <Button href={site.primaryCta.href} size="lg">
-              {site.primaryCta.label}
-            </Button>
-          </div>
-        </Container>
-      </Section>
     </>
   );
 }

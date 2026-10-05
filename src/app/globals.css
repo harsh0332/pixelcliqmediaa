@@ -19,7 +19,7 @@
 
   --bone: #f7f5f0;         /* PRIMARY PAGE BACKGROUND — warm ivory */
   --paper: #ffffff;        /* raised surfaces: cards, form fields */
-  --sand: #efebe3;         /* secondary raised surface, alternating bands */
+  --sand: #eaf2fb;         /* secondary raised surface, alternating bands */
   /* The one support tone. A muted slate for the large flat areas inside
      diagrams and placeholder frames, so they are not all beige. FILLS ONLY —
      never text, never a button, never a section background. 2.26:1 on bone,
@@ -29,7 +29,7 @@
   --support: #a2a5ad;
 
   --line: #e2ddd3;         /* hairline borders — the workhorse */
-  --line-strong: #c9c2b4;  /* emphasised dividers */
+  --line-strong: #bec9dc;  /* emphasised dividers */
   --line-field: #8d8678;   /* the ONLY border colour permitted on interactive
                               form controls — 3.32:1 on bone, meets WCAG 1.4.11
                               for UI component boundaries. --line fails it. */

@@ -16,7 +16,7 @@ export default function HomePage() {
       <ServiceExplorer />
       {/* The work bands paint their own backgrounds; the light tint keeps the
           page colour behind them from flashing dark at their edges. */}
-      <div id="work" data-tint="#f6f5f1">
+      <div id="work" data-tint="#f3f8fd">
         <PortfolioStage kind="both" />
       </div>
       <StartSteps />

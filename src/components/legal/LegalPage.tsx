@@ -1,4 +1,5 @@
 import { Container } from "@/components/ui/Container";
+import { PageHero } from "@/components/sections/PageHero";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Section } from "@/components/ui/Section";
 import type { LegalDocument } from "@/content/legal";
@@ -18,11 +19,15 @@ export function LegalPage({ doc }: { doc: LegalDocument }) {
   }).format(new Date(doc.updated));
 
   return (
-    <Section
-      tone="bone"
-      className="pt-[calc(var(--header-height)+4rem)]"
-      aria-labelledby="legal-heading"
-    >
+    <>
+    <PageHero
+      id="legal-heading"
+      eyebrow="Legal"
+      headlineLines={[doc.title, "In plain language."]}
+      support={doc.intro}
+      ctas={<p className="type-caption">Last updated <time dateTime={doc.updated}>{updated}</time></p>}
+    />
+    <Section tone="bone" aria-label={doc.title}>
       <Container>
         <div className="lg:grid lg:grid-cols-12 lg:gap-12">
           <div className="lg:col-span-3">
@@ -48,20 +53,9 @@ export function LegalPage({ doc }: { doc: LegalDocument }) {
 
           <div className="mt-12 lg:col-span-8 lg:col-start-5 lg:mt-0">
             <div className="max-w-prose">
-              <Eyebrow as="p">Legal</Eyebrow>
-              <h1 id="legal-heading" className="type-h1 mt-5">
-                {doc.title}
-              </h1>
-              <p className="type-caption mt-4">
-                Last updated{" "}
-                <time dateTime={doc.updated}>{updated}</time>
-              </p>
-              <p className="type-body-lg mt-8 leading-[1.7] text-ink-soft">
-                {doc.intro}
-              </p>
 
               {doc.sections.map((section) => (
-                <section key={section.id} id={section.id} className="mt-14">
+                <section key={section.id} id={section.id} className="mt-14 first:mt-0">
                   <h2 className="type-h2">{section.heading}</h2>
                   {section.body.map((paragraph) => (
                     <p
@@ -84,6 +78,7 @@ export function LegalPage({ doc }: { doc: LegalDocument }) {
         </div>
       </Container>
     </Section>
+    </>
   );
 }
 

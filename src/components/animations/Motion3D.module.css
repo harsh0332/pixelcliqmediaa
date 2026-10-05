@@ -3,7 +3,7 @@
 .wrap::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(#ffffff12 1px,transparent 1px) 0 0/44px 44px,linear-gradient(90deg,#ffffff12 1px,transparent 1px) 0 0/44px 44px;-webkit-mask-image:linear-gradient(90deg,transparent 10%,#000 70%);mask-image:linear-gradient(90deg,transparent 10%,#000 70%)}
 .wrap>div>span{font-size:10px;font-weight:700;letter-spacing:.16em;color:#9cc8ef}.wrap h3{font:700 clamp(28px,3vw,44px)/1.05 var(--font-sans-bold-stack);letter-spacing:-.04em;margin:18px 0}.wrap p{font-size:14px;line-height:1.6;color:#c9dcef;max-width:36ch}
 .wrap button{margin-top:23px;background:#d6f06e;color:#082f57;padding:13px 20px;border-radius:99px;font-size:13px;font-weight:700;cursor:pointer;transition:transform .25s}.wrap button:hover{transform:translateY(-2px)}
-.wrap iframe{border:0;width:100%;height:410px;border-radius:10px;background:#06284a}
+.wrap iframe{border:0;width:100%;height:410px;border-radius:10px;background:#082f57}
 .orbit{height:280px;position:relative;display:grid;place-items:center;overflow:hidden;perspective:700px}
 .orbit span{position:absolute;width:210px;height:210px;border:1px solid #4f8fd0;border-radius:50%;transform:rotateX(62deg) rotateZ(30deg)}.orbit span:nth-child(2){transform:rotateY(62deg) rotateZ(-30deg);border-color:#d6f06e99}
 /* A pixel cube: six faces, two of them lime. */

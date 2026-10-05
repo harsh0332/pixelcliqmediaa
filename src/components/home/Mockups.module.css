@@ -15,7 +15,7 @@
   background:
     radial-gradient(90% 70% at 12% 0%, var(--glow), transparent 62%),
     radial-gradient(60% 50% at 100% 100%, #ffffff, transparent 70%),
-    linear-gradient(160deg, #f6f5f1, #eceae3 80%);
+    linear-gradient(160deg, #f3f8fd, #e6eef8 80%);
   box-shadow: inset 0 0 0 1px #082f570d;
 }
 .frame_design { --glow: #ff6fae33; }

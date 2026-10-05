@@ -75,7 +75,7 @@
 .dark .eyebrow { color: #9fd0ff; }
 .title { margin: 0; font: 700 clamp(42px, 5.6vw, 84px) / 0.98 var(--font-sans-bold-stack) !important; letter-spacing: -0.055em !important; }
 .title em { font-family: var(--font-instrument), Georgia, serif !important; font-style: italic !important; font-weight: 400 !important; letter-spacing: -0.03em; color: #0a6fd0 !important; display: block; }
-.dark .title em { color: #9fd0ff !important; }
+.dark .title em { color: #d6f06e !important; }
 .lead { margin: 0; font-size: clamp(16px, 1.25vw, 18.5px); line-height: 1.6; color: #4a5d70; }
 
 /* The shift: what you no longer need. */
@@ -94,7 +94,7 @@
 .size { position: absolute; left: 14px; top: 14px; padding: 6px 10px; border-radius: 99px; background: #082f57cc; color: #fff; font-size: 11px; font-weight: 700; }
 .v_models { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; padding: 14px; }
 .model { position: relative; overflow: hidden; border-radius: 14px; }
-.v_aplus { display: grid; place-items: center; padding: 18px; background: linear-gradient(135deg, #e3f1fd, #f6f5f1); }
+.v_aplus { display: grid; place-items: center; padding: 18px; background: linear-gradient(135deg, #e3f1fd, #f3f8fd); }
 .aplus { display: grid; grid-template-columns: 0.9fr 1.1fr; align-items: center; gap: 18px; width: 100%; height: 100%; padding: 16px; border-radius: 16px; background: #fff; box-shadow: 0 20px 40px -30px #082f5799; }
 .aplusImg { position: relative; height: 100%; min-height: 160px; overflow: hidden; border-radius: 12px; }
 .aplusText small { display: block; font-size: 10.5px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #0868ad; }

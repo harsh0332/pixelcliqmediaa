@@ -11,7 +11,7 @@ import styles from "./Home.module.css";
 export function StartSteps() {
   const { start } = homeContent;
   return (
-    <section id="how-we-start" data-tint="#f6f5f1" aria-labelledby="start-heading" className={`${styles.start} tinted`}>
+    <section id="how-we-start" aria-labelledby="start-heading" className={styles.start}>
       <div className={styles.shell}>
         <div className={styles.startHead} data-rise>
           <p className={styles.eyebrowInk}>{start.eyebrow}</p>
@@ -45,7 +45,7 @@ export function StartSteps() {
 export function Standard() {
   const { standard } = homeContent;
   return (
-    <section id="our-standard" data-tint="#ffffff" aria-labelledby="standard-heading" className={`${styles.standard} tinted`}>
+    <section id="our-standard" aria-labelledby="standard-heading" className={styles.standard}>
       <div className={styles.shell}>
         <div className={styles.splitHead} data-rise>
           <div>
@@ -67,7 +67,7 @@ export function Standard() {
           {comparisonRows.map((row, i) => (
             <div key={row.id} className={styles.sheetRow} role="row" data-rise style={{ ["--rise" as string]: i + 1 }}>
               <span role="rowheader" className={styles.dimension}>{row.dimension}</span>
-              <span role="cell" className={styles.typical}>{row.typical}</span>
+              <span role="cell" className={styles.typical}><span className={styles.strike}>{row.typical}</span></span>
               <span role="cell" className={styles.ours}>
                 <Check size={16} strokeWidth={3} aria-hidden="true" />
                 {row.pixelcliq}
@@ -83,7 +83,7 @@ export function Standard() {
 export function HomeFaq() {
   const { faq } = homeContent;
   return (
-    <section id="faq" data-tint="#f6f5f1" aria-labelledby="home-faq-heading" className={`${styles.faq} tinted`}>
+    <section id="faq" data-tint="#f3f8fd" aria-labelledby="home-faq-heading" className={`${styles.faq} tinted`}>
       <div className={`${styles.shell} ${styles.faqGrid}`}>
         <div data-rise>
           <p className={styles.eyebrow}>{faq.eyebrow}</p>

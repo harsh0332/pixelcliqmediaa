@@ -6,7 +6,7 @@
 .explorer {
   --gutter: clamp(20px, 4vw, 64px);
   --ink: #082f57;
-  --muted: #6f6c5d;
+  --muted: #56697f;
   --blue: #0868ad; /* one step deeper: holds AA on every service tint */
   position: relative;
   padding: clamp(80px, 10vw, 150px) 0 clamp(64px, 8vw, 120px);

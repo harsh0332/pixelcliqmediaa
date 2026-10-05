@@ -7,6 +7,7 @@ import { buildMetadata } from "@/lib/seo";
 import { PageHero } from "@/components/sections/PageHero";
 import { ScrollTint } from "@/components/home/ScrollTint";
 import { ServiceExplorer } from "@/components/home/ServiceExplorer";
+import { StartChooser } from "@/components/services/StartChooser";
 
 
 
@@ -38,6 +39,7 @@ export default function ServicesIndexPage() {
    <ScrollTint />
    <PageHero id="services-index-heading" eyebrow="D2C FIRST. FULL-SERVICE BY DESIGN." headlineLines={["Bold thinking.", "Real execution."]} support="Creative, media, commerce and technology. Find the expertise your business needs now, with the room to connect more as you grow." />
    <ServiceExplorer />
+   <StartChooser />
 
 
   </>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { GalleryNudge } from "@/components/work/GalleryNudge";
 import { buildMetadata } from "@/lib/seo";
 import { PageHero } from "@/components/sections/PageHero";
 import { CreativeGallery } from "@/components/sections/CreativeGallery";
@@ -23,7 +24,7 @@ export default function CreativeShowcasePage() {
           <p className="font-[family-name:var(--font-sans-bold-stack)] text-2xl tracking-[-0.03em] text-[#082f57] md:text-3xl">Explore the visual side of Pixelcliq.</p>
           <Link href="/work" className="type-button">All portfolio collections ↗</Link>
         </div>
-        <CreativeGallery />
+        <GalleryNudge label="Want a world like this for your brand?"><CreativeGallery /></GalleryNudge>
       </Container>
     </section>
   </>;
