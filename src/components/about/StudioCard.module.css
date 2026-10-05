@@ -1,0 +1,22 @@
+.card { padding: clamp(24px, 3vw, 40px); border-radius: 28px; background: #082f57; color: #fff; box-shadow: 0 50px 90px -60px #082f57; }
+.clockRow { display: flex; align-items: center; gap: clamp(20px, 3vw, 36px); padding-bottom: 26px; border-bottom: 1px solid #ffffff1f; }
+.dial { position: relative; flex: none; width: 112px; height: 112px; border-radius: 50%; background: radial-gradient(circle, #0b3763 58%, #0a6fd0 59%, #0a6fd0 62%, #0b3763 63%); box-shadow: inset 0 0 0 1px #ffffff26; }
+.dial::before { content: ""; position: absolute; left: 50%; top: 50%; width: 8px; height: 8px; margin: -4px; border-radius: 50%; background: #d6f06e; z-index: 1; }
+.dial i { position: absolute; left: calc(50% - 1.5px); bottom: 50%; width: 3px; height: 38%; border-radius: 3px; background: #d6f06e; transform-origin: 50% 100%; transform: rotate(calc(var(--turn) * 360deg)); transition: transform 1s cubic-bezier(0.2, 0.7, 0.2, 1); }
+.label { margin: 0; font-size: 12px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #9fd0ff; }
+.time { margin: 6px 0 0; font: 700 clamp(44px, 4.6vw, 64px) / 1 var(--font-sans-bold-stack); letter-spacing: -0.05em; font-variant-numeric: tabular-nums; }
+.status { display: flex; align-items: center; gap: 8px; margin: 10px 0 0; font-size: 14px; font-weight: 700; color: #dcebfa; }
+.status span { width: 8px; height: 8px; border-radius: 50%; }
+.on { background: #d6f06e; box-shadow: 0 0 0 4px #d6f06e33; }
+.off { background: #74baf0; }
+@media (prefers-reduced-motion: no-preference) { .on { animation: pulse 2s ease-in-out infinite; } }
+@keyframes pulse { 50% { box-shadow: 0 0 0 8px #d6f06e00; } }
+.facts { display: grid; margin: 0; }
+.facts div { display: grid; grid-template-columns: 130px 1fr; gap: 16px; padding: 18px 0; border-bottom: 1px solid #ffffff14; }
+.facts div:last-child { border-bottom: 0; padding-bottom: 0; }
+.facts dt { font-size: 12px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: #9fd0ff; }
+.facts dd { margin: 0; font-size: 16px; font-weight: 700; }
+@media (max-width: 520px) {
+  .dial { width: 84px; height: 84px; }
+  .facts div { grid-template-columns: 1fr; gap: 4px; }
+}

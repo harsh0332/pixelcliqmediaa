@@ -60,12 +60,12 @@ export const homeContent = {
       { kind: "image", src: "interval", brand: "Interval", tag: "Studio concept" },
     ],
     cards: {
-      a: "01 / Brand worlds",
+      a: "Brand worlds",
       statementTop: "Creative × Commerce",
       statementA: "Made to stop.",
       statementB: "Built to move.",
       statementLink: "Explore the studio",
-      c: "02 / AI video & campaigns",
+      c: "AI video & campaigns",
     },
     form: {
       label: "Book a free growth call",
@@ -77,7 +77,7 @@ export const homeContent = {
     },
   },
   explorer: {
-    eyebrow: "01 / Services",
+    eyebrow: "Services",
     title: "How we grow",
     titleAccent: "brands",
     intro:
@@ -136,7 +136,7 @@ export const homeContent = {
     ],
   },
   start: {
-    eyebrow: "03 / How we start",
+    eyebrow: "How we start",
     titleA: "From first call",
     titleB: "to first launch.",
     steps: [
@@ -147,7 +147,7 @@ export const homeContent = {
     cta: "Book a free growth call",
   },
   standard: {
-    eyebrow: "04 / Our standard",
+    eyebrow: "Our standard",
     titleA: "What you can",
     titleB: "hold us to.",
     intro: "How most growth work is set up, and how we set it up instead.",
@@ -155,7 +155,7 @@ export const homeContent = {
     oursLabel: "The Pixelcliq way",
   },
   faq: {
-    eyebrow: "05 / Questions",
+    eyebrow: "Questions",
     titleA: "Before we",
     titleB: "get started.",
     note: "A few things founders usually ask on the first call.",

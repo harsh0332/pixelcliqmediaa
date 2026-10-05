@@ -18,7 +18,7 @@ export function RefinedHome() {
       <PortfolioStage kind="both" />
       <section className={styles.beyond} aria-labelledby="beyond-heading">
         <Container className={styles.beyondGrid}>
-          <div><p className={styles.eyebrow}>03 / Beyond D2C</p><h2 id="beyond-heading" className={styles.heading}>Different business.<br /><em>Same growth mindset.</em></h2><p className={styles.intro}>D2C is our speciality. Our capabilities go further. We help service businesses, educators and growing brands turn interest into their next customer.</p><Link href="/contact" className={styles.textLink}>Build your growth plan <ArrowUpRight size={19} /></Link></div>
+          <div><p className={styles.eyebrow}>Beyond D2C</p><h2 id="beyond-heading" className={styles.heading}>Different business.<br /><em>Same growth mindset.</em></h2><p className={styles.intro}>D2C is our speciality. Our capabilities go further. We help service businesses, educators and growing brands turn interest into their next customer.</p><Link href="/contact" className={styles.textLink}>Build your growth plan <ArrowUpRight size={19} /></Link></div>
           <div className={styles.beyondList}>{[
             ["01", "Ads & lead generation", "Meta and Google campaigns, lead capture and CRM follow-ups.", "/services/performance"],
             ["02", "Course & webinar funnels", "Launch journeys, registration pages and nurture sequences.", "/services/strategic-marketing"],
@@ -30,7 +30,7 @@ export function RefinedHome() {
       <section id="compound-loop" data-tone="inverse" aria-labelledby="approach-heading" className={styles.approach}>
         <Container>
           <div className={styles.sectionHeading}>
-            <div><p className={styles.eyebrow}>04 / How we work</p><h2 id="approach-heading" className={styles.heading}>One direction.<br /><em>Every detail connected.</em></h2></div>
+            <div><p className={styles.eyebrow}>How we work</p><h2 id="approach-heading" className={styles.heading}>One direction.<br /><em>Every detail connected.</em></h2></div>
             <p className={styles.intro}>The ad earns attention. The page builds confidence. The follow-up brings people back. We plan for the whole journey.</p>
           </div>
           <GrowthProcess />
@@ -39,7 +39,7 @@ export function RefinedHome() {
       </section>
       <section aria-labelledby="home-faq-heading" className={styles.faq}>
         <Container className={styles.faqGrid}>
-          <div><p className={styles.eyebrow}>05 / A little clarity</p><h2 id="home-faq-heading" className={styles.heading}>Before we<br /><em>get started.</em></h2><p className={styles.faqNote}>A few things you might be wondering.</p></div>
+          <div><p className={styles.eyebrow}>A little clarity</p><h2 id="home-faq-heading" className={styles.heading}>Before we<br /><em>get started.</em></h2><p className={styles.faqNote}>A few things you might be wondering.</p></div>
           <Accordion items={refinedHome.faqs} />
         </Container>
       </section>
