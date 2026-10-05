@@ -163,3 +163,83 @@
   .ring { width: 190px; height: 190px; }
   .ring span { transform: translate(-50%, -50%) rotate(calc(var(--n) * 90deg - 90deg)) translate(95px) rotate(calc(var(--n) * -90deg + 90deg)); font-size: 11px; }
 }
+
+/* ==== Service scenes ==================================================== */
+/* Structure: one account, three campaign families. */
+.vTree { display: grid; justify-items: center; align-content: center; gap: 0; padding: 28px; }
+.treeRoot { padding: 12px 22px; border-radius: 14px; background: #082f57; color: #fff; font-weight: 800; font-size: 14px; }
+.treeStem { width: 2px; height: 34px; background: #0a6fd0; transform: scaleY(0); transform-origin: top; }
+.treeKids { position: relative; display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; width: 100%; padding-top: 22px; border-top: 2px solid #0a6fd0; }
+.treeKids span { display: grid; justify-items: center; gap: 8px; padding: 16px 8px; border-radius: 14px; background: #fff; box-shadow: 0 14px 30px -20px #082f5799; font-size: 13px; font-weight: 800; opacity: 0; transform: translateY(10px); }
+.treeKids i { width: 10px; height: 10px; border-radius: 50%; background: #d6f06e; box-shadow: 0 0 0 4px #d6f06e44; }
+
+/* Creatives: a fan of ads, one gets the winner badge. */
+.vCreatives { display: grid; place-items: center; }
+.vCreatives figure { position: absolute; width: 38%; aspect-ratio: 4 / 5; margin: 0; overflow: hidden; border-radius: 14px; box-shadow: 0 24px 40px -24px #082f57; transform: translateX(calc((var(--n) - 1) * 70%)) rotate(calc((var(--n) - 1) * 8deg)); }
+.vCreatives figure img { object-fit: cover; }
+.winner { position: absolute; top: 18px; right: 18px; padding: 7px 12px; border-radius: 99px; background: #d6f06e; color: #082f57; font-size: 12px; font-weight: 800; opacity: 0; transform: translateY(-8px); }
+
+/* A/B: two hooks race; B wins. */
+.vAB { display: grid; align-content: center; gap: 14px; padding: 28px; }
+.abCard { display: grid; grid-template-columns: 36px 1fr; align-items: center; gap: 6px 14px; padding: 16px; border-radius: 16px; background: #fff; box-shadow: 0 14px 30px -20px #082f5799; }
+.abCard b { grid-row: span 2; display: grid; place-items: center; width: 36px; height: 36px; border-radius: 10px; background: #082f57; color: #fff; }
+.abCard span { font-size: 14px; font-weight: 700; }
+.abCard i { height: 10px; border-radius: 10px; background: #082f5714; overflow: hidden; }
+.abCard em { display: block; height: 100%; width: var(--w); border-radius: 10px; background: #0a6fd0; transform: scaleX(0); transform-origin: left; }
+.abCard:nth-child(2) em { background: linear-gradient(90deg, #1685e4, #d6f06e); }
+.abWin { justify-self: start; padding: 7px 13px; border-radius: 99px; background: #082f57; color: #d6f06e; font-size: 12px; font-weight: 800; opacity: 0; }
+
+/* Budget: equal bars rebalance towards what earns. */
+.vBudget { display: grid; align-content: center; gap: 14px; padding: 28px; }
+.budgetRow { display: grid; grid-template-columns: 80px 1fr; align-items: center; gap: 12px; font-size: 13px; font-weight: 800; }
+.budgetRow i { height: 16px; border-radius: 16px; background: #082f5714; overflow: hidden; }
+.budgetRow b { display: block; height: 100%; width: 45%; border-radius: 16px; background: linear-gradient(90deg, #0a6fd0, #1685e4); }
+
+/* Report: KPI tiles and a line that draws itself. */
+.vReport { display: grid; place-items: center; padding: 24px; }
+.reportCard { width: 100%; padding: 20px; border-radius: 16px; background: #fff; box-shadow: 0 24px 50px -30px #082f57; }
+.reportCard small { font-size: 11px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: #56697f; }
+.kpis { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 14px 0; }
+.kpis span { display: grid; gap: 8px; padding: 12px; border-radius: 12px; background: #f3f8fd; }
+.kpis em { font-style: normal; font-size: 11.5px; font-weight: 800; color: #0868ad; }
+.kpis b { height: 14px; width: 0; border-radius: 6px; background: #082f57; }
+.reportCard svg { width: 100%; height: 70px; }
+.reportCard path { fill: none; stroke: #0a6fd0; stroke-width: 3; stroke-linecap: round; stroke-dasharray: 320; stroke-dashoffset: 320; }
+
+/* Angles: hooks get added to the bank one by one. */
+.vAngles { display: flex; flex-wrap: wrap; align-content: center; justify-content: center; gap: 10px; padding: 28px; }
+.vAngles span { display: inline-flex; align-items: center; gap: 8px; padding: 11px 16px; border-radius: 99px; background: #fff; box-shadow: 0 12px 26px -18px #082f5799; font-size: 14px; font-weight: 800; opacity: 0; transform: scale(0.8); }
+.vAngles svg { padding: 2px; border-radius: 50%; background: #d6f06e; }
+
+/* Formats: one idea, three sizes. */
+.vFormats { display: flex; align-items: center; justify-content: center; gap: 14px; padding: 24px; }
+.vFormats figure { position: relative; height: 70%; margin: 0; overflow: hidden; border-radius: 12px; box-shadow: 0 20px 40px -24px #082f57; opacity: 0; transform: translateY(16px); }
+.vFormats figure:nth-child(1) { height: 82%; }
+.vFormats img { object-fit: cover; }
+.vFormats figcaption { position: absolute; left: 8px; bottom: 8px; padding: 4px 8px; border-radius: 99px; background: #082f57cc; color: #fff; font-size: 10.5px; font-weight: 800; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .on .treeStem { animation: grow 0.5s ease-out forwards; }
+  .on .treeKids span { animation: pop 0.5s ease-out forwards; animation-delay: calc(0.5s + var(--n) * 0.2s); }
+  .on .vCreatives figure { animation: fan 6s ease-in-out infinite; animation-delay: calc(var(--n) * -2s); }
+  .on .winner { animation: pop 0.4s ease-out 1.2s forwards; }
+  .on .abCard em { animation: fill 1.6s cubic-bezier(0.4, 0, 0.2, 1) forwards; animation-delay: calc(0.2s + var(--n) * 0.15s); }
+  .on .abWin { animation: pop 0.4s ease-out 2s forwards; }
+  .on .budgetRow b { animation: rebalance 1.8s cubic-bezier(0.4, 0, 0.2, 1) 0.4s forwards; }
+  .on .kpis b { animation: kpi 0.8s ease-out forwards; animation-delay: calc(0.3s + var(--n) * 0.2s); }
+  .on .reportCard path { animation: draw 1.8s ease-out 0.4s forwards; }
+  .on .vAngles span { animation: pop 0.4s ease-out forwards; animation-delay: calc(0.2s + var(--n) * 0.25s); }
+  .on .vFormats figure { animation: pop 0.5s ease-out forwards; animation-delay: calc(0.2s + var(--n) * 0.25s); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .treeStem { transform: none; } .treeKids span, .winner, .abWin, .vAngles span, .vFormats figure { opacity: 1; transform: none; }
+  .abCard em { transform: none; } .budgetRow b { width: var(--to); } .kpis b { width: 70%; } .reportCard path { stroke-dashoffset: 0; }
+}
+@keyframes fan {
+  0%, 30% { transform: translateX(calc((var(--n) - 1) * 70%)) rotate(calc((var(--n) - 1) * 8deg)); z-index: 1; }
+  33%, 63% { transform: translateX(0) rotate(0) scale(1.08); z-index: 3; }
+  66%, 100% { transform: translateX(calc((var(--n) - 1) * 70%)) rotate(calc((var(--n) - 1) * 8deg)); z-index: 1; }
+}
+@keyframes rebalance { to { width: var(--to); } }
+@keyframes kpi { to { width: 70%; } }
+@keyframes draw { to { stroke-dashoffset: 0; } }
