@@ -11,10 +11,13 @@
 .headLight .title { color: #fff; }
 .headLight .title em { color: #d6f06e !important; }
 .note { margin: 16px 0 0; font-size: 12.5px; color: #56697f; }
-.hint { margin: 0 0 18px; font-size: 13px; font-weight: 700; color: #56697f; }
+.hint { margin: 0; font-size: 13px; font-weight: 700; color: #56697f; }
 
 /* ---- Anatomy -------------------------------------------------------------- */
-.anatomy { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 0.85fr); gap: clamp(32px, 5vw, 96px); align-items: center; }
+.anatomy { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 0.85fr); gap: 24px clamp(32px, 5vw, 96px); align-items: center; }
+.anatomyHead { grid-column: 1; grid-row: 1; align-self: end; }
+.anatomyList { grid-column: 1; grid-row: 2; align-self: start; }
+.anatomy .phone { grid-column: 2; grid-row: 1 / span 2; }
 .parts { display: grid; gap: 8px; margin: 0; padding: 0; list-style: none; }
 .parts button { display: flex; align-items: flex-start; gap: 16px; width: 100%; padding: 16px 18px; border-radius: 18px; text-align: left; background: transparent; border: 1px solid transparent; cursor: pointer; transition: background-color 0.3s, border-color 0.3s; }
 .parts button[aria-pressed="true"] { background: #fff; border-color: #0a6fd033; box-shadow: 0 24px 50px -40px #082f57; }
@@ -96,8 +99,12 @@
 .format figcaption { position: absolute; left: 12px; bottom: 12px; padding: 6px 11px; border-radius: 99px; background: #082f57d9; color: #fff; font-size: 12px; font-weight: 800; }
 
 @media (max-width: 1000px) {
-  .anatomy { grid-template-columns: 1fr; }
-  .phone { grid-row: 1; }
+  .anatomy { grid-template-columns: 1fr; row-gap: 24px; }
+  .anatomyHead, .anatomyList, .anatomy .phone { grid-column: 1; grid-row: auto; }
+  .anatomy .phone { width: min(78%, 300px); order: 1; }
+  .anatomyList { order: 2; }
+  .lProof { left: 44%; font-size: 11px; padding: 6px 10px; }
+  .lHook { font-size: 15px; }
   .formats { display: grid; grid-template-columns: repeat(2, 1fr); align-items: end; }
 }
 @media (max-width: 640px) {

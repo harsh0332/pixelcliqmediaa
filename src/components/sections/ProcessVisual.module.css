@@ -20,3 +20,4 @@
 @keyframes draw{0%{stroke-dashoffset:450}60%,100%{stroke-dashoffset:0}}
 @media(max-width:600px){.top{padding:18px 18px 0;font-size:8px}.figure figcaption{padding:12px 16px;font-size:10px}.figure{border-radius:12px}}
 @media(prefers-reduced-motion:reduce){.figure *{animation:none!important}}
+@media(max-width:600px){.top{font-size:9.5px}}

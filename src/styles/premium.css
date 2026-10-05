@@ -227,3 +227,15 @@ main [data-dark-hero]::after { opacity:.10; }
 main [data-dark-hero]:not([data-hero-section]) aside p { color:#214e72; }
 
 :root { --brand-blue-field:linear-gradient(180deg,#1685e4 0%,#218ee9 28%,#74baf0 51%,#d9eefc 76%,#fff 100%); }
+
+/* Contact hero: the details and next-steps sit on the cobalt field, so they
+   take ink rather than the muted greys that wash out on blue. */
+main [data-dark-hero].contact-refresh :is(dl, ol) {
+  --ink-soft: #0b3763;
+  --ink-muted: #1d456f;
+  --line: #ffffff59;
+  color: #082f57;
+}
+main [data-dark-hero].contact-refresh ol { background: #ffffff38 !important; }
+main [data-dark-hero].contact-refresh h1 em { color: #fff !important; }
+main [data-dark-hero].contact-refresh :is(dl li, dl a, ol p, ol li) { font-weight: 600; }

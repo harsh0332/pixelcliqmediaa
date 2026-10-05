@@ -322,3 +322,7 @@
   .offerRow input { text-align: center; padding: 0 14px; }
   .offerRow button { justify-content: center; border-radius: 16px; }
 }
+@media (max-width: 767px) {
+  .kicker { font-size: 11px; letter-spacing: 0.1em; }
+  .footLink { min-height: 44px; }
+}

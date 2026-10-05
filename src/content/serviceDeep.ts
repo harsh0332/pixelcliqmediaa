@@ -53,7 +53,7 @@ export const creativeDeep = {
     eyebrow: "Anatomy of an ad that sells",
     title: "Five parts.",
     accent: "Each with a job.",
-    hint: "Hover a marker, or watch them cycle",
+    hint: "Tap a part, or watch them cycle",
     parts: [
       { id: "hook", label: "Hook", x: 10, y: 7, copy: "The first second. A line or a visual that stops the thumb, written in the buyer's own words." },
       { id: "product", label: "Product", x: 73, y: 36, copy: "The product shown clearly, in use, in the world it belongs to. No guessing what is being sold." },

@@ -9,3 +9,4 @@
 .heading h2{font:700 clamp(44px,6vw,92px)/.98 var(--font-sans-bold-stack)!important;letter-spacing:-.055em!important;color:#082f57}
 .heading h2 em{font-family:var(--font-instrument),Georgia,serif!important;font-style:italic!important;font-weight:400!important;letter-spacing:-.03em;color:#0a6fd0!important}
 .heading p{color:#4a5d70}
+@media(max-width:767px){.heading a{min-height:44px;margin-top:.5rem}}

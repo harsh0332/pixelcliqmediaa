@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { ContactDetails } from "@/components/layout/ContactDetails";
+import { Wordmark } from "@/components/layout/Wordmark";
 import { headerNav } from "@/content/navigation";
 import { site } from "@/content/site";
 import { DURATION, EASE, STAGGER } from "@/lib/motion";
@@ -163,6 +164,10 @@ export function MobileMenu() {
             }}
             className="fixed inset-0 z-50 flex flex-col overflow-y-auto overscroll-contain lg:hidden"
           >
+            {/* The header card sits under the panel, so the panel carries its own wordmark. */}
+            <div aria-hidden="true" className="absolute inset-x-0 top-2.5 flex h-[60px] items-center px-8">
+              <Wordmark asText />
+            </div>
             <Container className="flex min-h-full flex-col pt-28 pb-8">
               <nav aria-label="Site" className="flex-1">
                 <ul className="border-t border-line">

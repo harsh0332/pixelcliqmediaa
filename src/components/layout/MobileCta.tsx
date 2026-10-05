@@ -34,7 +34,11 @@ export function MobileCta() {
   useEffect(() => {
     if (disabled) return;
 
-    const hero = document.querySelector("[data-hero-section]");
+    // The home hero, else any inner-page hero, else the page's first section.
+    const hero =
+      document.querySelector("[data-hero-section]") ??
+      document.querySelector("[data-page-hero], [data-dark-hero]") ??
+      document.querySelector("main section");
     // Both the closing band and the footer carry a "Book a Growth Call" of
     // their own, so the bar stands down for either. Two calls to action on one
     // screen is worse than one, and these are the better-placed ones.

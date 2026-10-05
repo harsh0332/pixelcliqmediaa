@@ -167,3 +167,4 @@
   .aplus { grid-template-columns: 1fr 1.2fr; padding: 10px; gap: 10px; }
 }
 .hero > .inner { position: relative; z-index: 1; }
+@media (max-width: 767px) { .ghost { min-height: 44px; padding-bottom: 0; } }

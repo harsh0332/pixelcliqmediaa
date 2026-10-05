@@ -48,3 +48,20 @@
 .connections a:hover{background:#082f57;color:#fff}
 .next>span{font-size:.8rem;font-weight:700;letter-spacing:.14em;color:#0868ad}
 @media (max-width:900px){.deliverables>:last-child:nth-child(3n+2){grid-column:auto}}
+
+/* Mobile polish: shorter scroll, readable labels, comfortable taps. */
+@media (max-width: 767px) {
+  .label { font-size: 12px; }
+  .breadcrumb { min-height: 44px; display: inline-flex; align-items: center; }
+  .fitCard summary { display: flex; align-items: center; min-height: 44px; }
+  .painGrid { gap: 10px; }
+  .pain { display: grid; grid-template-columns: 44px 1fr; align-items: center; column-gap: 14px; padding: 18px; }
+  .pain svg { display: none; }
+  .pain > span { grid-row: 1; margin: 0; font-size: 1.6rem; }
+  .pain p { margin: 0; font-size: 1rem; line-height: 1.5; }
+  /* Deliverables become a swipeable row instead of a long stack. */
+  .deliverables { display: flex; gap: 12px; margin-inline: -20px; padding: 4px 20px 18px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: 20px; scrollbar-width: none; }
+  .deliverables::-webkit-scrollbar { display: none; }
+  .deliverables > * { flex: 0 0 84%; scroll-snap-align: start; }
+  .deliverable { padding: 1.4rem; }
+}

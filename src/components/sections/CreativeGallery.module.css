@@ -13,3 +13,4 @@
 .card:hover .art img{transform:scale(1.04)}
 .filters button[aria-pressed=true]{background:#082f57;color:#fff;border-color:#082f57}
 .caption small{font-size:12px;font-weight:600;color:#4a5d70}
+@media(max-width:767px){.note{font-size:11px;letter-spacing:.06em}}

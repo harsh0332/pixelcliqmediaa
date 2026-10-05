@@ -43,9 +43,11 @@ function AdAnatomy() {
   return (
     <section className={styles.section}>
       <div className={`${styles.inner} ${styles.anatomy}`}>
-        <div>
+        <div className={styles.anatomyHead}>
           <Head eyebrow={d.anatomy.eyebrow} title={d.anatomy.title} accent={d.anatomy.accent} />
           <p className={styles.hint}>{d.anatomy.hint}</p>
+        </div>
+        <div className={styles.anatomyList}>
           <ol className={styles.parts} onMouseLeave={() => setPaused(false)}>
             {parts.map((p, i) => (
               <li key={p.id}>

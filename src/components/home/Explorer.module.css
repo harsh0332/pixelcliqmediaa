@@ -251,3 +251,4 @@
   .line { font-size: 15.5px; }
   .title sup { vertical-align: 2.2em; }
 }
+@media (max-width: 767px) { .headCta { min-height: 44px; display: inline-flex; align-items: center; } }
