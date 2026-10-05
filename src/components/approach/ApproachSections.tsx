@@ -5,57 +5,36 @@ import styles from "./Approach.module.css";
 
 const ICONS = [Users, FileText, CalendarCheck, LineChart, KeyRound, Puzzle];
 
-function Head({ eyebrow, title, accent, intro, id }: { eyebrow: string; title: string; accent: string; intro?: string; id: string }) {
+function Head({ eyebrow, title, accent, id }: { eyebrow: string; title: string; accent: string; id: string }) {
   return (
     <div className={styles.head} data-rise>
-      <div>
-        <p className={styles.eyebrow}>{eyebrow}</p>
-        <h2 id={id} className={styles.title}>{title} <em>{accent}</em></h2>
-      </div>
-      {intro && <p className={styles.lead}>{intro}</p>}
+      <p className={styles.eyebrow}>{eyebrow}</p>
+      <h2 id={id} className={styles.title}>{title} <em>{accent}</em></h2>
     </div>
   );
 }
 
-/** A sprint week as a board; a lime marker walks the days on a loop. */
+/** The weekly sprint as a loop: five days light up in turn, forever. */
 export function ApproachWeek() {
   const { week } = approach;
   return (
-    <section className={`${styles.section} ${styles.dark}`} aria-labelledby="week-heading">
-      <div className={styles.inner}>
-        <Head id="week-heading" eyebrow={week.eyebrow} title={week.title} accent={week.accent} intro={week.intro} />
-        <div className={styles.weekWrap}>
-        <span className={styles.today} aria-hidden="true" />
-        <ol className={styles.week}>
-          {week.days.map((d, i) => (
-            <li key={d.day} data-rise style={{ ["--rise" as string]: i + 1, ["--d" as string]: i }}>
-              <span className={styles.day}>{d.day}</span>
-              <h3>{d.title}</h3>
-              <p>{d.copy}</p>
-            </li>
-          ))}
-        </ol>
+    <section className={`${styles.section} ${styles.tint}`} aria-labelledby="week-heading">
+      <div className={`${styles.inner} ${styles.weekGrid}`}>
+        <Head id="week-heading" eyebrow={week.eyebrow} title={week.title} accent={week.accent} />
+        <div className={styles.loop} aria-hidden="false">
+          <span className={styles.loopRing} aria-hidden="true" />
+          <span className={styles.loopSweep} aria-hidden="true" />
+          <div className={styles.loopCenter}><b>Weekly</b><span>sprint</span></div>
+          <ol className={styles.loopDays}>
+            {week.days.map((d, i) => (
+              <li key={d.day} style={{ ["--n" as string]: i }}>
+                <span className={styles.loopDay}>{d.day}</span>
+                <b>{d.title}</b>
+                <small>{d.copy}</small>
+              </li>
+            ))}
+          </ol>
         </div>
-      </div>
-    </section>
-  );
-}
-
-export function ApproachPrinciples() {
-  const { principles } = approach;
-  return (
-    <section className={styles.section} aria-labelledby="principles-heading">
-      <div className={styles.inner}>
-        <Head id="principles-heading" eyebrow={principles.eyebrow} title={principles.title} accent={principles.accent} />
-        <ol className={styles.rules}>
-          {principles.items.map((p, i) => (
-            <li key={p.title} data-rise style={{ ["--rise" as string]: (i % 2) + 1 }}>
-              <span className={styles.ruleNo}>{String(i + 1).padStart(2, "0")}</span>
-              <h3>{p.title}</h3>
-              <p>{p.body}</p>
-            </li>
-          ))}
-        </ol>
       </div>
     </section>
   );
@@ -64,7 +43,7 @@ export function ApproachPrinciples() {
 export function ApproachCommitments() {
   const { commitments } = approach;
   return (
-    <section className={`${styles.section} ${styles.tint}`} aria-labelledby="commit-heading">
+    <section className={`${styles.section} ${styles.dark}`} aria-labelledby="commit-heading">
       <div className={styles.inner}>
         <Head id="commit-heading" eyebrow={commitments.eyebrow} title={commitments.title} accent={commitments.accent} />
         <ul className={styles.commit}>
@@ -73,8 +52,7 @@ export function ApproachCommitments() {
             return (
               <li key={c.title} data-rise style={{ ["--rise" as string]: (i % 3) + 1 }}>
                 <span className={styles.icon}><Icon size={22} strokeWidth={1.8} aria-hidden="true" /></span>
-                <h3>{c.title}</h3>
-                <p>{c.body}</p>
+                <div><h3>{c.title}</h3><p>{c.body}</p></div>
               </li>
             );
           })}

@@ -3,7 +3,8 @@ import { buildMetadata } from "@/lib/seo";
 import { Button } from "@/components/ui/Button";
 import { PageHero } from "@/components/sections/PageHero";
 import { ApproachJourney } from "@/components/approach/ApproachJourney";
-import { ApproachCommitments, ApproachFit, ApproachPrinciples, ApproachWeek } from "@/components/approach/ApproachSections";
+import { ApproachCommitments, ApproachFit, ApproachWeek } from "@/components/approach/ApproachSections";
+import { ApproachPrinciples } from "@/components/approach/ApproachPrinciples";
 
 export const metadata: Metadata = buildMetadata({ title: "Our approach", description: "How Pixelcliq works: one free call, an audit, a written plan, then weekly sprints that connect strategy, creative, media and your store.", path: "/approach", eyebrow: "Our approach" });
 
@@ -14,7 +15,7 @@ export default function ApproachPage() {
         id="approach-heading"
         eyebrow="THE PIXELCLIQ APPROACH"
         headlineLines={["One direction.", "Every move connected."]}
-        support="From the first conversation to the next experiment. Here is exactly how we work, step by step, so you know what happens, what you get and what we need from you."
+        support="Six steps from the first call to compounding growth. Here is exactly how it works."
         ctas={<Button href="/contact" size="lg">Book a free growth call</Button>}
       />
       <ApproachJourney />
