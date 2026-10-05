@@ -4,3 +4,6 @@
 .canvas,.creative,.commerce,.search,.automation,.data,.performance,.social { background:linear-gradient(145deg,#d5ecfc,#f6fbff); border-color:#ffffffbb; color:#082f57; box-shadow:0 24px 65px -35px #1b60934d; }
 .canvas .top,.canvas h2,.canvas .note { color:#082f57; }
 .tags span { border-color:#1761933b; }
+
+/* The canvas headline supports the H1 rather than competing with it. */
+.canvas h2{font-size:clamp(22px,2.2vw,30px)!important}

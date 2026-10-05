@@ -36,7 +36,7 @@ export default function ServicesIndexPage() {
  return (
   <>
    <ScrollTint />
-   <PageHero id="services-index-heading" eyebrow="D2C FIRST. FULL-SERVICE BY DESIGN." headlineLines={["BOLD THINKING.", "REAL EXECUTION."]} support="Creative, media, commerce and technology. Find the expertise your business needs now, with the room to connect more as you grow." />
+   <PageHero id="services-index-heading" eyebrow="D2C FIRST. FULL-SERVICE BY DESIGN." headlineLines={["Bold thinking.", "Real execution."]} support="Creative, media, commerce and technology. Find the expertise your business needs now, with the room to connect more as you grow." />
    <ServiceExplorer />
 
 

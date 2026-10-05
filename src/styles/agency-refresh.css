@@ -1,6 +1,6 @@
 /* Shared visual direction: bold sans-serif, cool whites, cobalt and lime. */
-:root{--bone:#ffffff;--sand:#f6f5f1;--line:#dae1ed;--line-strong:#bec9dc;--font-display-stack:var(--font-satoshi-bold),Arial,sans-serif;--font-display-medium-stack:var(--font-satoshi-bold),Arial,sans-serif;--font-serif-stack:var(--font-satoshi-bold),Arial,sans-serif}
-main h1,main h2,main h3{font-family:var(--font-satoshi-bold),Arial,sans-serif;font-weight:700;letter-spacing:-.045em}main h1 em,main h2 em,main h3 em{font-family:inherit;font-style:normal;font-weight:700;color:var(--accent)}
+:root{--bone:#ffffff;--sand:#f6f5f1;--line:#dae1ed;--line-strong:#bec9dc;--font-display-stack:var(--font-satoshi-bold),Arial,sans-serif;--font-display-medium-stack:var(--font-satoshi-bold),Arial,sans-serif;--font-serif-stack:var(--font-instrument),Georgia,serif}
+main h1,main h2,main h3{font-family:var(--font-satoshi-bold),Arial,sans-serif;font-weight:700;letter-spacing:-.045em}/* The accent word in a heading is the brand serif, as in the hero: italic, regular weight, accent blue. */main h1 em,main h2 em,main h3 em,main h1 .type-emphasis,main h2 .type-emphasis,main h3 .type-emphasis{font-family:var(--font-instrument),Georgia,serif;font-style:italic;font-weight:400;letter-spacing:-.025em;color:var(--accent)}
 main [data-tone="inverse"] h2 em{color:#d6f06e}
 main [data-page-hero]{background:#f6f5f1;padding-top:calc(var(--header-height) + 3.5rem);padding-bottom:3.5rem;border-bottom:1px solid #d7e1f2}
 main [data-page-hero] h1{font-size:clamp(2.75rem,5.8vw,6rem);max-width:19ch;line-height:1.05}main [data-page-hero] [data-hero-support]{max-width:48ch;border-left:3px solid #0a6fd0;padding-left:1.25rem;font-size:1rem;line-height:1.7}

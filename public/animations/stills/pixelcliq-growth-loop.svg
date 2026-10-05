@@ -18,35 +18,35 @@
 @media (prefers-reduced-motion:reduce){*{animation:none!important}}
 </style>
 <circle cx="400" cy="260" r="170" fill="none" stroke="#E4E2DC" stroke-width="2"/>
-<circle class="arc" cx="400" cy="260" r="170" fill="none" stroke="#3452FF" stroke-width="3" stroke-linecap="round" transform="rotate(-90 400 260)"/>
-<g class="pulse"><circle cx="400" cy="90" r="10" fill="#FFC83D" stroke="#1C2140" stroke-width="2"/></g>
-<circle cx="400" cy="90" r="36" fill="#E8ECFF" stroke="#FFFFFF" stroke-width="4"/>
+<circle class="arc" cx="400" cy="260" r="170" fill="none" stroke="#0a6fd0" stroke-width="3" stroke-linecap="round" transform="rotate(-90 400 260)"/>
+<g class="pulse"><circle cx="400" cy="90" r="10" fill="#FFC83D" stroke="#082f57" stroke-width="2"/></g>
+<circle cx="400" cy="90" r="36" fill="#e3f1fd" stroke="#FFFFFF" stroke-width="4"/>
 <circle class="hl" cx="400" cy="90" r="36" fill="#FFC83D" opacity="0"/>
-<circle cx="570" cy="260" r="36" fill="#E8ECFF" stroke="#FFFFFF" stroke-width="4"/>
+<circle cx="570" cy="260" r="36" fill="#e3f1fd" stroke="#FFFFFF" stroke-width="4"/>
 <circle class="hl" cx="570" cy="260" r="36" fill="#FFC83D" opacity="0" style="animation-delay:-6s"/>
-<circle cx="400" cy="430" r="36" fill="#E8ECFF" stroke="#FFFFFF" stroke-width="4"/>
+<circle cx="400" cy="430" r="36" fill="#e3f1fd" stroke="#FFFFFF" stroke-width="4"/>
 <circle class="hl" cx="400" cy="430" r="36" fill="#FFC83D" opacity="0" style="animation-delay:-4s"/>
-<circle cx="230" cy="260" r="36" fill="#E8ECFF" stroke="#FFFFFF" stroke-width="4"/>
+<circle cx="230" cy="260" r="36" fill="#e3f1fd" stroke="#FFFFFF" stroke-width="4"/>
 <circle class="hl" cx="230" cy="260" r="36" fill="#FFC83D" opacity="0" style="animation-delay:-2s"/>
-<g fill="none" stroke="#1C2140" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+<g fill="none" stroke="#082f57" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
 <path d="M386 85h7l14-9v28l-14-9h-7z"/><path d="M393 95l3 8"/>
 <rect x="556" y="254" width="28" height="22" rx="4"/><path d="M563 254v-4a7 7 0 0 1 14 0v4"/>
 <path d="M384 419h32v21h-19l-8 7v-7h-5z"/><path d="M392 429h16"/>
 <path d="M218 257a13 13 0 0 1 23-7"/><path d="M242 244v7h-7"/><path d="M242 263a13 13 0 0 1-23 7"/><path d="M218 276v-7h7"/>
 </g>
 <g class="f">
-<text x="450" y="62" font-size="15" font-weight="600" fill="#1C2140">Meta ads</text>
+<text x="450" y="62" font-size="15" font-weight="600" fill="#082f57">Meta ads</text>
 <text x="450" y="80" font-size="13" fill="#6B7189">Right people, right offer</text>
-<text x="620" y="256" font-size="15" font-weight="600" fill="#1C2140">Store that converts</text>
+<text x="620" y="256" font-size="15" font-weight="600" fill="#082f57">Store that converts</text>
 <text x="620" y="275" font-size="13" fill="#6B7189">Shopify, built to sell</text>
-<text x="450" y="450" font-size="15" font-weight="600" fill="#1C2140">WhatsApp follow-ups</text>
+<text x="450" y="450" font-size="15" font-weight="600" fill="#082f57">WhatsApp follow-ups</text>
 <text x="450" y="469" font-size="13" fill="#6B7189">Carts and COD, recovered</text>
-<text x="180" y="256" font-size="15" font-weight="600" fill="#1C2140" text-anchor="end">Repeat buyers</text>
+<text x="180" y="256" font-size="15" font-weight="600" fill="#082f57" text-anchor="end">Repeat buyers</text>
 <text x="180" y="275" font-size="13" fill="#6B7189" text-anchor="end">Every order compounds</text>
 </g>
-<rect class="b b1" x="360" y="264" width="14" height="18" rx="3" fill="#AEBBFF"/>
-<rect class="b b2" x="382" y="250" width="14" height="32" rx="3" fill="#7C8FFF"/>
-<rect class="b b3" x="404" y="234" width="14" height="48" rx="3" fill="#5570FF"/>
-<rect class="b b4" x="426" y="216" width="14" height="66" rx="3" fill="#3452FF"/>
+<rect class="b b1" x="360" y="264" width="14" height="18" rx="3" fill="#a9d3f7"/>
+<rect class="b b2" x="382" y="250" width="14" height="32" rx="3" fill="#7cbdff"/>
+<rect class="b b3" x="404" y="234" width="14" height="48" rx="3" fill="#55aaff"/>
+<rect class="b b4" x="426" y="216" width="14" height="66" rx="3" fill="#0a6fd0"/>
 <text class="f" x="400" y="306" font-size="13" fill="#6B7189" text-anchor="middle">Revenue</text>
 <style>*{animation-play-state:paused!important;animation-delay:-4s!important}</style></svg>

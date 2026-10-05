@@ -23,31 +23,31 @@
 </style>
 <rect x="40" y="40" width="420" height="440" rx="20" fill="#FFFFFF" stroke="#E4E2DC" stroke-width="1.5"/>
 <path d="M80 300 A170 170 0 0 1 420 300" fill="none" stroke="#EFEDE7" stroke-width="18" stroke-linecap="round"/>
-<path class="ga" d="M80 300 A170 170 0 0 1 420 300" fill="none" stroke="#3452FF" stroke-width="18" stroke-linecap="round" stroke-dashoffset="85.5"/>
-<text class="f" x="116" y="304" font-size="12" fill="#9AA3C7" text-anchor="middle">0x</text>
-<text class="f" x="142" y="225" font-size="12" fill="#9AA3C7" text-anchor="middle">1x</text>
-<text class="f" x="209" y="177" font-size="12" fill="#9AA3C7" text-anchor="middle">2x</text>
-<text class="f" x="291" y="177" font-size="12" fill="#9AA3C7" text-anchor="middle">3x</text>
-<text class="f" x="358" y="225" font-size="12" fill="#9AA3C7" text-anchor="middle">4x</text>
-<text class="f" x="384" y="304" font-size="12" fill="#9AA3C7" text-anchor="middle">5x</text>
+<path class="ga" d="M80 300 A170 170 0 0 1 420 300" fill="none" stroke="#0a6fd0" stroke-width="18" stroke-linecap="round" stroke-dashoffset="85.5"/>
+<text class="f" x="116" y="304" font-size="12" fill="#9fb6cc" text-anchor="middle">0x</text>
+<text class="f" x="142" y="225" font-size="12" fill="#9fb6cc" text-anchor="middle">1x</text>
+<text class="f" x="209" y="177" font-size="12" fill="#9fb6cc" text-anchor="middle">2x</text>
+<text class="f" x="291" y="177" font-size="12" fill="#9fb6cc" text-anchor="middle">3x</text>
+<text class="f" x="358" y="225" font-size="12" fill="#9fb6cc" text-anchor="middle">4x</text>
+<text class="f" x="384" y="304" font-size="12" fill="#9fb6cc" text-anchor="middle">5x</text>
 <line x1="80" y1="326" x2="120" y2="326" stroke="#FFFFFF"/>
-<g class="nd" transform="rotate(61.2 250 300)"><path d="M244 300 L250 182 L256 300 Z" fill="#1C2140"/></g><circle cx="250" cy="300" r="12" fill="#1C2140"/><circle cx="250" cy="300" r="5" fill="#FFC83D"/>
-<text class="f rv0" x="250" y="364" font-size="40" font-weight="600" fill="#1C2140" text-anchor="middle" opacity="0">1.6x</text>
-<text class="f rv1" x="250" y="364" font-size="40" font-weight="600" fill="#1C2140" text-anchor="middle" opacity="0">2.2x</text>
-<text class="f rv2" x="250" y="364" font-size="40" font-weight="600" fill="#1C2140" text-anchor="middle" opacity="0">2.9x</text>
-<text class="f rv3" x="250" y="364" font-size="40" font-weight="600" fill="#1C2140" text-anchor="middle" opacity="0">3.6x</text>
-<text class="f rv4" x="250" y="364" font-size="40" font-weight="600" fill="#1C2140" text-anchor="middle" opacity="1">4.2x</text>
+<g class="nd" transform="rotate(61.2 250 300)"><path d="M244 300 L250 182 L256 300 Z" fill="#082f57"/></g><circle cx="250" cy="300" r="12" fill="#082f57"/><circle cx="250" cy="300" r="5" fill="#FFC83D"/>
+<text class="f rv0" x="250" y="364" font-size="40" font-weight="600" fill="#082f57" text-anchor="middle" opacity="0">1.6x</text>
+<text class="f rv1" x="250" y="364" font-size="40" font-weight="600" fill="#082f57" text-anchor="middle" opacity="0">2.2x</text>
+<text class="f rv2" x="250" y="364" font-size="40" font-weight="600" fill="#082f57" text-anchor="middle" opacity="0">2.9x</text>
+<text class="f rv3" x="250" y="364" font-size="40" font-weight="600" fill="#082f57" text-anchor="middle" opacity="0">3.6x</text>
+<text class="f rv4" x="250" y="364" font-size="40" font-weight="600" fill="#082f57" text-anchor="middle" opacity="1">4.2x</text>
 <text class="f" x="250" y="388" font-size="13" fill="#6B7189" text-anchor="middle">ROAS = revenue ÷ ad spend</text>
 <line x1="68" y1="410" x2="432" y2="410" stroke="#EFEDE7"/>
-<text class="f" x="68" y="442" font-size="13" fill="#6B7189">Revenue</text><text class="f" x="300" y="442" font-size="13" fill="#6B7189">Ad spend</text><text class="f" x="432" y="442" font-size="15" font-weight="600" fill="#1C2140" text-anchor="end">₹2L</text>
-<text class="f rw0" x="136" y="442" font-size="15" font-weight="600" fill="#1C2140" opacity="0">₹3.2L</text>
-<text class="f rw1" x="136" y="442" font-size="15" font-weight="600" fill="#1C2140" opacity="0">₹4.4L</text>
-<text class="f rw2" x="136" y="442" font-size="15" font-weight="600" fill="#1C2140" opacity="0">₹5.8L</text>
-<text class="f rw3" x="136" y="442" font-size="15" font-weight="600" fill="#1C2140" opacity="0">₹7.2L</text>
-<text class="f rw4" x="136" y="442" font-size="15" font-weight="600" fill="#1C2140" opacity="1">₹8.4L</text>
-<rect x="480" y="40" width="280" height="440" rx="20" fill="#FFFFFF" stroke="#E4E2DC" stroke-width="1.5"/><text class="f" x="504" y="78" font-size="16" font-weight="600" fill="#1C2140">How we raise ROAS</text>
-<g class="lr0"><rect x="500" y="112" width="240" height="72" rx="14" fill="#FAF9F6" stroke="#EFEDE7"/><circle cx="526" cy="148" r="12" fill="#FFC83D"/><text class="f" x="526" y="152" font-size="12" font-weight="600" fill="#1C2140" text-anchor="middle">1</text><text class="f" x="548" y="143" font-size="14" font-weight="600" fill="#1C2140">Winning creatives</text><rect x="548" y="152" width="118" height="20" rx="10" fill="#E8ECFF"/><text class="f" x="556" y="166" font-size="11" font-weight="600" fill="#2036D8">CTR 0.8% to 2.1%</text></g>
-<g class="lr1"><rect x="500" y="200" width="240" height="72" rx="14" fill="#FAF9F6" stroke="#EFEDE7"/><circle cx="526" cy="236" r="12" fill="#FFC83D"/><text class="f" x="526" y="240" font-size="12" font-weight="600" fill="#1C2140" text-anchor="middle">2</text><text class="f" x="548" y="231" font-size="14" font-weight="600" fill="#1C2140">Bundles raise AOV</text><rect x="548" y="240" width="157" height="20" rx="10" fill="#E8ECFF"/><text class="f" x="556" y="254" font-size="11" font-weight="600" fill="#2036D8">₹649 to ₹899 per order</text></g>
-<g class="lr2"><rect x="500" y="288" width="240" height="72" rx="14" fill="#FAF9F6" stroke="#EFEDE7"/><circle cx="526" cy="324" r="12" fill="#FFC83D"/><text class="f" x="526" y="328" font-size="12" font-weight="600" fill="#1C2140" text-anchor="middle">3</text><text class="f" x="548" y="319" font-size="14" font-weight="600" fill="#1C2140">A page that converts</text><rect x="548" y="328" width="118" height="20" rx="10" fill="#E8ECFF"/><text class="f" x="556" y="342" font-size="11" font-weight="600" fill="#2036D8">CVR 1.4% to 3.1%</text></g>
-<g class="lr3"><rect x="500" y="376" width="240" height="72" rx="14" fill="#FAF9F6" stroke="#EFEDE7"/><circle cx="526" cy="412" r="12" fill="#FFC83D"/><text class="f" x="526" y="416" font-size="12" font-weight="600" fill="#1C2140" text-anchor="middle">4</text><text class="f" x="548" y="407" font-size="14" font-weight="600" fill="#1C2140">Retarget on WhatsApp</text><rect x="548" y="416" width="182" height="20" rx="10" fill="#E8ECFF"/><text class="f" x="556" y="430" font-size="11" font-weight="600" fill="#2036D8">Fewer paid clicks per sale</text></g>
+<text class="f" x="68" y="442" font-size="13" fill="#6B7189">Revenue</text><text class="f" x="300" y="442" font-size="13" fill="#6B7189">Ad spend</text><text class="f" x="432" y="442" font-size="15" font-weight="600" fill="#082f57" text-anchor="end">₹2L</text>
+<text class="f rw0" x="136" y="442" font-size="15" font-weight="600" fill="#082f57" opacity="0">₹3.2L</text>
+<text class="f rw1" x="136" y="442" font-size="15" font-weight="600" fill="#082f57" opacity="0">₹4.4L</text>
+<text class="f rw2" x="136" y="442" font-size="15" font-weight="600" fill="#082f57" opacity="0">₹5.8L</text>
+<text class="f rw3" x="136" y="442" font-size="15" font-weight="600" fill="#082f57" opacity="0">₹7.2L</text>
+<text class="f rw4" x="136" y="442" font-size="15" font-weight="600" fill="#082f57" opacity="1">₹8.4L</text>
+<rect x="480" y="40" width="280" height="440" rx="20" fill="#FFFFFF" stroke="#E4E2DC" stroke-width="1.5"/><text class="f" x="504" y="78" font-size="16" font-weight="600" fill="#082f57">How we raise ROAS</text>
+<g class="lr0"><rect x="500" y="112" width="240" height="72" rx="14" fill="#FAF9F6" stroke="#EFEDE7"/><circle cx="526" cy="148" r="12" fill="#FFC83D"/><text class="f" x="526" y="152" font-size="12" font-weight="600" fill="#082f57" text-anchor="middle">1</text><text class="f" x="548" y="143" font-size="14" font-weight="600" fill="#082f57">Winning creatives</text><rect x="548" y="152" width="118" height="20" rx="10" fill="#e3f1fd"/><text class="f" x="556" y="166" font-size="11" font-weight="600" fill="#0868ad">CTR 0.8% to 2.1%</text></g>
+<g class="lr1"><rect x="500" y="200" width="240" height="72" rx="14" fill="#FAF9F6" stroke="#EFEDE7"/><circle cx="526" cy="236" r="12" fill="#FFC83D"/><text class="f" x="526" y="240" font-size="12" font-weight="600" fill="#082f57" text-anchor="middle">2</text><text class="f" x="548" y="231" font-size="14" font-weight="600" fill="#082f57">Bundles raise AOV</text><rect x="548" y="240" width="157" height="20" rx="10" fill="#e3f1fd"/><text class="f" x="556" y="254" font-size="11" font-weight="600" fill="#0868ad">₹649 to ₹899 per order</text></g>
+<g class="lr2"><rect x="500" y="288" width="240" height="72" rx="14" fill="#FAF9F6" stroke="#EFEDE7"/><circle cx="526" cy="324" r="12" fill="#FFC83D"/><text class="f" x="526" y="328" font-size="12" font-weight="600" fill="#082f57" text-anchor="middle">3</text><text class="f" x="548" y="319" font-size="14" font-weight="600" fill="#082f57">A page that converts</text><rect x="548" y="328" width="118" height="20" rx="10" fill="#e3f1fd"/><text class="f" x="556" y="342" font-size="11" font-weight="600" fill="#0868ad">CVR 1.4% to 3.1%</text></g>
+<g class="lr3"><rect x="500" y="376" width="240" height="72" rx="14" fill="#FAF9F6" stroke="#EFEDE7"/><circle cx="526" cy="412" r="12" fill="#FFC83D"/><text class="f" x="526" y="416" font-size="12" font-weight="600" fill="#082f57" text-anchor="middle">4</text><text class="f" x="548" y="407" font-size="14" font-weight="600" fill="#082f57">Retarget on WhatsApp</text><rect x="548" y="416" width="182" height="20" rx="10" fill="#e3f1fd"/><text class="f" x="556" y="430" font-size="11" font-weight="600" fill="#0868ad">Fewer paid clicks per sale</text></g>
 </svg>

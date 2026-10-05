@@ -31,3 +31,81 @@
 /* "Cookie settings" reads as a footer link, not a button. */
 .cookieButton { padding: 0; border: 0; background: none; font: inherit; color: inherit; cursor: pointer; min-height: 44px; }
 .cookieButton:hover { text-decoration: underline; text-underline-offset: 4px; }
+
+/* ---- Premium pass: bolder type, quieter labels, a closing wordmark -------- */
+.brandRow { padding: 56px 0 40px; }
+.tagline {
+  margin: 0;
+  font: 700 clamp(28px, 3.2vw, 46px) / 1.02 var(--font-sans-bold-stack) !important;
+  letter-spacing: -0.045em;
+  color: #082f57;
+  text-align: right;
+}
+.tagline em,
+.signoff em {
+  font-family: var(--font-instrument), Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  color: #0868ad;
+}
+.heading {
+  margin-bottom: 20px;
+  font-size: 11.5px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.18em !important;
+  text-transform: uppercase;
+  color: #56697f;
+}
+.links li + li { margin-top: 2px; }
+.links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-size: 17.5px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #082f57;
+  transition: color 0.2s, transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.links a:hover { color: #0868ad; transform: translateX(6px); }
+.details li { font-size: 17px; font-weight: 700; color: #082f57; letter-spacing: -0.015em; }
+.details a { font-size: 17px; font-weight: 700; color: #0868ad; }
+.legal { padding: 18px 0; font-size: 13px; font-weight: 600; color: #2f4b69; }
+.legal a { font-size: 13px; font-weight: 600; }
+.signoff { font-size: 16px; font-weight: 700; letter-spacing: -0.015em; color: #082f57; }
+.signoff em { font-size: 1.1em; }
+.bigMark {
+  margin: 12px 0 -0.08em;
+  font: 700 clamp(84px, 21vw, 330px) / 0.9 var(--font-sans-bold-stack);
+  letter-spacing: -0.075em;
+  white-space: nowrap;
+  background: linear-gradient(180deg, #1685e4 0%, #74baf0 55%, #d9eefc 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  user-select: none;
+  pointer-events: none;
+}
+.bigMark i {
+  display: inline-block;
+  width: 0.13em;
+  height: 0.13em;
+  margin-left: 0.04em;
+  background: #d6f06e;
+  vertical-align: baseline;
+}
+.footer { overflow: hidden; }
+@media (max-width: 600px) {
+  .tagline { text-align: left; font-size: 30px; }
+  .links a { font-size: 16px; }
+  .signoff { font-size: 15px; }
+}
+
+/* Closing band: the accent word in the brand serif, the main action in lime. */
+.cta { align-items: center; }
+.cta h2 :global(.type-emphasis) { font-family: var(--font-instrument), Georgia, serif; font-style: italic; font-weight: 400; color: #d6f06e; }
+.ctaButton { background: #d6f06e !important; color: #082f57 !important; }
+.ctaButton:hover { background: #fff !important; }
+/* Keep the floating WhatsApp button off the sign-off line. */
+@media (min-width: 768px) { .legal { padding-right: 88px; } }

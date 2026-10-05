@@ -6,7 +6,7 @@
    ========================================================================== */
 
 .frame {
-  --glow: #4d6bff33;
+  --glow: #0a6fd033;
   position: relative;
   aspect-ratio: 1.06;
   border-radius: 24px;
@@ -53,7 +53,7 @@
   border-radius: 20px;
   background:
     radial-gradient(circle at 85% 20%, #c9fbff99 0, transparent 45%),
-    radial-gradient(circle at 10% 90%, #e9e2ff 0, transparent 50%),
+    radial-gradient(circle at 10% 90%, #d6eaff 0, transparent 50%),
     #fff;
   box-shadow: 0 34px 60px -34px #1a1f4a66, 0 0 0 1px #082f570a;
   overflow: hidden;
@@ -145,7 +145,7 @@
 .avatarSm, .avatar { border-radius: 50%; background: linear-gradient(135deg, #ff7ab5, #ffb86b); flex-shrink: 0; }
 .avatarSm { width: 20px; height: 20px; box-shadow: 0 0 0 2px #fff, 0 0 0 3.5px #ff5f9e; }
 .postImg { position: relative; flex: 1; min-height: 0; background: #f4e7dc; }
-.postImg img { object-fit: cover; }
+.postImg img { object-fit: cover; object-position: 0% 50%; }
 .postBar { display: flex; gap: 10px; padding: 9px 10px 4px; color: #082f57; }
 .liked { color: #ff3d6e; fill: #ff3d6e; }
 .save { margin-left: auto; }
@@ -182,7 +182,7 @@
 .n_lead { background: #effcff; }
 .n_sheet { background: #278bf0; color: #fff; }
 .n_sheet small { background: #ffffff26; color: #fff; }
-.n_crm { background: #8a7dff; color: #fff; }
+.n_crm { background: #0a6fd0; color: #fff; }
 .n_crm small { background: #ffffff2e; color: #fff; }
 .n_wa { background: #25d366; color: #fff; }
 .n_wa small { background: #ffffff33; color: #fff; }
@@ -224,7 +224,7 @@
   font-size: 13px; font-weight: 600;
 }
 .typed { overflow: hidden; white-space: nowrap; border-right: 2px solid #0a6fd0; width: 100%; }
-.aiBox { padding: 11px 13px; border-radius: 14px; background: linear-gradient(135deg, #eef6ff, #f5edff); font-size: 11.5px; color: #374b5f; line-height: 1.45; }
+.aiBox { padding: 11px 13px; border-radius: 14px; background: linear-gradient(135deg, #eef6ff, #eaf5ff); font-size: 11.5px; color: #374b5f; line-height: 1.45; }
 .aiBox span { display: inline-flex; align-items: center; gap: 5px; font-size: 10.5px; font-weight: 800; color: #5b3fd9; margin-bottom: 4px; }
 .aiBox p { margin: 0; }
 .aiBox b { color: #0a6fd0; }
@@ -243,7 +243,7 @@
   background: linear-gradient(90deg, #ff9a52, #ff6b8a); box-shadow: 0 12px 22px -14px #ff6b8a;
 }
 .stage:nth-child(2) { background: linear-gradient(90deg, #ff7f72, #f2609f); }
-.stage:nth-child(3) { background: linear-gradient(90deg, #c768d8, #8c6bff); }
+.stage:nth-child(3) { background: linear-gradient(90deg, #1685e4, #0a6fd0); }
 .stage:nth-child(4) { background: linear-gradient(90deg, #5fafff, #0a6fd0); }
 .reg {
   position: absolute; right: 6%; top: 18%; width: 42%; padding: 13px; border-radius: 16px; background: #fff;
@@ -372,7 +372,7 @@
 
 /* ------------------------------------------------------------ LANDING ---- */
 .landing { padding: 6% !important; justify-content: center; }
-.lpHero { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 12px; padding: 14px 12px; background: linear-gradient(135deg, #f6f0ff, #eef5ff); }
+.lpHero { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 12px; padding: 14px 12px; background: linear-gradient(135deg, #eaf5ff, #eef5ff); }
 .lpCopy { display: flex; flex-direction: column; gap: 7px; color: #082f57; }
 .lpCopy b { font: 800 clamp(13px, 1.25vw, 16px) / 1.2 var(--font-sans-bold-stack); letter-spacing: -0.02em; }
 .lpTag { align-self: flex-start; padding: 3px 8px; border-radius: 6px; background: #ece8ff; color: #5b47e0; font-size: 9.5px; font-weight: 800; }
@@ -388,3 +388,6 @@
   .logoMark i { animation: bob 4s ease-in-out infinite; }
   .logoMark i + i { animation-delay: 0.5s; }
 }
+
+/* Lead-gen on phones: keep the WhatsApp bubble clear of the booking button. */
+@media (max-width: 640px) { .reg { top: 8%; } .bubble { bottom: 5%; left: 6%; max-width: 58%; } }

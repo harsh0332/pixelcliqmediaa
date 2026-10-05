@@ -19,3 +19,32 @@
 .hero{background:#f6f5f1}.promise{font-family:var(--font-sans-bold-stack);font-weight:700;font-size:clamp(1.25rem,2.2vw,2rem);line-height:1.25}.canvasArt{margin:1rem 0 2rem;border:0;box-shadow:none}.canvasArt>div{height:230px}.canvas>strong{font-weight:700}.section h2 em{font-style:normal;font-weight:700;color:#288bef}.dark{background:#0c2034}.dark h2 em{color:#aed6ff}.soft{background:#f6f5f1}.deliverable{background:#fff;border-color:#d7e1f2}.number{font-family:var(--font-sans-bold-stack);font-weight:700}.directoryCard>div:first-child{height:300px}.directoryCard{background:#fff}.directoryCard>div:last-child{padding:1.5rem}.directoryCard h2{font-size:1.65rem}.canvasArt [class*="poster"] strong{font-size:1.7rem}.canvasArt [class*="posterMeta"]{display:none}
 @media(max-width:767px){.canvasArt>div{height:200px}.directoryCard>div:first-child{height:250px}}
 .hero .copy,.sectionHead .copy,.fitCard>p{font-family:var(--font-sans-bold-stack);font-size:clamp(1.1rem,1.5vw,1.3rem);font-weight:700;line-height:1.55}.hero .copy,.sectionHead .copy{color:var(--ink)}.dark .sectionHead .copy{color:#dcebfa}
+
+/* ==== Premium pass ====================================================== */
+/* Hero: start at the top, readable labels, a quieter secondary link. */
+.heroGrid{align-items:start}
+.breadcrumb{color:#082f57;font-weight:600}
+.hero .label{display:inline-block;padding:.4rem .8rem;border-radius:999px;background:#d6f06e;color:#082f57!important;font-weight:800;letter-spacing:.14em}
+.hero .copy,.sectionHead .copy{font-weight:500}
+.actions>a:last-child{font-weight:700;border-bottom:2px solid #d6f06e}
+/* Capabilities read as tags, not as a footnote. */
+.capabilityRail>span{font:600 .85rem/1 var(--font-sans-bold-stack);padding:.6rem 1rem;border:1px solid #0a6fd033;border-radius:999px;background:#ffffffa6;color:#082f57}
+/* Pain cards: a strong top rule and a confident number. */
+.pain{border-top:3px solid #0a6fd0}
+.pain>span{display:block;float:none;margin-top:1rem;font:700 2rem/1 var(--font-sans-bold-stack);color:#0a6fd0}
+.pain p{font-size:1.125rem;font-weight:600;color:#082f57}
+/* No orphan cells in 3-column grids. */
+.process{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.deliverables>:last-child:nth-child(3n+2){grid-column:span 2}
+.deliverables>:last-child:nth-child(3n+1){grid-column:1/-1}
+/* One accent blue for heading serif words. */
+.section h2 em{font-family:var(--font-instrument),Georgia,serif!important;font-style:italic!important;font-weight:400!important;color:#0a6fd0!important}
+.dark h2 em{color:#9fd0ff!important}
+.fitCard summary{list-style:none;font-weight:700;cursor:pointer}
+.fitCard summary::-webkit-details-marker{display:none}
+.fitCard summary::after{content:" +";color:#0a6fd0}
+.fitCard details[open] summary::after{content:" −"}
+.connections a{font:600 .95rem/1 var(--font-sans-bold-stack);padding:.9rem 1.2rem;color:#082f57;transition:background-color .25s,color .25s}
+.connections a:hover{background:#082f57;color:#fff}
+.next>span{font-size:.8rem;font-weight:700;letter-spacing:.14em;color:#0868ad}
+@media (max-width:900px){.deliverables>:last-child:nth-child(3n+2){grid-column:auto}}

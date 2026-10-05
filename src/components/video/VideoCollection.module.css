@@ -3,10 +3,17 @@
 /* WCAG 2.5.8 — carousel controls are 38px and the lightbox close is 32px by
    design. The pseudo-element lifts each pointer target to 44x44 without
    changing the drawn size. */
-.railBar button,.close{position:relative}
+.railBar button{position:relative}
 .railBar button::before,.close::before{content:"";position:absolute;left:50%;top:50%;width:44px;height:44px;transform:translate(-50%,-50%)}
 
 /* WCAG 2.5.8 — filter chips measured 40-41px tall. A pseudo-element lifts the
    pointer target to 44 without growing the pill. */
 .filters button{position:relative}
 .filters button::before{content:"";position:absolute;left:0;top:50%;width:100%;height:44px;transform:translateY(-50%)}
+
+/* Premium pass: soft rail edges, same active pill as the design gallery, clearer hints. */
+.rail{-webkit-mask-image:linear-gradient(90deg,transparent,#000 56px,#000 calc(100% - 56px),transparent);mask-image:linear-gradient(90deg,transparent,#000 56px,#000 calc(100% - 56px),transparent)}
+.filters button[aria-pressed=true]{background:#082f57;color:#fff;border-color:#082f57}
+.railBar>span{font-size:11px;font-weight:700;opacity:.8}
+.featured{display:none}
+@media(max-width:767px){.railBar>span{max-width:none}}

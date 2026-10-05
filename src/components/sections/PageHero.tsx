@@ -106,7 +106,12 @@ export function PageHero({
                   className="block overflow-hidden py-[0.1em] -my-[0.1em]"
                   style={{ ["--hero-i" as string]: index }}
                 >
-                  <span className="block">{line}</span>
+                  {/* The closing line takes the brand serif, as on the homepage. */}
+                  {index > 0 && index === headlineLines.length - 1 ? (
+                    <em className="block">{line}</em>
+                  ) : (
+                    <span className="block">{line}</span>
+                  )}
                 </span>
               ))}
             </BalancedHeading>

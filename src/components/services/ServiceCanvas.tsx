@@ -16,14 +16,13 @@ const scenes: Record<string, { headline: string; subtitle: string; file: string;
   branding: { headline: "Be recognised at a glance.", subtitle: "THE IDENTITY SYSTEM", file: "loop-03-create-connection", title: "One visual system carried across ads, pages and packaging", theme: "creative" },
 };
 
-export function ServiceCanvas({ service, title, capabilities }: { service: string; title: string; capabilities: string[] }) {
+export function ServiceCanvas({ service, title }: { service: string; title: string }) {
   const scene = scenes[service] ?? scenes["d2c-growth"]!;
-  const visual = ({ seo: "seo", "social-media": "social", "web-development": "landing", "lead-generation": "leads", branding: "brand" } as Record<string, string>)[service];
+  const visual = ({ seo: "seo", "social-media": "social", "web-development": "landing", "lead-generation": "leads", branding: "brand", performance: "ads", creative: "design", automation: "automation", shopify: "store" } as Record<string, string>)[service];
   return <aside className={`${styles.canvas} ${styles[scene.theme]}`} aria-label={`${title} in motion`}>
     <div className={styles.top}><span>{scene.subtitle}</span><span aria-hidden="true">↗</span></div>
     <h2>{scene.headline}</h2>
     <div className={styles.motion} data-service-visual={visual ? "true" : undefined}>{visual ? <FeatureVisual kind={visual} instance="service" /> : <MotionFigure file={scene.file} title={scene.title} priority/>}</div>
-    <div className={styles.tags}>{capabilities.map(c => <span key={c}>{c}</span>)}</div>
     <p className={styles.note}>Illustrative workflow · example figures</p>
   </aside>;
 }

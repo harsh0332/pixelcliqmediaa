@@ -72,7 +72,7 @@ export default function ContactPage() {
                   id="contact-heading"
                   className="mt-6 max-w-[14ch]"
                 >
-                  LET’S MAKE YOUR NEXT MOVE COUNT.
+                  Let’s make your next move <em>count.</em>
                 </BalancedHeading>
                 <p className="type-body-lg mt-6 max-w-measure text-ink-soft">
                   {contactPage.support}

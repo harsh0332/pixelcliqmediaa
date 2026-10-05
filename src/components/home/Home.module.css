@@ -23,12 +23,12 @@
 
 .display {
   margin: 0;
-  font: 700 clamp(44px, 6vw, 98px) / 0.92 var(--font-sans-bold-stack) !important;
-  letter-spacing: -0.062em !important;
-  text-transform: uppercase;
+  font: 700 clamp(44px, 6vw, 92px) / 0.98 var(--font-sans-bold-stack) !important;
+  letter-spacing: -0.055em !important;
   color: #082f57;
 }
-.display em { font-style: normal; color: #0868ad !important; }
+/* Same two voices as the hero and the services heading. */
+.display em { font-family:var(--font-instrument),Georgia,serif!important;font-style:italic!important;font-weight:400!important;letter-spacing:-.03em; color: #0868ad !important; }
 .lead { margin: 0; font-size: clamp(16px, 1.3vw, 18.5px); line-height: 1.6; color: #4a5d70; max-width: 30em; }
 
 .splitHead {

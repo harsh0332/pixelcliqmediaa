@@ -44,15 +44,15 @@
 </style>
 <text class="f" x="36" y="44" font-size="12" fill="#E3FF8C" letter-spacing="1">04</text><text class="f" x="60" y="44" font-size="12" fill="#8E93A1" letter-spacing="3">MOMENTUM</text>
 <rect x="36" y="70" width="272" height="296" rx="16" fill="#2C303B" stroke="#454A57" stroke-width="1.5"/><text class="f" x="56" y="100" font-size="12" fill="#8E93A1" letter-spacing="1">PRE-LAUNCH CHECKS</text>
-<g class="r0"><circle cx="66" cy="138" r="10" fill="none" stroke="#454A57" stroke-width="1.5"/><text class="f" x="88" y="143" font-size="13" fill="#E6E8EE">Pixel and CAPI firing</text></g><g class="k0"><circle cx="66" cy="138" r="10" fill="#E3FF8C"/><path d="M61.5 138l3 3 5.5-6" fill="none" stroke="#1B2030" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><text class="f" x="288" y="143" font-size="11" fill="#E3FF8C" text-anchor="end">OK</text></g>
-<g class="r1"><circle cx="66" cy="186" r="10" fill="none" stroke="#454A57" stroke-width="1.5"/><text class="f" x="88" y="191" font-size="13" fill="#E6E8EE">UTMs on every ad</text></g><g class="k1"><circle cx="66" cy="186" r="10" fill="#E3FF8C"/><path d="M61.5 186l3 3 5.5-6" fill="none" stroke="#1B2030" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><text class="f" x="288" y="191" font-size="11" fill="#E3FF8C" text-anchor="end">OK</text></g>
-<g class="r2"><circle cx="66" cy="234" r="10" fill="none" stroke="#454A57" stroke-width="1.5"/><text class="f" x="88" y="239" font-size="13" fill="#E6E8EE">Events deduplicated</text></g><g class="k2"><circle cx="66" cy="234" r="10" fill="#E3FF8C"/><path d="M61.5 234l3 3 5.5-6" fill="none" stroke="#1B2030" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><text class="f" x="288" y="239" font-size="11" fill="#E3FF8C" text-anchor="end">OK</text></g>
-<g class="r3"><circle cx="66" cy="282" r="10" fill="none" stroke="#454A57" stroke-width="1.5"/><text class="f" x="88" y="287" font-size="13" fill="#E6E8EE">Budget and bids set</text></g><g class="k3"><circle cx="66" cy="282" r="10" fill="#E3FF8C"/><path d="M61.5 282l3 3 5.5-6" fill="none" stroke="#1B2030" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><text class="f" x="288" y="287" font-size="11" fill="#E3FF8C" text-anchor="end">OK</text></g>
-<g class="r4"><circle cx="66" cy="330" r="10" fill="none" stroke="#454A57" stroke-width="1.5"/><text class="f" x="88" y="335" font-size="13" fill="#E6E8EE">Creative QA passed</text></g><g class="k4"><circle cx="66" cy="330" r="10" fill="#E3FF8C"/><path d="M61.5 330l3 3 5.5-6" fill="none" stroke="#1B2030" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><text class="f" x="288" y="335" font-size="11" fill="#E3FF8C" text-anchor="end">OK</text></g>
+<g class="r0"><circle cx="66" cy="138" r="10" fill="none" stroke="#454A57" stroke-width="1.5"/><text class="f" x="88" y="143" font-size="13" fill="#E6E8EE">Pixel and CAPI firing</text></g><g class="k0"><circle cx="66" cy="138" r="10" fill="#E3FF8C"/><path d="M61.5 138l3 3 5.5-6" fill="none" stroke="#1b2530" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><text class="f" x="288" y="143" font-size="11" fill="#E3FF8C" text-anchor="end">OK</text></g>
+<g class="r1"><circle cx="66" cy="186" r="10" fill="none" stroke="#454A57" stroke-width="1.5"/><text class="f" x="88" y="191" font-size="13" fill="#E6E8EE">UTMs on every ad</text></g><g class="k1"><circle cx="66" cy="186" r="10" fill="#E3FF8C"/><path d="M61.5 186l3 3 5.5-6" fill="none" stroke="#1b2530" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><text class="f" x="288" y="191" font-size="11" fill="#E3FF8C" text-anchor="end">OK</text></g>
+<g class="r2"><circle cx="66" cy="234" r="10" fill="none" stroke="#454A57" stroke-width="1.5"/><text class="f" x="88" y="239" font-size="13" fill="#E6E8EE">Events deduplicated</text></g><g class="k2"><circle cx="66" cy="234" r="10" fill="#E3FF8C"/><path d="M61.5 234l3 3 5.5-6" fill="none" stroke="#1b2530" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><text class="f" x="288" y="239" font-size="11" fill="#E3FF8C" text-anchor="end">OK</text></g>
+<g class="r3"><circle cx="66" cy="282" r="10" fill="none" stroke="#454A57" stroke-width="1.5"/><text class="f" x="88" y="287" font-size="13" fill="#E6E8EE">Budget and bids set</text></g><g class="k3"><circle cx="66" cy="282" r="10" fill="#E3FF8C"/><path d="M61.5 282l3 3 5.5-6" fill="none" stroke="#1b2530" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><text class="f" x="288" y="287" font-size="11" fill="#E3FF8C" text-anchor="end">OK</text></g>
+<g class="r4"><circle cx="66" cy="330" r="10" fill="none" stroke="#454A57" stroke-width="1.5"/><text class="f" x="88" y="335" font-size="13" fill="#E6E8EE">Creative QA passed</text></g><g class="k4"><circle cx="66" cy="330" r="10" fill="#E3FF8C"/><path d="M61.5 330l3 3 5.5-6" fill="none" stroke="#1b2530" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><text class="f" x="288" y="335" font-size="11" fill="#E3FF8C" text-anchor="end">OK</text></g>
 <circle cx="420" cy="218" r="62" fill="none" stroke="#3A3F4B" stroke-width="6"/>
 <circle class="rg" cx="420" cy="218" r="62" fill="none" stroke="#E3FF8C" stroke-width="6" stroke-linecap="round" transform="rotate(-90 420 218)"/>
 <g class="st0" opacity="0"><circle cx="420" cy="218" r="48" fill="#2C303B"/><text class="f" x="420" y="224" font-size="16" font-weight="600" fill="#8E93A1" text-anchor="middle">Ready</text></g>
-<g class="st1"><circle cx="420" cy="218" r="48" fill="#E3FF8C"/><path d="M414 204l18 14-18 14z" fill="#1B2030"/></g>
+<g class="st1"><circle cx="420" cy="218" r="48" fill="#E3FF8C"/><path d="M414 204l18 14-18 14z" fill="#1b2530"/></g>
 <g class="rpw"><circle class="rp" cx="420" cy="218" r="62" fill="none" stroke="#E3FF8C" stroke-width="2"/><circle class="rp" cx="420" cy="218" r="62" fill="none" stroke="#E3FF8C" stroke-width="2" style="animation-delay:-.9s"/></g>
 <text class="f" x="420" y="318" font-size="12" fill="#8E93A1" text-anchor="middle" letter-spacing="1">CAMPAIGN</text>
 <text class="f sl0" x="420" y="338" font-size="14" font-weight="600" fill="#E6E8EE" text-anchor="middle" opacity="0">Setting up</text><text class="f sl1" x="420" y="338" font-size="14" font-weight="600" fill="#E3FF8C" text-anchor="middle">Live</text>
@@ -65,14 +65,14 @@
 <text class="f oc3" x="532" y="168" font-size="32" font-weight="600" fill="#E6E8EE" opacity="0">86</text>
 <text class="f oc4" x="532" y="168" font-size="32" font-weight="600" fill="#E6E8EE" opacity="1">141</text>
 <line x1="532" y1="340" x2="744" y2="340" stroke="#454A57"/>
-<rect class="b0" x="534" y="330" width="12" height="10" rx="3" fill="#8C9BFF"/>
-<rect class="b1" x="553" y="326" width="12" height="14" rx="3" fill="#8C9BFF"/>
-<rect class="b2" x="572" y="328" width="12" height="12" rx="3" fill="#8C9BFF"/>
-<rect class="b3" x="591" y="320" width="12" height="20" rx="3" fill="#8C9BFF"/>
-<rect class="b4" x="610" y="314" width="12" height="26" rx="3" fill="#8C9BFF"/>
-<rect class="b5" x="629" y="316" width="12" height="24" rx="3" fill="#8C9BFF"/>
-<rect class="b6" x="648" y="304" width="12" height="36" rx="3" fill="#8C9BFF"/>
-<rect class="b7" x="667" y="292" width="12" height="48" rx="3" fill="#8C9BFF"/>
+<rect class="b0" x="534" y="330" width="12" height="10" rx="3" fill="#8cc5ff"/>
+<rect class="b1" x="553" y="326" width="12" height="14" rx="3" fill="#8cc5ff"/>
+<rect class="b2" x="572" y="328" width="12" height="12" rx="3" fill="#8cc5ff"/>
+<rect class="b3" x="591" y="320" width="12" height="20" rx="3" fill="#8cc5ff"/>
+<rect class="b4" x="610" y="314" width="12" height="26" rx="3" fill="#8cc5ff"/>
+<rect class="b5" x="629" y="316" width="12" height="24" rx="3" fill="#8cc5ff"/>
+<rect class="b6" x="648" y="304" width="12" height="36" rx="3" fill="#8cc5ff"/>
+<rect class="b7" x="667" y="292" width="12" height="48" rx="3" fill="#8cc5ff"/>
 <rect class="b8" x="686" y="278" width="12" height="62" rx="3" fill="#E3FF8C"/>
 <rect class="b9" x="705" y="256" width="12" height="84" rx="3" fill="#E3FF8C"/>
 <rect class="b10" x="724" y="230" width="12" height="110" rx="3" fill="#E3FF8C"/>

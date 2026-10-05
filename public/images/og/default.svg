@@ -5,8 +5,8 @@
       <stop offset="100%" stop-color="#EFEBE3" />
     </linearGradient>
     <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#2C4BFF" />
-      <stop offset="100%" stop-color="#5472FF" />
+      <stop offset="0%" stop-color="#2c95ff" />
+      <stop offset="100%" stop-color="#54a9ff" />
     </linearGradient>
     <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
       <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#E2DDD3" stroke-width="0.75" stroke-opacity="0.6"/>
@@ -27,16 +27,16 @@
   <g transform="translate(72, 72)">
     <!-- Logo Monogram -->
     <rect x="0" y="0" width="48" height="48" rx="8" fill="#14151A" />
-    <path d="M 14 16 H 34 V 24 H 14 Z M 14 24 H 26 V 34 H 14 Z" fill="#2C4BFF" />
+    <path d="M 14 16 H 34 V 24 H 14 Z M 14 24 H 26 V 34 H 14 Z" fill="#2c95ff" />
     <circle cx="31" cy="31" r="3.5" fill="#FFFFFF" />
 
     <!-- Wordmark -->
-    <text x="64" y="32" font-family="system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="28" font-weight="700" fill="#14151A" letter-spacing="-0.02em">Pixelcliq<tspan fill="#2C4BFF">.</tspan>Media</text>
+    <text x="64" y="32" font-family="system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="28" font-weight="700" fill="#14151A" letter-spacing="-0.02em">Pixelcliq<tspan fill="#2c95ff">.</tspan>Media</text>
 
     <!-- Eyebrow Pill -->
-    <rect x="760" y="4" width="296" height="40" rx="20" fill="#EAEDFF" stroke="#2C4BFF" stroke-width="1" stroke-opacity="0.4"/>
-    <circle cx="780" cy="24" r="4" fill="#2C4BFF" />
-    <text x="794" y="29" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600" fill="#2C4BFF" letter-spacing="0.08em">D2C GROWTH ARCHITECTURE</text>
+    <rect x="760" y="4" width="296" height="40" rx="20" fill="#eaf4ff" stroke="#2c95ff" stroke-width="1" stroke-opacity="0.4"/>
+    <circle cx="780" cy="24" r="4" fill="#2c95ff" />
+    <text x="794" y="29" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600" fill="#2c95ff" letter-spacing="0.08em">D2C GROWTH ARCHITECTURE</text>
   </g>
 
   <!-- Main Headline Block -->
@@ -48,7 +48,7 @@
     <text x="0" y="70" font-family="system-ui, -apple-system, sans-serif" font-size="64" font-weight="800" fill="#14151A" letter-spacing="-0.03em">
       Where D2C Brands
     </text>
-    <text x="0" y="145" font-family="Georgia, serif" font-style="italic" font-size="68" font-weight="400" fill="#2C4BFF" letter-spacing="-0.02em">
+    <text x="0" y="145" font-family="Georgia, serif" font-style="italic" font-size="68" font-weight="400" fill="#2c95ff" letter-spacing="-0.02em">
       Compound<tspan font-family="system-ui, sans-serif" font-style="normal" font-weight="800" fill="#14151A">.</tspan>
     </text>
 
@@ -68,11 +68,11 @@
     <g transform="translate(0, 26)">
       <text x="0" y="16" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="#14151A" letter-spacing="0.1em">CAPABILITIES</text>
       <text x="130" y="16" font-family="system-ui, sans-serif" font-size="15" font-weight="500" fill="#54555B">Performance Creative</text>
-      <circle cx="310" cy="12" r="3" fill="#2C4BFF" />
+      <circle cx="310" cy="12" r="3" fill="#2c95ff" />
       <text x="330" y="16" font-family="system-ui, sans-serif" font-size="15" font-weight="500" fill="#54555B">Meta &amp; Google Ads</text>
-      <circle cx="500" cy="12" r="3" fill="#2C4BFF" />
+      <circle cx="500" cy="12" r="3" fill="#2c95ff" />
       <text x="520" y="16" font-family="system-ui, sans-serif" font-size="15" font-weight="500" fill="#54555B">Shopify &amp; CRO</text>
-      <circle cx="660" cy="12" r="3" fill="#2C4BFF" />
+      <circle cx="660" cy="12" r="3" fill="#2c95ff" />
       <text x="680" y="16" font-family="system-ui, sans-serif" font-size="15" font-weight="500" fill="#54555B">Retention &amp; AI</text>
     </g>
 

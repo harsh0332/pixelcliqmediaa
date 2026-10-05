@@ -15,32 +15,32 @@
 @media (prefers-reduced-motion:reduce){*{animation:none!important}}
 </style>
 <rect x="40" y="30" width="720" height="470" rx="20" fill="#FFFFFF" stroke="#E4E2DC" stroke-width="1.5"/>
-<text class="f" x="68" y="70" font-size="17" font-weight="600" fill="#1C2140">Where ₹1,000 of revenue goes</text>
+<text class="f" x="68" y="70" font-size="17" font-weight="600" fill="#082f57">Where ₹1,000 of revenue goes</text>
 <g class="sa0" opacity="0"><rect x="68" y="84" width="96" height="28" rx="14" fill="#FDE3E7"/><text class="f" x="116" y="103" font-size="13" font-weight="600" fill="#B3203D" text-anchor="middle">Before</text></g>
-<g class="sa1"><rect x="68" y="84" width="232" height="28" rx="14" fill="#E8ECFF"/><text class="f" x="184" y="103" font-size="13" font-weight="600" fill="#2036D8" text-anchor="middle">After lower CAC, fewer returns</text></g>
+<g class="sa1"><rect x="68" y="84" width="232" height="28" rx="14" fill="#e3f1fd"/><text class="f" x="184" y="103" font-size="13" font-weight="600" fill="#0868ad" text-anchor="middle">After lower CAC, fewer returns</text></g>
 <text class="f" x="732" y="68" font-size="13" fill="#6B7189" text-anchor="end">Profit per order</text>
-<text class="f pp0" x="732" y="104" font-size="32" font-weight="600" fill="#1C2140" text-anchor="end" opacity="0">₹110</text><text class="f pp1" x="732" y="104" font-size="32" font-weight="600" fill="#1C2140" text-anchor="end">₹300</text>
+<text class="f pp0" x="732" y="104" font-size="32" font-weight="600" fill="#082f57" text-anchor="end" opacity="0">₹110</text><text class="f pp1" x="732" y="104" font-size="32" font-weight="600" fill="#082f57" text-anchor="end">₹300</text>
 <line x1="68" y1="430" x2="732" y2="430" stroke="#E4E2DC"/>
-<rect x="88" y="150.0" width="56" height="280.0" rx="3" fill="#1C2140"/>
+<rect x="88" y="150.0" width="56" height="280.0" rx="3" fill="#082f57"/>
 <text class="f" x="116.0" y="454" font-size="12" fill="#6B7189" text-anchor="middle">Revenue</text>
-<text class="f" x="116.0" y="474" font-size="13" font-weight="600" fill="#1C2140" text-anchor="middle">₹1,000</text>
+<text class="f" x="116.0" y="474" font-size="13" font-weight="600" fill="#082f57" text-anchor="middle">₹1,000</text>
 <rect x="180" y="150.0" width="56" height="84.0" rx="3" fill="#F7A1B0"/>
 <text class="f" x="208.0" y="454" font-size="12" fill="#6B7189" text-anchor="middle">Product</text>
-<text class="f" x="208.0" y="474" font-size="13" font-weight="600" fill="#1C2140" text-anchor="middle">−₹300</text>
+<text class="f" x="208.0" y="474" font-size="13" font-weight="600" fill="#082f57" text-anchor="middle">−₹300</text>
 <rect class="w2" x="272" y="234.0" width="56" height="70.0" rx="3" fill="#F0506E"/>
 <text class="f" x="300.0" y="454" font-size="12" fill="#6B7189" text-anchor="middle">Meta ads</text>
-<text class="f sa0" x="300.0" y="474" font-size="13" font-weight="600" fill="#1C2140" text-anchor="middle" opacity="0">−₹350</text><text class="f sa1" x="300.0" y="474" font-size="13" font-weight="600" fill="#3452FF" text-anchor="middle">−₹250</text>
+<text class="f sa0" x="300.0" y="474" font-size="13" font-weight="600" fill="#082f57" text-anchor="middle" opacity="0">−₹350</text><text class="f sa1" x="300.0" y="474" font-size="13" font-weight="600" fill="#0a6fd0" text-anchor="middle">−₹250</text>
 <rect class="w3" x="364" y="304.0" width="56" height="22.4" rx="3" fill="#F7A1B0"/>
 <text class="f" x="392.0" y="454" font-size="12" fill="#6B7189" text-anchor="middle">Shipping</text>
-<text class="f sa0" x="392.0" y="474" font-size="13" font-weight="600" fill="#1C2140" text-anchor="middle" opacity="0">−₹90</text><text class="f sa1" x="392.0" y="474" font-size="13" font-weight="600" fill="#3452FF" text-anchor="middle">−₹80</text>
+<text class="f sa0" x="392.0" y="474" font-size="13" font-weight="600" fill="#082f57" text-anchor="middle" opacity="0">−₹90</text><text class="f sa1" x="392.0" y="474" font-size="13" font-weight="600" fill="#0a6fd0" text-anchor="middle">−₹80</text>
 <rect class="w4" x="456" y="326.4" width="56" height="11.2" rx="3" fill="#F0506E"/>
 <text class="f" x="484.0" y="454" font-size="12" fill="#6B7189" text-anchor="middle">RTO loss</text>
-<text class="f sa0" x="484.0" y="474" font-size="13" font-weight="600" fill="#1C2140" text-anchor="middle" opacity="0">−₹120</text><text class="f sa1" x="484.0" y="474" font-size="13" font-weight="600" fill="#3452FF" text-anchor="middle">−₹40</text>
+<text class="f sa0" x="484.0" y="474" font-size="13" font-weight="600" fill="#082f57" text-anchor="middle" opacity="0">−₹120</text><text class="f sa1" x="484.0" y="474" font-size="13" font-weight="600" fill="#0a6fd0" text-anchor="middle">−₹40</text>
 <rect class="w5" x="548" y="337.6" width="56" height="8.4" rx="3" fill="#F7A1B0"/>
 <text class="f" x="576.0" y="454" font-size="12" fill="#6B7189" text-anchor="middle">Gateway</text>
-<text class="f" x="576.0" y="474" font-size="13" font-weight="600" fill="#1C2140" text-anchor="middle">−₹30</text>
+<text class="f" x="576.0" y="474" font-size="13" font-weight="600" fill="#082f57" text-anchor="middle">−₹30</text>
 <rect class="w6" x="640" y="346.0" width="56" height="84.0" rx="3" fill="#FFC83D"/>
 <text class="f" x="668.0" y="454" font-size="12" fill="#6B7189" text-anchor="middle">Profit</text>
-<text class="f sa0" x="668.0" y="474" font-size="13" font-weight="600" fill="#1C2140" text-anchor="middle" opacity="0">₹110</text><text class="f sa1" x="668.0" y="474" font-size="13" font-weight="600" fill="#3452FF" text-anchor="middle">₹300</text>
+<text class="f sa0" x="668.0" y="474" font-size="13" font-weight="600" fill="#082f57" text-anchor="middle" opacity="0">₹110</text><text class="f sa1" x="668.0" y="474" font-size="13" font-weight="600" fill="#0a6fd0" text-anchor="middle">₹300</text>
 <line x1="144" y1="150.0" x2="180" y2="150.0" stroke="#C9CCD8" stroke-dasharray="3 4"/>
 </svg>

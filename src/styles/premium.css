@@ -183,9 +183,6 @@ main [data-dark-hero].contact-refresh ol { background: #ffffff14 !important; }
 :root { --accent: #0a6fd0; --accent-wash: #e8f2fc; }
 /* Large secondary lines stay white-blue; lime is kept for small accents. */
 main [data-dark-hero]:not([data-hero-section]) [class*="promise"] { color: #e3effb; }
-/* Some heroes hard-code their paragraph colour; on cobalt every paragraph
-   outside the white form card reads light. */
-main [data-dark-hero]:not([data-hero-section]) p:not(.contact-form-panel p) { color: #dfefff; }
 /* Large accented headings on dark bands use a soft periwinkle; lime is kept
    for buttons, numbers and small marks so it never fills the eye. */
 main [data-tone="inverse"] :is(h2, h3) em { color: #aed6ff !important; }

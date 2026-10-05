@@ -78,7 +78,8 @@ export const homeContent = {
   },
   explorer: {
     eyebrow: "01 / Services",
-    title: "How we grow brands",
+    title: "How we grow",
+    titleAccent: "brands",
     intro:
       "Start with the one thing holding you back today. Every service is planned to plug into the others, so nothing you build now has to be rebuilt later.",
     cta: { label: "Not sure where to start? Book a free growth call", href: "/contact" },

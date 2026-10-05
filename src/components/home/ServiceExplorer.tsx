@@ -80,7 +80,8 @@ export function ServiceExplorer({ headingLevel = "h2" }: { headingLevel?: "h1" |
           <div>
             <p className={styles.eyebrow}>{explorer.eyebrow}</p>
             <Heading id="explorer-heading" className={styles.title}>
-              {explorer.title}
+              {explorer.title}{" "}
+              <em>{explorer.titleAccent}<span className={styles.titleDot}>.</span></em>
             </Heading>
           </div>
           <div className={styles.headSide}>

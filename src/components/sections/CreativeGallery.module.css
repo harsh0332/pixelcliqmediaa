@@ -6,3 +6,10 @@
    the pointer target to 44x44 without changing what is drawn. */
 .galleryBar>button{position:relative}
 .galleryBar>button::before{content:"";position:absolute;left:50%;top:50%;width:44px;height:44px;transform:translate(-50%,-50%)}
+
+/* Premium pass: soft edges on the moving rail, a real hover, one active-pill style. */
+.marquee{-webkit-mask-image:linear-gradient(90deg,transparent,#000 56px,#000 calc(100% - 56px),transparent);mask-image:linear-gradient(90deg,transparent,#000 56px,#000 calc(100% - 56px),transparent)}
+.art img{transition:filter .3s,transform .7s cubic-bezier(.2,.7,.2,1)}
+.card:hover .art img{transform:scale(1.04)}
+.filters button[aria-pressed=true]{background:#082f57;color:#fff;border-color:#082f57}
+.caption small{font-size:12px;font-weight:600;color:#4a5d70}

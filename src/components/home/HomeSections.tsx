@@ -65,7 +65,7 @@ export function Standard() {
             <span role="columnheader">{standard.oursLabel}</span>
           </div>
           {comparisonRows.map((row, i) => (
-            <div key={row.id} className={styles.sheetRow} role="row" data-rise style={{ ["--rise" as string]: i % 3 }}>
+            <div key={row.id} className={styles.sheetRow} role="row" data-rise style={{ ["--rise" as string]: i + 1 }}>
               <span role="rowheader" className={styles.dimension}>{row.dimension}</span>
               <span role="cell" className={styles.typical}>{row.typical}</span>
               <span role="cell" className={styles.ours}>

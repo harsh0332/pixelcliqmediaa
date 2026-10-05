@@ -28,38 +28,38 @@
 @keyframes av{0%,76%{opacity:0;transform:translate(-6px,0px)}79%,93%{opacity:1;transform:translate(0,0)}97%,100%{opacity:0;transform:translate(0,0)}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important}}
 </style>
-<rect x="50" y="30" width="240" height="480" rx="38" fill="#0F1330"/><rect x="62" y="42" width="216" height="456" rx="28" fill="#1C2140"/><rect x="140" y="50" width="60" height="14" rx="7" fill="#0F1330"/>
-<circle class="ring" cx="170" cy="112" r="30" fill="#3452FF"/><circle cx="170" cy="112" r="30" fill="#3452FF"/><path d="M170 97l4 10 10 4-10 4-4 10-4-10-10-4 10-4z" fill="#FFFFFF"/>
-<text class="f" x="170" y="166" font-size="16" font-weight="600" fill="#FFFFFF" text-anchor="middle">Order desk AI</text><text class="f" x="170" y="185" font-size="12" fill="#9AA3C7" text-anchor="middle">Verifying a COD order</text>
-<rect class="wv" x="122" y="217.0" width="5" height="10" rx="2.5" fill="#7C8FFF" style="animation-delay:-0.00s;animation-duration:0.70s"/>
-<rect class="wv" x="131" y="213.0" width="5" height="18" rx="2.5" fill="#7C8FFF" style="animation-delay:-0.13s;animation-duration:0.85s"/>
-<rect class="wv" x="140" y="209.0" width="5" height="26" rx="2.5" fill="#7C8FFF" style="animation-delay:-0.26s;animation-duration:1.00s"/>
-<rect class="wv" x="149" y="215.0" width="5" height="14" rx="2.5" fill="#7C8FFF" style="animation-delay:-0.39s;animation-duration:0.70s"/>
-<rect class="wv" x="158" y="207.0" width="5" height="30" rx="2.5" fill="#7C8FFF" style="animation-delay:-0.52s;animation-duration:0.85s"/>
-<rect class="wv" x="167" y="212.0" width="5" height="20" rx="2.5" fill="#7C8FFF" style="animation-delay:-0.65s;animation-duration:1.00s"/>
-<rect class="wv" x="176" y="208.0" width="5" height="28" rx="2.5" fill="#7C8FFF" style="animation-delay:-0.78s;animation-duration:0.70s"/>
-<rect class="wv" x="185" y="216.0" width="5" height="12" rx="2.5" fill="#7C8FFF" style="animation-delay:-0.01s;animation-duration:0.85s"/>
-<rect class="wv" x="194" y="211.0" width="5" height="22" rx="2.5" fill="#7C8FFF" style="animation-delay:-0.14s;animation-duration:1.00s"/>
-<rect class="wv" x="203" y="214.0" width="5" height="16" rx="2.5" fill="#7C8FFF" style="animation-delay:-0.27s;animation-duration:0.70s"/>
-<rect class="wv" x="212" y="218.0" width="5" height="8" rx="2.5" fill="#7C8FFF" style="animation-delay:-0.40s;animation-duration:0.85s"/>
-<g class="b1"><rect x="72" y="252" width="196" height="52" rx="14" fill="#2A3160"/><text class="f" x="84" y="273" font-size="12" fill="#FFFFFF"><tspan x="84" dy="0">Hi Riya, confirming your</tspan><tspan x="84" dy="16">COD order of ₹1,299?</tspan></text></g>
-<g class="b2"><rect x="158" y="314" width="110" height="34" rx="14" fill="#3452FF"/><text class="f" x="170" y="335" font-size="12" fill="#FFFFFF"><tspan x="170" dy="0">Haan, bhej do</tspan></text></g>
-<g class="b3"><rect x="72" y="358" width="196" height="52" rx="14" fill="#2A3160"/><text class="f" x="84" y="379" font-size="12" fill="#FFFFFF"><tspan x="84" dy="0">Done! Delivery by Friday.</tspan><tspan x="84" dy="16">Please keep ₹1,299 ready.</tspan></text></g>
-<g class="ok"><rect x="100" y="436" width="140" height="32" rx="16" fill="#FFC83D"/><path d="M117 452l4 4 7-8" fill="none" stroke="#1C2140" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><text class="f" x="184" y="457" font-size="13" font-weight="600" fill="#1C2140" text-anchor="middle">Order verified</text></g>
+<rect x="50" y="30" width="240" height="480" rx="38" fill="#0f1f30"/><rect x="62" y="42" width="216" height="456" rx="28" fill="#082f57"/><rect x="140" y="50" width="60" height="14" rx="7" fill="#0f1f30"/>
+<circle class="ring" cx="170" cy="112" r="30" fill="#0a6fd0"/><circle cx="170" cy="112" r="30" fill="#0a6fd0"/><path d="M170 97l4 10 10 4-10 4-4 10-4-10-10-4 10-4z" fill="#FFFFFF"/>
+<text class="f" x="170" y="166" font-size="16" font-weight="600" fill="#FFFFFF" text-anchor="middle">Order desk AI</text><text class="f" x="170" y="185" font-size="12" fill="#9fb6cc" text-anchor="middle">Verifying a COD order</text>
+<rect class="wv" x="122" y="217.0" width="5" height="10" rx="2.5" fill="#7cbdff" style="animation-delay:-0.00s;animation-duration:0.70s"/>
+<rect class="wv" x="131" y="213.0" width="5" height="18" rx="2.5" fill="#7cbdff" style="animation-delay:-0.13s;animation-duration:0.85s"/>
+<rect class="wv" x="140" y="209.0" width="5" height="26" rx="2.5" fill="#7cbdff" style="animation-delay:-0.26s;animation-duration:1.00s"/>
+<rect class="wv" x="149" y="215.0" width="5" height="14" rx="2.5" fill="#7cbdff" style="animation-delay:-0.39s;animation-duration:0.70s"/>
+<rect class="wv" x="158" y="207.0" width="5" height="30" rx="2.5" fill="#7cbdff" style="animation-delay:-0.52s;animation-duration:0.85s"/>
+<rect class="wv" x="167" y="212.0" width="5" height="20" rx="2.5" fill="#7cbdff" style="animation-delay:-0.65s;animation-duration:1.00s"/>
+<rect class="wv" x="176" y="208.0" width="5" height="28" rx="2.5" fill="#7cbdff" style="animation-delay:-0.78s;animation-duration:0.70s"/>
+<rect class="wv" x="185" y="216.0" width="5" height="12" rx="2.5" fill="#7cbdff" style="animation-delay:-0.01s;animation-duration:0.85s"/>
+<rect class="wv" x="194" y="211.0" width="5" height="22" rx="2.5" fill="#7cbdff" style="animation-delay:-0.14s;animation-duration:1.00s"/>
+<rect class="wv" x="203" y="214.0" width="5" height="16" rx="2.5" fill="#7cbdff" style="animation-delay:-0.27s;animation-duration:0.70s"/>
+<rect class="wv" x="212" y="218.0" width="5" height="8" rx="2.5" fill="#7cbdff" style="animation-delay:-0.40s;animation-duration:0.85s"/>
+<g class="b1"><rect x="72" y="252" width="196" height="52" rx="14" fill="#2a4560"/><text class="f" x="84" y="273" font-size="12" fill="#FFFFFF"><tspan x="84" dy="0">Hi Riya, confirming your</tspan><tspan x="84" dy="16">COD order of ₹1,299?</tspan></text></g>
+<g class="b2"><rect x="158" y="314" width="110" height="34" rx="14" fill="#0a6fd0"/><text class="f" x="170" y="335" font-size="12" fill="#FFFFFF"><tspan x="170" dy="0">Haan, bhej do</tspan></text></g>
+<g class="b3"><rect x="72" y="358" width="196" height="52" rx="14" fill="#2a4560"/><text class="f" x="84" y="379" font-size="12" fill="#FFFFFF"><tspan x="84" dy="0">Done! Delivery by Friday.</tspan><tspan x="84" dy="16">Please keep ₹1,299 ready.</tspan></text></g>
+<g class="ok"><rect x="100" y="436" width="140" height="32" rx="16" fill="#FFC83D"/><path d="M117 452l4 4 7-8" fill="none" stroke="#082f57" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><text class="f" x="184" y="457" font-size="13" font-weight="600" fill="#082f57" text-anchor="middle">Order verified</text></g>
 <rect x="330" y="30" width="430" height="290" rx="20" fill="#FFFFFF" stroke="#E4E2DC" stroke-width="1.5"/>
-<text class="f" x="356" y="70" font-size="18" font-weight="600" fill="#1C2140">Order 4821</text><text class="f" x="356" y="92" font-size="13" fill="#6B7189">Cash on delivery, ₹1,299, Bhopal</text>
+<text class="f" x="356" y="70" font-size="18" font-weight="600" fill="#082f57">Order 4821</text><text class="f" x="356" y="92" font-size="13" fill="#6B7189">Cash on delivery, ₹1,299, Bhopal</text>
 <g class="pw" opacity="0"><rect x="604" y="52" width="132" height="30" rx="15" fill="#FFF3D1"/><text class="f" x="670" y="72" font-size="13" font-weight="600" fill="#8A6100" text-anchor="middle">Checking order</text></g>
-<g class="pr"><rect x="604" y="52" width="132" height="30" rx="15" fill="#3452FF"/><text class="f" x="670" y="72" font-size="13" font-weight="600" fill="#FFFFFF" text-anchor="middle">Ready to ship</text></g>
-<g class="r0"><circle cx="370" cy="136" r="12" fill="#EFEDE7"/><text class="f" x="394" y="141" font-size="15" fill="#1C2140">Pincode check</text><text class="f" x="736" y="141" font-size="13" fill="#6B7189" text-anchor="end">Serviceable</text></g><line x1="356" y1="158" x2="736" y2="158" stroke="#EFEDE7"/>
-<g class="c0"><circle cx="370" cy="136" r="12" fill="#3452FF"/><path d="M364.5 136l3.5 3.5 6.5-7" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></g>
-<g class="r1"><circle cx="370" cy="180" r="12" fill="#EFEDE7"/><text class="f" x="394" y="185" font-size="15" fill="#1C2140">Address completeness</text><text class="f" x="736" y="185" font-size="13" fill="#6B7189" text-anchor="end">Landmark added</text></g><line x1="356" y1="202" x2="736" y2="202" stroke="#EFEDE7"/>
-<g class="c1"><circle cx="370" cy="180" r="12" fill="#3452FF"/><path d="M364.5 180l3.5 3.5 6.5-7" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></g>
-<g class="r2"><circle cx="370" cy="224" r="12" fill="#EFEDE7"/><text class="f" x="394" y="229" font-size="15" fill="#1C2140">AI confirmation call</text><text class="f" x="736" y="229" font-size="13" fill="#6B7189" text-anchor="end">Customer said yes</text></g><line x1="356" y1="246" x2="736" y2="246" stroke="#EFEDE7"/>
-<g class="c2"><circle cx="370" cy="224" r="12" fill="#3452FF"/><path d="M364.5 224l3.5 3.5 6.5-7" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></g>
-<g class="r3"><circle cx="370" cy="268" r="12" fill="#EFEDE7"/><text class="f" x="394" y="273" font-size="15" fill="#1C2140">WhatsApp confirmation</text><text class="f" x="736" y="273" font-size="13" fill="#6B7189" text-anchor="end">Tapped confirm</text></g>
-<g class="c3"><circle cx="370" cy="268" r="12" fill="#3452FF"/><path d="M364.5 268l3.5 3.5 6.5-7" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></g>
+<g class="pr"><rect x="604" y="52" width="132" height="30" rx="15" fill="#0a6fd0"/><text class="f" x="670" y="72" font-size="13" font-weight="600" fill="#FFFFFF" text-anchor="middle">Ready to ship</text></g>
+<g class="r0"><circle cx="370" cy="136" r="12" fill="#EFEDE7"/><text class="f" x="394" y="141" font-size="15" fill="#082f57">Pincode check</text><text class="f" x="736" y="141" font-size="13" fill="#6B7189" text-anchor="end">Serviceable</text></g><line x1="356" y1="158" x2="736" y2="158" stroke="#EFEDE7"/>
+<g class="c0"><circle cx="370" cy="136" r="12" fill="#0a6fd0"/><path d="M364.5 136l3.5 3.5 6.5-7" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></g>
+<g class="r1"><circle cx="370" cy="180" r="12" fill="#EFEDE7"/><text class="f" x="394" y="185" font-size="15" fill="#082f57">Address completeness</text><text class="f" x="736" y="185" font-size="13" fill="#6B7189" text-anchor="end">Landmark added</text></g><line x1="356" y1="202" x2="736" y2="202" stroke="#EFEDE7"/>
+<g class="c1"><circle cx="370" cy="180" r="12" fill="#0a6fd0"/><path d="M364.5 180l3.5 3.5 6.5-7" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></g>
+<g class="r2"><circle cx="370" cy="224" r="12" fill="#EFEDE7"/><text class="f" x="394" y="229" font-size="15" fill="#082f57">AI confirmation call</text><text class="f" x="736" y="229" font-size="13" fill="#6B7189" text-anchor="end">Customer said yes</text></g><line x1="356" y1="246" x2="736" y2="246" stroke="#EFEDE7"/>
+<g class="c2"><circle cx="370" cy="224" r="12" fill="#0a6fd0"/><path d="M364.5 224l3.5 3.5 6.5-7" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></g>
+<g class="r3"><circle cx="370" cy="268" r="12" fill="#EFEDE7"/><text class="f" x="394" y="273" font-size="15" fill="#082f57">WhatsApp confirmation</text><text class="f" x="736" y="273" font-size="13" fill="#6B7189" text-anchor="end">Tapped confirm</text></g>
+<g class="c3"><circle cx="370" cy="268" r="12" fill="#0a6fd0"/><path d="M364.5 268l3.5 3.5 6.5-7" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></g>
 <rect x="330" y="340" width="430" height="170" rx="20" fill="#FFFFFF" stroke="#E4E2DC" stroke-width="1.5"/>
 <text class="f" x="356" y="376" font-size="15" fill="#6B7189">RTO on COD orders</text>
-<text class="f" x="356" y="412" font-size="14" fill="#1C2140">Without verification</text><text class="f" x="736" y="412" font-size="14" font-weight="600" fill="#1C2140" text-anchor="end">28%</text><rect x="356" y="422" width="380" height="12" rx="6" fill="#EFEDE7"/><rect x="356" y="422" width="266" height="12" rx="6" fill="#F0506E"/>
-<text class="f" x="356" y="466" font-size="14" fill="#1C2140">With call verification</text><text class="f av" x="736" y="466" font-size="14" font-weight="600" fill="#3452FF" text-anchor="end">9%</text><rect x="356" y="476" width="380" height="12" rx="6" fill="#EFEDE7"/><rect class="af" x="356" y="476" width="86" height="12" rx="6" fill="#3452FF"/>
+<text class="f" x="356" y="412" font-size="14" fill="#082f57">Without verification</text><text class="f" x="736" y="412" font-size="14" font-weight="600" fill="#082f57" text-anchor="end">28%</text><rect x="356" y="422" width="380" height="12" rx="6" fill="#EFEDE7"/><rect x="356" y="422" width="266" height="12" rx="6" fill="#F0506E"/>
+<text class="f" x="356" y="466" font-size="14" fill="#082f57">With call verification</text><text class="f av" x="736" y="466" font-size="14" font-weight="600" fill="#0a6fd0" text-anchor="end">9%</text><rect x="356" y="476" width="380" height="12" rx="6" fill="#EFEDE7"/><rect class="af" x="356" y="476" width="86" height="12" rx="6" fill="#0a6fd0"/>
 <style>*{animation-play-state:paused!important;animation-delay:-4s!important}</style></svg>

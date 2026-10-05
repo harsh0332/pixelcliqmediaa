@@ -38,28 +38,28 @@
 @media (prefers-reduced-motion:reduce){*{animation:none!important}}
 </style>
 <rect x="40" y="30" width="720" height="260" rx="20" fill="#FFFFFF" stroke="#E4E2DC" stroke-width="1.5"/>
-<text class="f" x="68" y="70" font-size="16" font-weight="600" fill="#1C2140">One customer, 12 months</text><text class="f" x="68" y="92" font-size="13" fill="#6B7189">Each repeat order comes from a planned retention flow</text>
+<text class="f" x="68" y="70" font-size="16" font-weight="600" fill="#082f57">One customer, 12 months</text><text class="f" x="68" y="92" font-size="13" fill="#6B7189">Each repeat order comes from a planned retention flow</text>
 <text class="f" x="732" y="68" font-size="13" fill="#6B7189" text-anchor="end">Lifetime value</text>
-<text class="f lv0" x="732" y="106" font-size="30" font-weight="600" fill="#1C2140" text-anchor="end" opacity="0">₹649</text>
-<text class="f lv1" x="732" y="106" font-size="30" font-weight="600" fill="#1C2140" text-anchor="end" opacity="0">₹1,298</text>
-<text class="f lv2" x="732" y="106" font-size="30" font-weight="600" fill="#1C2140" text-anchor="end" opacity="0">₹2,147</text>
-<text class="f lv3" x="732" y="106" font-size="30" font-weight="600" fill="#1C2140" text-anchor="end" opacity="0">₹2,796</text>
-<text class="f lv4" x="732" y="106" font-size="30" font-weight="600" fill="#1C2140" text-anchor="end" opacity="0">₹3,445</text>
-<text class="f lv5" x="732" y="106" font-size="30" font-weight="600" fill="#1C2140" text-anchor="end" opacity="1">₹4,294</text>
+<text class="f lv0" x="732" y="106" font-size="30" font-weight="600" fill="#082f57" text-anchor="end" opacity="0">₹649</text>
+<text class="f lv1" x="732" y="106" font-size="30" font-weight="600" fill="#082f57" text-anchor="end" opacity="0">₹1,298</text>
+<text class="f lv2" x="732" y="106" font-size="30" font-weight="600" fill="#082f57" text-anchor="end" opacity="0">₹2,147</text>
+<text class="f lv3" x="732" y="106" font-size="30" font-weight="600" fill="#082f57" text-anchor="end" opacity="0">₹2,796</text>
+<text class="f lv4" x="732" y="106" font-size="30" font-weight="600" fill="#082f57" text-anchor="end" opacity="0">₹3,445</text>
+<text class="f lv5" x="732" y="106" font-size="30" font-weight="600" fill="#082f57" text-anchor="end" opacity="1">₹4,294</text>
 <rect x="110" y="208" width="580" height="4" rx="2" fill="#EFEDE7"/>
-<rect class="pl" x="110" y="208" width="580" height="4" rx="2" fill="#3452FF"/>
-<g class="tg0"><rect x="56" y="146" width="108" height="28" rx="14" fill="#FFC83D"/><text class="f" x="110" y="165" font-size="12" font-weight="500" fill="#1C2140" text-anchor="middle">First order</text><line x1="110" y1="174" x2="110" y2="190" stroke="#C9CCD8" stroke-width="1.5"/></g>
-<g class="ev0"><circle cx="110" cy="210" r="16" fill="#3452FF" stroke="#FFFFFF" stroke-width="3"/><rect x="104" y="205" width="12" height="11" rx="2" fill="none" stroke="#FFFFFF" stroke-width="1.8"/><path d="M107 205v-2a3 3 0 0 1 6 0v2" fill="none" stroke="#FFFFFF" stroke-width="1.8"/></g>
-<g class="tg1"><rect x="172" y="146" width="108" height="28" rx="14" fill="#E8ECFF"/><text class="f" x="226" y="165" font-size="12" font-weight="500" fill="#1C2140" text-anchor="middle">Refill reminder</text><line x1="226" y1="174" x2="226" y2="190" stroke="#C9CCD8" stroke-width="1.5"/></g>
-<g class="ev1"><circle cx="226" cy="210" r="16" fill="#3452FF" stroke="#FFFFFF" stroke-width="3"/><rect x="220" y="205" width="12" height="11" rx="2" fill="none" stroke="#FFFFFF" stroke-width="1.8"/><path d="M223 205v-2a3 3 0 0 1 6 0v2" fill="none" stroke="#FFFFFF" stroke-width="1.8"/></g>
-<g class="tg2"><rect x="288" y="146" width="108" height="28" rx="14" fill="#E8ECFF"/><text class="f" x="342" y="165" font-size="12" font-weight="500" fill="#1C2140" text-anchor="middle">Loyalty points</text><line x1="342" y1="174" x2="342" y2="190" stroke="#C9CCD8" stroke-width="1.5"/></g>
-<g class="ev2"><circle cx="342" cy="210" r="16" fill="#3452FF" stroke="#FFFFFF" stroke-width="3"/><rect x="336" y="205" width="12" height="11" rx="2" fill="none" stroke="#FFFFFF" stroke-width="1.8"/><path d="M339 205v-2a3 3 0 0 1 6 0v2" fill="none" stroke="#FFFFFF" stroke-width="1.8"/></g>
-<g class="tg3"><rect x="404" y="146" width="108" height="28" rx="14" fill="#E8ECFF"/><text class="f" x="458" y="165" font-size="12" font-weight="500" fill="#1C2140" text-anchor="middle">Bundle offer</text><line x1="458" y1="174" x2="458" y2="190" stroke="#C9CCD8" stroke-width="1.5"/></g>
-<g class="ev3"><circle cx="458" cy="210" r="16" fill="#3452FF" stroke="#FFFFFF" stroke-width="3"/><rect x="452" y="205" width="12" height="11" rx="2" fill="none" stroke="#FFFFFF" stroke-width="1.8"/><path d="M455 205v-2a3 3 0 0 1 6 0v2" fill="none" stroke="#FFFFFF" stroke-width="1.8"/></g>
-<g class="tg4"><rect x="520" y="146" width="108" height="28" rx="14" fill="#E8ECFF"/><text class="f" x="574" y="165" font-size="12" font-weight="500" fill="#1C2140" text-anchor="middle">VIP early access</text><line x1="574" y1="174" x2="574" y2="190" stroke="#C9CCD8" stroke-width="1.5"/></g>
-<g class="ev4"><circle cx="574" cy="210" r="16" fill="#3452FF" stroke="#FFFFFF" stroke-width="3"/><rect x="568" y="205" width="12" height="11" rx="2" fill="none" stroke="#FFFFFF" stroke-width="1.8"/><path d="M571 205v-2a3 3 0 0 1 6 0v2" fill="none" stroke="#FFFFFF" stroke-width="1.8"/></g>
-<g class="tg5"><rect x="636" y="146" width="108" height="28" rx="14" fill="#E8ECFF"/><text class="f" x="690" y="165" font-size="12" font-weight="500" fill="#1C2140" text-anchor="middle">Birthday offer</text><line x1="690" y1="174" x2="690" y2="190" stroke="#C9CCD8" stroke-width="1.5"/></g>
-<g class="ev5"><circle cx="690" cy="210" r="16" fill="#3452FF" stroke="#FFFFFF" stroke-width="3"/><rect x="684" y="205" width="12" height="11" rx="2" fill="none" stroke="#FFFFFF" stroke-width="1.8"/><path d="M687 205v-2a3 3 0 0 1 6 0v2" fill="none" stroke="#FFFFFF" stroke-width="1.8"/></g>
+<rect class="pl" x="110" y="208" width="580" height="4" rx="2" fill="#0a6fd0"/>
+<g class="tg0"><rect x="56" y="146" width="108" height="28" rx="14" fill="#FFC83D"/><text class="f" x="110" y="165" font-size="12" font-weight="500" fill="#082f57" text-anchor="middle">First order</text><line x1="110" y1="174" x2="110" y2="190" stroke="#C9CCD8" stroke-width="1.5"/></g>
+<g class="ev0"><circle cx="110" cy="210" r="16" fill="#0a6fd0" stroke="#FFFFFF" stroke-width="3"/><rect x="104" y="205" width="12" height="11" rx="2" fill="none" stroke="#FFFFFF" stroke-width="1.8"/><path d="M107 205v-2a3 3 0 0 1 6 0v2" fill="none" stroke="#FFFFFF" stroke-width="1.8"/></g>
+<g class="tg1"><rect x="172" y="146" width="108" height="28" rx="14" fill="#e3f1fd"/><text class="f" x="226" y="165" font-size="12" font-weight="500" fill="#082f57" text-anchor="middle">Refill reminder</text><line x1="226" y1="174" x2="226" y2="190" stroke="#C9CCD8" stroke-width="1.5"/></g>
+<g class="ev1"><circle cx="226" cy="210" r="16" fill="#0a6fd0" stroke="#FFFFFF" stroke-width="3"/><rect x="220" y="205" width="12" height="11" rx="2" fill="none" stroke="#FFFFFF" stroke-width="1.8"/><path d="M223 205v-2a3 3 0 0 1 6 0v2" fill="none" stroke="#FFFFFF" stroke-width="1.8"/></g>
+<g class="tg2"><rect x="288" y="146" width="108" height="28" rx="14" fill="#e3f1fd"/><text class="f" x="342" y="165" font-size="12" font-weight="500" fill="#082f57" text-anchor="middle">Loyalty points</text><line x1="342" y1="174" x2="342" y2="190" stroke="#C9CCD8" stroke-width="1.5"/></g>
+<g class="ev2"><circle cx="342" cy="210" r="16" fill="#0a6fd0" stroke="#FFFFFF" stroke-width="3"/><rect x="336" y="205" width="12" height="11" rx="2" fill="none" stroke="#FFFFFF" stroke-width="1.8"/><path d="M339 205v-2a3 3 0 0 1 6 0v2" fill="none" stroke="#FFFFFF" stroke-width="1.8"/></g>
+<g class="tg3"><rect x="404" y="146" width="108" height="28" rx="14" fill="#e3f1fd"/><text class="f" x="458" y="165" font-size="12" font-weight="500" fill="#082f57" text-anchor="middle">Bundle offer</text><line x1="458" y1="174" x2="458" y2="190" stroke="#C9CCD8" stroke-width="1.5"/></g>
+<g class="ev3"><circle cx="458" cy="210" r="16" fill="#0a6fd0" stroke="#FFFFFF" stroke-width="3"/><rect x="452" y="205" width="12" height="11" rx="2" fill="none" stroke="#FFFFFF" stroke-width="1.8"/><path d="M455 205v-2a3 3 0 0 1 6 0v2" fill="none" stroke="#FFFFFF" stroke-width="1.8"/></g>
+<g class="tg4"><rect x="520" y="146" width="108" height="28" rx="14" fill="#e3f1fd"/><text class="f" x="574" y="165" font-size="12" font-weight="500" fill="#082f57" text-anchor="middle">VIP early access</text><line x1="574" y1="174" x2="574" y2="190" stroke="#C9CCD8" stroke-width="1.5"/></g>
+<g class="ev4"><circle cx="574" cy="210" r="16" fill="#0a6fd0" stroke="#FFFFFF" stroke-width="3"/><rect x="568" y="205" width="12" height="11" rx="2" fill="none" stroke="#FFFFFF" stroke-width="1.8"/><path d="M571 205v-2a3 3 0 0 1 6 0v2" fill="none" stroke="#FFFFFF" stroke-width="1.8"/></g>
+<g class="tg5"><rect x="636" y="146" width="108" height="28" rx="14" fill="#e3f1fd"/><text class="f" x="690" y="165" font-size="12" font-weight="500" fill="#082f57" text-anchor="middle">Birthday offer</text><line x1="690" y1="174" x2="690" y2="190" stroke="#C9CCD8" stroke-width="1.5"/></g>
+<g class="ev5"><circle cx="690" cy="210" r="16" fill="#0a6fd0" stroke="#FFFFFF" stroke-width="3"/><rect x="684" y="205" width="12" height="11" rx="2" fill="none" stroke="#FFFFFF" stroke-width="1.8"/><path d="M687 205v-2a3 3 0 0 1 6 0v2" fill="none" stroke="#FFFFFF" stroke-width="1.8"/></g>
 <text class="f" x="110" y="254" font-size="12" fill="#6B7189" text-anchor="middle">Month 0</text>
 <text class="f" x="226" y="254" font-size="12" fill="#6B7189" text-anchor="middle">Month 2</text>
 <text class="f" x="342" y="254" font-size="12" fill="#6B7189" text-anchor="middle">Month 4</text>
@@ -67,21 +67,21 @@
 <text class="f" x="574" y="254" font-size="12" fill="#6B7189" text-anchor="middle">Month 9</text>
 <text class="f" x="690" y="254" font-size="12" fill="#6B7189" text-anchor="middle">Month 12</text>
 <rect x="40" y="310" width="720" height="190" rx="20" fill="#FFFFFF" stroke="#E4E2DC" stroke-width="1.5"/>
-<text class="f" x="68" y="360" font-size="14" fill="#1C2140">Cost to acquire</text><rect x="220" y="349" width="429" height="14" rx="7" fill="#F3F2EE"/><rect x="220" y="349" width="90" height="14" rx="7" fill="#F0506E"/><text class="f" x="732" y="361" font-size="14" font-weight="600" fill="#1C2140" text-anchor="end">₹900</text>
-<text class="f" x="68" y="404" font-size="14" fill="#1C2140">Lifetime value</text><rect x="220" y="393" width="429" height="14" rx="7" fill="#F3F2EE"/><rect class="lb" x="220" y="393" width="429" height="14" rx="7" fill="#3452FF"/>
-<text class="f lr0" x="732" y="405" font-size="14" font-weight="600" fill="#1C2140" text-anchor="end" opacity="0">₹649</text>
-<text class="f lr1" x="732" y="405" font-size="14" font-weight="600" fill="#1C2140" text-anchor="end" opacity="0">₹1,298</text>
-<text class="f lr2" x="732" y="405" font-size="14" font-weight="600" fill="#1C2140" text-anchor="end" opacity="0">₹2,147</text>
-<text class="f lr3" x="732" y="405" font-size="14" font-weight="600" fill="#1C2140" text-anchor="end" opacity="0">₹2,796</text>
-<text class="f lr4" x="732" y="405" font-size="14" font-weight="600" fill="#1C2140" text-anchor="end" opacity="0">₹3,445</text>
-<text class="f lr5" x="732" y="405" font-size="14" font-weight="600" fill="#1C2140" text-anchor="end" opacity="1">₹4,294</text>
+<text class="f" x="68" y="360" font-size="14" fill="#082f57">Cost to acquire</text><rect x="220" y="349" width="429" height="14" rx="7" fill="#F3F2EE"/><rect x="220" y="349" width="90" height="14" rx="7" fill="#F0506E"/><text class="f" x="732" y="361" font-size="14" font-weight="600" fill="#082f57" text-anchor="end">₹900</text>
+<text class="f" x="68" y="404" font-size="14" fill="#082f57">Lifetime value</text><rect x="220" y="393" width="429" height="14" rx="7" fill="#F3F2EE"/><rect class="lb" x="220" y="393" width="429" height="14" rx="7" fill="#0a6fd0"/>
+<text class="f lr0" x="732" y="405" font-size="14" font-weight="600" fill="#082f57" text-anchor="end" opacity="0">₹649</text>
+<text class="f lr1" x="732" y="405" font-size="14" font-weight="600" fill="#082f57" text-anchor="end" opacity="0">₹1,298</text>
+<text class="f lr2" x="732" y="405" font-size="14" font-weight="600" fill="#082f57" text-anchor="end" opacity="0">₹2,147</text>
+<text class="f lr3" x="732" y="405" font-size="14" font-weight="600" fill="#082f57" text-anchor="end" opacity="0">₹2,796</text>
+<text class="f lr4" x="732" y="405" font-size="14" font-weight="600" fill="#082f57" text-anchor="end" opacity="0">₹3,445</text>
+<text class="f lr5" x="732" y="405" font-size="14" font-weight="600" fill="#082f57" text-anchor="end" opacity="1">₹4,294</text>
 <line x1="68" y1="428" x2="732" y2="428" stroke="#EFEDE7"/>
 <text class="f" x="68" y="470" font-size="14" fill="#6B7189">LTV to CAC</text>
 <text class="f rt0" x="220" y="474" font-size="26" font-weight="600" fill="#F0506E" opacity="0">0.7x</text>
 <text class="f rt1" x="220" y="474" font-size="26" font-weight="600" fill="#F0506E" opacity="0">1.4x</text>
-<text class="f rt2" x="220" y="474" font-size="26" font-weight="600" fill="#3452FF" opacity="0">2.4x</text>
-<text class="f rt3" x="220" y="474" font-size="26" font-weight="600" fill="#3452FF" opacity="0">3.1x</text>
-<text class="f rt4" x="220" y="474" font-size="26" font-weight="600" fill="#3452FF" opacity="0">3.8x</text>
-<text class="f rt5" x="220" y="474" font-size="26" font-weight="600" fill="#3452FF" opacity="1">4.8x</text>
+<text class="f rt2" x="220" y="474" font-size="26" font-weight="600" fill="#0a6fd0" opacity="0">2.4x</text>
+<text class="f rt3" x="220" y="474" font-size="26" font-weight="600" fill="#0a6fd0" opacity="0">3.1x</text>
+<text class="f rt4" x="220" y="474" font-size="26" font-weight="600" fill="#0a6fd0" opacity="0">3.8x</text>
+<text class="f rt5" x="220" y="474" font-size="26" font-weight="600" fill="#0a6fd0" opacity="1">4.8x</text>
 <text class="f" x="732" y="470" font-size="13" fill="#6B7189" text-anchor="end">Above 3x, you can scale ads profitably</text>
 <style>*{animation-play-state:paused!important;animation-delay:-4s!important}</style></svg>

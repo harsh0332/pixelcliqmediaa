@@ -2,3 +2,10 @@
 @media(max-width:767px){.section{padding:56px 0}.heading{display:block}.heading>div:last-child{margin-top:1.25rem}.graphics,.videos{grid-template-columns:repeat(2,1fr);gap:.75rem}.graphic,.video{padding:.85rem}.slotCenter strong{font-size:.85rem}.slotCenter{gap:.65rem}.slotFooter{font-size:.45rem}.video h3{font-size:.9rem}.crossed{height:140px}.band{top:44px;padding:12px 0}.band:nth-child(2){top:51px}}
 .track{display:flex;width:max-content;animation:band-travel 38s linear infinite}.band .track span{flex:none;text-align:left;padding-right:.45em}.crossed[data-paused=true] .track{animation-play-state:paused}.motionToggle{position:absolute;right:1.5rem;bottom:8px;border:1px solid #d4deee;border-radius:20px;background:white;color:#0b3763;padding:6px 12px;font-size:11px;cursor:pointer;z-index:2}.motionToggle:focus-visible{outline:2px solid #0a6fd0;outline-offset:3px}@keyframes band-travel{to{transform:translateX(-50%)}}@media(prefers-reduced-motion:reduce){.track{animation:none}.motionToggle{display:none}}
 .heading>div:last-child>p{font:700 clamp(1.05rem,1.4vw,1.25rem)/1.5 var(--font-sans-bold-stack);color:#0b3763;max-width:30ch}
+
+/* Premium pass: one heading system across the home bands. */
+.section{padding:clamp(72px,9vw,130px) 0}
+.heading>div:first-child>p{font-size:12.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#0868ad}
+.heading h2{font:700 clamp(44px,6vw,92px)/.98 var(--font-sans-bold-stack)!important;letter-spacing:-.055em!important;color:#082f57}
+.heading h2 em{font-family:var(--font-instrument),Georgia,serif!important;font-style:italic!important;font-weight:400!important;letter-spacing:-.03em;color:#0a6fd0!important}
+.heading p{color:#4a5d70}
