@@ -26,6 +26,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }[] = [
     { path: "/", priority: 1, changeFrequency: "monthly" },
     { path: "/approach", priority: 0.8, changeFrequency: "monthly" },
+    { path: "/studio-zero", priority: 0.8, changeFrequency: "monthly" },
     { path: "/services", priority: 0.9, changeFrequency: "monthly" },
     { path: "/work", priority: 0.8, changeFrequency: "monthly" },
     { path: "/creative-showcase", priority: 0.8, changeFrequency: "monthly" },

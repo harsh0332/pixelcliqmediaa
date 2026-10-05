@@ -67,7 +67,15 @@ const servicesMega: MegaMenu = {
     number: String(index + 1).padStart(2, "0"),
     visual: item.visual,
     group: SERVICE_GROUP[item.id] ?? "grow",
-  })),
+  })).concat({
+    // Studio Zero sits with the creative services; it is a product, not an explorer row.
+    label: "Studio Zero: AI visuals",
+    href: "/studio-zero",
+    description: "Campaign images, model shots and A+ content made with art direction and AI. No studio required.",
+    number: "09",
+    visual: "design",
+    group: "create",
+  }),
   cta: homeContent.explorer.cta,
   explore: "Explore",
   footerLink: {
@@ -94,7 +102,7 @@ export const footerNav: FooterColumn[] = [
     title: "Services",
     // All eight, not just the six nav pillars: the landing pages need a
     // crawlable link from somewhere, and the footer is where they live.
-    links: homeContent.explorer.items.map((item) => ({ label: item.title, href: item.href })),
+    links: [...homeContent.explorer.items.map((item) => ({ label: item.title, href: item.href })), { label: "Studio Zero: AI visuals", href: "/studio-zero" }],
   },
   {
     title: "Company",
