@@ -1,0 +1,36 @@
+.stage { position: relative; height: clamp(380px, 38vw, 540px); perspective: 1400px; }
+.deck { position: absolute; inset: 0; transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)); transform-style: preserve-3d; transition: transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1); }
+.card {
+  position: absolute; left: 50%; top: 50%; width: clamp(170px, 17vw, 250px); aspect-ratio: 4 / 5.2; margin: 0;
+  overflow: hidden; border-radius: 20px; background: #dfeefb;
+  box-shadow: 0 0 0 6px #fff, 0 40px 70px -30px #082f57a6;
+  transition: transform 0.9s cubic-bezier(0.65, 0, 0.35, 1), filter 0.9s;
+}
+.media { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.card figcaption {
+  position: absolute; left: 10px; bottom: 10px; padding: 6px 11px; border-radius: 99px;
+  background: #082f57d9; color: #fff; font-size: 12px; font-weight: 800;
+  opacity: 0; transform: translateY(6px); transition: opacity 0.4s 0.3s, transform 0.4s 0.3s;
+}
+.card[data-slot="0"] { z-index: 5; transform: translate(-50%, -50%) rotate(-2deg); }
+.card[data-slot="0"] figcaption { opacity: 1; transform: none; }
+.card[data-slot="1"] { z-index: 4; transform: translate(-92%, -46%) rotate(-11deg) scale(0.92); filter: saturate(0.85); }
+.card[data-slot="2"] { z-index: 3; transform: translate(-8%, -46%) rotate(10deg) scale(0.92); filter: saturate(0.85); }
+.card[data-slot="3"] { z-index: 2; transform: translate(-124%, -40%) rotate(-19deg) scale(0.82); filter: saturate(0.7) brightness(0.95); }
+.card[data-slot="4"] { z-index: 1; transform: translate(24%, -40%) rotate(18deg) scale(0.82); filter: saturate(0.7) brightness(0.95); }
+
+@media (prefers-reduced-motion: no-preference) {
+  .card { animation: deal 1s cubic-bezier(0.16, 0.84, 0.24, 1) backwards; animation-delay: calc(0.35s + var(--deal) * 0.09s); }
+  .stage { animation: float 7s ease-in-out 1.6s infinite; }
+}
+@keyframes deal { from { opacity: 0; transform: translate(-50%, 30%) rotate(0deg) scale(0.7); } }
+@keyframes float { 50% { transform: translateY(-10px); } }
+
+@media (max-width: 1079px) {
+  .stage { margin-top: 8px; }
+}
+@media (max-width: 560px) {
+  .stage { height: 340px; }
+  .card { width: 150px; box-shadow: 0 0 0 4px #fff, 0 30px 50px -24px #082f57a6; }
+  .card[data-slot="3"], .card[data-slot="4"] { opacity: 0; }
+}

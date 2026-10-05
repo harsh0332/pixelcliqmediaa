@@ -1,0 +1,30 @@
+.wrap { background: #fff; border-bottom: 1px solid #d7e1f2; }
+.inner { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; width: 100%; max-width: 1440px; margin: 0 auto; padding: 28px clamp(20px, 4vw, 64px); }
+.door {
+  position: relative; display: flex; align-items: center; gap: 18px; padding: 16px 20px 16px 16px;
+  border-radius: 22px; background: #f3f8fd; border: 1px solid #082f5712; color: #082f57;
+  transition: background-color 0.35s, border-color 0.35s, transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.door:hover { background: #fff; border-color: #0a6fd040; transform: translateY(-3px); box-shadow: 0 30px 50px -40px #082f57; }
+.door:focus-visible { outline: 2px solid #0a6fd0; outline-offset: 3px; }
+.fan { position: relative; flex: none; width: 96px; height: 84px; }
+.thumb { position: absolute; top: 4px; left: 20px; width: 56px; height: 72px; overflow: hidden; border-radius: 10px; background: #dfeefb; box-shadow: 0 0 0 3px #fff, 0 10px 20px -12px #082f57; transition: transform 0.5s cubic-bezier(0.2, 0.7, 0.2, 1); }
+.thumb img { object-fit: cover; }
+.thumb:nth-child(1) { z-index: 1; transform: rotate(-10deg) translateX(-12px); }
+.thumb:nth-child(2) { z-index: 2; transform: rotate(9deg) translateX(12px); }
+.thumb:nth-child(3) { z-index: 3; transform: rotate(-1deg); }
+.door:hover .thumb:nth-child(1) { transform: rotate(-18deg) translateX(-22px) translateY(-2px); }
+.door:hover .thumb:nth-child(2) { transform: rotate(16deg) translateX(22px) translateY(-2px); }
+.door:hover .thumb:nth-child(3) { transform: translateY(-6px) scale(1.05); }
+.text { display: grid; gap: 4px; min-width: 0; }
+.text b { font: 700 clamp(18px, 1.5vw, 21px) / 1.2 var(--font-sans-bold-stack); letter-spacing: -0.025em; }
+.text small { font-size: 14px; line-height: 1.45; color: #4a5d70; }
+.arrow { flex: none; margin-left: auto; color: #0a6fd0; transition: transform 0.35s; }
+.door:hover .arrow { transform: translate(3px, -3px); }
+
+@media (max-width: 1000px) {
+  .inner { grid-template-columns: 1fr; gap: 10px; padding-block: 20px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .door, .thumb, .arrow { transition: none; }
+}
