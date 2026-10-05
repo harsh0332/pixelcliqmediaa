@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState, type FormEvent } from "react";
-import { site } from "@/content/site";
+import { site, whatsappHref } from "@/content/site";
 import { Button } from "@/components/ui/Button";
 import { Chip } from "@/components/ui/Chip";
 import { contactPage } from "@/content/home";
@@ -139,9 +139,29 @@ export function ContactForm() {
     }
 
     if (values.website2) return;
-    track("generate_lead", { method: "contact_form", services: help.join(", ") });
+    track("generate_lead", { method: "whatsapp_form", services: help.join(", ") });
+    // Opened inside the submit event, so browsers treat it as user-initiated
+    // and don't block it. On phones this hands straight over to the app.
+    window.open(whatsappHref(composeMessage()), "_blank", "noopener,noreferrer");
     setStatus("done");
   };
+
+  /** The brief as a WhatsApp message: a greeting, then one line per field. */
+  function composeMessage() {
+    return [
+      "Hi Pixelcliq, I'd like to book a free growth call.",
+      "",
+      `Name: ${values.name}`,
+      `Company: ${values.company}`,
+      `Email: ${values.email}`,
+      `Phone: ${values.phone || "Not provided"}`,
+      `Website: ${values.website || "Not provided"}`,
+      `Need help with: ${help.join(", ")}`,
+      `Monthly ad spend: ${values.spend}`,
+      "",
+      values.message,
+    ].join("\n");
+  }
 
   if (status === "done") {
     const body = [
@@ -154,17 +174,16 @@ export function ContactForm() {
     const draft = `mailto:${site.email}?subject=${encodeURIComponent(`Growth enquiry — ${values.company}`)}&body=${encodeURIComponent(body)}`;
     return (
       <div role="status" className="rounded-md border border-line p-8">
-        <h2 ref={readyHeading} tabIndex={-1} className="type-h2">Your brief is ready.</h2>
+        <h2 ref={readyHeading} tabIndex={-1} className="type-h2">Your message is ready on WhatsApp.</h2>
         <p className="type-body-lg mt-5 text-ink-soft">
-          Open your email draft, review it and send it to {site.email}.
-          Your enquiry has not been sent yet.
+          WhatsApp has opened with your details filled in. Press send there and we will reply within one working day.
         </p>
         <div className="mt-6 flex flex-wrap gap-4">
-          <Button href={draft}>Open email draft</Button>
-          <Button variant="secondary" onClick={() => setStatus("idle")}>Edit your brief</Button>
+          <Button href={whatsappHref(composeMessage())} target="_blank" rel="noopener noreferrer">Open WhatsApp</Button>
+          <Button variant="secondary" onClick={() => setStatus("idle")}>Edit your details</Button>
         </div>
         <p className="type-body-sm mt-6 text-ink-soft">
-          No email app? Copy the brief below into your email, or call <a className="underline" href={`tel:${site.phone.replace(/\s/g, "")}`}>{site.phone}</a>.
+          Prefer email? <a className="underline" href={draft}>Open an email draft</a> or call <a className="underline" href={`tel:${site.phone.replace(/\s/g, "")}`}>{site.phone}</a>.
         </p>
         <textarea aria-label="Your enquiry brief" readOnly value={body} rows={9} className="type-body-sm mt-4 w-full rounded border border-line bg-transparent p-4" />
       </div>
@@ -351,9 +370,9 @@ export function ContactForm() {
 
         <div>
           <Button type="submit" size="lg" loading={busy} className="w-full">
-            Prepare email enquiry
+            Send on WhatsApp
           </Button>
-          <p className="type-body-sm mt-3 text-ink-soft">Next, review your brief and send it through your email app.</p>
+          <p className="type-body-sm mt-3 text-ink-soft">Opens WhatsApp with your details filled in. Just press send.</p>
           <ErrorSlot id="server-error" message={errors.server} live />
         </div>
       </fieldset>
