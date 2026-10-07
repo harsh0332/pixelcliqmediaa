@@ -1,3 +1,4 @@
+import { QuoteBand } from "@/components/sections/QuoteBand";
 import type { Metadata } from "next";
 import { buildMetadata } from "@/lib/seo";
 
@@ -39,6 +40,7 @@ export default function ServicesIndexPage() {
    <ScrollTint />
    <PageHero id="services-index-heading" eyebrow="D2C FIRST. FULL-SERVICE BY DESIGN." headlineLines={["Bold thinking.", "Real execution."]} support="Creative, media, commerce and technology. Find the expertise your business needs now, with the room to connect more as you grow." />
    <ServiceExplorer />
+   <QuoteBand not="Pick a service and hope." is="Plug into a system that compounds." />
    <StartChooser />
 
 

@@ -1,3 +1,4 @@
+import { QuoteBand } from "@/components/sections/QuoteBand";
 import type { Metadata } from "next";
 import { absoluteUrl } from "@/lib/seo";
 import { PortfolioStage } from "@/components/sections/PortfolioStage";
@@ -14,6 +15,7 @@ export default function HomePage() {
       <ScrollTint />
       <PremiumHero />
       <ServiceExplorer />
+      <QuoteBand not="A vendor for every channel." is="One team for the whole journey." />
       {/* The work bands paint their own backgrounds; the light tint keeps the
           page colour behind them from flashing dark at their edges. */}
       <div id="work" data-tint="#f3f8fd">

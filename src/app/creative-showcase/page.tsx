@@ -1,3 +1,4 @@
+import { QuoteBand } from "@/components/sections/QuoteBand";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { GalleryNudge } from "@/components/work/GalleryNudge";
@@ -18,6 +19,7 @@ export default function CreativeShowcasePage() {
     <PageHero id="creative-showcase-heading" eyebrow="THE DESIGN COLLECTION"
       headlineLines={["A world around", "every brand."]}
       support="Art direction. Brand identity. Campaign design. Original studio explorations, made to turn a passing glance into a lasting impression." />
+    <QuoteBand tone="ice" not="Pretty for a glance." is="Built for the second look." />
     <section className="bg-white py-14 md:py-20" aria-label="Brand and campaign design gallery">
       <Container>
         <div className="mb-10 flex flex-wrap items-center justify-between gap-5 border-b border-line pb-6">

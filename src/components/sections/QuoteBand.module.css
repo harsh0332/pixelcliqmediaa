@@ -1,0 +1,28 @@
+.band { position: relative; overflow: hidden; padding: clamp(64px, 9vw, 130px) 0; }
+.navy { background: radial-gradient(60% 90% at 90% 10%, #1685e43d, transparent 70%), #082f57; color: #fff; --muted: #8fb3d6; --accent: #d6f06e; }
+.ice { background: #f3f8fd; color: #082f57; --muted: #8aa0b8; --accent: #0a6fd0; }
+.inner { width: 100%; max-width: 1440px; margin: 0 auto; padding: 0 clamp(20px, 4vw, 64px); }
+
+.not, .is { margin: 0; letter-spacing: -0.05em; line-height: 1; }
+.not { font: 700 clamp(30px, 5vw, 76px) / 1.05 var(--font-sans-bold-stack); color: var(--muted); }
+.strike {
+  background: linear-gradient(currentColor, currentColor) no-repeat 0 56% / 100% 0.07em;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+.is {
+  margin-top: clamp(6px, 1vw, 14px);
+  font: 400 clamp(46px, 8.4vw, 132px) / 1 var(--font-instrument), Georgia, serif;
+  font-style: italic;
+  letter-spacing: -0.035em;
+  color: var(--accent);
+}
+
+/* Struck first, then the answer rises. Tied to the shared scroll reveal. */
+@media (prefers-reduced-motion: no-preference) {
+  html[data-reveal-ready] .inner[data-rise] { opacity: 1; transform: none; }
+  html[data-reveal-ready] .inner .strike { background-size: 0% 0.07em; transition: background-size 0.8s cubic-bezier(0.65, 0, 0.35, 1) 0.35s; }
+  html[data-reveal-ready] .inner .is { opacity: 0; transform: translateY(0.35em); transition: opacity 0.9s 1s, transform 1s cubic-bezier(0.16, 0.84, 0.24, 1) 1s; }
+  html[data-reveal-ready] .inner[data-risen] .strike { background-size: 100% 0.07em; }
+  html[data-reveal-ready] .inner[data-risen] .is { opacity: 1; transform: none; }
+}
