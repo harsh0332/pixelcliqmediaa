@@ -67,8 +67,8 @@ export interface ServicePillar {
     title: string;
     accent: string;
     intro: string;
-    items: { name: string; body: string }[];
-    outro: string;
+    items: { name?: string; body: string }[];
+    outro?: string;
   };
 }
 
@@ -1203,7 +1203,7 @@ export const servicePillars: ServicePillar[] = [
     "connectsNote": "Meta Ads depends on creative to test and on the store to convert, and hands automation the WhatsApp and retention flows that close the loop.",
     "fit": {
       "intro": "You are a D2C or ecommerce brand already spending, or ready to spend, real money on Meta, and you suspect the account is leaving margin on the table. You want one team accountable to the P&L, not a dashboard. You are willing to feed the creative machine and to hear uncomfortable truths from the audit.",
-      "notFor": "If your monthly ad budget is small, a full management retainer is usually the wrong spend, so start with an audit. If you want someone to just run the ads while creative and the store stay frozen, we will decline politely: media can only be as good as what it points at. If Google Ads is your primary channel, our Performance Marketing page describes the combined engagement."
+      "notFor": "If your ad budget is still small, a full management retainer is usually the wrong spend — start with an audit. If you want someone to \"just run the ads\" while creative and the store stay frozen, we will decline politely: media can only be as good as what it points at, and we would rather say that upfront than take the retainer anyway. If Google Ads is your primary channel, our Performance Marketing page describes the combined engagement."
     },
     "capabilities": [
       "Meta Ads audit",
@@ -1312,17 +1312,16 @@ export const servicePillars: ServicePillar[] = [
       }
     ],
     "pricing": {
-    "label": "SCOPE AND FEES",
+    "label": "PRICING",
     "title": "Scoped on the call,",
     "accent": "not on the page.",
-    "intro": "Meta ads management is priced to the size of the account and the workload, so a number on a web page would be wrong for most brands. We will tell you on the first call which structure fits you.",
+    "intro": "We don't publish rate cards, because a small account and a large account are different jobs and deserve different quotes. What we will tell you on the free growth call, plainly and before you commit to anything:",
     "items": [
-      { "name": "One-time account audit & rebuild", "body": "Scoped to the size and history of the account. You keep the findings report and the rebuilt structure either way." },
-      { "name": "Monthly management", "body": "The fee follows the workload: a small account and a large one are different jobs, and we agree the basis with you before anything starts." },
-      { "name": "Minimum ad spend", "body": "Meta's learning systems need enough daily spend to do their job. Below that level you are mostly paying for reporting, and we will say so and suggest an audit instead of a retainer." },
-      { "name": "Creative production", "body": "Scoped separately and depends on volume. A weekly testing rhythm needs a real creative pipeline, and we will show you the maths before you commit." }
+      { "body": "Whether a one-time audit & rebuild or ongoing monthly management fits your situation — and why." },
+      { "body": "What the engagement includes, what it doesn't, and what happens to your account, your data and your creative if you ever leave." },
+      { "body": "Whether your current ad spend can support a management retainer at all — if it can't, we'll say so and suggest a lighter-touch engagement instead of taking your money for reporting." }
     ],
-    "outro": "No lock-ins beyond a sensible initial term: the first 90 days are where the rebuild and the testing system get installed. After that, the weekly numbers should be the reason you stay. If you are comparing agencies, ask each one what happens to your account, your data and your creative if you leave in month four. The honest ones answer in one sentence."
+    "outro": "No lock-ins beyond a sensible initial term: the first 90 days are where the rebuild and the testing system get installed. After that, the weekly numbers should be the reason you stay. If you are comparing agencies, ask each one what happens to your account, your data and your creative if you leave in month four — the honest ones answer in one sentence."
   },
   "connectsTo": [
       "performance",
@@ -1334,7 +1333,7 @@ export const servicePillars: ServicePillar[] = [
     "faq": [
       {
         "q": "How much do Meta ads cost in India?",
-      "a": "Two costs matter: what you pay Meta and what you pay whoever runs it. Ad spend itself is flexible, and meaningful testing needs enough daily budget for Meta's systems to learn. Our fee depends on the size of the account and the workload, and a one-time audit is priced separately from monthly management. The honest answer for your brand depends on your margins and your average order value, which is exactly what the free growth call establishes before anyone quotes you a number."
+      "a": "Two costs matter: what you pay Meta and what you pay whoever runs it. Ad spend itself is flexible — it depends on your category, your margins and your average order value, and meaningful testing needs enough daily budget for Meta's systems to learn properly. Our fee depends on the size and complexity of your account — a small account and a large one are different jobs, so we quote after looking at your numbers, not before. The honest answer for your brand comes from the free growth call, where we review your business first and talk money second."
     },
       {
         "q": "Facebook ads vs Google ads: which is better for my brand?",
@@ -1350,7 +1349,7 @@ export const servicePillars: ServicePillar[] = [
       },
       {
         "q": "What is the minimum budget to work with you?",
-      "a": "For full monthly management, the ad budget has to be large enough for Meta's systems to exit learning properly. Below that, most of the fee goes to reporting rather than growth. We will tell you that on the first call and suggest an audit plus lighter-touch guidance instead. The audit itself has no spend minimum and is often the highest-return first step."
+      "a": "For full monthly management, you need enough ad spend for Meta's systems to learn properly — otherwise most of the fee goes to reporting rather than growth. We will tell you honestly on the first call whether your budget supports a retainer, and if it doesn't, we'll suggest an audit plus lighter-touch guidance instead. The audit itself has no spend minimum and is often the highest-ROI first step."
     },
       {
         "q": "Do you only work with D2C and ecommerce brands?",
@@ -1466,16 +1465,15 @@ export const servicePillars: ServicePillar[] = [
       }
     ],
     "pricing": {
-    "label": "SCOPE AND FEES",
+    "label": "PRICING",
     "title": "Scoped on the call,",
     "accent": "not on the page.",
-    "intro": "Speed work is priced by the size and platform of your site, not by the hour, so you always know what you are buying before it starts.",
+    "intro": "We don't publish rate cards, because a small brochure site and a large Shopify catalogue are different jobs. Every engagement starts with an audit, and every quote comes after we've seen your site — never before. What you get before committing to anything:",
     "items": [
-      { "name": "Speed audit", "body": "The full diagnosis: real-user Core Web Vitals, a page-by-page load profile and a prioritized fix list with expected impact. Yours to keep, whether we implement or your own team does." },
-      { "name": "One-time optimization", "body": "The audit plus implementation, for a typical Shopify store or WordPress site. Larger catalogues, custom builds and multilingual sites take more work; we quote exactly after the audit, so there are no surprises." },
-      { "name": "Ongoing monitoring", "body": "Weekly Core Web Vitals tracking, regression alerts and continuous small improvements as your site changes. Built for stores and businesses running ads month after month, where a slow week directly costs revenue." }
-    ],
-    "outro": "Every engagement starts with the audit. If the audit shows your site is already in good shape, we will tell you, and you will have paid for certainty, not for work you did not need."
+      { "name": "The audit first.", "body": "A full diagnosis: real-user Core Web Vitals, a page-by-page load profile, and a prioritized fix list with expected impact. Yours to keep, whether we implement or your own team does." },
+      { "name": "A fixed quote after the audit.", "body": "No hourly billing, no surprises — you approve the exact scope and price before we touch anything." },
+      { "name": "Honesty as policy.", "body": "If the audit shows your site is already in good shape, we will tell you — and you will have paid for certainty, not for work you didn't need." }
+    ]
   },
   "connectsTo": [
       "performance",
@@ -1624,7 +1622,7 @@ export const pillarSeo: Record<string, { title: string; description: string; kic
   },
   "speed-optimization": {
     title: "Website Speed Optimization Services India | Pixelcliq",
-    description: "Slow website losing sales? Pixelcliq fixes Core Web Vitals for Shopify, WordPress and custom sites across India, starting with a speed audit.",
+    description: "Slow website losing sales? Pixelcliq fixes Core Web Vitals for Shopify, WordPress and custom sites across India.",
     kicker: "A faster website for D2C brands in India — measured in sales, not scores.",
   },
   branding: {
