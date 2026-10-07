@@ -235,3 +235,28 @@ export function faqSchema(
     })),
   };
 }
+
+/**
+ * VideoObject, one per film. Needs a name, thumbnail and upload date to be
+ * eligible for video rich results; contentUrl points at the file itself.
+ */
+export function videoSchema(input: {
+  siteUrl: string;
+  name: string;
+  description: string;
+  thumbnailUrl: string;
+  uploadDate: string;
+  contentUrl: string;
+  durationSeconds?: number;
+}): JsonLdNode {
+  return pruneEmpty({
+    "@type": "VideoObject",
+    name: input.name,
+    description: input.description,
+    thumbnailUrl: input.thumbnailUrl,
+    uploadDate: input.uploadDate,
+    contentUrl: input.contentUrl,
+    duration: input.durationSeconds ? `PT${Math.floor(input.durationSeconds / 60)}M${input.durationSeconds % 60}S` : undefined,
+    publisher: { "@id": ORG_ID(input.siteUrl) },
+  });
+}

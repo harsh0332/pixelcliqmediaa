@@ -61,6 +61,14 @@ export async function generateMetadata({
     path: `/insights/${article.slug}`,
     eyebrow: "Insights",
     ogType: "article",
+    // Use the cover only when it is a real raster image. The current covers
+    // are the shared placeholder SVG, which social networks will not render,
+    // so those fall back to the generated /api/og card.
+    image:
+      article.cover && !/placeholder|\.svg$/i.test(article.cover)
+        ? absoluteUrl(article.cover)
+        : undefined,
+    publishedTime: article.publishedAt ?? undefined,
     noIndex: article.status !== "published",
   });
 }

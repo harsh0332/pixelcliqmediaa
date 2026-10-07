@@ -24,6 +24,11 @@ const nextConfig: NextConfig = {
           { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=(), browsing-topics=()" },
         ],
       },
+      // OG scrapers hit the card route repeatedly; let them reuse it for a day.
+      {
+        source: "/api/og",
+        headers: [{ key: "Cache-Control", value: "public, max-age=86400" }],
+      },
       // Static media from /public: let browsers keep it for 30 days instead of
       // re-downloading every visit. Replaced files should get a new name.
       {

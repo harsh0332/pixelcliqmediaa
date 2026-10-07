@@ -11,7 +11,7 @@ import { notFound } from "next/navigation";
 import { ServicePageTemplate } from "@/components/services/ServicePageTemplate";
 import { caseStudies } from "@/content/cases";
 import { creativesForPillar } from "@/content/creatives";
-import { primaryPillars, servicePillars } from "@/content/services";
+import { pillarSeo, primaryPillars, servicePillars } from "@/content/services";
 
 /**
  * One template, eight routes.
@@ -42,20 +42,17 @@ export async function generateMetadata({
   );
   if (!pillar) return {};
 
-  // `promise` is a single short line — good on the page under a heading, but
-  // roughly 45 characters, which wastes most of a search snippet. Pairing it
-  // with the pillar's own summary fills the snippet without writing new copy
-  // here, and truncation stays inside the second sentence where it costs least.
-  const description = `${pillar.promise} ${pillar.summary}`
-    .replace(/\s+/g, " ")
-    .trim()
-    .slice(0, 158);
+  const seo = pillarSeo[slug];
+  // Hand-written, complete-sentence description per pillar (see pillarSeo).
+  // The fallback keeps a new pillar from shipping without one.
+  const description = seo?.description ?? `${pillar.promise} ${pillar.summary}`.replace(/\s+/g, " ").trim().slice(0, 152);
 
   return buildMetadata({
-    title: pillar.title,
+    title: seo?.title ?? pillar.title,
     description,
     path: pillar.slug,
     eyebrow: "Services",
+    absoluteTitle: Boolean(seo),
   });
 }
 

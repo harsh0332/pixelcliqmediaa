@@ -48,6 +48,7 @@ export function PremiumHero() {
                 <ArrowUpRight className={styles.stampArrow} aria-hidden="true" />
               </Link>
             </div>
+            <p className={styles.seoLine}>{hero.seoLine}</p>
 
             <p className={styles.support}>{hero.support}</p>
 

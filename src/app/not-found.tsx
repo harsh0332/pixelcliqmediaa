@@ -1,8 +1,11 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { PixelFourOhFour } from "@/components/legal/PixelFourOhFour";
 import { notFoundPage } from "@/content/home";
+
+export const metadata: Metadata = { title: "Page not found", robots: { index: false, follow: true }, alternates: { canonical: null } };
 
 /**
  * 404.

@@ -31,6 +31,7 @@ export const refinedHome = {
 export const homeContent = {
   hero: {
     kicker: "Independent creative & growth studio",
+    seoLine: "Meta ads, creative and Shopify growth for D2C brands in India",
     topRight: "Creative · Media · Commerce",
     titleLines: ["Make your", "next big move."],
     support:

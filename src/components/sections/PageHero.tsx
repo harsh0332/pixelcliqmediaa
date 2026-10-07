@@ -40,6 +40,8 @@ export interface PageHeroProps {
   headlineLines: readonly string[];
   /** The <h1> id, so the section can be labelled by it. */
   id: string;
+  /** Keyword-rich line directly under the H1, for search and for skimmers. */
+  kicker?: string;
   /** Optional: a hero built around a diagram or a rail may carry no paragraph. */
   support?: string;
   /** Surface tone. Service pages rotate this so consecutive pages differ. */
@@ -57,6 +59,7 @@ export function PageHero({
   eyebrow,
   headlineLines,
   id,
+  kicker,
   support,
   ctas,
   accent = "none",
@@ -115,6 +118,12 @@ export function PageHero({
                 </span>
               ))}
             </BalancedHeading>
+
+            {kicker ? (
+              <p className="mt-6 text-[13px] font-extrabold uppercase tracking-[0.14em] text-accent-deep">
+                {kicker}
+              </p>
+            ) : null}
 
             {support ? (
               <p

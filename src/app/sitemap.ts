@@ -17,11 +17,18 @@ import { publishedInsights } from "@/content/insights";
  * nothing here needs editing when they do.
  */
 export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date();
+  // Real dates only. Bump a route's `updated` when its content meaningfully
+  // changes; a build timestamp would signal freshness that is not there.
+  const SITE_UPDATED = "2026-10-07";
+  const dateOf = (iso: string) => {
+    const d = new Date(iso);
+    return d.getTime() > Date.now() ? new Date() : d;
+  };
 
   const staticRoutes: {
     path: string;
     priority: number;
+    updated?: string;
     changeFrequency: MetadataRoute.Sitemap[number]["changeFrequency"];
   }[] = [
     { path: "/", priority: 1, changeFrequency: "monthly" },
@@ -35,15 +42,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/insights", priority: 0.7, changeFrequency: "weekly" },
     ...(HAS_VERIFIED_STATS ? [{ path: "/numbers", priority: 0.5, changeFrequency: "monthly" as const }] : []),
     { path: "/contact", priority: 0.9, changeFrequency: "yearly" },
-    { path: "/privacy", priority: 0.2, changeFrequency: "yearly" },
-    { path: "/terms", priority: 0.2, changeFrequency: "yearly" },
-    { path: "/cookies", priority: 0.2, changeFrequency: "yearly" },
+    { path: "/privacy", priority: 0.1, changeFrequency: "yearly", updated: "2026-10-05" },
   ];
 
   return [
     ...staticRoutes.map((route) => ({
       url: `${SITE_URL}${route.path}`,
-      lastModified: now,
+      lastModified: dateOf(route.updated ?? SITE_UPDATED),
       changeFrequency: route.changeFrequency,
       priority: route.priority,
     })),
@@ -52,14 +57,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // after the home page, and the pages most worth recrawling.
     ...servicePillars.map((pillar) => ({
       url: `${SITE_URL}${pillar.slug}`,
-      lastModified: now,
+      lastModified: dateOf(SITE_UPDATED),
       changeFrequency: "monthly" as const,
       priority: pillar.primary ? 0.8 : 0.6,
     })),
 
     ...publishedCaseStudies.map((entry) => ({
       url: `${SITE_URL}/work/${entry.slug}`,
-      lastModified: now,
+      lastModified: dateOf(SITE_UPDATED),
       changeFrequency: "yearly" as const,
       priority: 0.6,
     })),
@@ -68,7 +73,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // content changing rather than by the build running.
     ...publishedInsights.map((article) => ({
       url: `${SITE_URL}/insights/${article.slug}`,
-      lastModified: article.publishedAt ? new Date(article.publishedAt) : now,
+      lastModified: article.publishedAt ? dateOf(article.publishedAt) : dateOf(SITE_UPDATED),
       changeFrequency: "yearly" as const,
       priority: 0.6,
     })),

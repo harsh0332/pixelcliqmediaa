@@ -50,6 +50,11 @@ export interface PageSeoInput {
   ogTitle?: string;
   /** "article" for insight pages, "website" everywhere else. */
   ogType?: "website" | "article";
+  /** Skip the " — Pixelcliq Media" suffix so a long keyword title stays ≤60 in results. */
+  absoluteTitle?: boolean;
+  /** ISO dates, emitted as article:published_time / article:modified_time. */
+  publishedTime?: string;
+  modifiedTime?: string;
 }
 
 /**
@@ -67,13 +72,16 @@ export function buildMetadata({
   eyebrow,
   ogTitle,
   ogType = "website",
+  absoluteTitle = false,
+  publishedTime,
+  modifiedTime,
 }: PageSeoInput): Metadata {
   const url = absoluteUrl(path);
   const ogImage = image ?? ogImagePath({ title: ogTitle ?? title, eyebrow });
 
   return {
     metadataBase: new URL(SITE_URL),
-    title,
+    title: absoluteTitle ? { absolute: title } : title,
     description,
     alternates: { canonical: url },
     openGraph: {
@@ -84,9 +92,13 @@ export function buildMetadata({
       title,
       description,
       images: [{ url: ogImage, width: 1200, height: 630, alt: title }],
+      ...(ogType === "article" && publishedTime
+        ? { publishedTime, modifiedTime: modifiedTime ?? publishedTime }
+        : {}),
     },
     twitter: {
       card: "summary_large_image",
+      // TODO: add `site` / `creator` (e.g. "@handle") once the X account is known.
       title,
       description,
       images: [ogImage],

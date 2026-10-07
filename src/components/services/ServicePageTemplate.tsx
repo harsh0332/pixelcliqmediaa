@@ -8,17 +8,18 @@ import { FadeUp } from "@/components/motion/FadeUp";
 import { ServiceArt } from "@/components/sections/GrowthVisuals";
 import { ServiceCanvas } from "./ServiceCanvas";
 import { ServiceDeep, hasServiceDeep } from "./ServiceDeep";
-import { servicePillars, type ServicePillar } from "@/content/services";
+import { pillarSeo, servicePillars, type ServicePillar } from "@/content/services";
 import type { CaseStudy } from "@/content/cases";
 import type { CreativeItem } from "@/content/creatives";
 import styles from "./StudioPages.module.css";
 
 export interface ServicePageTemplateProps { pillar: ServicePillar; next: ServicePillar; related: CreativeItem[]; cases: CaseStudy[]; }
 export function ServicePageTemplate({ pillar, next }: ServicePageTemplateProps) {
+  const kicker = pillarSeo[pillar.slug.split("/").pop() ?? ""]?.kicker;
   return <>
     <section className={styles.hero} data-dark-hero aria-labelledby="pillar-heading"><Container>
       <Link href="/services" className={styles.breadcrumb}>Services / {pillar.title}</Link>
-      <div className={styles.heroGrid}><div><p className={styles.label}>PIXELCLIQ CAPABILITIES</p><h1 id="pillar-heading">{pillar.title}<span>.</span></h1><p className={styles.promise}>{pillar.promise}</p><p className={styles.copy}>{pillar.summary}</p><div className={styles.actions}><Button href="/contact" size="lg">Book a free growth call</Button><a href="#deliverables">Explore the scope ↓</a></div></div><ServiceCanvas service={pillar.slug.split("/").pop() ?? pillar.id} title={pillar.title} /></div>
+      <div className={styles.heroGrid}><div><p className={styles.label}>PIXELCLIQ CAPABILITIES</p><h1 id="pillar-heading">{pillar.title}<span>.</span></h1>{kicker ? <p className={styles.label}>{kicker}</p> : null}<p className={styles.promise}>{pillar.promise}</p><p className={styles.copy}>{pillar.summary}</p><div className={styles.actions}><Button href="/contact" size="lg">Book a free growth call</Button><a href="#deliverables">Explore the scope ↓</a></div></div><ServiceCanvas service={pillar.slug.split("/").pop() ?? pillar.id} title={pillar.title} /></div>
       <div className={styles.capabilityRail}>{pillar.capabilities.map(c => <span key={c}><Check size={13}/>{c}</span>)}</div>
     </Container></section>
     <section className={styles.section}><Container><div className={styles.sectionHead} data-rise><div><p className={styles.label}>THE OPPORTUNITY</p><h2>Find the friction.<br/><em>Move things forward.</em></h2></div><p className={styles.copy}>{pillar.problem.intro}</p></div><div className={styles.painGrid}>{pillar.problem.pains.map((pain,i)=><FadeUp key={pain} delay={i*.06}><div className={styles.pain}><Crosshair size={20}/><span>0{i+1}</span><p>{pain}</p></div></FadeUp>)}</div></Container></section>

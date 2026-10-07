@@ -328,3 +328,6 @@
   .kicker { font-size: 11px; letter-spacing: 0.1em; }
   .footLink { min-height: 44px; }
 }
+
+.seoLine { margin: clamp(14px, 1.6vw, 22px) 0 0; font-size: 12.5px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #082f57; text-align: center; }
+@media (max-width: 767px) { .seoLine { font-size: 11px; letter-spacing: 0.1em; } }

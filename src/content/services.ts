@@ -1193,3 +1193,67 @@ export const serviceLabels = {
   ctaPrefix: "Let us talk about",
   nextPrefix: "Next:",
 } as const;
+
+/**
+ * Search-facing copy for each pillar, kept apart from `title` on purpose:
+ * `title` is the display name (nav, breadcrumb, H1) and stays short, while
+ * these lines carry the keyword. Titles are ≤60 characters, descriptions ≤155
+ * and complete sentences, kickers sit directly under the H1.
+ */
+export const pillarSeo: Record<string, { title: string; description: string; kicker: string }> = {
+  "d2c-growth": {
+    title: "D2C Growth Marketing Services",
+    description: "D2C growth marketing built around contribution margin: account structure, creative testing and measurement, scaled only where the numbers hold.",
+    kicker: "D2C growth marketing services",
+  },
+  creative: {
+    title: "Ad Creative & Content for D2C Brands",
+    description: "Performance creative, UGC and reels made for 4:5 and 9:16 feeds, tested weekly so D2C brands always know which hook and format are winning.",
+    kicker: "Ad creative and content production for D2C brands",
+  },
+  shopify: {
+    title: "Shopify Development & CRO for D2C Brands",
+    description: "Shopify stores, product pages and landing pages built for speed and conversion, so the traffic your ads buy actually turns into orders.",
+    kicker: "Shopify development and conversion rate optimisation",
+  },
+  seo: {
+    title: "SEO Services for D2C Brands in India",
+    description: "Technical SEO, category and product page optimisation and content that search engines and AI assistants can quote, built for D2C brands in India.",
+    kicker: "SEO and AI search optimisation for D2C brands in India",
+  },
+  automation: {
+    title: "WhatsApp Automation & CRM for D2C Brands",
+    description: "WhatsApp, email and CRM automation that replies in minutes, recovers abandoned carts and brings customers back without anyone doing it by hand.",
+    kicker: "WhatsApp automation, CRM and AI workflows",
+  },
+  data: {
+    title: "Marketing Analytics & Tracking for D2C",
+    description: "Server-side tracking, clean dashboards and margin-based reporting, so every spend decision rests on numbers you can reproduce and trust.",
+    kicker: "Marketing analytics, tracking and reporting",
+  },
+  performance: {
+    title: "Performance Marketing Agency — Meta & Google Ads",
+    description: "Facebook, Instagram and Google Ads managed against contribution margin, with clean structure, fresh creative and weekly decisions on real numbers.",
+    kicker: "Facebook & Instagram ads management and Google Ads",
+  },
+  "social-media": {
+    title: "Social Media Management for D2C Brands",
+    description: "Instagram and Facebook content, community and a testing rhythm that gives every post a job and every week a lesson for the paid team.",
+    kicker: "Instagram and Facebook social media management",
+  },
+  "web-development": {
+    title: "Landing Page & Website Design for Lead Gen",
+    description: "Fast websites and landing pages with one job per page, built for mobile first and connected to your follow-up so enquiries are never lost.",
+    kicker: "Website and landing page design for lead generation",
+  },
+  "lead-generation": {
+    title: "Lead Generation Funnels for Courses & Clinics",
+    description: "Lead ads, webinar and course funnels, and instant follow-up measured on booked calls and sales rather than on the cost of a form fill.",
+    kicker: "Lead generation, webinar and course funnels",
+  },
+  branding: {
+    title: "Brand Identity & Packaging Design for D2C",
+    description: "Logo, colour, type, packaging and a template kit that keep every ad, page and pack recognisably one brand at thumbnail size and beyond.",
+    kicker: "Brand identity and packaging design",
+  },
+};
