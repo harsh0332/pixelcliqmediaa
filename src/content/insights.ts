@@ -1,3 +1,4 @@
+import { newInsights } from "@/content/insightPosts";
 export type InsightCategory =
   | "Creative"
   | "Media"
@@ -42,6 +43,14 @@ export interface Insight {
    */
   body: ArticleBlock[] | null;
   status: "draft" | "published";
+  /** Search-facing title (≤60 chars, no site suffix) when the H1 is too long or too poetic for a SERP. */
+  metaTitle?: string;
+  /** Use `title` as the whole <title> (no site suffix) when it already reads as a search title. */
+  absoluteTitle?: boolean;
+  /** Hand-written meta description (≤155 chars). Falls back to a trimmed excerpt. */
+  metaDescription?: string;
+  /** Questions answered on the page, rendered as an accordion and emitted as FAQPage JSON-LD. */
+  faq?: { q: string; a: string }[];
 }
 
 /**
@@ -105,6 +114,8 @@ export const insights: Insight[] = [
     ],
     status: "published",
   },
+  // Published 8 Oct 2026. Bodies live in insightPosts.ts to keep this file readable.
+  ...newInsights,
   {
     slug: "creative-volume-and-cac",
     title: "Why CAC rises when creative volume drops",

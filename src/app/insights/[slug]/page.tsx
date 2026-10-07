@@ -4,6 +4,7 @@ import {
   jsonLdScriptProps,
   articleSchema,
   breadcrumbSchema,
+  faqSchema,
 } from "@/lib/schema";
 import { notFound } from "next/navigation";
 import journalStyles from "@/components/insights/InsightsIndex.module.css";
@@ -12,6 +13,7 @@ import { BalancedHeading } from "@/components/ui/BalancedHeading";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Section } from "@/components/ui/Section";
+import { Accordion } from "@/components/ui/Accordion";
 import { ArticleBody } from "@/components/insights/ArticleBody";
 import { ReadingProgress } from "@/components/insights/ReadingProgress";
 import { ShareRail } from "@/components/insights/ShareRail";
@@ -56,8 +58,9 @@ export async function generateMetadata({
       : `${article.excerpt.slice(0, 155).replace(/\s+\S*$/, "")}…`;
 
   return buildMetadata({
-    title: article.title,
-    description,
+    title: article.metaTitle ?? article.title,
+    absoluteTitle: Boolean(article.metaTitle) || Boolean(article.absoluteTitle),
+    description: article.metaDescription ?? description,
     path: `/insights/${article.slug}`,
     eyebrow: "Insights",
     ogType: "article",
@@ -107,6 +110,12 @@ export default async function ArticlePage({
         })
       : null;
 
+  // Only for the questions the page actually renders below the article.
+  const faqLd =
+    article.status === "published" && article.faq?.length
+      ? faqSchema(article.faq.map((f) => ({ question: f.q, answer: f.a })))
+      : null;
+
   const published = article.status === "published" && article.body;
   const related = insights
     .filter((entry) => entry.slug !== article.slug)
@@ -115,6 +124,7 @@ export default async function ArticlePage({
   return (
     <>
       {articleLd ? <script {...jsonLdScriptProps(articleLd)} /> : null}
+      {faqLd ? <script {...jsonLdScriptProps(faqLd)} /> : null}
       <script
         {...jsonLdScriptProps(
           breadcrumbSchema([
@@ -188,6 +198,19 @@ export default async function ArticlePage({
           </div>
         </Container>
       </Section>
+
+      {published && article.faq?.length ? (
+        <Section tone="bone" aria-labelledby="article-faq-heading">
+          <Container>
+            <div className="mx-auto max-w-prose">
+              <Eyebrow as="h2" id="article-faq-heading">Common questions</Eyebrow>
+              <div className="mt-6">
+                <Accordion items={article.faq.map((f, i) => ({ id: `${article.slug}-faq-${i}`, question: f.q, answer: f.a }))} />
+              </div>
+            </div>
+          </Container>
+        </Section>
+      ) : null}
 
       <Section tone="sand" aria-labelledby="related-heading">
         <Container>

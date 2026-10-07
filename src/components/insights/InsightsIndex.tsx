@@ -5,10 +5,11 @@ import { ArrowUpRight } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Chip } from "@/components/ui/Chip";
 import { InsightCover } from "./InsightCover";
-import { insights, type InsightCategory } from "@/content/insights";
+import type { Insight, InsightCategory } from "@/content/insights";
+export type InsightCard = Omit<Insight, "body" | "faq">;
 import styles from "./InsightsIndex.module.css";
-const categories=[...new Set(insights.map(i=>i.category))];
-export function InsightsIndex(){
+export function InsightsIndex({insights}:{insights:InsightCard[]}){
+ const categories=[...new Set(insights.map(i=>i.category))];
  const [category,setCategory]=useState<InsightCategory|null>(null);
  const featured=insights.find(i=>i.status==="published");
  const filtered=insights.filter(i=>!category||i.category===category);

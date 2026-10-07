@@ -1,4 +1,29 @@
+import type { ReactNode } from "react";
+import Link from "next/link";
 import type { ArticleBlock } from "@/content/insights";
+
+/**
+ * Light inline markup for article copy: [text](/path), **bold**, *italic*, `code`.
+ * A small hand-rolled pass rather than a markdown dependency; internal links go
+ * through next/link and anything else is left as plain text.
+ */
+function inline(text: string): ReactNode[] {
+  const out: ReactNode[] = [];
+  const re = /\[([^\]]+)\]\((\/[^)\s]*)\)|\*\*([^*]+)\*\*|\*([^*]+)\*|`([^`]+)`/g;
+  let last = 0;
+  let m: RegExpExecArray | null;
+  let k = 0;
+  while ((m = re.exec(text))) {
+    if (m.index > last) out.push(text.slice(last, m.index));
+    if (m[1]) out.push(<Link key={k++} href={m[2]!} className="text-accent-deep underline underline-offset-4 decoration-accent/40 hover:decoration-accent">{m[1]}</Link>);
+    else if (m[3]) out.push(<strong key={k++} className="font-bold text-ink">{m[3]}</strong>);
+    else if (m[4]) out.push(<em key={k++}>{m[4]}</em>);
+    else if (m[5]) out.push(<code key={k++} className="font-mono text-[0.9em] text-ink">{m[5]}</code>);
+    last = m.index + m[0].length;
+  }
+  if (last < text.length) out.push(text.slice(last));
+  return out;
+}
 
 /**
  * Long-form typography.
@@ -43,7 +68,7 @@ export function ArticleBody({ blocks }: { blocks: ArticleBlock[] }) {
                       className="mt-[0.85em] h-px w-4 shrink-0 bg-accent"
                     />
                     <span className="type-body-lg leading-[1.7] text-ink-soft">
-                      {item}
+                      {inline(item)}
                     </span>
                   </li>
                 ))}
@@ -59,7 +84,7 @@ export function ArticleBody({ blocks }: { blocks: ArticleBlock[] }) {
                       {String(position + 1).padStart(2, "0")}
                     </span>
                     <span className="type-body-lg leading-[1.7] text-ink-soft">
-                      {item}
+                      {inline(item)}
                     </span>
                   </li>
                 ))}
@@ -111,7 +136,7 @@ export function ArticleBody({ blocks }: { blocks: ArticleBlock[] }) {
                 key={key}
                 className="type-body-lg mb-6 leading-[1.7] text-ink-soft"
               >
-                {block.text}
+                {inline(block.text)}
               </p>
             );
         }
