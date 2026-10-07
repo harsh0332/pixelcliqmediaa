@@ -258,6 +258,8 @@ const VISUALS: Record<PillarId, () => React.ReactElement> = {
   "web-development": CommerceFlow,
   "lead-generation": GrowthFunnel,
   "brand-design": CreativeCluster,
+  "meta-ads": GrowthFunnel,
+  "speed-optimization": CommerceFlow,
 };
 
 export function ServiceVisual({ pillar }: { pillar: PillarId }) {

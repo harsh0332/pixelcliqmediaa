@@ -153,6 +153,8 @@ export function serviceSchema(input: {
   description: string;
   serviceType: string;
   url: string;
+  /** Published fee ranges, in rupees. */
+  offers?: { name: string; min: number; max: number }[];
 }): JsonLdNode {
   return pruneEmpty({
     "@type": "Service",
@@ -162,6 +164,14 @@ export function serviceSchema(input: {
     url: input.url,
     provider: { "@id": ORG_ID(input.siteUrl) },
     areaServed: { "@type": "Country", name: "India" },
+    offers: input.offers?.length
+      ? input.offers.map((o) => ({
+          "@type": "Offer",
+          name: o.name,
+          priceCurrency: "INR",
+          priceSpecification: { "@type": "PriceSpecification", priceCurrency: "INR", minPrice: o.min, maxPrice: o.max },
+        }))
+      : undefined,
   });
 }
 

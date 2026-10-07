@@ -9,7 +9,7 @@ const PROBLEMS = [
   {
     pain: "Ads spend more than they earn",
     why: "Fix structure, tracking and bidding first, so every rupee after that is judged on margin.",
-    picks: [{ label: "Performance Marketing", href: "/services/performance" }, { label: "Creative & Ad Design", href: "/services/creative" }],
+    picks: [{ label: "Meta Ads", href: "/services/meta-ads" }, { label: "Performance Marketing", href: "/services/performance" }],
   },
   {
     pain: "Creative feels tired",
@@ -19,7 +19,7 @@ const PROBLEMS = [
   {
     pain: "Traffic comes, sales don't",
     why: "The page has to finish what the ad started: faster product pages, clearer proof and a simpler checkout.",
-    picks: [{ label: "Shopify & Web Experiences", href: "/services/shopify" }],
+    picks: [{ label: "Shopify & Web Experiences", href: "/services/shopify" }, { label: "Speed Optimization", href: "/services/speed-optimization" }],
   },
   {
     pain: "Leads go cold before we reply",

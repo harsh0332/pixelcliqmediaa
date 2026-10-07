@@ -22,6 +22,8 @@ export const PILLAR_IDS = [
   "web-development",
   "lead-generation",
   "brand-design",
+  "meta-ads",
+  "speed-optimization",
 ] as const;
 
 export type PillarId = (typeof PILLAR_IDS)[number];

@@ -50,6 +50,31 @@ export interface ServicePillar {
   /** Pillars this one feeds. Powers the Compound Loop cross-links. */
   connectsTo: PillarId[];
   faq: { q: string; a: string }[];
+  /** Overrides the "{title}." H1 when the page wants its own headline. */
+  heading?: string;
+  /** Extra copy sections, rendered before the scope grid or after the process. */
+  sections?: {
+    placement: "before-scope" | "after-process";
+    label: string;
+    title: string;
+    accent: string;
+    intro: string;
+    items: { title: string; body: string }[];
+  }[];
+  /**
+   * Our own fee ranges. `min`/`max` (rupees) also feed the Service schema.
+   * Pages that carry this set `quotesFees`, which exempts them from the
+   * content guard's currency check: these are price quotes, not result claims.
+   */
+  pricing?: {
+    label: string;
+    title: string;
+    accent: string;
+    intro: string;
+    items: { name: string; price: string; body: string; min?: number; max?: number }[];
+    outro: string;
+  };
+  quotesFees?: boolean;
 }
 
 /**
@@ -160,7 +185,7 @@ export const servicePillars: ServicePillar[] = [
           "Budget moves to what survives, with agreed pull-back thresholds. Retention and the store carry the load that paid media hands them.",
       },
     ],
-    connectsTo: ["creative-content", "commerce-shopify", "data-optimisation"],
+    connectsTo: ["creative-content", "commerce-shopify", "data-optimisation", "meta-ads"],
     faq: [
       {
         q: "How long before we can judge the account?",
@@ -292,7 +317,7 @@ export const servicePillars: ServicePillar[] = [
           "Winning angles are extended into new variants and losing ones retired with a note on why, so the library compounds instead of resetting.",
       },
     ],
-    connectsTo: ["d2c-growth", "commerce-shopify", "seo-organic"],
+    connectsTo: ["d2c-growth", "commerce-shopify", "seo-organic", "meta-ads"],
     faq: [
       {
         q: "How much creative do you produce each month?",
@@ -429,7 +454,7 @@ export const servicePillars: ServicePillar[] = [
           "A standing test cadence against the biggest remaining leak, so the store improves every month rather than every redesign.",
       },
     ],
-    connectsTo: ["d2c-growth", "data-optimisation", "automation-ai"],
+    connectsTo: ["d2c-growth", "data-optimisation", "automation-ai", "speed-optimization"],
     faq: [
       {
         q: "Do you only work on Shopify?",
@@ -559,7 +584,7 @@ export const servicePillars: ServicePillar[] = [
           "Existing pages are improved on a cadence. Organic rewards maintenance more than it rewards launches.",
       },
     ],
-    connectsTo: ["creative-content", "commerce-shopify", "data-optimisation"],
+    connectsTo: ["creative-content", "commerce-shopify", "data-optimisation", "speed-optimization"],
     faq: [
       {
         q: "How long does SEO take?",
@@ -900,7 +925,7 @@ export const servicePillars: ServicePillar[] = [
       { step: "03", title: "Test", description: "Concepts and offers run against written win conditions, cut on schedule, with every result fed back into the creative brief." },
       { step: "04", title: "Scale", description: "Budget moves toward what survives contact with the P&L, against agreed pull-back thresholds rather than against nerve." },
     ],
-    connectsTo: ["creative-content", "commerce-shopify", "data-optimisation"],
+    connectsTo: ["creative-content", "commerce-shopify", "data-optimisation", "meta-ads"],
     faq: [
       { q: "How is this different from the D2C Growth pillar?", a: "It is the media half of it, described on its own for people searching for performance marketing specifically. The work and the people are the same; D2C Growth is the wider engagement that also covers the store and the retention side." },
       { q: "Do you run Meta and Google, or just one?", a: "Both, and usually together. Meta creates demand and Google captures it. Run separately, brands routinely pay twice for the same customer and never find out." },
@@ -1034,7 +1059,7 @@ export const servicePillars: ServicePillar[] = [
       { step: "03", title: "Build", description: "A clean build with speed, tracking and forms tested on real devices, then a staged launch with nothing left switched to placeholder." },
       { step: "04", title: "Improve", description: "We watch how visitors actually use the pages and adjust headlines, sections and forms against what the data shows." },
     ],
-    connectsTo: ["commerce-shopify", "performance", "automation-ai"],
+    connectsTo: ["commerce-shopify", "performance", "automation-ai", "speed-optimization"],
     faq: [
       { q: "Do you build on Shopify, WordPress or custom code?", a: "Whichever suits the job. Stores usually belong on Shopify, content-heavy marketing sites often suit WordPress, and fast campaign or brand sites are frequently built in Next.js. We recommend one and explain why." },
       { q: "Can you just build landing pages for our ads?", a: "Yes. Campaign pages are one of the most common starting points, and they are where the gap between an ad and a sale is easiest to close." },
@@ -1160,6 +1185,392 @@ export const servicePillars: ServicePillar[] = [
       { q: "Do we own the final files?", a: "Yes. On final payment you receive all source files and full ownership of the identity we create for you." },
     ],
   },
+  {
+    "id": "meta-ads",
+    "number": "06",
+    "title": "Meta Ads",
+    "heading": "Meta Ads, run like a P&L line.",
+    "slug": "/services/meta-ads",
+    "primary": false,
+    "parent": "d2c-growth",
+    "quotesFees": true,
+    "promise": "Spend that answers to margin, not to the dashboard.",
+    "headline": "One channel, treated as a business unit, not a traffic tap.",
+    "summary": "Most Meta ad accounts are not underperforming. They are mismeasured, misstructured and starved of creative. We rebuild the account around your contribution margin, install a creative testing system that never runs dry, and manage spend in weekly sprints against numbers everyone trusts.",
+    "intro": "Meta is the channel that creates demand for most D2C brands, which is exactly why it deserves its own owner. We run it as a business unit: a structure that matches how you make money, creative that is always in test, and reporting that agrees with the bank.",
+    "problem": {
+      "intro": "Almost every Meta ad account we audit in India fails in the same three places, and the bidding is never the real problem. The account grew by accident, with campaigns stacked on campaigns, audiences overlapping and exclusions missing. The creative that once carried it is six months old. And the ROAS number everyone argues about cannot be reconciled with what the business actually banked.",
+      "pains": [
+        "Budget split across eleven campaigns so thin that nothing ever exits learning. You are paying tuition forever and graduating never.",
+        "The same buyer acquired three times, once by prospecting, once by retargeting and once by a lookalike, because nobody excluded anyone from anything.",
+        "A strong-looking ROAS month that the bank statement does not recognise, once COD, returns, shipping and discounts are counted."
+      ]
+    },
+    "connectsNote": "Meta Ads depends on creative to test and on the store to convert, and hands automation the WhatsApp and retention flows that close the loop.",
+    "fit": {
+      "intro": "You are a D2C or ecommerce brand already spending, or ready to spend, real money on Meta, and you suspect the account is leaving margin on the table. You want one team accountable to the P&L, not a dashboard. You are willing to feed the creative machine and to hear uncomfortable truths from the audit.",
+      "notFor": "If your monthly ad budget is under roughly ₹1 lakh, a full management retainer is usually the wrong spend, so start with an audit. If you want someone to just run the ads while creative and the store stay frozen, we will decline politely: media can only be as good as what it points at. If Google Ads is your primary channel, our Performance Marketing page describes the combined engagement."
+    },
+    "capabilities": [
+      "Meta Ads audit",
+      "Facebook & Instagram management",
+      "Creative testing",
+      "Campaign structure",
+      "Advantage+",
+      "Click-to-WhatsApp ads",
+      "Retargeting",
+      "Scaling systems"
+    ],
+    "sections": [
+      {
+        "placement": "before-scope",
+        "label": "META ADS IN INDIA",
+        "title": "Same platform.",
+        "accent": "Different game.",
+        "intro": "Meta's auction works the same everywhere; the buyer does not. Running Meta ads for Indian D2C brands means building for realities most playbooks ignore.",
+        "items": [
+          {
+            "title": "Cash on delivery changes the math",
+            "body": "A purchase event is not revenue until the courier returns, or does not. We optimise toward confirmed, delivered orders where the data allows, and we treat COD-heavy categories with the scepticism they deserve: a 3% conversion rate means nothing if a third of it comes back."
+          },
+          {
+            "title": "WhatsApp is a channel, not a chat bubble",
+            "body": "For high-consideration products and Tier 2 and 3 audiences, the fastest path from ad to order often skips the website entirely. Click-to-WhatsApp campaigns, paired with a proper qualification flow, regularly outperform landing pages where trust is built in conversation. We build the ad-to-chat journey as one system, not as an afterthought."
+          },
+          {
+            "title": "Festive season is its own economy",
+            "body": "Diwali, wedding season and end-of-season sales create predictable demand spikes and CPM surges. Accounts that scale in October were built in July: creative banked early, audiences warmed, budgets planned against the surge rather than reacting to it. An agency that meets festive season for the first time in festive season is already late."
+          },
+          {
+            "title": "Language and creative travel further than targeting",
+            "body": "A reel that speaks the buyer's idiom, with Hinglish hooks, regional festivals and price framing in rupees with EMI and COD made explicit, will beat a better-targeted generic asset. We brief creative from your reviews and your customers' actual words, because the auction rewards resonance and resonance is local."
+          }
+        ]
+      },
+      {
+        "placement": "after-process",
+        "label": "WHAT THE FIRST 90 DAYS LOOK LIKE",
+        "title": "No surprises.",
+        "accent": "Just a sequence.",
+        "intro": "Four phases, each with a written output you approve before the next begins.",
+        "items": [
+          {
+            "title": "Days 1 to 7: the audit",
+            "body": "We read the account, the store and the margins, and hand you a written findings report: what is leaking, what is working so we protect it, and what the rebuild will change. You approve the plan before anything moves."
+          },
+          {
+            "title": "Days 8 to 21: the rebuild",
+            "body": "Structure consolidated, audiences and exclusions rebuilt, tracking rewired, creative pipeline installed. Spend continues throughout, because we rebuild around live campaigns, not instead of them."
+          },
+          {
+            "title": "Days 22 to 60: the testing window",
+            "body": "Concepts run against written win conditions and are cut on schedule. This is the noisiest phase and the most valuable one: the account starts telling the truth about hooks, offers and audiences. Expect clarity before profit, and a true acquisition cost before you scale it."
+          },
+          {
+            "title": "Days 61 to 90: the scaling decision",
+            "body": "With a tested creative bank and trusted numbers, budget moves toward what earned it. Some brands scale here; some discover the constraint is the offer or the store, and we say so with the numbers to prove it. Either way, the 90 days end with an account you understand."
+          }
+        ]
+      }
+    ],
+    "deliverables": [
+      {
+        "title": "Account audit & rebuild",
+        "description": "We read your entire Meta ad account against your store and your margins before touching a single setting: every campaign's real job, every audience overlap, every broken exclusion, every tracking gap between the pixel, the Conversions API and what your Shopify actually recorded. Then we rebuild, with a consolidated structure, clean naming, exclusions that mean something and a measurement setup where platform numbers and banked numbers finally agree. Tracking is checked against your Shopify store as part of the audit."
+      },
+      {
+        "title": "Creative strategy & testing",
+        "description": "Creative is the targeting now: on Meta, the asset does more work than the audience setting. We build a testing system, not a pile of ads. Concepts are written from your reviews, unboxings and objections, hooks are tested in the first three seconds, and winners are picked by contribution margin per creative, not by CTR. For D2C brands this usually means a weekly rhythm of new statics, reels and UGC-style creatives, produced with our Creative & Content team."
+      },
+      {
+        "title": "Campaign management",
+        "description": "Day-to-day ownership of the account: budget pacing so a festival weekend does not eat a month of spend, bid strategy matched to your actual conversion volume, Advantage+ shopping campaigns structured correctly instead of thrown together, and retargeting that pulls its weight instead of taking credit for sales that were happening anyway. We watch the account like operators, not reporters."
+      },
+      {
+        "title": "Scaling & retention",
+        "description": "Scaling is a sequence, not a switch: budget follows what survives contact with the P&L, against agreed pull-back thresholds. Because Meta rarely closes the loop alone in India, we connect it to retention: click-to-WhatsApp ads that drop high-intent buyers into a conversation, customer lists fed back as exclusions and seed audiences, and post-purchase flows that turn a first order into a second. WhatsApp flows after the chat starts are built with our Automation & AI team."
+      },
+      {
+        "title": "Measurement you can defend",
+        "description": "Pixel, Conversions API, UTM discipline and a weekly numbers review where metric definitions are written down, so ROAS, CAC and margin mean the same thing every week. Tests that failed are reported with what they cost to learn. If the numbers cannot settle an argument, the setup is wrong, and fixing the setup is part of the job."
+      }
+    ],
+    "process": [
+      {
+        "step": "01",
+        "title": "Audit (week 1)",
+        "description": "We read the account, the store and the margins together, documenting every place spend is duplicated, mistracked or unaccounted for. You get a written findings report before we change anything, including the things that are working, so we do not break them."
+      },
+      {
+        "step": "02",
+        "title": "Rebuild (weeks 2 to 3)",
+        "description": "Structure, audiences, exclusions, creative pipeline and tracking are rebuilt to match how the business makes money rather than how the account happened to grow."
+      },
+      {
+        "step": "03",
+        "title": "Test (weeks 4 to 8)",
+        "description": "Concepts and offers run against written win conditions and are cut on schedule. This is where the account starts telling the truth about what your customer actually responds to."
+      },
+      {
+        "step": "04",
+        "title": "Scale (week 8 onward)",
+        "description": "Weekly sprints continue: what changed, what it cost, what we learned, what happens next week. Scaling never outruns creative supply or measurement, the two constraints that break most scale attempts, so we manage them explicitly."
+      }
+    ],
+    "pricing": {
+      "label": "PRICING GUIDANCE",
+      "title": "Honest numbers,",
+      "accent": "in rupees.",
+      "intro": "Meta ads management in India typically prices in one of two ways, and we will tell you on the first call which one fits you.",
+      "items": [
+        {
+          "name": "One-time account audit & rebuild",
+          "price": "₹25,000 to ₹50,000",
+          "min": 25000,
+          "max": 50000,
+          "body": "Depends on account size and history. You keep the findings report and the rebuilt structure either way."
+        },
+        {
+          "name": "Monthly management",
+          "price": "₹35,000 to ₹90,000 a month",
+          "min": 35000,
+          "max": 90000,
+          "body": "Or 10 to 15% of ad spend with a minimum floor, whichever the account size justifies. The fee follows the workload, and a ₹2L a month account and a ₹20L a month account are different jobs."
+        },
+        {
+          "name": "Minimum ad spend",
+          "price": "About ₹1.5 to 2 lakh a month",
+          "body": "Roughly ₹5,000 to 7,000 a day. Below that, Meta's learning systems cannot do their job and you are mostly paying for reporting. We will say so and suggest an audit instead of a retainer."
+        },
+        {
+          "name": "Creative production",
+          "price": "Scoped separately",
+          "body": "A weekly testing rhythm needs a real creative pipeline, and we will price it plainly rather than bury it. We show you the maths before you commit."
+        }
+      ],
+      "outro": "No lock-ins beyond a sensible initial term: the first 90 days are where the rebuild and the testing system get installed. After that, the weekly numbers should be the reason you stay. If you are comparing agencies, ask each one what happens to your account, your data and your creative if you leave in month four. The honest ones answer in one sentence."
+    },
+    "connectsTo": [
+      "performance",
+      "creative-content",
+      "d2c-growth",
+      "automation-ai",
+      "commerce-shopify"
+    ],
+    "faq": [
+      {
+        "q": "How much do Meta ads cost in India?",
+        "a": "Two costs matter: what you pay Meta and what you pay whoever runs it. Ad spend itself is flexible. Most D2C brands we work with spend between ₹1.5 lakh and ₹20+ lakh per month, and meaningful testing starts around ₹5,000 to 7,000 per day. Our management fee is typically ₹35,000 to ₹90,000 per month or 10 to 15% of spend with a floor, and a one-time audit runs ₹25,000 to ₹50,000. The honest answer for your brand depends on your margins and your average order value, which is exactly what the free growth call establishes before anyone quotes you a number."
+      },
+      {
+        "q": "Facebook ads vs Google ads: which is better for my brand?",
+        "a": "They do different jobs. Meta (Facebook and Instagram) creates demand, putting your product in front of people who were not searching for it, which is why it scales D2C brands. Google captures demand by converting people already looking. Most growing brands need both, run together; run separately, brands routinely pay twice for the same customer without ever finding out. If you can only fund one channel to start, Meta is usually the right first bet for D2C, and our Performance Marketing page describes the combined setup."
+      },
+      {
+        "q": "How long before we see results from Meta ads?",
+        "a": "The rebuild and tracking cleanup takes two to three weeks. The testing phase then needs four to eight weeks of real spend before the account starts telling the truth about what works, and anyone promising scale in week one is selling you their learning budget as your strategy. What you should expect early is clarity: within the first month you will know where the account was leaking and what your true acquisition cost is. Profitable scaling typically follows in months two to three, gated by creative supply."
+      },
+      {
+        "q": "Who owns the ad account?",
+        "a": "You do, always. We work inside your Business Manager and ad account, and you retain full ownership of the account, the pixel data, the audiences and the creative. If we ever part ways, everything stays with you and keeps running. Any agency that insists on running your spend through its own account is building leverage, not partnership."
+      },
+      {
+        "q": "What is the minimum budget to work with you?",
+        "a": "For full monthly management, roughly ₹1.5 to 2 lakh per month in ad spend. Below that, Meta's systems cannot exit learning properly and most of the fee goes to reporting rather than growth. We will tell you that on the first call and suggest an audit plus lighter-touch guidance instead. The audit itself has no spend minimum and is often the highest-return first step."
+      },
+      {
+        "q": "Do you only work with D2C and ecommerce brands?",
+        "a": "D2C is our home ground, because it is where contribution-margin thinking matters most. We also run Meta ads for lead generation, clinics, educators and local services, where the mechanics change (lead forms, click-to-WhatsApp, call tracking) but the discipline does not. If your business can state a target cost per acquired customer, we can probably run it."
+      },
+      {
+        "q": "Can you work with our in-house creative team?",
+        "a": "Yes, and it often works well. We own the testing brief, the hypotheses and the account; your team owns volume production. Results feed back through one shared document rather than a monthly call, so every test, won or lost, improves the next brief. What does not work is creative by committee with no testing discipline. The system needs a single owner."
+      },
+      {
+        "q": "Do you run click-to-WhatsApp ads?",
+        "a": "Yes. For many Indian D2C and service brands, click-to-WhatsApp outperforms website campaigns, especially for high-consideration products, COD-heavy categories and Tier 2 and 3 audiences who prefer chatting to checking out. We build the ad-to-chat journey as one system: the ad, the opening message, the qualification flow and the handoff to your team or automation. See also our Automation page for what happens after the chat starts."
+      },
+      {
+        "q": "Do you guarantee ROAS?",
+        "a": "No, and you should be suspicious of anyone who does. A guaranteed ROAS is either set so low it means nothing, or it is being bought with brand searches and existing customers relabelled as performance. What we guarantee is the system: clean structure, honest measurement, a testing cadence that never stops, and weekly reporting where failed tests are shown with what they cost to learn. That is what compounds into profitable scale; a guaranteed number is what gets faked."
+      },
+      {
+        "q": "How is this different from your Performance Marketing page?",
+        "a": "That page describes Meta and Google run together as one system, the right setup for most scaling brands. This page is the Meta-only deep dive: the audit, the creative testing machine, Advantage+ structure, click-to-WhatsApp and the scaling sequence, described in full for brands looking specifically for Meta ads help. Same team, same margin-first discipline, different depth on the one channel."
+      }
+    ]
+  },
+  {
+    "id": "speed-optimization",
+    "number": "07",
+    "title": "Speed Optimization",
+    "slug": "/services/speed-optimization",
+    "primary": false,
+    "parent": "commerce-shopify",
+    "quotesFees": true,
+    "promise": "A slow site taxes every rupee you spend on ads. We find exactly what is slowing yours down, and fix it without touching your design.",
+    "headline": "A speed project with us is not install a caching plugin and hope. It is a measured engagement: we diagnose your site the way Google measures it, fix what moves the numbers, and prove it on real visitor data.",
+    "summary": "Website speed optimization for Shopify stores, WordPress sites and custom builds. Core Web Vitals fixes, image and script cleanup, and ongoing monitoring, done by the same team that runs performance marketing, so speed improvements show up where it matters: conversion rate and ad returns.",
+    "intro": "Speed work is usually sold as a score. We treat it as revenue: the page has to open fast for a real visitor on a real phone, because that is who your ads are paying for.",
+    "problem": {
+      "intro": "Most websites are not slow because of one big thing. They are slow because of twenty small things: a hero image nobody compressed, three tracking scripts loading before the content, a theme pulling in fonts the page never uses, a slider plugin from 2019 still running on every page. Each one costs a fraction of a second. Together, they cost you customers. On a phone, which is where most of your visitors arrive, every extra second of load time pushes more people to leave before they ever see your offer. If you run Meta or Google ads, you are paying full price to send traffic to pages that half your visitors never wait for. Speed is not a technical nicety. It is a leak in your revenue, running every day you ignore it.",
+      "pains": [
+        "Paid traffic landing on pages that take five or more seconds to open on a phone.",
+        "A PageSpeed score in the 40s that two different freelancers promised to fix and did not.",
+        "Google's page experience quietly ranking faster competitors above you for the same keywords."
+      ]
+    },
+    "connectsNote": "Speed work multiplies whatever sends traffic to your site: faster pages mean cheaper conversions for paid media, and Core Web Vitals feed into rankings.",
+    "fit": {
+      "intro": "You run a Shopify store, a WordPress site or a custom marketing site; you spend on ads and suspect the landing experience is leaking conversions; your PageSpeed scores are poor and you want them fixed properly rather than patched; or your developers are strong on features but speed keeps slipping down the priority list. It works best when someone on your side can approve changes and give us access to the site, the theme and the hosting.",
+      "notFor": "If your site needs a full rebuild, because the theme or platform is fundamentally wrong for what you are trying to do, we will say so plainly. Polishing a broken foundation wastes your money and our time, so we will scope the rebuild honestly (see Websites & Landing Pages) rather than sell you optimization on top of rot. We would also rather not take on sites where we cannot get proper access: guessing from the outside produces guesses, not fixes."
+    },
+    "capabilities": [
+      "Speed audits",
+      "Core Web Vitals fixes",
+      "Shopify optimization",
+      "WordPress optimization",
+      "Image & script cleanup",
+      "Ongoing monitoring"
+    ],
+    "sections": [
+      {
+        "placement": "after-process",
+        "label": "WHY US, SPECIFICALLY",
+        "title": "Speed, ads and SEO.",
+        "accent": "One conversation.",
+        "intro": "Most speed freelancers hand you a better lab score and disappear. We are a performance marketing agency: we optimize speed because we have watched slow pages eat ad budgets from the inside.",
+        "items": [
+          {
+            "title": "The team that spends your ad budget",
+            "body": "The same team that fixes your Core Web Vitals understands what your landing pages need to do for paid traffic, and what Google needs to see for rankings. Speed, ads and SEO stop being three separate conversations and become one system."
+          }
+        ]
+      }
+    ],
+    "deliverables": [
+      {
+        "title": "Website speed audit",
+        "description": "A complete diagnosis of your site as it exists today. We measure your Core Web Vitals on real-user data, profile what loads on your key pages, and hand you a prioritized findings report: what is slow, why it is slow, and what fixing each item is worth. You can take this report to your own developer, or have us implement it. Either way, you will know exactly where you stand."
+      },
+      {
+        "title": "Core Web Vitals fixes",
+        "description": "Google judges your site on three measurements, and we fix all three. Largest Contentful Paint (LCP) is how quickly the main content appears, usually an image problem and sometimes a server problem. Interaction to Next Paint (INP) is how fast the page responds to a tap or click, usually heavy JavaScript. Cumulative Layout Shift (CLS) is whether the page jumps around while loading, usually images or embeds with no reserved space. We explain each fix in plain language first, and nothing we do changes how your site looks. These measurements feed rankings, which is where our SEO & Organic work picks up."
+      },
+      {
+        "title": "Shopify speed optimization",
+        "description": "Shopify stores have their own classic slowdowns: app bloat (every installed app adds JavaScript, even the ones you stopped using), oversized theme code, uncompressed product images and third-party scripts firing on every page. We audit your apps and theme, remove dead weight, compress and properly size your imagery, defer what can wait, and get collection and product pages loading the way a store should. Most stores gain their biggest wins from app cleanup alone. This sits alongside our Shopify & Web Experiences work."
+      },
+      {
+        "title": "WordPress speed optimization",
+        "description": "WordPress sites slow down differently: plugin sprawl, page builders generating heavy markup, unoptimized databases and hosting chosen for price rather than performance. We trim the plugin list to what earns its place, set up proper caching, optimize images and the database, and fix the theme-level issues that page builders leave behind. If your hosting is the bottleneck, we will tell you honestly and help you move."
+      },
+      {
+        "title": "Ongoing speed monitoring",
+        "description": "A site is fastest the day it is optimized, then slowly gets slower as new apps, images, campaigns and tracking are added. Monitoring keeps a weekly eye on your Core Web Vitals and load times, flags regressions before they cost you, and keeps the site fast as it grows. For stores running continuous ad spend, this is the difference between a one-time fix and a durable advantage."
+      }
+    ],
+    "process": [
+      {
+        "step": "01",
+        "title": "Measure",
+        "description": "We run your site through real-user data (Chrome UX Report) and lab diagnostics, and establish your baseline: LCP, INP, CLS, and full load profiles for your homepage, top landing pages and checkout or lead forms. No work starts without numbers."
+      },
+      {
+        "step": "02",
+        "title": "Prioritize",
+        "description": "Not every fix is worth doing. We rank every finding by impact versus effort, so the work that moves revenue happens first and the nice-to-haves wait their turn. You approve the plan before we touch anything."
+      },
+      {
+        "step": "03",
+        "title": "Fix",
+        "description": "We implement in order of priority: images, scripts, caching, theme and app cleanup, server-level improvements where needed. Changes go live in stages, and we check the numbers after each stage so we know what worked."
+      },
+      {
+        "step": "04",
+        "title": "Prove",
+        "description": "We re-measure on the same real-user data, show you the before and after, and hand over a maintenance checklist so the gains stick. If you are on monitoring, this becomes a continuous loop."
+      }
+    ],
+    "pricing": {
+      "label": "PRICING",
+      "title": "Honest numbers,",
+      "accent": "in rupees.",
+      "intro": "Speed work is priced by the size and platform of your site, not by the hour, so you always know what you are buying.",
+      "items": [
+        {
+          "name": "Speed audit",
+          "price": "₹15,000 to ₹25,000, one time",
+          "min": 15000,
+          "max": 25000,
+          "body": "The full diagnosis: real-user Core Web Vitals, a page-by-page load profile and a prioritized fix list with expected impact. Yours to keep, whether we implement or your own team does."
+        },
+        {
+          "name": "One-time optimization",
+          "price": "₹35,000 to ₹80,000",
+          "min": 35000,
+          "max": 80000,
+          "body": "The audit plus implementation, for a typical Shopify store or WordPress site. Larger catalogues, custom builds and multilingual sites sit at the higher end; we quote exactly after the audit, so there are no surprises."
+        },
+        {
+          "name": "Ongoing monitoring",
+          "price": "₹15,000 to ₹30,000 a month",
+          "min": 15000,
+          "max": 30000,
+          "body": "Weekly Core Web Vitals tracking, regression alerts and continuous small improvements as your site changes. Built for stores and businesses running ads month after month, where a slow week directly costs revenue."
+        }
+      ],
+      "outro": "Every engagement starts with the audit. If the audit shows your site is already in good shape, we will tell you, and you will have paid for certainty, not for work you did not need."
+    },
+    "connectsTo": [
+      "performance",
+      "seo-organic",
+      "web-development",
+      "commerce-shopify"
+    ],
+    "faq": [
+      {
+        "q": "What are Core Web Vitals?",
+        "a": "Core Web Vitals are the three measurements Google uses to judge how a page feels to a real visitor. Largest Contentful Paint (LCP) is how fast the main content appears, and the target is under 2.5 seconds. Interaction to Next Paint (INP) is how quickly the page responds when someone taps or clicks, and the target is under 200 milliseconds. Cumulative Layout Shift (CLS) is how much the layout jumps around while loading, and the target is as close to zero as possible. Together they form Google's page experience signal, which influences rankings."
+      },
+      {
+        "q": "How is website speed measured, and what is the difference between lab scores and field data?",
+        "a": "There are two kinds of measurement. Lab scores come from tools like PageSpeed Insights running a simulated test, which is useful for diagnosis but tests one moment on one connection. Field data comes from real visitors' browsers (Google's Chrome UX Report), and this is what Google actually ranks you on. We optimize for field data first, because that is what your customers experience and what Google rewards. A perfect lab score with poor field data is a vanity metric."
+      },
+      {
+        "q": "How long does speed optimization take?",
+        "a": "A speed audit takes five to seven working days. Implementation usually takes two to four weeks after that, depending on the size of your site and how many fixes are needed. Shopify stores with app bloat are often transformed in the first two weeks; large WordPress sites with years of plugin accumulation can take longer. You will see staged improvements as we go, not one big reveal at the end."
+      },
+      {
+        "q": "Will speed optimization change how my website looks?",
+        "a": "No. Almost all speed work happens underneath the design: compressing images, deferring scripts, cleaning up code, fixing caching and removing dead weight. Your visitors see the same site, only faster. The one exception is if we find something in the design itself causing the slowness, like a 10MB background video. In that case we flag it, explain the trade-off, and only change it with your approval."
+      },
+      {
+        "q": "My store is on Shopify. What is usually slowing it down?",
+        "a": "In our experience, the top three Shopify slowdowns are app bloat (every installed app loads JavaScript, including apps you stopped using months ago), oversized theme code and uncompressed product images, and third-party scripts such as review widgets, popups and tracking pixels firing on every page instead of only where needed. An audit almost always finds quick wins in the first category alone. We never recommend deleting apps you actually use; we make them load smarter."
+      },
+      {
+        "q": "Do you optimize WordPress websites too?",
+        "a": "Yes. WordPress slowdowns are usually plugin sprawl, page builders producing heavy markup, unoptimized databases and images, and budget hosting. We trim plugins to what earns its place, configure proper caching, optimize the database and media, and fix theme-level issues. If your hosting plan is the real bottleneck, we will tell you honestly rather than optimize around it."
+      },
+      {
+        "q": "Will a faster website improve my Google rankings?",
+        "a": "It helps, with honest limits. Page experience, built on Core Web Vitals, is a confirmed Google ranking factor, so moving from poor to good removes a handicap, especially against faster competitors. But speed alone will not outrank a page with better content and stronger links. Speed optimization makes sure your site is never losing rankings it deserves, and it pairs best with our SEO work, which handles the content and authority side."
+      },
+      {
+        "q": "What is the difference between your audit and a free online speed test?",
+        "a": "A free test gives you a score and a generic list of warnings. Our audit gives you a diagnosis: which issues actually affect your revenue pages, what each fix is worth, what it will cost to implement, and in what order to do the work. It is the difference between a thermometer and a doctor, and it is measured against your real visitors' data, not a single simulated run."
+      },
+      {
+        "q": "Is a one-time fix enough, or do I need ongoing monitoring?",
+        "a": "A one-time fix is enough if your site rarely changes. But most growing businesses add new apps, images, campaigns and tracking every month, and each addition quietly slows the site back down. If you run ads continuously, monitoring pays for itself: it catches regressions in the same week they appear, before they eat into your conversion rate. We will tell you honestly which camp you are in after the audit."
+      },
+      {
+        "q": "Can you work with our in-house developer or existing agency?",
+        "a": "Yes, and it works well. Many clients take our audit to their own team for implementation, because the findings report is written to be actionable by any competent developer, with each item explained and prioritized. We stay available for questions during implementation, and we re-measure afterwards to confirm the gains. No turf wars; the goal is a fast site, whoever builds it."
+      }
+    ]
+  }
 ];
 
 /** Lookup by id, for cross-links and the Compound Loop. */
@@ -1250,6 +1661,16 @@ export const pillarSeo: Record<string, { title: string; description: string; kic
     title: "Lead Generation Funnels for Courses & Clinics",
     description: "Lead ads, webinar and course funnels, and instant follow-up measured on booked calls and sales rather than on the cost of a form fill.",
     kicker: "Lead generation, webinar and course funnels",
+  },
+  "meta-ads": {
+    title: "Meta Ads Agency for D2C Brands in India",
+    description: "Meta ads agency for D2C brands in India — Facebook & Instagram management rebuilt around contribution margin, with creative testing and weekly sprints.",
+    kicker: "Facebook & Instagram ads management for D2C brands in India",
+  },
+  "speed-optimization": {
+    title: "Website Speed Optimization Services India | Pixelcliq",
+    description: "Slow website losing sales? Pixelcliq fixes Core Web Vitals for Shopify, WordPress and custom sites across India. Speed audits from ₹15,000.",
+    kicker: "A faster website for D2C brands in India — measured in sales, not scores.",
   },
   branding: {
     title: "Brand Identity & Packaging Design for D2C",

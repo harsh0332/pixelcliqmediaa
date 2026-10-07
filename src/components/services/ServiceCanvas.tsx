@@ -18,7 +18,7 @@ const scenes: Record<string, { headline: string; subtitle: string; file: string;
 
 export function ServiceCanvas({ service, title }: { service: string; title: string }) {
   const scene = scenes[service] ?? scenes["d2c-growth"]!;
-  const visual = ({ seo: "seo", "social-media": "social", "web-development": "landing", "lead-generation": "leads", branding: "brand", performance: "ads", creative: "design", automation: "automation", shopify: "store" } as Record<string, string>)[service];
+  const visual = ({ seo: "seo", "social-media": "social", "web-development": "landing", "lead-generation": "leads", branding: "brand", performance: "ads", "meta-ads": "ads", "speed-optimization": "landing", creative: "design", automation: "automation", shopify: "store" } as Record<string, string>)[service];
   return <aside className={`${styles.canvas} ${styles[scene.theme]}`} aria-label={`${title} in motion`}>
     <div className={styles.top}><span>{scene.subtitle}</span><span aria-hidden="true">↗</span></div>
     <h2>{scene.headline}</h2>

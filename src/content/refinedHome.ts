@@ -90,7 +90,7 @@ export const homeContent = {
         id: "ads", visual: "ads", title: "Performance Marketing", href: "/services/performance",
         line: "Meta and Google campaigns planned around your margins, with creative testing built in.",
         copy: "Account structure, budgets and tracking rebuilt around contribution margin, so more spend does not quietly mean less profit.",
-        links: [{ label: "Meta Ads", href: "/services/performance" }, { label: "Google Ads", href: "/services/performance" }, { label: "D2C growth", href: "/services/d2c-growth" }],
+        links: [{ label: "Meta Ads", href: "/services/meta-ads" }, { label: "Google Ads", href: "/services/performance" }, { label: "D2C growth", href: "/services/d2c-growth" }],
       },
       {
         id: "design", visual: "design", title: "Creative & Ad Design", href: "/services/creative",
@@ -114,7 +114,7 @@ export const homeContent = {
         id: "store", visual: "store", title: "Shopify & Web Experiences", href: "/services/shopify",
         line: "Shopify stores, websites and landing pages that turn the first visit into the next step.",
         copy: "From a brand website to a Shopify store: fast mobile experiences, focused campaign pages and a clear path to purchase or enquiry.",
-        links: [{ label: "Shopify stores", href: "/services/shopify" }, { label: "Websites & landing pages", href: "/services/shopify#deliverables" }, { label: "Conversion", href: "/services/shopify" }],
+        links: [{ label: "Shopify stores", href: "/services/shopify" }, { label: "Websites & landing pages", href: "/services/shopify#deliverables" }, { label: "Speed optimization", href: "/services/speed-optimization" }],
       },
       {
         id: "seo", visual: "seo", title: "SEO & AI Search", href: "/services/seo",

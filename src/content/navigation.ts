@@ -102,7 +102,7 @@ export const footerNav: FooterColumn[] = [
     title: "Services",
     // All eight, not just the six nav pillars: the landing pages need a
     // crawlable link from somewhere, and the footer is where they live.
-    links: [...homeContent.explorer.items.map((item) => ({ label: item.title, href: item.href })), { label: "Studio Zero: AI visuals", href: "/studio-zero" }],
+    links: [...homeContent.explorer.items.map((item) => ({ label: item.title, href: item.href })), { label: "Meta Ads", href: "/services/meta-ads" }, { label: "Speed Optimization", href: "/services/speed-optimization" }, { label: "Studio Zero: AI visuals", href: "/studio-zero" }],
   },
   {
     title: "Company",

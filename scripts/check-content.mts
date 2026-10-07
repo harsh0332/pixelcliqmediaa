@@ -99,7 +99,16 @@ const bundle = {
     legalDocuments,
   },
   // Exempt paths where published metrics or budget options are legitimately stated.
-  claimExemptPaths: ["contactPage.spendOptions", "cases", "creatives"],
+  claimExemptPaths: [
+    "contactPage.spendOptions",
+    "cases",
+    "creatives",
+    // Pillars that publish our own fee ranges (pricing section and the FAQ
+    // answers that quote it). A price list is not a claim about results.
+    ...servicePillars.flatMap((pillar, i) =>
+      pillar.quotesFees ? [`servicePillars[${i}].pricing`, `servicePillars[${i}].faq`, `servicePillars[${i}].fit`] : [],
+    ),
+  ],
   // Derived from servicePillars rather than authored separately.
   derivedModules: {
     headerNav: navigationModule.headerNav,

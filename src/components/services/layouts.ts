@@ -55,6 +55,8 @@ const CONFIG: Record<PillarId, ServiceLayoutConfig> = {
   "web-development": { layout: "flow", tone: "sand", cta: "end" },
   "lead-generation": { layout: "row", tone: "bone", cta: "end" },
   "brand-design": { layout: "showcase", tone: "paper", cta: "mid" },
+  "meta-ads": { layout: "row", tone: "bone", cta: "end" },
+  "speed-optimization": { layout: "flow", tone: "sand", cta: "end" },
 };
 
 export function serviceLayout(id: PillarId): ServiceLayoutConfig {

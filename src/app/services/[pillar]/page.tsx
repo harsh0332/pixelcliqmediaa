@@ -98,6 +98,9 @@ export default async function ServicePage({
             description: pillar.promise,
             serviceType: pillar.title,
             url,
+            offers: pillar.pricing?.items
+              .filter((i) => i.min && i.max)
+              .map((i) => ({ name: i.name, min: i.min!, max: i.max! })),
           }),
         )}
       />
