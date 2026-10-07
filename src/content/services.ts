@@ -61,20 +61,15 @@ export interface ServicePillar {
     intro: string;
     items: { title: string; body: string }[];
   }[];
-  /**
-   * Our own fee ranges. `min`/`max` (rupees) also feed the Service schema.
-   * Pages that carry this set `quotesFees`, which exempts them from the
-   * content guard's currency check: these are price quotes, not result claims.
-   */
+  /** Scope-and-fees copy. Deliberately carries no figures: pricing is discussed on a call. */
   pricing?: {
     label: string;
     title: string;
     accent: string;
     intro: string;
-    items: { name: string; price: string; body: string; min?: number; max?: number }[];
+    items: { name: string; body: string }[];
     outro: string;
   };
-  quotesFees?: boolean;
 }
 
 /**
@@ -1193,7 +1188,6 @@ export const servicePillars: ServicePillar[] = [
     "slug": "/services/meta-ads",
     "primary": false,
     "parent": "d2c-growth",
-    "quotesFees": true,
     "promise": "Spend that answers to margin, not to the dashboard.",
     "headline": "One channel, treated as a business unit, not a traffic tap.",
     "summary": "Most Meta ad accounts are not underperforming. They are mismeasured, misstructured and starved of creative. We rebuild the account around your contribution margin, install a creative testing system that never runs dry, and manage spend in weekly sprints against numbers everyone trusts.",
@@ -1209,7 +1203,7 @@ export const servicePillars: ServicePillar[] = [
     "connectsNote": "Meta Ads depends on creative to test and on the store to convert, and hands automation the WhatsApp and retention flows that close the loop.",
     "fit": {
       "intro": "You are a D2C or ecommerce brand already spending, or ready to spend, real money on Meta, and you suspect the account is leaving margin on the table. You want one team accountable to the P&L, not a dashboard. You are willing to feed the creative machine and to hear uncomfortable truths from the audit.",
-      "notFor": "If your monthly ad budget is under roughly ₹1 lakh, a full management retainer is usually the wrong spend, so start with an audit. If you want someone to just run the ads while creative and the store stay frozen, we will decline politely: media can only be as good as what it points at. If Google Ads is your primary channel, our Performance Marketing page describes the combined engagement."
+      "notFor": "If your monthly ad budget is small, a full management retainer is usually the wrong spend, so start with an audit. If you want someone to just run the ads while creative and the store stay frozen, we will decline politely: media can only be as good as what it points at. If Google Ads is your primary channel, our Performance Marketing page describes the combined engagement."
     },
     "capabilities": [
       "Meta Ads audit",
@@ -1318,39 +1312,19 @@ export const servicePillars: ServicePillar[] = [
       }
     ],
     "pricing": {
-      "label": "PRICING GUIDANCE",
-      "title": "Honest numbers,",
-      "accent": "in rupees.",
-      "intro": "Meta ads management in India typically prices in one of two ways, and we will tell you on the first call which one fits you.",
-      "items": [
-        {
-          "name": "One-time account audit & rebuild",
-          "price": "₹25,000 to ₹50,000",
-          "min": 25000,
-          "max": 50000,
-          "body": "Depends on account size and history. You keep the findings report and the rebuilt structure either way."
-        },
-        {
-          "name": "Monthly management",
-          "price": "₹35,000 to ₹90,000 a month",
-          "min": 35000,
-          "max": 90000,
-          "body": "Or 10 to 15% of ad spend with a minimum floor, whichever the account size justifies. The fee follows the workload, and a ₹2L a month account and a ₹20L a month account are different jobs."
-        },
-        {
-          "name": "Minimum ad spend",
-          "price": "About ₹1.5 to 2 lakh a month",
-          "body": "Roughly ₹5,000 to 7,000 a day. Below that, Meta's learning systems cannot do their job and you are mostly paying for reporting. We will say so and suggest an audit instead of a retainer."
-        },
-        {
-          "name": "Creative production",
-          "price": "Scoped separately",
-          "body": "A weekly testing rhythm needs a real creative pipeline, and we will price it plainly rather than bury it. We show you the maths before you commit."
-        }
-      ],
-      "outro": "No lock-ins beyond a sensible initial term: the first 90 days are where the rebuild and the testing system get installed. After that, the weekly numbers should be the reason you stay. If you are comparing agencies, ask each one what happens to your account, your data and your creative if you leave in month four. The honest ones answer in one sentence."
-    },
-    "connectsTo": [
+    "label": "SCOPE AND FEES",
+    "title": "Scoped on the call,",
+    "accent": "not on the page.",
+    "intro": "Meta ads management is priced to the size of the account and the workload, so a number on a web page would be wrong for most brands. We will tell you on the first call which structure fits you.",
+    "items": [
+      { "name": "One-time account audit & rebuild", "body": "Scoped to the size and history of the account. You keep the findings report and the rebuilt structure either way." },
+      { "name": "Monthly management", "body": "The fee follows the workload: a small account and a large one are different jobs, and we agree the basis with you before anything starts." },
+      { "name": "Minimum ad spend", "body": "Meta's learning systems need enough daily spend to do their job. Below that level you are mostly paying for reporting, and we will say so and suggest an audit instead of a retainer." },
+      { "name": "Creative production", "body": "Scoped separately and depends on volume. A weekly testing rhythm needs a real creative pipeline, and we will show you the maths before you commit." }
+    ],
+    "outro": "No lock-ins beyond a sensible initial term: the first 90 days are where the rebuild and the testing system get installed. After that, the weekly numbers should be the reason you stay. If you are comparing agencies, ask each one what happens to your account, your data and your creative if you leave in month four. The honest ones answer in one sentence."
+  },
+  "connectsTo": [
       "performance",
       "creative-content",
       "d2c-growth",
@@ -1360,8 +1334,8 @@ export const servicePillars: ServicePillar[] = [
     "faq": [
       {
         "q": "How much do Meta ads cost in India?",
-        "a": "Two costs matter: what you pay Meta and what you pay whoever runs it. Ad spend itself is flexible. Most D2C brands we work with spend between ₹1.5 lakh and ₹20+ lakh per month, and meaningful testing starts around ₹5,000 to 7,000 per day. Our management fee is typically ₹35,000 to ₹90,000 per month or 10 to 15% of spend with a floor, and a one-time audit runs ₹25,000 to ₹50,000. The honest answer for your brand depends on your margins and your average order value, which is exactly what the free growth call establishes before anyone quotes you a number."
-      },
+      "a": "Two costs matter: what you pay Meta and what you pay whoever runs it. Ad spend itself is flexible, and meaningful testing needs enough daily budget for Meta's systems to learn. Our fee depends on the size of the account and the workload, and a one-time audit is priced separately from monthly management. The honest answer for your brand depends on your margins and your average order value, which is exactly what the free growth call establishes before anyone quotes you a number."
+    },
       {
         "q": "Facebook ads vs Google ads: which is better for my brand?",
         "a": "They do different jobs. Meta (Facebook and Instagram) creates demand, putting your product in front of people who were not searching for it, which is why it scales D2C brands. Google captures demand by converting people already looking. Most growing brands need both, run together; run separately, brands routinely pay twice for the same customer without ever finding out. If you can only fund one channel to start, Meta is usually the right first bet for D2C, and our Performance Marketing page describes the combined setup."
@@ -1376,8 +1350,8 @@ export const servicePillars: ServicePillar[] = [
       },
       {
         "q": "What is the minimum budget to work with you?",
-        "a": "For full monthly management, roughly ₹1.5 to 2 lakh per month in ad spend. Below that, Meta's systems cannot exit learning properly and most of the fee goes to reporting rather than growth. We will tell you that on the first call and suggest an audit plus lighter-touch guidance instead. The audit itself has no spend minimum and is often the highest-return first step."
-      },
+      "a": "For full monthly management, the ad budget has to be large enough for Meta's systems to exit learning properly. Below that, most of the fee goes to reporting rather than growth. We will tell you that on the first call and suggest an audit plus lighter-touch guidance instead. The audit itself has no spend minimum and is often the highest-return first step."
+    },
       {
         "q": "Do you only work with D2C and ecommerce brands?",
         "a": "D2C is our home ground, because it is where contribution-margin thinking matters most. We also run Meta ads for lead generation, clinics, educators and local services, where the mechanics change (lead forms, click-to-WhatsApp, call tracking) but the discipline does not. If your business can state a target cost per acquired customer, we can probably run it."
@@ -1407,7 +1381,6 @@ export const servicePillars: ServicePillar[] = [
     "slug": "/services/speed-optimization",
     "primary": false,
     "parent": "commerce-shopify",
-    "quotesFees": true,
     "promise": "A slow site taxes every rupee you spend on ads. We find exactly what is slowing yours down, and fix it without touching your design.",
     "headline": "A speed project with us is not install a caching plugin and hope. It is a measured engagement: we diagnose your site the way Google measures it, fix what moves the numbers, and prove it on real visitor data.",
     "summary": "Website speed optimization for Shopify stores, WordPress sites and custom builds. Core Web Vitals fixes, image and script cleanup, and ongoing monitoring, done by the same team that runs performance marketing, so speed improvements show up where it matters: conversion rate and ad returns.",
@@ -1493,36 +1466,18 @@ export const servicePillars: ServicePillar[] = [
       }
     ],
     "pricing": {
-      "label": "PRICING",
-      "title": "Honest numbers,",
-      "accent": "in rupees.",
-      "intro": "Speed work is priced by the size and platform of your site, not by the hour, so you always know what you are buying.",
-      "items": [
-        {
-          "name": "Speed audit",
-          "price": "₹15,000 to ₹25,000, one time",
-          "min": 15000,
-          "max": 25000,
-          "body": "The full diagnosis: real-user Core Web Vitals, a page-by-page load profile and a prioritized fix list with expected impact. Yours to keep, whether we implement or your own team does."
-        },
-        {
-          "name": "One-time optimization",
-          "price": "₹35,000 to ₹80,000",
-          "min": 35000,
-          "max": 80000,
-          "body": "The audit plus implementation, for a typical Shopify store or WordPress site. Larger catalogues, custom builds and multilingual sites sit at the higher end; we quote exactly after the audit, so there are no surprises."
-        },
-        {
-          "name": "Ongoing monitoring",
-          "price": "₹15,000 to ₹30,000 a month",
-          "min": 15000,
-          "max": 30000,
-          "body": "Weekly Core Web Vitals tracking, regression alerts and continuous small improvements as your site changes. Built for stores and businesses running ads month after month, where a slow week directly costs revenue."
-        }
-      ],
-      "outro": "Every engagement starts with the audit. If the audit shows your site is already in good shape, we will tell you, and you will have paid for certainty, not for work you did not need."
-    },
-    "connectsTo": [
+    "label": "SCOPE AND FEES",
+    "title": "Scoped on the call,",
+    "accent": "not on the page.",
+    "intro": "Speed work is priced by the size and platform of your site, not by the hour, so you always know what you are buying before it starts.",
+    "items": [
+      { "name": "Speed audit", "body": "The full diagnosis: real-user Core Web Vitals, a page-by-page load profile and a prioritized fix list with expected impact. Yours to keep, whether we implement or your own team does." },
+      { "name": "One-time optimization", "body": "The audit plus implementation, for a typical Shopify store or WordPress site. Larger catalogues, custom builds and multilingual sites take more work; we quote exactly after the audit, so there are no surprises." },
+      { "name": "Ongoing monitoring", "body": "Weekly Core Web Vitals tracking, regression alerts and continuous small improvements as your site changes. Built for stores and businesses running ads month after month, where a slow week directly costs revenue." }
+    ],
+    "outro": "Every engagement starts with the audit. If the audit shows your site is already in good shape, we will tell you, and you will have paid for certainty, not for work you did not need."
+  },
+  "connectsTo": [
       "performance",
       "seo-organic",
       "web-development",
@@ -1669,7 +1624,7 @@ export const pillarSeo: Record<string, { title: string; description: string; kic
   },
   "speed-optimization": {
     title: "Website Speed Optimization Services India | Pixelcliq",
-    description: "Slow website losing sales? Pixelcliq fixes Core Web Vitals for Shopify, WordPress and custom sites across India. Speed audits from ₹15,000.",
+    description: "Slow website losing sales? Pixelcliq fixes Core Web Vitals for Shopify, WordPress and custom sites across India, starting with a speed audit.",
     kicker: "A faster website for D2C brands in India — measured in sales, not scores.",
   },
   branding: {

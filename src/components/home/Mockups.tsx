@@ -72,7 +72,7 @@ function AdsVisual({ uid }: { uid: string }) {
       </svg>
       <div className={styles.kpis}>
         <div><span className={styles.kDot} style={{ background: "#2ad19b" }} /><b>3.4x</b><small>Blended ROAS</small></div>
-        <div><span className={styles.kDot} style={{ background: "#0a6fd0" }} /><b>₹412</b><small>Cost per order</small></div>
+        <div><span className={styles.kDot} style={{ background: "#0a6fd0" }} /><b>{uid.includes("-nocurrency") ? "412" : "₹412"}</b><small>Cost per order</small></div>
         <div><span className={styles.kDot} style={{ background: "#ff6b8a" }} /><b>1,284</b><small>Orders this month</small></div>
       </div>
       <Sample />
