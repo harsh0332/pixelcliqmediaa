@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { refuseRequest } from "@/lib/requestGuard";
 
 /**
  * Newsletter placeholder handler.
@@ -11,6 +12,9 @@ import { NextResponse } from "next/server";
  * real to talk to. Wiring a provider is a change to this file alone.
  */
 export async function POST(request: Request) {
+  const refused = refuseRequest(request);
+  if (refused) return NextResponse.json({ ok: false, message: refused.message }, { status: refused.status });
+
   let email = "";
   try {
     const body = (await request.json()) as { email?: unknown };

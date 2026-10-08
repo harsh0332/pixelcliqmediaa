@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { refuseRequest } from "@/lib/requestGuard";
 import { contactPage } from "@/content/home";
 
 /** One source of error copy, so the server can never contradict the field
@@ -24,6 +25,9 @@ const isText = (value: unknown, min = 1): value is string =>
   typeof value === "string" && value.trim().length >= min;
 
 export async function POST(request: Request) {
+  const refused = refuseRequest(request);
+  if (refused) return NextResponse.json({ ok: false, errors: { server: refused.message } }, { status: refused.status });
+
   let payload: ContactPayload;
   try {
     const body: unknown = await request.json();

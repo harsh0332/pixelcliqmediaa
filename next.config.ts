@@ -21,6 +21,13 @@ const nextConfig: NextConfig = {
           { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
           // SAMEORIGIN, not DENY: the 3D scenes are same-origin iframes.
           { key: "X-Frame-Options", value: "SAMEORIGIN" },
+          // Framing is already limited by X-Frame-Options; these close off plugins,
+          // base-tag injection and off-site form posts. No script-src: the site
+          // relies on inline JSON-LD and Next's own bootstrap scripts.
+          { key: "Content-Security-Policy", value: "object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'" },
+          { key: "Cross-Origin-Opener-Policy", value: "same-origin" },
+          { key: "X-Permitted-Cross-Domain-Policies", value: "none" },
+          { key: "X-DNS-Prefetch-Control", value: "off" },
           { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=(), browsing-topics=()" },
         ],
       },
